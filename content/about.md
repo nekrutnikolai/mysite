@@ -1,7 +1,7 @@
 ---
 title: "About"
 date: 2020-04-30T15:26:54-04:00
-draft: true
+draft: false
 ---
 {{< figure src="/img/nikolaicam1.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="Sabino Canyon, AZ" titlePosition="center">}}
 
