@@ -73,12 +73,12 @@ We are going to destroy the MacBook by heat over the next few weeks.</descriptio
 <p>If you reopened it, double check that you are in the <strong>~</strong> directory.</p>
 <p>Create a shell script called xmr:</p>
 <p><code>touch xmr.sh</code></p>
-<p>Make it executable</p>
+<p>Make it executable:</p>
 <p><code>chmod +x xmr.sh</code></p>
 <p>Edit the shell script to make it navigate to the xmrig/build directory, and start the miner from there:</p>
 <p><code>nano xmr.sh</code></p>
 <p>A basic text editor will show up.</p>
-<p>Type the following into it, each on a separate line:</p>
+<p>Type the following into it, each on a separate:</p>
 <p><code>cd xmrig/build</code></p>
 <p><code>copy and paste the code that we generated earlier from the configurator</code></p>
 <p>Press control x and then press enter to save the edits made to the file.</p>

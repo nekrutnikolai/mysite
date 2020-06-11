@@ -97,7 +97,7 @@ Create a shell script called xmr:
 
 `touch xmr.sh`
 
-Make it executable
+Make it executable:
 
 `chmod +x xmr.sh`
 
@@ -107,7 +107,7 @@ Edit the shell script to make it navigate to the xmrig/build directory, and star
 
 A basic text editor will show up.
 
-Type the following into it, each on a separate line:
+Type the following into it, each on a separate:
 
 `cd xmrig/build`
 
