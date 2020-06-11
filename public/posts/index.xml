@@ -5,8 +5,107 @@
         <description>Recent content in Posts on Nikolai Nekrutenko</description>
         <generator>Hugo -- gohugo.io</generator>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Thu, 30 Apr 2020 15:21:48 -0400</lastBuildDate>
+        <lastBuildDate>Thu, 11 Jun 2020 10:04:55 -0400</lastBuildDate>
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Let&#39;s Kill This MacBook! - How to Mine Monero on a Mac</title>
+            <link>/posts/2020/06/lets-kill-this-macbook-how-to-mine-monero-on-a-mac/</link>
+            <pubDate>Thu, 11 Jun 2020 10:04:55 -0400</pubDate>
+            
+            <guid>/posts/2020/06/lets-kill-this-macbook-how-to-mine-monero-on-a-mac/</guid>
+            <description>MacBook Pro 13 without TouchBar   My good friend wants to kill his MacBook He&amp;rsquo;s already had it, the one in the picture above, for a couple of years, and the battery is starting to degrade. He has a decent budget for a new computer, but doesn&amp;rsquo;t want to buy a new laptop until this one stops functioning.
+We are going to destroy the MacBook by heat over the next few weeks.</description>
+            <content type="html"><![CDATA[<figure>
+    <img src="/img/skylerdontlikemacs.png"
+         alt="Hello Friend"/> <figcaption>
+            <h4>MacBook Pro 13 without TouchBar</h4>
+        </figcaption>
+</figure>
+
+<h2 id="my-good-friend-wants-to-kill-his-macbook">My good friend wants to kill his MacBook</h2>
+<p>He&rsquo;s already had it, the one in the picture above, for a couple of years, and the battery is starting to degrade. He has a decent budget for a new computer, but doesn&rsquo;t want to buy a new laptop until this one stops functioning.</p>
+<p>We are going to destroy the MacBook by <strong>heat</strong> over the next few weeks. MacBooks are known for their subpar cooling systems. Instead of wasting this Mac&rsquo;s <strong>insane</strong> computational power, we are going to set it up for mining <a href="https://www.getmonero.org/">Monero(XMR)</a>, a type of cryptocurrency that can be mined with a CPU. He is only going to earn a couple pennies per day, but it&rsquo;s better than nothing. I don&rsquo;t know how he&rsquo;ll be able to sleep through the insane fan noise. Maybe he&rsquo;ll have to run an extension cable to his closet.</p>
+<figure>
+    <img src="/img/monero.png"
+         alt="Hello Friend"/> <figcaption>
+            <h4>Official Monero Logo</h4>
+        </figcaption>
+</figure>
+
+<h2 id="disclaimer">Disclaimer</h2>
+<p>You have been warned that there are risks such as damage to the computer keeping it at a high temperature for long periods of time.</p>
+<p>It is barely profitable to do this on a laptop.</p>
+<p>Pools usually have a minimum of 0.1 XMR payout, so it would take atleast a couple of months to be able to withdraw Monero if using a laptop.</p>
+<p>Please do this at your own risk.</p>
+<h2 id="installing-xmrig">Installing xmrig</h2>
+<p>Install Xcode from the App Store:</p>
+<p><a href="https://apps.apple.com/us/app/xcode/id497799835?mt=12">Xcode</a></p>
+<p><em><strong>Open the terminal application on your mac and copy and paste the code below into it, step by step.</strong></em></p>
+<p>Install Homebrew, a package manager for macOS:</p>
+<p><code>/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)&quot;</code></p>
+<p>Install the required dependencies with Homebrew:</p>
+<p><code>brew install git cmake libuv libmicrohttpd openssl hwloc</code></p>
+<p>Clone, or in other words, save the xmrig mining software with git:</p>
+<p><code>git clone https://github.com/xmrig/xmrig.git</code></p>
+<p>Make the build directory inside of the xmrig directory:</p>
+<p><code>mkdir xmrig/build</code></p>
+<p>Navigate into the build directory inside xmrig</p>
+<p><code>cd xmrig/build</code></p>
+<p>Build the program with cmake, then make:</p>
+<p><code>cmake .. -DOPENSSL_ROOT_DIR=/usr/local/opt/openssl</code></p>
+<p><code>make -j$(sysctl -n hw.logicalcpu)</code></p>
+<h2 id="generating-the-xmrig-config-code">Generating the xmrig config code</h2>
+<p>The people over at xmrig made a wonderful configuration wizard which helps create a line of code to start the miner.</p>
+<p>Open the <a href="https://xmrig.com/wizard">xmrig configuration wizard</a></p>
+<p>Click the <strong>New configuration</strong> button.</p>
+<p>Press on the <strong>Add pool</strong> button.</p>
+<p>Click on your pool of choice in the dropdown. I use the supporxmr.com pool.</p>
+<p>Then there will be a popup where it asks for the <strong>Monero wallet address</strong>, where you type in your wallet. You can also choose to set a <strong>Worker name</strong>, something like MacBookPro13.</p>
+<p>Navigate to the <strong>Backends</strong> tab and only turn on the <strong>CPU</strong> option. You can use a GPU if you have one, but I don&rsquo;t recommend it.</p>
+<p>Next, select the <strong>Misc</strong> tab and set a donation percentage, I chose to leave the <strong>HTTP API</strong> option off.</p>
+<p>Finally, navigate the the <strong>Result</strong> tab, click on macOS option under the <strong>Command line</strong>. Copy the line of code.</p>
+<h2 id="making-an-executable-shell-script">Making an executable shell script</h2>
+<p>While this is not a required step, I recommend that you do it for ease of use.</p>
+<p>Go back to the terminal app.</p>
+<p>If it is still open, navigate to the user(<strong>~</strong>) directory:</p>
+<p><code>cd .. &amp;&amp; cd ..</code></p>
+<p>If you reopened it, double check that you are in the <strong>~</strong> directory.</p>
+<p>Create a shell script called xmr:</p>
+<p><code>touch xmr.sh</code></p>
+<p>Make it executable</p>
+<p><code>chmod +x xmr.sh</code></p>
+<p>Edit the shell script to make it navigate to the xmrig/build directory, and start the miner from there:</p>
+<p><code>nano xmr.sh</code></p>
+<p>A basic text editor will show up.</p>
+<p>Type the following into it, each on a separate line:</p>
+<p><code>cd xmrig/build</code></p>
+<p><code>copy and paste the code that we generated earlier from the configurator</code></p>
+<p>Press control x and then press enter to save the edits made to the file.</p>
+<h2 id="running-the-shell-script">Running the shell script</h2>
+<p>It&rsquo;s actually really easy, type the following into terminal from the <strong>~</strong> directory, which is the default when you open Terminal:</p>
+<p><code>./xmr.sh</code></p>
+<p>To stop the program press control c.</p>
+<p>You can monitor all sorts of statistics on the pool&rsquo;s home page, logging in with your wallet address as your username.</p>
+<h2 id="updating-xmrig">Updating xmrig</h2>
+<p>Navigate to the build directory:</p>
+<p><code>cd xmrig/build</code></p>
+<p>Update using the git pull command:</p>
+<p><code>git pull</code></p>
+<h2 id="resources">Resources</h2>
+<ul>
+<li>
+<p>Based around the <a href="https://xmrig.com/docs/miner/macos-build">official xmrig macOS build guide</a></p>
+</li>
+<li>
+<p><a href="https://coin360.com/coin/monero-xmr">Monero(XMR) price chart</a></p>
+</li>
+<li>
+<p><a href="https://www.getmonero.org/">Monero&rsquo;s official website</a></p>
+</li>
+</ul>
+]]></content>
+        </item>
         
         <item>
             <title>My First Post</title>
@@ -18,7 +117,7 @@
 Why did I make this website and what even is it? I&amp;rsquo;m glad you asked although you probably didn&amp;rsquo;t! I made and will continue to make this website because I want to learn how to build a website. I also enjoy writing, especially when it isn&amp;rsquo;t tied to a grade.
 I will be posting about everything from a small cryptocurrency mining operation that I run in the basement to my favorite hobby of RC flight to my own ice cream recipes and everything in between.</description>
             <content type="html"><![CDATA[<p>Hello World!</p>
-<h3 id="why-did-i-make-this-website-and-what-even-is-it">Why did I make this website and what even is it?</h3>
+<h2 id="why-did-i-make-this-website-and-what-even-is-it">Why did I make this website and what even is it?</h2>
 <p>I&rsquo;m glad you asked although you probably didn&rsquo;t! I made and <strong>will continue</strong> to make this website because I want to learn how to build a website. I also enjoy writing, especially when it isn&rsquo;t tied to a grade.</p>
 <p>I will be posting about everything from a small cryptocurrency mining operation that I run in the basement to my favorite hobby of RC flight to my own ice cream recipes and everything in between. In short, the things that I do to keep myself sane, especially during quarantine. I&rsquo;ll post at least every week. This is my blog site.</p>
 ]]></content>
