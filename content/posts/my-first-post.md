@@ -9,7 +9,7 @@ tags:
 ---
 Hello World!
 
-### Why did I make this website and what even is it?
+## Why did I make this website and what even is it?
 
 I'm glad you asked although you probably didn't! I made and **will continue** to make this website because I want to learn how to build a website. I also enjoy writing, especially when it isn't tied to a grade.
 

@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>About</title>
+      <link>/about/</link>
+      <pubDate>Thu, 30 Apr 2020 15:26:54 -0400</pubDate>
+      
+      <guid>/about/</guid>
+      <description>Sabino Canyon, AZ   Hi!
+My name is Nikolai Nekrutenko and I am a junior at State College Area High School. I am the president and co-founder of State High Model Aeronautics Club, SHMAC for short.</description>
+    </item>
+    
+    <item>
       <title>My First Post</title>
       <link>/posts/2020/04/my-first-post/</link>
       <pubDate>Thu, 30 Apr 2020 15:21:48 -0400</pubDate>

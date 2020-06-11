@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/about/</loc>
+    <lastmod>2020-04-30T15:26:54-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tags/helloworld-firstpost-testpost/</loc>
     <lastmod>2020-04-30T15:21:48-04:00</lastmod>
   </url>
