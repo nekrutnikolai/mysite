@@ -51,7 +51,7 @@ Make the build directory inside of the xmrig directory:
 
 `mkdir xmrig/build`
 
-Navigate into the build directory inside xmrig
+Navigate into the build directory inside xmrig:
 
 `cd xmrig/build`
 
@@ -63,7 +63,7 @@ Build the program with cmake, then make:
 
 ## Generating the xmrig config code
 
-The people over at xmrig made a wonderful configuration wizard which helps create a line of code to start the miner.
+The people over at xmrig made a fantastics configuration wizard which helps create a line of code to start the miner.
 
 Open the [xmrig configuration wizard](https://xmrig.com/wizard)
 
@@ -73,7 +73,7 @@ Press on the **Add pool** button.
 
 Click on your pool of choice in the dropdown. I use the supporxmr.com pool.
 
-Then there will be a popup where it asks for the **Monero wallet address**, where you type in your wallet. You can also choose to set a **Worker name**, something like MacBookPro13.
+Then there will be a pop-up where it asks for the **Monero wallet address**, where you type in your wallet. You can also choose to set a **Worker name**, something like MacBookPro13.
 
 Navigate to the **Backends** tab and only turn on the **CPU** option. You can use a GPU if you have one, but I don't recommend it.
 
