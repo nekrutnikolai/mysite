@@ -13,7 +13,7 @@ tags:
 
 He's already had it, the one in the picture above, for a couple of years, and the battery is starting to degrade. He has a decent budget for a new computer, but doesn't want to buy a new laptop until this one stops functioning.
 
-We are going to destroy the MacBook by **heat** over the next few weeks. MacBooks are known for their subpar cooling systems. Instead of wasting this Mac's **insane** computational power, we are going to set it up for mining [Monero(XMR)](https://www.getmonero.org/), a type of cryptocurrency that can be mined with a CPU. He is only going to earn a couple pennies per day, but it's better than nothing. I don't know how he'll be able to sleep through the insane fan noise. Maybe he'll have to run an extension cable to his closet.
+We are going to destroy the MacBook by **heat** over the next few weeks. MacBooks are known for their subpar cooling systems as demonstrated in [this video](https://www.youtube.com/watch?v=MlOPPuNv4Ec). Instead of wasting this Mac's **insane** computational power, we are going to set it up for mining [Monero(XMR)](https://www.getmonero.org/), a type of cryptocurrency that can be mined with a CPU. He is only going to earn a couple pennies per day, but it's better than nothing. I don't know how he'll be able to sleep through the insane fan noise. Maybe he'll have to run an extension cable to his closet.
 
 {{< figure src="/img/monero.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="Official Monero Logo" titlePosition="center">}}
 
@@ -23,15 +23,11 @@ You have been warned that there are risks such as damage to the computer keeping
 
 It is barely profitable to do this on a laptop.
 
-Pools usually have a minimum of 0.1 XMR payout, so it would take atleast a couple of months to be able to withdraw Monero if using a laptop.
+Pools usually have a minimum of 0.1 XMR payout, so it would take at least a couple of months to be able to withdraw the Monero if using a laptop.
 
 Please do this at your own risk.
 
 ## Installing xmrig
-
-Install Xcode from the App Store:
-
-[Xcode](https://apps.apple.com/us/app/xcode/id497799835?mt=12)
 
 ***Open the terminal application on your mac and copy and paste the code below into it, step by step.***
 
@@ -43,7 +39,7 @@ Install the required dependencies with Homebrew:
 
 `brew install git cmake libuv libmicrohttpd openssl hwloc`
 
-Clone, or in other words, save the xmrig mining software with git:
+Clone, or in other words, save the xmrig mining software to your computer with git:
 
 `git clone https://github.com/xmrig/xmrig.git`
 
@@ -63,7 +59,7 @@ Build the program with cmake, then make:
 
 ## Generating the xmrig config code
 
-The people over at xmrig made a fantastics configuration wizard which helps create a line of code to start the miner.
+The people over at xmrig made a fantastic configuration wizard which helps create a line of code to start the miner.
 
 Open the [xmrig configuration wizard](https://xmrig.com/wizard)
 
@@ -75,7 +71,7 @@ Click on your pool of choice in the dropdown. I use the supporxmr.com pool.
 
 Then there will be a pop-up where it asks for the **Monero wallet address**, where you type in your wallet. You can also choose to set a **Worker name**, something like MacBookPro13.
 
-Navigate to the **Backends** tab and only turn on the **CPU** option. You can use a GPU if you have one, but I don't recommend it.
+Navigate to the **Backends** tab and only turn on the **CPU** option. You can use a GPU if you have one, but I don't recommend it as there are far more profitable currencies to mine with a GPU.
 
 Next, select the **Misc** tab and set a donation percentage, I chose to leave the **HTTP API** option off.
 
@@ -107,13 +103,13 @@ Edit the shell script to make it navigate to the xmrig/build directory, and star
 
 A basic text editor will show up.
 
-Type the following into it, each on a separate:
+Type the following into it, each on a separate line:
 
 `cd xmrig/build`
 
 `copy and paste the code that we generated earlier from the configurator`
 
-Press control x and then press enter to save the edits made to the file.
+Press control x, press y to apply the changes, and then press enter to save the edits made to the file.
 
 ## Running the shell script
 

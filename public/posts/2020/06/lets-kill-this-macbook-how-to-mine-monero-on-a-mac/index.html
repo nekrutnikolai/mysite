@@ -47,7 +47,7 @@ We are going to destroy the MacBook by heat over the next few weeks." />
 We are going to destroy the MacBook by heat over the next few weeks.">
 <meta itemprop="datePublished" content="2020-06-11T10:04:55-04:00" />
 <meta itemprop="dateModified" content="2020-06-11T10:04:55-04:00" />
-<meta itemprop="wordCount" content="699">
+<meta itemprop="wordCount" content="721">
 <meta itemprop="image" content="/"/>
 
 
@@ -168,7 +168,7 @@ We are going to destroy the MacBook by heat over the next few weeks."/>
 
 <h2 id="my-good-friend-wants-to-kill-his-macbook">My good friend wants to kill his MacBook</h2>
 <p>He&rsquo;s already had it, the one in the picture above, for a couple of years, and the battery is starting to degrade. He has a decent budget for a new computer, but doesn&rsquo;t want to buy a new laptop until this one stops functioning.</p>
-<p>We are going to destroy the MacBook by <strong>heat</strong> over the next few weeks. MacBooks are known for their subpar cooling systems. Instead of wasting this Mac&rsquo;s <strong>insane</strong> computational power, we are going to set it up for mining <a href="https://www.getmonero.org/">Monero(XMR)</a>, a type of cryptocurrency that can be mined with a CPU. He is only going to earn a couple pennies per day, but it&rsquo;s better than nothing. I don&rsquo;t know how he&rsquo;ll be able to sleep through the insane fan noise. Maybe he&rsquo;ll have to run an extension cable to his closet.</p>
+<p>We are going to destroy the MacBook by <strong>heat</strong> over the next few weeks. MacBooks are known for their subpar cooling systems as demonstrated in <a href="https://www.youtube.com/watch?v=MlOPPuNv4Ec">this video</a>. Instead of wasting this Mac&rsquo;s <strong>insane</strong> computational power, we are going to set it up for mining <a href="https://www.getmonero.org/">Monero(XMR)</a>, a type of cryptocurrency that can be mined with a CPU. He is only going to earn a couple pennies per day, but it&rsquo;s better than nothing. I don&rsquo;t know how he&rsquo;ll be able to sleep through the insane fan noise. Maybe he&rsquo;ll have to run an extension cable to his closet.</p>
 <figure>
     <img src="/img/monero.png"
          alt="Hello Friend"/> <figcaption>
@@ -179,17 +179,15 @@ We are going to destroy the MacBook by heat over the next few weeks."/>
 <h2 id="disclaimer">Disclaimer</h2>
 <p>You have been warned that there are risks such as damage to the computer keeping it at a high temperature for long periods of time.</p>
 <p>It is barely profitable to do this on a laptop.</p>
-<p>Pools usually have a minimum of 0.1 XMR payout, so it would take atleast a couple of months to be able to withdraw Monero if using a laptop.</p>
+<p>Pools usually have a minimum of 0.1 XMR payout, so it would take at least a couple of months to be able to withdraw the Monero if using a laptop.</p>
 <p>Please do this at your own risk.</p>
 <h2 id="installing-xmrig">Installing xmrig</h2>
-<p>Install Xcode from the App Store:</p>
-<p><a href="https://apps.apple.com/us/app/xcode/id497799835?mt=12">Xcode</a></p>
 <p><em><strong>Open the terminal application on your mac and copy and paste the code below into it, step by step.</strong></em></p>
 <p>Install Homebrew, a package manager for macOS:</p>
 <p><code>/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)&quot;</code></p>
 <p>Install the required dependencies with Homebrew:</p>
 <p><code>brew install git cmake libuv libmicrohttpd openssl hwloc</code></p>
-<p>Clone, or in other words, save the xmrig mining software with git:</p>
+<p>Clone, or in other words, save the xmrig mining software to your computer with git:</p>
 <p><code>git clone https://github.com/xmrig/xmrig.git</code></p>
 <p>Make the build directory inside of the xmrig directory:</p>
 <p><code>mkdir xmrig/build</code></p>
@@ -199,13 +197,13 @@ We are going to destroy the MacBook by heat over the next few weeks."/>
 <p><code>cmake .. -DOPENSSL_ROOT_DIR=/usr/local/opt/openssl</code></p>
 <p><code>make -j$(sysctl -n hw.logicalcpu)</code></p>
 <h2 id="generating-the-xmrig-config-code">Generating the xmrig config code</h2>
-<p>The people over at xmrig made a fantastics configuration wizard which helps create a line of code to start the miner.</p>
+<p>The people over at xmrig made a fantastic configuration wizard which helps create a line of code to start the miner.</p>
 <p>Open the <a href="https://xmrig.com/wizard">xmrig configuration wizard</a></p>
 <p>Click the <strong>New configuration</strong> button.</p>
 <p>Press on the <strong>Add pool</strong> button.</p>
 <p>Click on your pool of choice in the dropdown. I use the supporxmr.com pool.</p>
 <p>Then there will be a pop-up where it asks for the <strong>Monero wallet address</strong>, where you type in your wallet. You can also choose to set a <strong>Worker name</strong>, something like MacBookPro13.</p>
-<p>Navigate to the <strong>Backends</strong> tab and only turn on the <strong>CPU</strong> option. You can use a GPU if you have one, but I don&rsquo;t recommend it.</p>
+<p>Navigate to the <strong>Backends</strong> tab and only turn on the <strong>CPU</strong> option. You can use a GPU if you have one, but I don&rsquo;t recommend it as there are far more profitable currencies to mine with a GPU.</p>
 <p>Next, select the <strong>Misc</strong> tab and set a donation percentage, I chose to leave the <strong>HTTP API</strong> option off.</p>
 <p>Finally, navigate the the <strong>Result</strong> tab, click on macOS option under the <strong>Command line</strong>. Copy the line of code.</p>
 <h2 id="making-an-executable-shell-script">Making an executable shell script</h2>
@@ -221,10 +219,10 @@ We are going to destroy the MacBook by heat over the next few weeks."/>
 <p>Edit the shell script to make it navigate to the xmrig/build directory, and start the miner from there:</p>
 <p><code>nano xmr.sh</code></p>
 <p>A basic text editor will show up.</p>
-<p>Type the following into it, each on a separate:</p>
+<p>Type the following into it, each on a separate line:</p>
 <p><code>cd xmrig/build</code></p>
 <p><code>copy and paste the code that we generated earlier from the configurator</code></p>
-<p>Press control x and then press enter to save the edits made to the file.</p>
+<p>Press control x, press y to apply the changes, and then press enter to save the edits made to the file.</p>
 <h2 id="running-the-shell-script">Running the shell script</h2>
 <p>It&rsquo;s actually really easy, type the following into terminal from the <strong>~</strong> directory, which is the default when you open Terminal:</p>
 <p><code>./xmr.sh</code></p>
@@ -258,7 +256,7 @@ We are going to destroy the MacBook by heat over the next few weeks."/>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="/tags/xmr-cryptocurrency-mining">XMR, cryptocurrency, mining</a></span>
                 </p>
 
-            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>699 Words</p>
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>721 Words</p>
 
             <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2020-06-11 10:04 -0400</p>
         </div>
