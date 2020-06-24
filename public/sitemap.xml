@@ -1,16 +1,49 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-	
-	<sitemap>
-	   	<loc>/en/sitemap.xml</loc>
-		
-	   	<lastmod>2020-06-11T10:04:55-04:00</lastmod>
-		
-	</sitemap>
-	
-	<sitemap>
-	   	<loc>/fr/sitemap.xml</loc>
-		
-	</sitemap>
-	
-</sitemapindex>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/posts/lets-kill-this-macbook-how-to-mine-monero-on-a-mac/</loc>
+    <lastmod>2020-06-11T10:04:55-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2020-06-11T10:04:55-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/</loc>
+    <lastmod>2020-06-11T10:04:55-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-06-11T10:04:55-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/xmr-cryptocurrency-mining/</loc>
+    <lastmod>2020-06-11T10:04:55-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/about/</loc>
+    <lastmod>2020-04-30T15:26:54-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/helloworld-firstpost-testpost/</loc>
+    <lastmod>2020-04-30T15:21:48-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/my-first-post/</loc>
+    <lastmod>2020-04-30T15:21:48-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+  </url>
+  
+</urlset>
