@@ -13,17 +13,6 @@
     
     <item>
       <title>My First Post</title>
-      <link>/gallery/test/</link>
-      <pubDate>Thu, 30 Apr 2020 15:21:48 -0400</pubDate>
-      
-      <guid>/gallery/test/</guid>
-      <description>Hello World!
-Why did I make this website and what even is it? I&amp;rsquo;m glad you asked although you probably didn&amp;rsquo;t! I made and will continue to make this website because I want to learn how to build a website. I also enjoy writing, especially when it isn&amp;rsquo;t tied to a grade.
-I will be posting about everything from a small cryptocurrency mining operation that I run in the basement to my favorite hobby of RC flight to my own ice cream recipes and everything in between.</description>
-    </item>
-    
-    <item>
-      <title>My First Post</title>
       <link>/posts/my-first-post/</link>
       <pubDate>Thu, 30 Apr 2020 15:21:48 -0400</pubDate>
       
