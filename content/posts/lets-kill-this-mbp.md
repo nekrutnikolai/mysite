@@ -7,7 +7,7 @@ images:
 tags:
   - XMR, cryptocurrency, mining
 ---
-{{<figure src="/img/skylerdontlikemacs.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="MacBook Pro 13 without TouchBar" titlePosition="center">}}
+{{<figure src="/img/skylerdontlikemacs.png" link="https://photos.google.com/share/AF1QipOnTdQhaVcnGqWL_eIzyXbZ0g0AQSIaB5IkYha6bJq6StyyUPXZR1aahlgx3LYavA/photo/AF1QipNbFR7YnzDpscfTV_9RPTp3ZeJarEyBEHpfXKQ?key=ZUJaaUkxTllZNmt5R0Z0VThWQVg1TmVlQVNDd2FB" alt="Hello Friend" position="center" style="border-radius: 8px;" title="MacBook Pro 13 without TouchBar" titlePosition="center">}}
 
 ## My good friend wants to kill his MacBook
 
