@@ -3,32 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/posts/gallerytest/</loc>
-    <lastmod>2020-06-29T10:18:07-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2020-06-29T10:18:07-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/</loc>
-    <lastmod>2020-06-29T10:18:07-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2020-06-29T10:18:07-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/untagged/</loc>
-    <lastmod>2020-06-29T10:18:07-04:00</lastmod>
+    <loc>/mowing/</loc>
+    <lastmod>2020-06-30T15:26:54-04:00</lastmod>
   </url>
   
   <url>
     <loc>/posts/lets-kill-this-macbook-how-to-mine-monero-on-a-mac/</loc>
+    <lastmod>2020-06-11T10:04:55-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2020-06-11T10:04:55-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/</loc>
+    <lastmod>2020-06-11T10:04:55-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
     <lastmod>2020-06-11T10:04:55-04:00</lastmod>
   </url>
   
