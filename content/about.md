@@ -8,3 +8,5 @@ draft: false
 Hi!
 
 My name is Nikolai Nekrutenko and I am a junior at [State College Area High School](https://www.scasd.org/). I am the president and co-founder of [State High Model Aeronautics Club](https://nikolaiteslovich.github.io/shmac/), SHMAC for short.
+
+I have several interests about which this website will be about.

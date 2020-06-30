@@ -9,13 +9,15 @@ Strangely enough, I enjoy lawn mowing and find it to be an effective mind relaxa
 
 It's the summer in the middle of the COVID-19 pandemic, and I want to earn some cash that I can use to fuel my hobbies and to start saving for the future.
 
-## Business model
+## Business model and info
 
 **Customer satisfaction** is at the core of Nikolai's Mowing. If you don't like how I took care of your lawn, please let me know and we can arrange something.
 
 I don't use any heavy machinery, just a simple gasoline walk behind lawn mower along with an electric edger to keep the noise down and offer an authentic mowing experience.
 
 I will admit that I am not as good nor as fast at mowing compared to the more professional and larger businesses. However, I offer competitive prices along with the quality and reliability that comes from a caring individual.
+
+You can pay me through PayPal, cash or various cryptocurrencies.
 
 I plan to create a transparent business model where the price depends on the size of the lawn once I acquire enough clients and get a feel for the mowing times of various properties.
 
