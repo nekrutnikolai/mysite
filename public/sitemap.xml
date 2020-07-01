@@ -8,7 +8,27 @@
   </url>
   
   <url>
+    <loc>/tags/album/</loc>
+    <lastmod>2020-06-29T10:18:07-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/arboretum/</loc>
+    <lastmod>2020-06-29T10:18:07-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/flowers/</loc>
+    <lastmod>2020-06-29T10:18:07-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/gallery/</loc>
+    <lastmod>2020-06-29T10:18:07-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/gallery/</loc>
     <lastmod>2020-06-29T10:18:07-04:00</lastmod>
   </url>
   
@@ -28,12 +48,22 @@
   </url>
   
   <url>
-    <loc>/tags/test-gallery-album-flowers-arboretum/</loc>
+    <loc>/tags/test/</loc>
     <lastmod>2020-06-29T10:18:07-04:00</lastmod>
   </url>
   
   <url>
+    <loc>/tags/cryptocurrency/</loc>
+    <lastmod>2020-06-11T10:04:55-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/posts/lets-kill-this-macbook-how-to-mine-monero-on-a-mac/</loc>
+    <lastmod>2020-06-11T10:04:55-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/mining/</loc>
     <lastmod>2020-06-11T10:04:55-04:00</lastmod>
   </url>
   
@@ -43,7 +73,7 @@
   </url>
   
   <url>
-    <loc>/tags/xmr-cryptocurrency-mining/</loc>
+    <loc>/tags/xmr/</loc>
     <lastmod>2020-06-11T10:04:55-04:00</lastmod>
   </url>
   
@@ -53,7 +83,12 @@
   </url>
   
   <url>
-    <loc>/tags/helloworld-firstpost-testpost/</loc>
+    <loc>/tags/firstpost/</loc>
+    <lastmod>2020-04-30T15:21:48-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/helloworld/</loc>
     <lastmod>2020-04-30T15:21:48-04:00</lastmod>
   </url>
   

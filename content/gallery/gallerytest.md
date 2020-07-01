@@ -5,7 +5,11 @@ draft: false
 toc: false
 images:
 tags:
-  - test, gallery, album, flowers, arboretum
+  - test
+  - gallery
+  - album
+  - flowers
+  - arboretum
 ---
 This is just a test to see how well my python program works
 
