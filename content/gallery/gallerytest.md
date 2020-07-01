@@ -1,7 +1,7 @@
 ---
 title: "Gallerytest"
 date: 2020-06-29T10:18:07-04:00
-draft: true
+draft: false
 toc: false
 images:
 tags:
