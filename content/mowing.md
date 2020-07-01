@@ -17,7 +17,7 @@ I don't use any heavy machinery, just a simple gasoline walk behind lawn mower a
 
 I will admit that I am not as good nor as fast at mowing compared to the more professional and larger businesses. However, I offer competitive prices along with the quality and reliability that comes from a caring individual.
 
-You can pay me through PayPal, cash or various cryptocurrencies.
+I accept payment in PayPal, cash, or cryptocurrencies.
 
 I plan to create a transparent business model where the price depends on the size of the lawn once I acquire enough clients and get a feel for the mowing times of various properties.
 
