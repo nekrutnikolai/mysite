@@ -16,7 +16,8 @@ So, I mounted my camera with an ultra wide lens on a tripod and did several long
 |{{< figure src="/img/thumb/1N1A2749.png" link="https://www.dropbox.com/s/w2tfnragxbniewi/1N1A2749.png?dl=0" >}}|{{< figure src="/img/thumb/1N1A2750.png" link="https://www.dropbox.com/s/ats1hpnsfi3jnxl/1N1A2750.png?dl=0" >}}|
 
 **In hindsight, this was certainly not a safe thing to do!**
->I'm glad I didn't cause a forest fire.
+
+> I'm glad I didn't cause a forest fire.
 
 I wrote a program in python that helps displaying the images about by generating a table in markdown, which is the format that I use to code this website. **The images are clickable!**
 
@@ -24,4 +25,4 @@ Here's the program if you wanna take a look:
 
 {{< mkdowntable >}}
 
-Please note that I have not fully finished commenting and organizing the code. 
+Please note that I have not fully finished commenting and organizing the code.
