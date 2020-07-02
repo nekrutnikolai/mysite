@@ -15,4 +15,4 @@ I enjoy playing tennis and badminton with my friends or mom. My dad and I like t
 
 My favorite hobby is model aviation. I fly planes any chance I get, and when they crash, build new ones. I built a homemade Arduino-based CNC cutter. I might even get around to writing a post about it. The CNC allows me to quickly cut out new planes. The planes I fly do not last for very long anyway, on the order of a few weeks. This passion for aviation prompted me to start an [aeronautics club](https://nikolaiteslovich.github.io/shmac/) at my high school.
 
-Over the course of the pandemic, I have been indulging myself with more and more hobbies and projects. Particularly photography, drones, microcontrollers, electronics, programming in Python, and—how could I forget—this website. **This is what the website will be about, my hobbies!**
+Over the course of the pandemic, I have been indulging myself with more and more hobbies and projects. Particularly photography, drones, microcontrollers, electronics, programming in Python, and—how could I forget—this website. **This is what this website is about, my hobbies!**
