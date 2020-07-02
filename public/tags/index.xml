@@ -6,55 +6,10 @@
     <description>Recent content in Tags on Nikolai Nekrutenko</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 29 Jun 2020 10:18:07 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jun 2020 10:04:55 -0400</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>album</title>
-      <link>/tags/album/</link>
-      <pubDate>Mon, 29 Jun 2020 10:18:07 -0400</pubDate>
-      
-      <guid>/tags/album/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>arboretum</title>
-      <link>/tags/arboretum/</link>
-      <pubDate>Mon, 29 Jun 2020 10:18:07 -0400</pubDate>
-      
-      <guid>/tags/arboretum/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>flowers</title>
-      <link>/tags/flowers/</link>
-      <pubDate>Mon, 29 Jun 2020 10:18:07 -0400</pubDate>
-      
-      <guid>/tags/flowers/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>gallery</title>
-      <link>/tags/gallery/</link>
-      <pubDate>Mon, 29 Jun 2020 10:18:07 -0400</pubDate>
-      
-      <guid>/tags/gallery/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>test</title>
-      <link>/tags/test/</link>
-      <pubDate>Mon, 29 Jun 2020 10:18:07 -0400</pubDate>
-      
-      <guid>/tags/test/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>cryptocurrency</title>
@@ -98,6 +53,15 @@
       <pubDate>Thu, 30 Apr 2020 15:21:48 -0400</pubDate>
       
       <guid>/tags/helloworld/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>test</title>
+      <link>/tags/test/</link>
+      <pubDate>Thu, 30 Apr 2020 15:21:48 -0400</pubDate>
+      
+      <guid>/tags/test/</guid>
       <description></description>
     </item>
     
