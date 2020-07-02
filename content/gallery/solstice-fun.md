@@ -8,7 +8,7 @@ I went camping with my family in the beautiful Northern PA countryside, near the
 
 To celebrate the longest day of the year, I found a stick about my height and lit both ends of it on **fire**. It was similar to the staff that I use in Tang Soo Do, so I messed around with various techniques. Particularly, I really enjoy doing the figure-eight technique where you essentially spin the stick in the shape of an infinity sign.
 
-So, I mounted my camera with an ultra wide lens on a tripod and did several long exposure photographs. The shutter was open for ~ 20 to ~ 30 seconds.
+So, I mounted my camera with an ultra wide lens on a tripod and did several long exposure photographs. The shutter was open for ~20 to ~30 seconds.
 
 |       |       |       |       |
 | :---: | :---: | :---: | :---: |
