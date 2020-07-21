@@ -9,11 +9,11 @@ tags:
   - cryptocurrency
   - mining
 ---
-{{<figure src="/img/skylerdontlikemacs.png" link="https://photos.google.com/share/AF1QipOnTdQhaVcnGqWL_eIzyXbZ0g0AQSIaB5IkYha6bJq6StyyUPXZR1aahlgx3LYavA/photo/AF1QipNbFR7YnzDpscfTV_9RPTp3ZeJarEyBEHpfXKQ?key=ZUJaaUkxTllZNmt5R0Z0VThWQVg1TmVlQVNDd2FB" alt="Hello Friend" position="center" style="border-radius: 8px;" title="MacBook Pro 13 without TouchBar" titlePosition="center">}}
+{{<figure src="/img/skylerdontlikemacs.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="MacBook Pro 13 without TouchBar" titlePosition="center">}}
 
 ## My good friend wants to kill his MacBook
 
-He's already had it, the one in the picture above, for a couple of years, and the battery is starting to degrade. He has a decent budget for a new computer, but doesn't want to buy a new laptop until this one stops functioning.
+He's already had it, the one in the picture above, for a couple of years, and the battery is starting to degrade among several other serious issues. He has a decent budget for a new computer, but doesn't want to buy a new laptop until this one stops functioning.
 
 We are going to destroy the MacBook by **heat** over the next few weeks. MacBooks are known for their subpar cooling systems as demonstrated in [this video](https://www.youtube.com/watch?v=MlOPPuNv4Ec). Instead of wasting this Mac's **insane** computational power, we are going to set it up for mining [Monero(XMR)](https://www.getmonero.org/), a type of cryptocurrency that can be mined with a CPU. He is only going to earn a couple pennies per day, but it's better than nothing. I don't know how he'll be able to sleep through the insane fan noise. Maybe he'll have to run an extension cable to his closet.
 
