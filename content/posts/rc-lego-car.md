@@ -51,7 +51,7 @@ I forgot to consider how to actually make the servo steer, so an additional part
 
 I am very impressed with the performance of this car. It has enough torque to just about climb over anything and on a 3S 2200mAh LiPo, the battery lasts for ages, about 1.5 hrs of regular use.
 
-However, LEGO Technic clearly isn't designed for this. For instance, the lego axles heated up so much that they fused the gears on them permanently. I sprayed the moving parts with WD-40, but that didn't seem to help too much for some reason.
+However, LEGO Technic clearly isn't designed for this. For instance, the lego axles heated up so much that they fused the gears onto them permanently. I sprayed the moving parts with WD-40, but that didn't seem to help too much for some reason.
 
 ## What are it's features?
 
