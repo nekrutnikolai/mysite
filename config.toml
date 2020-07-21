@@ -58,7 +58,7 @@ disableHugoGeneratorInject = false
   keywords = "blog, posts"
   images = [""]
 
-  homeSubtitle = "My personal blog site"
+  homeSubtitle = "My personal website"
 
   # Prefix of link to the git commit detail page. GitInfo must be enabled.
   # gitUrl = ""
