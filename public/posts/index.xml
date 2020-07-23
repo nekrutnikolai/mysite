@@ -9,21 +9,19 @@
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
-            <title>An Extremely Overkill LEGO RC Car from Airplane Parts</title>
-            <link>/posts/an-extremely-overkill-lego-rc-car-from-airplane-parts/</link>
+            <title>AEOLRC - An Extremely Overkill LEGO RC Car (from Plane Parts)</title>
+            <link>/posts/aeolrc-an-extremely-overkill-lego-rc-car-from-plane-parts/</link>
             <pubDate>Tue, 21 Jul 2020 07:27:42 -0400</pubDate>
             
-            <guid>/posts/an-extremely-overkill-lego-rc-car-from-airplane-parts/</guid>
-            <description>This article is not yet complete, just publishing it for testing purposes
-It&amp;rsquo;s been a while since I last played around with LEGO Technic. About 4 years to be exact. I can say with absolute confidence that this was my favorite way to spend time in my younger years.
-I recollect building all sorts of crazy things from an automatic lego crossbow to a massive Mercedes Benz Unimog with a working suspension and a functioning pneumatic crane.</description>
-            <content type="html"><![CDATA[<p><strong>This article is not yet complete, just publishing it for testing purposes</strong></p>
-<h2 id="its-been-a-while">It&rsquo;s been a while</h2>
+            <guid>/posts/aeolrc-an-extremely-overkill-lego-rc-car-from-plane-parts/</guid>
+            <description>It&amp;rsquo;s been a while since I last played around with LEGO Technic. About 4 years to be exact. I can say with absolute confidence that this was my favorite way to spend time in my younger years.
+I recollect building all sorts of crazy things from an automatic crossbow to a massive Mercedes Benz Unimog with a functioning suspension and a pneumatic crane. Over the years, I have acquired an impressive amount of LEGO technic parts that are still scattered everywhere around the house.</description>
+            <content type="html"><![CDATA[<h2 id="its-been-a-while">It&rsquo;s been a while</h2>
 <p>since I last played around with LEGO Technic. About 4 years to be exact. I can say with absolute confidence that this was my favorite way to spend time in my
 younger years.</p>
-<p>I recollect building all sorts of crazy things from an automatic lego crossbow to a massive Mercedes Benz Unimog with a working suspension and a functioning pneumatic crane. Over the years, I have acquired an impressive amount of LEGO technic parts that are still scattered around the house.</p>
+<p>I recollect building all sorts of crazy things from an automatic crossbow to a massive Mercedes Benz Unimog with a functioning suspension and a pneumatic crane. Over the years, I have acquired an impressive amount of LEGO technic parts that are still scattered everywhere around the house.</p>
 <h2 id="i-recently-had-to-decommission">I recently had to decommission</h2>
-<p>one of my favorite birds of all time. It was a FT(Flite Test) Versa wing with the Blunt Nose modification, and it had to be put out of service due to a combination of old age and abuse like trying to hit a small gap between the trees.</p>
+<p>one of my favorite birds of all time. It was a <a href="https://www.flitetest.com/articles/ft-versa-wing">FT(Flite Test) Versa wing</a> with the <a href="https://www.flitetest.com/articles/blunt-nose-conversion-ft-versa-build">Blunt Nose modification</a>. It had to be put out of service due to a combination of old age and abuse like trying to hit a small gap between the trees.</p>
 <figure>
     <img src="/img/versa1.png"
          alt="Hello Friend"/> <figcaption>
@@ -34,8 +32,8 @@ younger years.</p>
 <p>This gave me several spare electronic components including a 20A BLHeli brushless ESC(electronic speed controller), a radio receiver, a Flite Test Radial 2212-1050kV motor, and an AIO(all in one) FPV camera.</p>
 <h2 id="i-hopped-onto-fusion-360">I hopped onto Fusion 360</h2>
 <p>and started modeling adapters to those electronic components so that they could be compatible with LEGO Technic. I&rsquo;ll be honest, it took multiple iterations to design parts that interfaced well with the plane and LEGO parts.</p>
-<p>In the end, I designed and printed four parts: a servo holder so that the RC car could steer, a motor to lego axle adapter, a FPV camera holder, and last but not least a motor mount.</p>
-<p>They were all printed in PLA with a 0.2mm layer height and 35% infill. The servo was some crappy 9g off of amazon, but it works fine for this application.</p>
+<p>In the end, I designed and printed four parts: a servo holder so that the RC car could steer, a motor to lego axle adapter, a FPV camera holder, and last but not least a motor mount. Later on, I also designed an arm from the servo to the lego steering mechanism, but this is not in the pictures shown below.</p>
+<p><strong>A build guide will also be written soon, so stay posted.</strong></p>
 <figure>
     <img src="/img/rclego1.png"
          alt="Hello Friend"/> <figcaption>
@@ -50,8 +48,7 @@ younger years.</p>
         </figcaption>
 </figure>
 
-<p>I forgot to consider how to actually make the servo steer, so an additional part was designed for that.</p>
-<p><strong>Here is the final result:</strong></p>
+<h2 id="here-is-the-final-result">Here is the final result:</h2>
 <figure>
     <img src="/img/rclego3.png"
          alt="Hello Friend"/> <figcaption>
@@ -69,6 +66,7 @@ younger years.</p>
 <h2 id="i-have-to-say">I have to say</h2>
 <p>I am very impressed with the performance of this car. It has enough torque to just about climb over anything and on a 3S 2200mAh LiPo, the battery lasts for ages, about 1.5 hrs of regular use.</p>
 <p>However, LEGO Technic clearly isn&rsquo;t designed for this. For instance, the lego axles heated up so much that they fused the gears onto them permanently. I sprayed the moving parts with WD-40, but that didn&rsquo;t seem to help too much for some reason.</p>
+<p>I also did some water testing, and it seems to be surprisingly waterproof. <strong>Please don&rsquo;t abuse your electronics.</strong> I did it so that you wouldn&rsquo;t have to.</p>
 <h2 id="what-are-its-features">What are it&rsquo;s features?</h2>
 <ul>
 <li>A fully functioning differential</li>
@@ -78,8 +76,10 @@ younger years.</p>
 <li>Quick and easy to build and repair after a crash</li>
 <li>Customizability that comes with LEGO</li>
 <li>Probably cheaper than buying the LEGO electronics</li>
-<li>Insane torque</li>
+<li>Extremely overpowered</li>
+<li>Surprisingly waterproof</li>
 <li>Extremely unstable</li>
+<li>Brings back the childhood nostalgia</li>
 </ul>
 ]]></content>
         </item>
