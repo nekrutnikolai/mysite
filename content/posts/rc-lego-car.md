@@ -1,5 +1,5 @@
 ---
-title: "AEOLRC - An Extremely Overkill LEGO RC Car (from Plane Parts)"
+title: "EOLRC - An Extremely Overkill LEGO RC Car (from Plane Parts)"
 date: 2020-07-21T7:27:42-04:00
 draft: false
 toc: false
