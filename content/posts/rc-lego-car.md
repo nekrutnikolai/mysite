@@ -11,6 +11,8 @@ tags:
   - AEOLRC
 ---
 
+{{< youtube id="VaGnldsxeiA" autoplay="true" >}}
+
 ## It's been a while
 
 since I last played around with LEGO Technic. About 4 years to be exact. I can say with absolute confidence that this was my favorite way to spend time in my
