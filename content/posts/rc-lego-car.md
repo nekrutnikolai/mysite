@@ -28,7 +28,7 @@ one of my favorite birds of all time. It was a [FT(Flite Test) Versa wing](https
 
 This gave me several spare electronic components including a 20A BLHeli brushless ESC(electronic speed controller), a radio receiver, a Flite Test Radial 2212-1050kV motor, and an AIO(all in one) FPV camera.  
 
-## I hopped onto Fusion 360
+## I hopped onto Fusion 360  
 
 and started modeling adapters to those electronic components so that they could be compatible with LEGO Technic. I'll be honest, it took multiple iterations to design parts that interfaced well with the plane and LEGO parts.
 
@@ -54,7 +54,7 @@ However, LEGO Technic clearly isn't designed for this. For instance, the lego ax
 
 I also did some water testing, and it seems to be surprisingly waterproof. **Please don't abuse your electronics.** I did it so that you wouldn't have to.
 
-## What are it's features?
+## What are its features?
 
 - A fully functioning differential
 - Optional 5mm led lights
