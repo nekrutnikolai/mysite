@@ -5,10 +5,10 @@ draft: false
 toc: false
 images:
 tags:
-  - rc
+  - RC
   - flitetest
   - shenanigans
-  - AEOLRC
+  - EOLRC
 ---
 
 {{< youtube id="VaGnldsxeiA" autoplay="true" >}}
