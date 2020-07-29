@@ -11,6 +11,8 @@ tags:
   - EOLRC
 ---
 
+Note that this is not a build guide of the car itself. Rather, how to integrate the 3D printed parts with the plane parts for your own projects. 
+
 ## Printing the parts
 
 **The parts can be found in the [plans GitHub repo](https://github.com/NikolaiTeslovich/plans/tree/master/EOLRC).**
