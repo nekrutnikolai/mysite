@@ -1,7 +1,7 @@
 ---
 title: "EOLRC - Build Guide"
 date: 2020-07-29T10:30:15-04:00
-draft: true
+draft: false
 toc: true
 images:
 tags:
@@ -11,7 +11,7 @@ tags:
   - EOLRC
 ---
 
-Note that this is not a build guide of the car itself. Rather, how to integrate the 3D printed parts with the plane parts for your own projects. 
+Note that this is not a build guide of the car itself. Rather, how to integrate the 3D printed parts with the plane parts for your own projects.
 
 ## Printing the parts
 

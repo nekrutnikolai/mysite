@@ -6,10 +6,22 @@
     <description>Recent content in RC on Nikolai Nekrutenko</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Tue, 21 Jul 2020 07:27:42 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 29 Jul 2020 10:30:15 -0400</lastBuildDate>
     
 	<atom:link href="/tags/rc/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>EOLRC - Build Guide</title>
+      <link>/posts/eolrc-build-guide/</link>
+      <pubDate>Wed, 29 Jul 2020 10:30:15 -0400</pubDate>
+      
+      <guid>/posts/eolrc-build-guide/</guid>
+      <description>Note that this is not a build guide of the car itself. Rather, how to integrate the 3D printed parts with the plane parts for your own projects.
+Printing the parts The parts can be found in the plans GitHub repo.
+I recommend printing the All_parts_arranged.stl
+I used an Ultimaker 3 to print the parts with eSun PLA+ at a 0.2mm layer height at 215C, 35% infill, along with a PETG brim for easy cleanup.</description>
+    </item>
     
     <item>
       <title>EOLRC - An Extremely Overkill LEGO RC Car (from Plane Parts)</title>
