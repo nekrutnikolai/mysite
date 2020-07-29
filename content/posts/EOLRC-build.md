@@ -13,7 +13,7 @@ tags:
 
 Note that this is not a build guide of the car itself. Rather, how to integrate the 3D printed parts with the plane parts for your own projects.
 
-## Printing the parts
+# Printing the parts
 
 **The parts can be found in the [plans GitHub repo](https://github.com/NikolaiTeslovich/plans/tree/master/EOLRC).**
 
@@ -26,7 +26,7 @@ The print took about an hour and a half and used under 20 grams of filament.
 {{< figure src="/img/EOLRC_build/EOLRC1.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="3D printed parts fresh off the printer" titlePosition="center">}}
 
 
-## Bill of parts
+# Bill of parts
 
 - **Part (what I used)**
 - Battery (3S1P 2200mAh LiPo)
@@ -43,7 +43,7 @@ The print took about an hour and a half and used under 20 grams of filament.
 
 {{< figure src="/img/EOLRC_build/EOLRC2.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="Parts laid out" titlePosition="center">}}
 
-## Bill of tools
+# Bill of tools
 
 - Adjustable wrench
 - Phillips No. 1 screwdriver
@@ -52,9 +52,9 @@ The print took about an hour and a half and used under 20 grams of filament.
 
 {{< figure src="/img/EOLRC_build/EOLRC3.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="Tools laid out" titlePosition="center">}}
 
-## Let's put the parts together damn it!
+# Let's put the parts together damn it!
 
-### Step 1 - Binding the receiver
+## Step 1 - Binding the receiver
 
 {{< figure src="/img/EOLRC_build/EOLRC4.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="Sample binding circuit" titlePosition="center">}}
 
@@ -62,11 +62,11 @@ Make a new model with zero trims. Check with your manufacturer's instructions on
 
 We'll need this for a later step.
 
-### Step 2 - Attaching the motor to axle adapter to the motor
+## Step 2 - Attaching the motor to axle adapter to the motor
 
 {{< figure src="/img/EOLRC_build/EOLRC5.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="" titlePosition="center">}}
 
-#### Parts/Tools
+### Parts/Tools
 
 - Motor with a 16mm by 19mm mounting arrangement
 - Motor to axle adapter
@@ -74,52 +74,52 @@ We'll need this for a later step.
 
 You can use additional tools for this, but be careful to ***not*** **misshape the motor bell**. I totally haven't done that before.
 
-#### Steps
+### Steps
 
 1. Screw on the motor to axle adapter onto the motor while making sure that it is screwed all the way down.
 
 {{< figure src="/img/EOLRC_build/EOLRC6.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="" titlePosition="center">}}
 
-### Step 3 - Affixing the motor to the motor mount
+## Step 3 - Affixing the motor to the motor mount
 
 {{< figure src="/img/EOLRC_build/EOLRC7.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="" titlePosition="center">}}
 
-#### Parts/Tools
+### Parts/Tools
 
 - Motor from step 2
 - Motor mount
 - 4x cone-shaped motor screws
 - Philips No. 1 screwdriver
 
-#### Steps
+### Steps
 
 1. Attach the motor to the motor mount using the screws
 
 {{< figure src="/img/EOLRC_build/EOLRC8.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="" titlePosition="center">}}
 
-### Step 4 - Mounting the servo to the servo holder
+## Step 4 - Mounting the servo to the servo holder
 
 {{< figure src="/img/EOLRC_build/EOLRC9.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="" titlePosition="center">}}
 
-#### Parts/Tools
+### Parts/Tools
 
 - 9g servo
 - Servo mount
 - 2x long servo screws
 - Philips No. 1 screwdriver
 
-#### Steps
+### Steps
 
 1. Push the servo into the mount until it is flush
 2. Screw in the screws to secure the Servo
 
 {{< figure src="/img/EOLRC_build/EOLRC10.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="" titlePosition="center">}}
 
-### Step 5 - Securing the servo arm to the servo
+## Step 5 - Securing the servo arm to the servo
 
 {{< figure src="/img/EOLRC_build/EOLRC11.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="" titlePosition="center">}}
 
-#### Parts/Tools
+### Parts/Tools
 
 - Radio receiver
 - Battery
@@ -129,7 +129,7 @@ You can use additional tools for this, but be careful to ***not*** **misshape th
 - 1x short servo screw
 - Philips No. 1 screwdriver
 
-#### Steps
+### Steps
 
 1. Plug the battery into the electronic speed controller
 2. Power on the radio receiver using the electronic speed controller
@@ -140,24 +140,24 @@ You can use additional tools for this, but be careful to ***not*** **misshape th
 
 {{< figure src="/img/EOLRC_build/EOLRC12.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="" titlePosition="center">}}
 
-### Step 6 - Fixing the AIO FPV camera to the camera mount
+## Step 6 - Fixing the AIO FPV camera to the camera mount
 
 {{< figure src="/img/EOLRC_build/EOLRC13.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="" titlePosition="center">}}
 
-#### Parts/Tools
+### Parts/Tools
 
 - AIO FPV camera
 - Camera mount
 - Hot glue (optional)
 
-#### Steps
+### Steps
 
 1. (Optional) Put hot glue inside the camera mount. This will secure the camera much more than just pushing it in and having it stay attached due to friction.
 2. Carefully yet forcefully push the camera into the Camera mount. The camera lens should be flush with the exterior of the mount.
 
 {{< figure src="/img/EOLRC_build/EOLRC14.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="" titlePosition="center">}}
 
-## Making sure that the whole system works
+# Making sure that the whole system works
 
 These gifs were recorded through the FPV camera, so at least I know that that works.
 
@@ -176,7 +176,7 @@ When I moved the left stick of the controller vertically, the motor span up. Whe
 
 {{< figure src="/img/EOLRC_build/servomotor.gif" alt="Hello Friend" position="center" style="border-radius: 8px;" title="Servo and motor responding to my inputs" titlePosition="center">}}
 
-## What next?
+# What next?
 
 **Congratulations, you're finally done. Now give yourself a big pat on the back**
 
