@@ -1,14 +1,14 @@
 ---
 title: "EOLRC - Build Guide"
-date: 2020-07-25T12:18:55-04:00
+date: 2020-07-29T10:30:15-04:00
 draft: true
 toc: true
 images:
 tags:
-- RC
-- flitetest
-- shenanigans
-- EOLRC
+  - RC
+  - flitetest
+  - shenanigans
+  - EOLRC
 ---
 
 ## Printing the parts
@@ -17,12 +17,11 @@ tags:
 
 I recommend printing the All_parts_arranged.stl
 
-I used an Ultimaker 3 to print the parts out with eSun PLA+ at a 0.2mm layer height at 215C, 35% infill,  along with a PETG brim for easy cleanup. They were printed relatively slow at 60mm/s.
+I used an Ultimaker 3 to print the parts with eSun PLA+ at a 0.2mm layer height at 215C, 35% infill, along with a PETG brim for easy cleanup. They were printed relatively slow at 60mm/s.
 
 The print took about an hour and a half and used under 20 grams of filament.  
 
 {{< figure src="/img/EOLRC_build/EOLRC1.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="3D printed parts fresh off the printer" titlePosition="center">}}
-
 
 
 ## Bill of parts
@@ -40,7 +39,7 @@ The print took about an hour and a half and used under 20 grams of filament.
   - 2x long servo screws
   - 1x short servo screw
 
-{{< figure src="/img/EOLRC_build/EOLRC2.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="Parts aesthetically layed out" titlePosition="center">}}
+{{< figure src="/img/EOLRC_build/EOLRC2.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="Parts laid out" titlePosition="center">}}
 
 ## Bill of tools
 
@@ -49,8 +48,7 @@ The print took about an hour and a half and used under 20 grams of filament.
 - Radio control transmitter/remote
 - FPV goggles with a 5.8GHz system
 
-{{< figure src="/img/EOLRC_build/EOLRC3.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="Tools aesthetically layed out" titlePosition="center">}}
-
+{{< figure src="/img/EOLRC_build/EOLRC3.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="Tools laid out" titlePosition="center">}}
 
 ## Let's put the parts together damn it!
 
@@ -58,13 +56,13 @@ The print took about an hour and a half and used under 20 grams of filament.
 
 {{< figure src="/img/EOLRC_build/EOLRC4.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="Sample binding circuit" titlePosition="center">}}
 
-Check with your manufacturer's instructions on binding the radio with the receiver. Make a new model with zero trims.
+Make a new model with zero trims. Check with your manufacturer's instructions on binding the radio with the receiver.
 
 We'll need this for a later step.
 
 ### Step 2 - Attaching the motor to axle adapter to the motor
 
-{{< figure src="/img/EOLRC_build/EOLRC5.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="Tools aesthetically layed out" titlePosition="center">}}
+{{< figure src="/img/EOLRC_build/EOLRC5.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="" titlePosition="center">}}
 
 #### Parts/Tools
 
@@ -72,21 +70,21 @@ We'll need this for a later step.
 - Motor to axle adapter
 - Adjustable wrench
 
-You can use additional tools for this, but ce careful to ***not*** **misshape the motor bell**
+You can use additional tools for this, but be careful to ***not*** **misshape the motor bell**. I totally haven't done that before.
 
 #### Steps
 
-1. Screw on the Motor_to_axle_adapter onto the motor while making sure that it is screwed all the way down.
+1. Screw on the motor to axle adapter onto the motor while making sure that it is screwed all the way down.
 
-{{< figure src="/img/EOLRC_build/EOLRC6.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="Tools aesthetically layed out" titlePosition="center">}}
+{{< figure src="/img/EOLRC_build/EOLRC6.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="" titlePosition="center">}}
 
 ### Step 3 - Affixing the motor to the motor mount
 
-{{< figure src="/img/EOLRC_build/EOLRC7.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="Tools aesthetically layed out" titlePosition="center">}}
+{{< figure src="/img/EOLRC_build/EOLRC7.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="" titlePosition="center">}}
 
 #### Parts/Tools
 
-- Motor from Step 2
+- Motor from step 2
 - Motor mount
 - 4x cone-shaped motor screws
 - Philips No. 1 screwdriver
@@ -95,11 +93,11 @@ You can use additional tools for this, but ce careful to ***not*** **misshape th
 
 1. Attach the motor to the motor mount using the screws
 
-{{< figure src="/img/EOLRC_build/EOLRC8.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="Tools aesthetically layed out" titlePosition="center">}}
+{{< figure src="/img/EOLRC_build/EOLRC8.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="" titlePosition="center">}}
 
 ### Step 4 - Mounting the servo to the servo holder
 
-{{< figure src="/img/EOLRC_build/EOLRC9.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="Tools aesthetically layed out" titlePosition="center">}}
+{{< figure src="/img/EOLRC_build/EOLRC9.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="" titlePosition="center">}}
 
 #### Parts/Tools
 
@@ -110,14 +108,14 @@ You can use additional tools for this, but ce careful to ***not*** **misshape th
 
 #### Steps
 
-1. Push the servo into the mount to make it flush
+1. Push the servo into the mount until it is flush
 2. Screw in the screws to secure the Servo
 
-{{< figure src="/img/EOLRC_build/EOLRC10.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="Tools aesthetically layed out" titlePosition="center">}}
+{{< figure src="/img/EOLRC_build/EOLRC10.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="" titlePosition="center">}}
 
 ### Step 5 - Securing the servo arm to the servo
 
-{{< figure src="/img/EOLRC_build/EOLRC11.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="Tools aesthetically layed out" titlePosition="center">}}
+{{< figure src="/img/EOLRC_build/EOLRC11.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="" titlePosition="center">}}
 
 #### Parts/Tools
 
@@ -138,11 +136,11 @@ You can use additional tools for this, but ce careful to ***not*** **misshape th
 5. Test that the servo works by moving the sticks on the controller
 6. While leaving the sticks of the radio centered, line up the servo arm parallel to the long side of the servo mount and screw it in. (This is so that the servo arm is centered)
 
-{{< figure src="/img/EOLRC_build/EOLRC12.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="Tools aesthetically layed out" titlePosition="center">}}
+{{< figure src="/img/EOLRC_build/EOLRC12.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="" titlePosition="center">}}
 
 ### Step 6 - Fixing the AIO FPV camera to the camera mount
 
-{{< figure src="/img/EOLRC_build/EOLRC13.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="Tools aesthetically layed out" titlePosition="center">}}
+{{< figure src="/img/EOLRC_build/EOLRC13.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="" titlePosition="center">}}
 
 #### Parts/Tools
 
@@ -155,6 +153,31 @@ You can use additional tools for this, but ce careful to ***not*** **misshape th
 1. (Optional) Put hot glue inside the camera mount. This will secure the camera much more than just pushing it in and having it stay attached due to friction.
 2. Carefully yet forcefully push the camera into the Camera mount. The camera lens should be flush with the exterior of the mount.
 
-{{< figure src="/img/EOLRC_build/EOLRC14.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="Tools aesthetically layed out" titlePosition="center">}}
+{{< figure src="/img/EOLRC_build/EOLRC14.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="" titlePosition="center">}}
 
 ## Making sure that the whole system works
+
+These gifs were recorded through the FPV camera, so at least I know that that works.
+
+{{< figure src="/img/EOLRC_build/controller.gif" alt="Hello Friend" position="center" style="border-radius: 8px;" title="Moving the controller's sticks" titlePosition="center">}}
+
+With everything properly wired up, it was time to test all the parts.
+- The three motor cables were joined with the ones coming out of the electronic speed controller (ESC)
+- The ESC cable was plugged into the first channel of the receiver
+- The FPV camera was plugged into 5V BEC output of the ESC, for which I made a custom splitter
+- The servo cable was plugged into the second channel of the receiver
+- Obviously the battery was plugged into the ESC
+
+When I moved the left stick of the controller vertically, the motor span up. When I moved the right stick on the controller horizontally, the servo turned.
+
+**If you want to reverse the motor direction, just swap any two of the three motor wires**
+
+{{< figure src="/img/EOLRC_build/servomotor.gif" alt="Hello Friend" position="center" style="border-radius: 8px;" title="Servo and motor responding to my inputs" titlePosition="center">}}
+
+## What next?
+
+**Congratulations, you're finally done. Now give yourself a big pat on the back**
+
+> Let your imagination run wild! As they say: the sky is the limit!
+
+[Here's what I built using these parts.](/posts/eolrc-an-extremely-overkill-lego-rc-car-from-plane-parts/)

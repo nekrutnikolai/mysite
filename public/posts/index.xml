@@ -38,7 +38,7 @@ younger years.</p>
 <h2 id="i-hopped-onto-fusion-360">I hopped onto Fusion 360</h2>
 <p>and started modeling adapters to those electronic components so that they could be compatible with LEGO Technic. I&rsquo;ll be honest, it took multiple iterations to design parts that interfaced well with the plane and LEGO parts.</p>
 <p>In the end, I designed and printed four parts: a servo holder so that the RC car could steer, a motor to lego axle adapter, a FPV camera holder, and last but not least a motor mount. Later on, I also designed an arm from the servo to the lego steering mechanism, but this is not in the pictures shown below.</p>
-<p><strong>A build guide will also be written soon, so stay posted.</strong></p>
+<p><strong>A build guide will also be written soon, so stay posted.</strong> <em><strong>Update</strong></em> <a href="/posts/eolrc-build-guide/">It&rsquo;s already written.</a></p>
 <figure>
     <img src="/img/rclego1.png"
          alt="Hello Friend"/> <figcaption>
@@ -70,7 +70,7 @@ younger years.</p>
 
 <h2 id="i-have-to-say">I have to say</h2>
 <p>I am very impressed with the performance of this car. It has enough torque to just about climb over anything and on a 3S 2200mAh LiPo, the battery lasts for ages, about 1.5 hrs of regular use.</p>
-<p>However, LEGO Technic clearly isn&rsquo;t designed for this. For instance, the lego axles heated up so much that they fused the gears onto them permanently. I sprayed the moving parts with WD-40, but that didn&rsquo;t seem to help too much for some reason.</p>
+<p>However, LEGO Technic clearly isn&rsquo;t designed for this. For instance, the lego axles heated up so much that they fused the gears onto them permanently. I sprayed the moving parts with WD-40, but that didn&rsquo;t seem to help too much.</p>
 <p>I also did some water testing, and it seems to be surprisingly waterproof. <strong>Please don&rsquo;t abuse your electronics.</strong> I did it so that you wouldn&rsquo;t have to.</p>
 <h2 id="what-are-its-features">What are its features?</h2>
 <ul>
@@ -84,7 +84,7 @@ younger years.</p>
 <li>Extremely overpowered</li>
 <li>Surprisingly waterproof</li>
 <li>Extremely unstable</li>
-<li>Brings back the childhood nostalgia</li>
+<li>Brings back childhood nostalgia</li>
 </ul>
 ]]></content>
         </item>

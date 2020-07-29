@@ -34,7 +34,7 @@ and started modeling adapters to those electronic components so that they could 
 
 In the end, I designed and printed four parts: a servo holder so that the RC car could steer, a motor to lego axle adapter, a FPV camera holder, and last but not least a motor mount. Later on, I also designed an arm from the servo to the lego steering mechanism, but this is not in the pictures shown below.
 
-**A build guide will also be written soon, so stay posted.**
+**A build guide will also be written soon, so stay posted.** ***Update*** [It's already written.](/posts/eolrc-build-guide/)
 
 {{< figure src="/img/rclego1.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="3D printed parts" titlePosition="center">}}
 
@@ -50,7 +50,7 @@ In the end, I designed and printed four parts: a servo holder so that the RC car
 
 I am very impressed with the performance of this car. It has enough torque to just about climb over anything and on a 3S 2200mAh LiPo, the battery lasts for ages, about 1.5 hrs of regular use.
 
-However, LEGO Technic clearly isn't designed for this. For instance, the lego axles heated up so much that they fused the gears onto them permanently. I sprayed the moving parts with WD-40, but that didn't seem to help too much for some reason.
+However, LEGO Technic clearly isn't designed for this. For instance, the lego axles heated up so much that they fused the gears onto them permanently. I sprayed the moving parts with WD-40, but that didn't seem to help too much.
 
 I also did some water testing, and it seems to be surprisingly waterproof. **Please don't abuse your electronics.** I did it so that you wouldn't have to.
 
@@ -66,4 +66,4 @@ I also did some water testing, and it seems to be surprisingly waterproof. **Ple
 - Extremely overpowered
 - Surprisingly waterproof
 - Extremely unstable
-- Brings back the childhood nostalgia
+- Brings back childhood nostalgia
