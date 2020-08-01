@@ -322,8 +322,8 @@ younger years.</p>
             <pubDate>Thu, 11 Jun 2020 10:04:55 -0400</pubDate>
             
             <guid>/posts/lets-kill-this-macbook-how-to-mine-monero-on-a-mac/</guid>
-            <description>MacBook Pro 13 without TouchBar   My good friend wants to kill his MacBook He&amp;rsquo;s already had it, the one in the picture above, for a couple of years, and the battery is starting to degrade among several other serious issues. He has a decent budget for a new computer, but doesn&amp;rsquo;t want to buy a new laptop until this one stops functioning.
-We are going to destroy the MacBook by heat over the next few weeks.</description>
+            <description>MacBook Pro 13 without TouchBar   My good friend&amp;rsquo;s Mac is nearing its end He&amp;rsquo;s already had it, the one in the picture above, for a couple of years, and the battery is starting to degrade among several other serious issues. Since it is nearing its end soon, in the time that it isn&amp;rsquo;t being used it could mine some cryptocurrency.
+MacBooks are known for their subpar cooling systems as demonstrated in this video.</description>
             <content type="html"><![CDATA[<figure>
     <img src="/img/skylerdontlikemacs.png"
          alt="Hello Friend"/> <figcaption>
@@ -331,9 +331,9 @@ We are going to destroy the MacBook by heat over the next few weeks.</descriptio
         </figcaption>
 </figure>
 
-<h2 id="my-good-friend-wants-to-kill-his-macbook">My good friend wants to kill his MacBook</h2>
-<p>He&rsquo;s already had it, the one in the picture above, for a couple of years, and the battery is starting to degrade among several other serious issues. He has a decent budget for a new computer, but doesn&rsquo;t want to buy a new laptop until this one stops functioning.</p>
-<p>We are going to destroy the MacBook by <strong>heat</strong> over the next few weeks. MacBooks are known for their subpar cooling systems as demonstrated in <a href="https://www.youtube.com/watch?v=MlOPPuNv4Ec">this video</a>. Instead of wasting this Mac&rsquo;s <strong>insane</strong> computational power, we are going to set it up for mining <a href="https://www.getmonero.org/">Monero(XMR)</a>, a type of cryptocurrency that can be mined with a CPU. He is only going to earn a couple pennies per day, but it&rsquo;s better than nothing. I don&rsquo;t know how he&rsquo;ll be able to sleep through the insane fan noise. Maybe he&rsquo;ll have to run an extension cable to his closet.</p>
+<h1 id="my-good-friends-mac-is-nearing-its-end">My good friend&rsquo;s Mac is nearing its end</h1>
+<p>He&rsquo;s already had it, the one in the picture above, for a couple of years, and the battery is starting to degrade among several other serious issues. Since it is nearing its end soon, in the time that it isn&rsquo;t being used it could mine some cryptocurrency.</p>
+<p>MacBooks are known for their subpar cooling systems as demonstrated in <a href="https://www.youtube.com/watch?v=MlOPPuNv4Ec">this video</a>. We are going to set up this mac for mining <a href="https://www.getmonero.org/">Monero(XMR)</a>, a type of cryptocurrency that can be mined with a CPU. He is only going to earn a couple pennies per day, but it&rsquo;s better than nothing. I don&rsquo;t know how he&rsquo;ll be able to sleep through the insane fan noise. Maybe he&rsquo;ll have to run an extension cable to his closet.</p>
 <figure>
     <img src="/img/monero.png"
          alt="Hello Friend"/> <figcaption>
@@ -341,12 +341,12 @@ We are going to destroy the MacBook by heat over the next few weeks.</descriptio
         </figcaption>
 </figure>
 
-<h2 id="disclaimer">Disclaimer</h2>
+<h1 id="disclaimer">Disclaimer</h1>
 <p>You have been warned that there are risks such as damage to the computer keeping it at a high temperature for long periods of time.</p>
 <p>It is barely profitable to do this on a laptop.</p>
 <p>Pools usually have a minimum of 0.1 XMR payout, so it would take at least a couple of months to be able to withdraw the Monero if using a laptop.</p>
 <p>Please do this at your own risk.</p>
-<h2 id="installing-xmrig">Installing xmrig</h2>
+<h1 id="installing-xmrig">Installing xmrig</h1>
 <p><em><strong>Open the terminal application on your mac and copy and paste the code below into it, step by step.</strong></em></p>
 <p>Install Homebrew, a package manager for macOS:</p>
 <p><code>/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)&quot;</code></p>
@@ -361,7 +361,7 @@ We are going to destroy the MacBook by heat over the next few weeks.</descriptio
 <p>Build the program with cmake, then make:</p>
 <p><code>cmake .. -DOPENSSL_ROOT_DIR=/usr/local/opt/openssl</code></p>
 <p><code>make -j$(sysctl -n hw.logicalcpu)</code></p>
-<h2 id="generating-the-xmrig-config-code">Generating the xmrig config code</h2>
+<h1 id="generating-the-xmrig-config-code">Generating the xmrig config code</h1>
 <p>The people over at xmrig made a fantastic configuration wizard which helps create a line of code to start the miner.</p>
 <p>Open the <a href="https://xmrig.com/wizard">xmrig configuration wizard</a></p>
 <p>Click the <strong>New configuration</strong> button.</p>
@@ -371,7 +371,7 @@ We are going to destroy the MacBook by heat over the next few weeks.</descriptio
 <p>Navigate to the <strong>Backends</strong> tab and only turn on the <strong>CPU</strong> option. You can use a GPU if you have one, but I don&rsquo;t recommend it as there are far more profitable currencies to mine with a GPU.</p>
 <p>Next, select the <strong>Misc</strong> tab and set a donation percentage, I chose to leave the <strong>HTTP API</strong> option off.</p>
 <p>Finally, navigate the the <strong>Result</strong> tab, click on macOS option under the <strong>Command line</strong>. Copy the line of code.</p>
-<h2 id="making-an-executable-shell-script">Making an executable shell script</h2>
+<h1 id="making-an-executable-shell-script">Making an executable shell script</h1>
 <p>While this is not a required step, I recommend that you do it for ease of use.</p>
 <p>Go back to the terminal app.</p>
 <p>If it is still open, navigate to the user(<strong>~</strong>) directory:</p>
@@ -388,17 +388,17 @@ We are going to destroy the MacBook by heat over the next few weeks.</descriptio
 <p><code>cd xmrig/build</code></p>
 <p><code>copy and paste the code that we generated earlier from the configurator</code></p>
 <p>Press control x, press y to apply the changes, and then press enter to save the edits made to the file.</p>
-<h2 id="running-the-shell-script">Running the shell script</h2>
+<h1 id="running-the-shell-script">Running the shell script</h1>
 <p>It&rsquo;s actually really easy, type the following into terminal from the <strong>~</strong> directory, which is the default when you open Terminal:</p>
 <p><code>./xmr.sh</code></p>
 <p>To stop the program press control c.</p>
 <p>You can monitor all sorts of statistics on the pool&rsquo;s home page, logging in with your wallet address as your username.</p>
-<h2 id="updating-xmrig">Updating xmrig</h2>
+<h1 id="updating-xmrig">Updating xmrig</h1>
 <p>Navigate to the build directory:</p>
 <p><code>cd xmrig/build</code></p>
 <p>Update using the git pull command:</p>
 <p><code>git pull</code></p>
-<h2 id="resources">Resources</h2>
+<h1 id="resources">Resources</h1>
 <ul>
 <li>
 <p>Based around the <a href="https://xmrig.com/docs/miner/macos-build">official xmrig macOS build guide</a></p>

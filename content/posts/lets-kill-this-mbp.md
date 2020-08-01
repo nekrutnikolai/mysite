@@ -11,15 +11,15 @@ tags:
 ---
 {{<figure src="/img/skylerdontlikemacs.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="MacBook Pro 13 without TouchBar" titlePosition="center">}}
 
-## My good friend wants to kill his MacBook
+# My good friend's Mac is nearing its end
 
-He's already had it, the one in the picture above, for a couple of years, and the battery is starting to degrade among several other serious issues. He has a decent budget for a new computer, but doesn't want to buy a new laptop until this one stops functioning.
+He's already had it, the one in the picture above, for a couple of years, and the battery is starting to degrade among several other serious issues. Since it is nearing its end soon, in the time that it isn't being used it could mine some cryptocurrency.
 
-We are going to destroy the MacBook by **heat** over the next few weeks. MacBooks are known for their subpar cooling systems as demonstrated in [this video](https://www.youtube.com/watch?v=MlOPPuNv4Ec). Instead of wasting this Mac's **insane** computational power, we are going to set it up for mining [Monero(XMR)](https://www.getmonero.org/), a type of cryptocurrency that can be mined with a CPU. He is only going to earn a couple pennies per day, but it's better than nothing. I don't know how he'll be able to sleep through the insane fan noise. Maybe he'll have to run an extension cable to his closet.
+MacBooks are known for their subpar cooling systems as demonstrated in [this video](https://www.youtube.com/watch?v=MlOPPuNv4Ec). We are going to set up this mac for mining [Monero(XMR)](https://www.getmonero.org/), a type of cryptocurrency that can be mined with a CPU. He is only going to earn a couple pennies per day, but it's better than nothing. I don't know how he'll be able to sleep through the insane fan noise. Maybe he'll have to run an extension cable to his closet.
 
 {{< figure src="/img/monero.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="Official Monero Logo" titlePosition="center">}}
 
-## Disclaimer
+# Disclaimer
 
 You have been warned that there are risks such as damage to the computer keeping it at a high temperature for long periods of time.
 
@@ -29,7 +29,7 @@ Pools usually have a minimum of 0.1 XMR payout, so it would take at least a coup
 
 Please do this at your own risk.
 
-## Installing xmrig
+# Installing xmrig
 
 ***Open the terminal application on your mac and copy and paste the code below into it, step by step.***
 
@@ -59,7 +59,7 @@ Build the program with cmake, then make:
 
 `make -j$(sysctl -n hw.logicalcpu)`
 
-## Generating the xmrig config code
+# Generating the xmrig config code
 
 The people over at xmrig made a fantastic configuration wizard which helps create a line of code to start the miner.
 
@@ -79,7 +79,7 @@ Next, select the **Misc** tab and set a donation percentage, I chose to leave th
 
 Finally, navigate the the **Result** tab, click on macOS option under the **Command line**. Copy the line of code.
 
-## Making an executable shell script
+# Making an executable shell script
 
 While this is not a required step, I recommend that you do it for ease of use.
 
@@ -113,7 +113,7 @@ Type the following into it, each on a separate line:
 
 Press control x, press y to apply the changes, and then press enter to save the edits made to the file.
 
-## Running the shell script
+# Running the shell script
 
 It's actually really easy, type the following into terminal from the **~** directory, which is the default when you open Terminal:
 
@@ -123,7 +123,7 @@ To stop the program press control c.
 
 You can monitor all sorts of statistics on the pool's home page, logging in with your wallet address as your username.
 
-## Updating xmrig
+# Updating xmrig
 
 Navigate to the build directory:
 
@@ -133,7 +133,7 @@ Update using the git pull command:
 
 `git pull`
 
-## Resources
+# Resources
 
 - Based around the [official xmrig macOS build guide](https://xmrig.com/docs/miner/macos-build)
 
