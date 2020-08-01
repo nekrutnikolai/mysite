@@ -1,6 +1,6 @@
 ---
 title: "The Book of Bitcoin - An Analogy to Explain Bitcoin"
-date: 2020-07-02T11:48:42-04:00
+date: 2020-09-01T15:57:01-04:00
 draft: false
 toc: true
 images:

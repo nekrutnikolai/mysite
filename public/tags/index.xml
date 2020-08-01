@@ -48,29 +48,11 @@
     </item>
     
     <item>
-      <title>bitcoin</title>
-      <link>/tags/bitcoin/</link>
-      <pubDate>Thu, 02 Jul 2020 11:48:42 -0400</pubDate>
-      
-      <guid>/tags/bitcoin/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>cryptocurrency</title>
       <link>/tags/cryptocurrency/</link>
-      <pubDate>Thu, 02 Jul 2020 11:48:42 -0400</pubDate>
+      <pubDate>Thu, 11 Jun 2020 10:04:55 -0400</pubDate>
       
       <guid>/tags/cryptocurrency/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>speech</title>
-      <link>/tags/speech/</link>
-      <pubDate>Thu, 02 Jul 2020 11:48:42 -0400</pubDate>
-      
-      <guid>/tags/speech/</guid>
       <description></description>
     </item>
     
@@ -98,6 +80,24 @@
       <pubDate>Thu, 30 Apr 2020 15:21:48 -0400</pubDate>
       
       <guid>/tags/firstpost/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>helloworld</title>
+      <link>/tags/helloworld/</link>
+      <pubDate>Thu, 30 Apr 2020 15:21:48 -0400</pubDate>
+      
+      <guid>/tags/helloworld/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>test</title>
+      <link>/tags/test/</link>
+      <pubDate>Thu, 30 Apr 2020 15:21:48 -0400</pubDate>
+      
+      <guid>/tags/test/</guid>
       <description></description>
     </item>
     
