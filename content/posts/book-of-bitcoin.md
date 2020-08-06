@@ -46,4 +46,5 @@ Another pro, or a con, depending on who you ask, is that Bitcoin can have any pr
 
 # Cryptocurrencies can bring more transparency and accountability to the world.
 They hold a lot of potential in the future and there is no doubt that they will soon overtake the current economic system. That is, only if they are designed well. The anonymous founder of bitcoin, Satoshi Nakamoto once said:
+
 > “If you don’t believe it or don’t get it, I don’t have the time to try to convince you, sorry.”
