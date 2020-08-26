@@ -1,8 +1,9 @@
 ---
 title: "A Tribute to National Parks"
-date: 2020-07-02T12:09:18-04:00
+date: 2020-08-24T12:09:18-04:00
 draft: true
 ---
+
 
 Theodore Roosevelt once said,
 > "There is nothing so American as our national parks. The scenery and the wildlife are native. The fundamental idea behind the parks is native. It is, in brief, that the country belongs to the people, that it is in process of making for the enrichment of the lives of all of us. The parks stand as the outward symbol of the great human principle.”
