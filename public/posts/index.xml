@@ -20,7 +20,7 @@ I actually have a drone, an EMAX Tinyhawk 2, which note to self I still need to 
             <content type="html"><![CDATA[<p><strong>Enjoy this video, I&rsquo;m really proud of how it turned out!</strong></p>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube.com/embed/RvZXMa7au5k" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="https://www.youtube.com/embed/RvZXMa7au5k?autoplay=1" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
 <p>I finally convinced my best friend to lend me his drone after days of trying.</p>

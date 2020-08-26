@@ -11,7 +11,7 @@ tags:
 
 **Enjoy this video, I'm really proud of how it turned out!**
 
-{{< youtube RvZXMa7au5k >}}
+{{< youtube id="RvZXMa7au5k" autoplay="true" >}}
 
 I finally convinced my best friend to lend me his drone after days of trying.
 
