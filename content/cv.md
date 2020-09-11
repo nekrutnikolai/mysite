@@ -20,11 +20,11 @@ TOC: true
 ### AP Exams
 
 ***May 2020***
-  * 5 Physics C Electricity and Magnetism
-  * 5 Physics C Mechanics
-  * 5 US History
-  * 4 Statistics
-  * 4 Computer Science Principles
+* 5 Physics C Electricity and Magnetism
+* 5 Physics C Mechanics
+* 5 US History
+* 4 Statistics
+* 4 Computer Science Principles
 
 ***May 2019***
   * 5 Physics I
