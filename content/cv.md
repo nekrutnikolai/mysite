@@ -10,17 +10,17 @@ TOC: true
 **State College High School**
 
 *August 2017 - Present*
-  * GPA (as of June 2020)
-    * 4.73 weighted
-    * 3.91 unweighted
-  * Projected graduation in January 2021
+
+* GPA (as of June 2020)
+  * 4.73 weighted
+  * 3.91 unweighted
+* Projected graduation in January 2021
 
 **Anticipated to take classes at Penn State in 2021 Spring Semester**
 
 ### AP Exams
 
 ***May 2020***
-
 * 5 Physics C Electricity and Magnetism
 * 5 Physics C Mechanics
 * 5 US History
@@ -28,22 +28,26 @@ TOC: true
 * 4 Computer Science Principles
 
 ***May 2019***
-  * 5 Physics I
-  * 5 Calculus BC
-  * 5 Calculus AB Subscore
-  * 5 French Language and Culture
+
+* 5 Physics I
+* 5 Calculus BC
+* 5 Calculus AB Subscore
+* 5 French Language and Culture
 
 ***May 2018***
-  * 5 Human Geography
-  * 4 Biology
+
+* 5 Human Geography
+* 4 Biology
 
 ### SAT Subject Test
 
 ***August 2018***
-  * 800 Math II
+
+* 800 Math II
 
 ***May 2019***
-  * 800 Physics
+
+* 800 Physics
 
 ### ACT
 
@@ -140,6 +144,7 @@ French-language competition (Le Grand Concours) awards:
 **A Mountain Wind Martial Arts, State College, PA**
 
 *February 2013 - Present*   
+
   * Practicing the type of Martial Arts called Tang Soo Do
   * Member and Instructor
   * Instruct and help younger students with proper form, technique, and on the practical and philosophical applications
