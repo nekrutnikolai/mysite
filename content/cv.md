@@ -7,25 +7,47 @@ TOC: true
 
 ## Education
 
+**State College High School**
+
+*August 2017 - Present*
+  * GPA (as of June 2020)
+    * 4.73 weighted
+    * 3.91 unweighted
+  * Projected graduation in January 2021
+
+**Anticipated to take classes at Penn State in 2021 Spring Semester**
+
 ### AP Exams
-  * 5 Physics C - Electricity and Magnetism *May 2020*
-  * 5 Physics C - Mechanics May 2020
-  * 5 US History May 2020
-  * 4 Statistics May 2020
-  * 4 Computer Science Principles May 2020
-  * 5 Physics 1 May 2019
-  * 5 Calculus BC May 2019
-  * 5 Calculus AB Subscore May 2019
-  * 5 French Language May 2019
-  * 5 Human Geography May 2018
-  * 4 Biology May 2018
+
+***May 2020***
+  * 5 Physics C Electricity and Magnetism
+  * 5 Physics C Mechanics
+  * 5 US History
+  * 4 Statistics
+  * 4 Computer Science Principles
+
+***May 2019***
+  * 5 Physics I
+  * 5 Calculus BC
+  * 5 Calculus AB Subscore
+  * 5 French Language and Culture
+
+***May 2018***
+  * 5 Human Geography
+  * 4 Biology
 
 ### SAT Subject Test
-  * Math 2 taken in Aug. 2018 with a score of 800
-  * Physics taken in May 2019 with a score of 800
+
+***August 2018***
+  * 800 Math II
+
+***May 2019***
+  * 800 Physics
 
 ### ACT
-  * 34 Composite Feb. 2020
+
+***February 2020***
+  * 34 Composite
     * 36 Reading
     * 36 Science
     * 35 Math
@@ -193,8 +215,8 @@ French-language competition (Le Grand Concours) awards:
   * Netlify to host
   * Github to save to and Netlify hosts off of it
 
-**Cryptocurrency mining**
-  * Done on Linux
+**Cryptocurrency Mining**
+  * Linux
     * Pop!_OS and Ubuntu
   * NVIDIA GeForce & AMD Radeon GPU's
     * Ethereum (ETH), Ethereum Classic (ETC), Ravencoin (RVN)
@@ -216,32 +238,38 @@ French-language competition (Le Grand Concours) awards:
 
 
 ### Other Skills
+
 **Mentoring, leadership & teamwork experience**
+
+**Photography & Cinematography**
   * Taking pictures on a DSLR and mirrorless digital camera
+  * Taking films with a drone
+  * Editing photos and videos
+
   * Flying RC planes and FPV drones
   * Drone cinematography
   * Editing
 
-**Licenses/Certifications**
+## Licenses/Certifications
   * HAM Radio
   * April 2019
   * Amateur Radio License
   * Technician level
     * Call sign: KC3NJK
 
-**Jobs**
+## Jobs
   * Lawn Mowing
   * Summers 2016 - 2020
   * Mow lawns for people in my town
 
-**Family Responsibilities**
+## Family Responsibilities
   * Taking Care of my Sister
   * November 2008 - Present
   * Helping her with homework
   * Going on walks everyday
   * Being a responsible big brother
 
-**Interests/Hobbies**
+## Interests/Hobbies
   * Applied physics
   * RC planes and drones (design, construction, and flight),
   * Electronic circuitry
@@ -252,7 +280,7 @@ French-language competition (Le Grand Concours) awards:
   * Cryptocurrencies
   * 3D Animation
 
-**Websites/Social Media**
+## Websites/Social Media
   * Website about my hobbies and interests
   * https://nnekrut.netlify.app/
 
