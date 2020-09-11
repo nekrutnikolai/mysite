@@ -276,9 +276,7 @@ French-language competition (Le Grand Concours) awards:
 * Taking films with a drone
 * Editing photos and videos
 
-* Flying RC planes and FPV drones
-* Drone cinematography
-* Editing
+**Flying remote controlled planes and FPV drones**
 
 ## Licenses/Certifications
 
