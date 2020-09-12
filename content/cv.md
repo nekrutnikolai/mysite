@@ -20,7 +20,7 @@ TOC: true
 
 ### AP Exams
 
-***May 2020***
+*May 2020*
 
 * 5 Physics C Electricity and Magnetism
 * 5 Physics C Mechanics
@@ -28,31 +28,31 @@ TOC: true
 * 4 Statistics
 * 4 Computer Science Principles
 
-***May 2019***
+*May 2019*
 
 * 5 Physics I
 * 5 Calculus BC
 * 5 Calculus AB Subscore
 * 5 French Language and Culture
 
-***May 2018***
+*May 2018*
 
 * 5 Human Geography
 * 4 Biology
 
 ### SAT Subject Test
 
-***August 2018***
+*August 2018*
 
 * 800 Math II
 
-***May 2019***
+*May 2019*
 
 * 800 Physics
 
 ### ACT
 
-***February 2020***
+*February 2020*
 
 * 34 Composite
   * 36 Reading
@@ -161,6 +161,7 @@ French-language competition (Le Grand Concours) awards:
 * Role model for younger students
 * Rank of Cho Dan Bo, Black Belt candidate
 * Awards at tournaments
+  * April 2019 
   * 3rd place sparring 2014
   * 2nd place forms 2014
   * 3rd place sparring 2019
