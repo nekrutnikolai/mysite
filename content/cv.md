@@ -346,8 +346,8 @@ French-language competition (Le Grand Concours) awards:
 
 ## Websites/Social Media
 
-* [Website about my hobbies and interests](https://nnekrut.netlify.app/)
-* [Photo gallery](https://nnekrut.netlify.app/gallery/)
+* [Website about my hobbies and interests](/)
+* [Photo gallery](/gallery)
 * [Instagram about my hobbies](https://www.instagram.com/projectniknek/?hl=en)
 * [Youtube channel](https://www.youtube.com/channel/UC-WSQ21Q2Q36urFPc4e5T6Q)
 * [Github profile](https://github.com/NikolaiTeslovich)
