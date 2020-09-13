@@ -24,6 +24,10 @@ TOC: true
 
 **Anticipated to take classes at Penn State in 2021 Spring Semester**
 
+---
+
+## Standardized Exams
+
 ### AP Exams
 
 *May 2020*
@@ -38,7 +42,7 @@ TOC: true
 
 * 5 Physics I
 * 5 Calculus BC
-* 5 Calculus AB Subscore
+  * 5 Calculus BC: AB Subscore
 * 5 French Language and Culture
 
 *May 2018*
@@ -46,7 +50,7 @@ TOC: true
 * 5 Human Geography
 * 4 Biology
 
-### SAT Subject Test
+### SAT Subject Tests
 
 *August 2018*
 
@@ -83,10 +87,11 @@ TOC: true
 
 *June 2019*
 
-**Completed Johns Hopkins Center for Talented Youth: Crafting the Essay with a grade of A**
+**Johns Hopkins Center for Talented Youth: Crafting the Essay**
 
 *August 2019 - March 2020*
 
+* Completed with an A
 ---
 
 ## Languages
@@ -151,22 +156,23 @@ French-language competition (Le Grand Concours) awards:
 
 ### Sports
 
-**A Mountain Wind Martial Arts**, *State College, PA*
+**Tang Soo Do**, *A Mountain Wind Martial Arts, State College, PA*
 
 *February 2013 - Present*   
 
-* Tang Soo Do (A Korean martial art)
+* A Korean martial art
 * Member and Instructor
 * Instruct and help younger students with proper form, technique, and on the practical and philosophical applications
 * Role model for younger students
 * Rank of Cho Dan Bo, Black Belt candidate
 * Awards at tournaments
-  * April 2019
-  * 3rd place sparring 2014
-  * 2nd place forms 2014
-  * 3rd place sparring 2019
-  * 3rd place weapons 2019
-  * Certificate of appreciation for assisting at the tournament 2019
+  * *2019*
+    * 3rd place sparring
+    * 3rd place weapons
+    * Certificate of appreciation for assisting at the tournament
+  * *2014*
+    * 2nd place forms
+    * 3rd place sparring
 
 **Tennis**, *State College, PA*
 
@@ -184,7 +190,7 @@ French-language competition (Le Grand Concours) awards:
 
 **Piano**
 
-*Spring 2010 - Fall 2018*
+*Spring 2008 - Fall 2016*
 
 * Took weekly lessons and practiced
 
@@ -293,16 +299,28 @@ French-language competition (Le Grand Concours) awards:
 
 ## Jobs
 
-* Lawn Mowing
-* Summers 2016 - 2020
+**Lawn Mowing**
+
+*Summers 2016 - 2020*
+
 * Mow lawns for people in my town
+* Self-employed
+
+**Fixing Bicycles**
+
+*Summer 2020*
+
+* Fixed and maintained bikes
+* Self-employed
 
 ---
 
 ## Family Responsibilities
 
-* Taking Care of my Sister
-* November 2008 - Present
+**Taking Care of my Sister**
+
+*November 2008 - Present*
+
 * Helping her with homework
 * Going on walks everyday
 * Being a responsible big brother
@@ -312,10 +330,10 @@ French-language competition (Le Grand Concours) awards:
 ## Interests/Hobbies
 
 * Applied physics
-* RC planes and drones (design, construction, and flight),
+* Engineering
 * Electronic circuitry
 * Chemistry
-* Engineering
+* RC planes and drones (design, construction, and flight)
 * Photography
 * Cinematography
 * Cryptocurrencies
@@ -325,13 +343,8 @@ French-language competition (Le Grand Concours) awards:
 
 ## Websites/Social Media
 
-* Website about my hobbies and interests
-* https://nnekrut.netlify.app/
-* Photo gallery
-* https://nnekrut.netlify.app/gallery/
-* Instagram about my hobbies
-* @projectniknek
-* Youtube channel
-* https://www.youtube.com/channel/UC-WSQ21Q2Q36urFPc4e5T6Q
-* Github profile
-* https://github.com/NikolaiTeslovich
+* [Website about my hobbies and interests](https://nnekrut.netlify.app/)
+* [Photo gallery](https://nnekrut.netlify.app/gallery/)
+* [Instagram about my hobbies](https://www.instagram.com/projectniknek/?hl=en)
+* [Youtube channel](https://www.youtube.com/channel/UC-WSQ21Q2Q36urFPc4e5T6Q)
+* [Github profile](https://github.com/NikolaiTeslovich)
