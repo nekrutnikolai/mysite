@@ -227,7 +227,7 @@ French-language competition (Le Grand Concours) awards:
 * Python
     * Jupyter Notebooks
 * C++
-  * Arduino
+    * Arduino
 
 **Computer Programs**
 
@@ -254,11 +254,11 @@ French-language competition (Le Grand Concours) awards:
 
 * Nicehash
 * Linux
-  * Pop!_OS and Ubuntu
+    * Pop!_OS and Ubuntu
 * NVIDIA GeForce & AMD Radeon GPU's
-  * Ethereum (ETH), Ethereum Classic (ETC), Ravencoin (RVN)
+    * Ethereum (ETH), Ethereum Classic (ETC), Ravencoin (RVN)
 * Intel CPU's
-  * Monero (XMR)
+    * Monero (XMR)
 
 
 ### Technical Skills
@@ -296,7 +296,7 @@ French-language competition (Le Grand Concours) awards:
 * April 2019
 * Amateur Radio License
 * Technician level
-  * Call sign: KC3NJK
+    * Call sign: KC3NJK
 
 ---
 
