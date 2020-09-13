@@ -1,4 +1,4 @@
----
+UtilizationUtilization---
 title: "Curriculum Vitae"
 date: 2020-09-11T16:26:17-04:00
 draft: false
@@ -17,12 +17,12 @@ TOC: true
 
 *August 2017 - Present*
 
-* GPA (as of June 2020)
+* GPA (as of *June 2020*)
   * 4.73 weighted
   * 3.91 unweighted
-* Projected graduation in January 2021
+* Projected graduation in *January 2021*
 
-**Anticipated to take classes at Penn State in 2021 Spring Semester**
+**Anticipated to take classes at Penn State in the** ***2021 Spring Semester***
 
 ---
 
@@ -33,51 +33,51 @@ TOC: true
 *May 2020*
 
 * Physics C Electricity and Magnetism (Score 5)
-* 5 Physics C Mechanics
-* 5 US History
-* 4 Statistics
-* 4 Computer Science Principles
+* Physics C Mechanics (Score 5)
+* US History (Score 5)
+* Statistics (Score 4)
+* Computer Science Principles (Score 4)
 
 *May 2019*
 
-* 5 Physics I
-* 5 Calculus BC
-  * 5 Calculus BC: AB Subscore
-* 5 French Language and Culture
+* 5 Physics I (Score 5)
+* 5 Calculus BC (Score 5)
+  * 5 Calculus BC: AB Subscore (Score 5)
+* 5 French Language and Culture (Score 5)
 
 *May 2018*
 
-* 5 Human Geography
-* 4 Biology
+* Human Geography (Score 5)
+* Biology (Score 4)
 
 ### SAT Subject Tests
 
 *August 2018*
 
-* 800 Math II
+* Math II (Score 800)
 
 *May 2019*
 
-* 800 Physics
+* Physics (Score 800)
 
 ### ACT
 
 *February 2020*
 
-* 34 Composite
-  * 36 Reading
-  * 36 Science
-  * 35 Math
-  * 30 English
-  * 8 Essay
+* Composite (Score 34)
+  * Reading (Score 36)
+  * Science (Score 36)
+  * Math (Score 35)
+  * English (Score 30)
+  * Essay (Score 8)
 
 ---
 
 ## Scholastic Awards  
 
-* National AP Scholar 2020
-* AP Scholar with distinction 2019 - 2020
-* Top 10% 2018 - 2020
+* National AP Scholar *2020*
+* AP Scholar with distinction *2019 - 2020*
+* Top 10% *2018 - 2020*
 
 ---
 
@@ -115,17 +115,17 @@ French-language competition (Le Grand Concours) awards:
 *October 2019 - Present*
 
 * School club focused on learning about Aeronautics through the design, construction, and flight of remote controlled model aircraft
-* Founder and President
-* Club’s website: https://nikolaiteslovich.github.io/shmac/
-* Club’s Instagram: https://www.instagram.com/statehighmodelaeronauticsclub/
+* Founder and President (*2019 - Present*)
+* [Website](https://nikolaiteslovich.github.io/shmac/)
+* [Instagram](https://www.instagram.com/statehighmodelaeronauticsclub/)
 
 **Science Bowl**,  *State College Area High School*
 
 *September 2017 - Present*
 
 * School club centered around science trivia question that competes annually at the Princeton Plasma Physics Laboratory
-* President (2020 - Present), Treasurer/Secretary (2019 - 2020)
-* Compete on the A-team (2019 - 2020)
+* President (*2020 - Present*), Treasurer/Secretary (*2019 - 2020*)
+* Compete on the A-team (*2019 - 2020*)
 
 **Science Olympiad**, *State College Area High School*
 
@@ -134,8 +134,9 @@ French-language competition (Le Grand Concours) awards:
 * School club which competes in specialized events with different schools at all levels
 * Member
 * Science Olympiad Awards (Regionals)
-* Detector Building 1st place 2020
-* Circuit Lab 1st place 2020
+  * *2020*
+    * 1st place Detector Building
+    * 1st place Circuit Lab
 
 **Research at the Penn State Materials Research Institute**, *Penn State*
 
@@ -181,7 +182,9 @@ French-language competition (Le Grand Concours) awards:
 * Took tennis lessons
 * Frequently played with my friends
 
+
 ### Music
+
 **Guitar**
 
 *December 2018 - Present*
@@ -244,8 +247,8 @@ French-language competition (Le Grand Concours) awards:
 
 * Markdown to format
 * Hugo to generate static pages
-* Netlify to host
 * Github to save to
+* Netlify to host
 
 **Cryptocurrency Mining**
 
@@ -268,9 +271,9 @@ French-language competition (Le Grand Concours) awards:
 **Basic understanding of electronic circuitry and components**
 
 * Soldering
-* Utilisation of electronic tools (e.g. Multimeter)
-* Utilisation of construction tools (e.g. Table saw, Drill, Band saw, Dremel, Router)
-* Utilisation and cleaning/repairing FDM & SLA 3D printers, and CNC machines
+* Utilization of electronic tools (e.g. multimeter)
+* Usage of construction tools (e.g. table saw, drill, band saw, Dremel, router)
+* Use and cleaning/repairing of FDM & SLA 3D printers, and CNC machines
 
 
 ### Other Skills

@@ -12,20 +12,6 @@
     
     
     <item>
-      <title>Curriculum Vitae</title>
-      <link>/cv/</link>
-      <pubDate>Fri, 11 Sep 2020 16:26:17 -0400</pubDate>
-      
-      <guid>/cv/</guid>
-      <description>Nikolai Nekrutenko (814) 852-9256 · 618 Glenn Rd, State College PA, 16803 · nekrutnikolai@gmail.com · https://nnekrut.netlify.app/
- Education State College Area High School
-August 2017 - Present
- GPA (as of June 2020)  4.73 weighted 3.91 unweighted   Projected graduation in January 2021  Anticipated to take classes at Penn State in 2021 Spring Semester
- Standardized Exams AP Exams May 2020
- Physics C Electricity and Magnetism (Score 5) 5 Physics C Mechanics 5 US History 4 Statistics 4 Computer Science Principles  May 2019</description>
-    </item>
-    
-    <item>
       <title>Flying RC Jets!</title>
       <link>/gallery/rcplanes/</link>
       <pubDate>Wed, 26 Aug 2020 15:50:00 -0400</pubDate>
@@ -125,6 +111,16 @@ Maybe it has to do with the look of these tubes, but I&amp;rsquo;m convinced tha
 At first, I decided to bring a 35mm macro lens. However, after seeing all of the dragonflies and lilies, I biked home in record time and snagged a telephoto lens.
 I present to you the Water lilies and Dragonflies at The Arboretum at Penn State.
                                                 </description>
+    </item>
+    
+    <item>
+      <title>EOLRC - An Extremely Overkill LEGO RC Car (from Plane Parts)</title>
+      <link>/posts/eolrc-an-extremely-overkill-lego-rc-car-from-plane-parts/</link>
+      <pubDate>Tue, 21 Jul 2020 07:27:42 -0400</pubDate>
+      
+      <guid>/posts/eolrc-an-extremely-overkill-lego-rc-car-from-plane-parts/</guid>
+      <description>It&amp;rsquo;s been a while since I last played around with LEGO Technic. About 4 years to be exact. I can say with absolute confidence that this was my favorite way to spend time in my younger years.
+I recollect building all sorts of crazy things from an automatic crossbow to a massive Mercedes Benz Unimog with a functioning suspension and a pneumatic crane. Over the years, I have acquired an impressive amount of LEGO technic parts that are still scattered everywhere around the house.</description>
     </item>
     
   </channel>
