@@ -18,8 +18,8 @@ TOC: true
 *August 2017 - Present*
 
 * GPA (as of *June 2020*)
-  * 4.73 weighted
-  * 3.91 unweighted
+    * 4.73 weighted
+    * 3.91 unweighted
 * Projected graduation in *January 2021*
 
 **Anticipated to take classes at Penn State in the** ***2021 Spring Semester***
@@ -42,7 +42,7 @@ TOC: true
 
 * Physics I (Score 5)
 * Calculus BC (Score 5)
-  * Calculus BC: AB Subscore (Score 5)
+    * Calculus BC: AB Subscore (Score 5)
 * French Language and Culture (Score 5)
 
 *May 2018*
@@ -65,11 +65,11 @@ TOC: true
 *February 2020*
 
 * Composite (Score 34)
-  * Reading (Score 36)
-  * Science (Score 36)
-  * Math (Score 35)
-  * English (Score 30)
-  * Essay (Score 8)
+    * Reading (Score 36)
+    * Science (Score 36)
+    * Math (Score 35)
+    * English (Score 30)
+    * Essay (Score 8)
 
 ---
 
@@ -134,10 +134,9 @@ French-language competition (Le Grand Concours) awards:
 * School club which competes in specialized events with different schools at all levels
 * Member
 * Science Olympiad Awards (Regionals)
-  * *2020*
-
-    * 1st place Detector Building
-    * 1st place Circuit Lab
+    * *2020*
+        * 1st place Detector Building
+        * 1st place Circuit Lab
 
 **Research at the Penn State Materials Research Institute**, *Penn State*
 
@@ -168,15 +167,13 @@ French-language competition (Le Grand Concours) awards:
 * Role model for younger students
 * Rank of Cho Dan Bo, Black Belt candidate
 * Awards at tournaments
-  * *2019*
-
-    * 3rd place sparring
-    * 3rd place weapons
-    * Certificate of appreciation for assisting at the tournament
-  * *2014*
-  
-    * 2nd place forms
-    * 3rd place sparring
+    * *2019*
+        * 3rd place sparring
+        * 3rd place weapons
+        * Certificate of appreciation for assisting at the tournament
+    * *2014*
+        * 2nd place forms
+        * 3rd place sparring
 
 **Tennis**, *State College, PA*
 
