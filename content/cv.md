@@ -32,7 +32,7 @@ TOC: true
 
 *May 2020*
 
-* 5 Physics C Electricity and Magnetism
+* Physics C Electricity and Magnetism (Score 5)
 * 5 Physics C Mechanics
 * 5 US History
 * 4 Statistics
@@ -92,6 +92,7 @@ TOC: true
 *August 2019 - March 2020*
 
 * Completed with an A
+
 ---
 
 ## Languages
@@ -123,8 +124,7 @@ French-language competition (Le Grand Concours) awards:
 *September 2017 - Present*
 
 * School club centered around science trivia question that competes annually at the Princeton Plasma Physics Laboratory
-* President (2020 - Present)
-* Treasurer/Secretary (2019 - 2020)
+* President (2020 - Present), Treasurer/Secretary (2019 - 2020)
 * Compete on the A-team (2019 - 2020)
 
 **Science Olympiad**, *State College Area High School*
@@ -137,13 +137,13 @@ French-language competition (Le Grand Concours) awards:
 * Detector Building 1st place 2020
 * Circuit Lab 1st place 2020
 
-**Unpaid research at the Penn State Materials Research Institute**, *Penn State*
+**Research at the Penn State Materials Research Institute**, *Penn State*
 
 *August 2019*
 
+* Volunteered in Dr. Rotkin‘s laboratory
 * Learned about scanning near-field optical microscopy (SNOM)
 * Developed a Python program using Jupyter Notebooks that filters out background noise from microscope scans
-* Worked in Dr. Rotkin‘s laboratory
 
 **Shaver’s Creek Environmental Center**, *State College, PA*
 
@@ -205,7 +205,7 @@ French-language competition (Le Grand Concours) awards:
 *Fall 2009 - Spring 2017*
 
 * Nittany Valley Children’s Choir
-* Sung in the White and Blue choir
+* Sang in the White and Blue choir
 
 ---
 
@@ -245,7 +245,7 @@ French-language competition (Le Grand Concours) awards:
 * Markdown to format
 * Hugo to generate static pages
 * Netlify to host
-* Github to save to and Netlify hosts off of it
+* Github to save to
 
 **Cryptocurrency Mining**
 
@@ -315,18 +315,6 @@ French-language competition (Le Grand Concours) awards:
 
 ---
 
-## Family Responsibilities
-
-**Taking Care of my Sister**
-
-*November 2008 - Present*
-
-* Helping her with homework
-* Going on walks everyday
-* Being a responsible big brother
-
----
-
 ## Interests/Hobbies
 
 * Applied physics
@@ -338,6 +326,18 @@ French-language competition (Le Grand Concours) awards:
 * Cinematography
 * Cryptocurrencies
 * 3D Animation
+
+---
+
+## Family Responsibilities
+
+**Taking care of my Sister**
+
+*November 2008 - Present*
+
+* Helping her with homework
+* Going on walks everyday
+* Being a responsible big brother
 
 ---
 
