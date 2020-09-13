@@ -135,6 +135,7 @@ French-language competition (Le Grand Concours) awards:
 * Member
 * Science Olympiad Awards (Regionals)
   * *2020*
+
     * 1st place Detector Building
     * 1st place Circuit Lab
 
@@ -168,10 +169,12 @@ French-language competition (Le Grand Concours) awards:
 * Rank of Cho Dan Bo, Black Belt candidate
 * Awards at tournaments
   * *2019*
+
     * 3rd place sparring
     * 3rd place weapons
     * Certificate of appreciation for assisting at the tournament
   * *2014*
+  
     * 2nd place forms
     * 3rd place sparring
 
