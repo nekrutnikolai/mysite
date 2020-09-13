@@ -40,10 +40,10 @@ TOC: true
 
 *May 2019*
 
-* 5 Physics I (Score 5)
-* 5 Calculus BC (Score 5)
-  * 5 Calculus BC: AB Subscore (Score 5)
-* 5 French Language and Culture (Score 5)
+* Physics I (Score 5)
+* Calculus BC (Score 5)
+  * Calculus BC: AB Subscore (Score 5)
+* French Language and Culture (Score 5)
 
 *May 2018*
 
