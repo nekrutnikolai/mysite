@@ -5,9 +5,15 @@ draft: false
 TOC: true
 ---
 
+# Nikolai Nekrutenko
+
+(814) 852-9256 · 618 Glenn Rd, State College PA, 16803 · nekrutnikolai@gmail.com · https://nnekrut.netlify.app/
+
+---
+
 ## Education
 
-**State College High School**
+**State College Area High School**
 
 *August 2017 - Present*
 
@@ -61,7 +67,7 @@ TOC: true
   * 30 English
   * 8 Essay
 
-
+---
 
 ## Scholastic Awards  
 
@@ -69,34 +75,36 @@ TOC: true
 * AP Scholar with distinction 2019 - 2020
 * Top 10% 2018 - 2020
 
-
+---
 
 ## Supplemental Education
 
 **Summer Springboard: Fundamentals of Engineering at University of California Berkeley**
-June 2019
 
-### Completed Johns Hopkins Center for Talented Youth: Crafting the Essay with a grade of A
-August 2019 - March 2020
+*June 2019*
 
+**Completed Johns Hopkins Center for Talented Youth: Crafting the Essay with a grade of A**
 
+*August 2019 - March 2020*
+
+---
 
 ## Languages
-Fluent in English, Pусский (Russian, native), and Français (French)
+Fluent in ***English***, ***Pусский*** (Russian), and ***Français*** (French)
 
 French-language competition (Le Grand Concours) awards:
 
-* Placed 4th nationally (gold medal) 2016
-* Gold medal 2017
-* Bronze medal 2018
+* Placed 4th nationally (gold medal) *2016*
+* Gold medal *2017*
+* Bronze medal *2018*
 
-
+---
 
 ## Extracurricular Activities and Leadership
 
 ### Science and Technology
 
-**State College Area High School Model Aeronautics Club, State College Area High School**		
+**State College Area High School Model Aeronautics Club**, *State College Area High School*		
 
 *October 2019 - Present*
 
@@ -105,7 +113,7 @@ French-language competition (Le Grand Concours) awards:
 * Club’s website: https://nikolaiteslovich.github.io/shmac/
 * Club’s Instagram: https://www.instagram.com/statehighmodelaeronauticsclub/
 
-**Science Bowl, State College Area High School**
+**Science Bowl**,  *State College Area High School*
 
 *September 2017 - Present*
 
@@ -114,7 +122,7 @@ French-language competition (Le Grand Concours) awards:
 * Treasurer/Secretary (2019 - 2020)
 * Compete on the A-team (2019 - 2020)
 
-**Science Olympiad, State College Area High School**
+**Science Olympiad**, *State College Area High School*
 
 *February 2020 - March 2020*
 
@@ -124,14 +132,7 @@ French-language competition (Le Grand Concours) awards:
 * Detector Building 1st place 2020
 * Circuit Lab 1st place 2020
 
-**Technology Student Association (TSA), State College Area High School**
-
-*August 2019 - March 2020*
-
-* School club built around competing in various STEM projects
-* Member
-
-**Unpaid research at the Penn State Materials Research Institute, Penn State**
+**Unpaid research at the Penn State Materials Research Institute**, *Penn State*
 
 *August 2019*
 
@@ -139,7 +140,7 @@ French-language competition (Le Grand Concours) awards:
 * Developed a Python program using Jupyter Notebooks that filters out background noise from microscope scans
 * Worked in Dr. Rotkin‘s laboratory
 
-**Shaver’s Creek Environmental Center, State College, PA**
+**Shaver’s Creek Environmental Center**, *State College, PA*
 
 *Summers 2017 - 2019*
 
@@ -148,27 +149,26 @@ French-language competition (Le Grand Concours) awards:
 * Performed various leadership activities such as games, and songs to make  the club enjoyable, memorable and educational for all
 
 
-
 ### Sports
 
-**A Mountain Wind Martial Arts, State College, PA**
+**A Mountain Wind Martial Arts**, *State College, PA*
 
 *February 2013 - Present*   
 
-* Practicing the type of Martial Arts called Tang Soo Do
+* Tang Soo Do (A Korean martial art)
 * Member and Instructor
 * Instruct and help younger students with proper form, technique, and on the practical and philosophical applications
 * Role model for younger students
 * Rank of Cho Dan Bo, Black Belt candidate
 * Awards at tournaments
-  * April 2019 
+  * April 2019
   * 3rd place sparring 2014
   * 2nd place forms 2014
   * 3rd place sparring 2019
   * 3rd place weapons 2019
   * Certificate of appreciation for assisting at the tournament 2019
 
-**Tennis, State College, PA**
+**Tennis**, *State College, PA*
 
 *Spring - Fall 2014 - 2019*
 
@@ -201,7 +201,7 @@ French-language competition (Le Grand Concours) awards:
 * Nittany Valley Children’s Choir
 * Sung in the White and Blue choir
 
-
+---
 
 ## Skills
 
@@ -279,6 +279,8 @@ French-language competition (Le Grand Concours) awards:
 
 **Flying remote controlled planes and FPV drones**
 
+---
+
 ## Licenses/Certifications
 
 * HAM Radio
@@ -287,11 +289,15 @@ French-language competition (Le Grand Concours) awards:
 * Technician level
   * Call sign: KC3NJK
 
+---
+
 ## Jobs
 
 * Lawn Mowing
 * Summers 2016 - 2020
 * Mow lawns for people in my town
+
+---
 
 ## Family Responsibilities
 
@@ -300,6 +306,8 @@ French-language competition (Le Grand Concours) awards:
 * Helping her with homework
 * Going on walks everyday
 * Being a responsible big brother
+
+---
 
 ## Interests/Hobbies
 
@@ -313,19 +321,17 @@ French-language competition (Le Grand Concours) awards:
 * Cryptocurrencies
 * 3D Animation
 
+---
+
 ## Websites/Social Media
 
-  * Website about my hobbies and interests
-  * https://nnekrut.netlify.app/
-
-  * Photo gallery
-  * https://nnekrut.netlify.app/gallery/
-
-  * Instagram about my hobbies
-  * @projectniknek
-
-  * Youtube channel
-  * https://www.youtube.com/channel/UC-WSQ21Q2Q36urFPc4e5T6Q
-
-  * Github profile
-  * https://github.com/NikolaiTeslovich
+* Website about my hobbies and interests
+* https://nnekrut.netlify.app/
+* Photo gallery
+* https://nnekrut.netlify.app/gallery/
+* Instagram about my hobbies
+* @projectniknek
+* Youtube channel
+* https://www.youtube.com/channel/UC-WSQ21Q2Q36urFPc4e5T6Q
+* Github profile
+* https://github.com/NikolaiTeslovich
