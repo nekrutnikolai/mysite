@@ -114,11 +114,11 @@ TOC: true
 
     * *2018*
 
-          * Bronze medal
+        * Bronze medal
 
     * *2017*
 
-          * Gold medal
+        * Gold medal
 
     * *2016*
 
