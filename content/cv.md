@@ -112,11 +112,16 @@ TOC: true
 
 **Le Grand Concours (French language competition) awards**
 
-* *2018*
+*2018*
+
     * Bronze medal
-* *2017*
+
+*2017*
+
     * Gold medal
-* *2016*
+
+*2016*
+
     * Placed 4th nationally
     * Gold medal
 
