@@ -300,24 +300,6 @@ French-language competition (Le Grand Concours) awards:
 
 ---
 
-## Jobs
-
-**Lawn Mowing**
-
-*Summers 2016 - 2020*
-
-* Mow lawns for people in my town
-* Self-employed
-
-**Fixing Bicycles**
-
-*Summer 2020*
-
-* Fixed and maintained bikes
-* Self-employed
-
----
-
 ## Interests/Hobbies
 
 * Applied physics
