@@ -20,9 +20,9 @@ TOC: true
 * GPA (as of *June 2020*)
     * 4.73 weighted
     * 3.91 unweighted
-* Projected graduation in *January 2021*
+* Projected graduation *January 2021*
 
-**Anticipated to take classes at Penn State in the** ***2021 Spring Semester***
+**Anticipated to take classes at Penn State** ***2021***
 
 ---
 
@@ -34,7 +34,7 @@ TOC: true
 
 * Physics C Electricity and Magnetism (Score 5)
 * Physics C Mechanics (Score 5)
-* US History (Score 5)
+* United States History (Score 5)
 * Statistics (Score 4)
 * Computer Science Principles (Score 4)
 
@@ -135,7 +135,7 @@ TOC: true
 
 *October 2019 - Present*
 
-* School club focused on learning about Aeronautics through the design, construction, and flight of remote controlled model aircraft
+* Club focused on learning about Aeronautics through the design, construction, and flight of remote controlled model aircraft
 * Founder and President (*2019 - Present*)
 * [Website](https://nikolaiteslovich.github.io/shmac/)
 * [Instagram](https://www.instagram.com/statehighmodelaeronauticsclub/)
@@ -144,7 +144,7 @@ TOC: true
 
 *September 2017 - Present*
 
-* School club centered around science trivia question that competes annually at the Princeton Plasma Physics Laboratory
+* Club centered around science trivia question that competes annually at Princeton
 * President (*2020 - Present*), Treasurer/Secretary (*2019 - 2020*)
 * Compete on the A-team (*2019 - 2020*)
 
@@ -152,7 +152,7 @@ TOC: true
 
 *February 2020 - March 2020*
 
-* School club which competes in specialized events with different schools at all levels
+* Club which competes in specialized events with different schools
 * Member
 * Science Olympiad Awards (Regionals)
     * *2020*
@@ -173,7 +173,7 @@ TOC: true
 
 * Leader-in-training
 * Volunteered in a summer camp for elementary and middle school children
-* Performed various leadership activities such as games, and songs to make  the club enjoyable, memorable and educational for all
+* Performed various leadership activities such as games, and songs to make the club enjoyable, memorable and educational for all
 
 
 ### Sports
@@ -183,7 +183,7 @@ TOC: true
 *February 2013 - Present*   
 
 * A Korean martial art
-* Member and Instructor
+* Member and instructor
 * Instruct and help younger students with proper form, technique, and on the practical and philosophical applications
 * Role model for younger students
 * Rank of Cho Dan Bo, Black Belt candidate
@@ -201,7 +201,6 @@ TOC: true
 *Spring - Fall 2014 - 2019*
 
 * Took tennis lessons
-* Frequently played with my friends
 
 
 ### Music
@@ -229,7 +228,7 @@ TOC: true
 *Fall 2009 - Spring 2017*
 
 * Nittany Valley Children’s Choir
-* Sang in the White and Blue choir
+* Sang in the white and blue choir
 
 ---
 
@@ -252,14 +251,14 @@ TOC: true
 
 **Computer Programs**
 
-* Google programs (e.g. Drive, Docs, Slides, Sheets, Chrome)
-* Mac OS programs (e.g. iMovie, Garageband, etc.)
+* Google programs (Drive, Docs, Slides, Chrome, etc.)
+* Mac OS programs (iMovie, Garageband, etc.)
 * Adobe programs (Photoshop, Illustrator, Premiere Pro)
 * Davinci Resolve 16
 * 3D design programs (Sketchup, Tinkercad, Fusion 360, Blender)
 * Slicing software (Ultimaker Cura)
 
-**Microcontrollers (Programming and Utilization)**
+**Microcontrollers (Programming and Use)**
 
 * Arduino
 * Raspberry Pi
@@ -275,10 +274,9 @@ TOC: true
 
 * Nicehash
 * Linux
-    * Pop!_OS and Ubuntu
-* NVIDIA GeForce & AMD Radeon GPU's
+* Graphics cards
     * Ethereum (ETH), Ethereum Classic (ETC), Ravencoin (RVN)
-* Intel CPU's
+* Processors
     * Monero (XMR)
 
 
@@ -303,8 +301,8 @@ TOC: true
 
 **Photography & Cinematography**
 
-* Taking pictures on a DSLR and mirrorless digital camera
-* Taking films with a drone
+* Taking pictures with a digital camera
+* Filming with a drone
 * Editing photos and videos
 
 **Flying remote controlled planes and FPV drones**
@@ -345,7 +343,7 @@ TOC: true
 
 * Helping her with homework
 * Going on walks everyday
-* Being a responsible big brother
+* Being a responsible brother
 
 ---
 
