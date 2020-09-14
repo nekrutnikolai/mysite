@@ -108,7 +108,7 @@ TOC: true
 
 ## Languages
 
-**Fluent in ***English***, ***Pусский*** (Russian), and ***Français*** (French)**
+**Fluent in** ***English***, ***Pусский*** **(Russian), and** ***Français*** **(French)**
 
 **Le Grand Concours (French language competition) awards**
 
