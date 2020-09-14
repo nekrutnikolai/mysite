@@ -114,16 +114,16 @@ TOC: true
 
 *2018*
 
-    * Bronze medal
+* Bronze medal
 
 *2017*
 
-    * Gold medal
+* Gold medal
 
 *2016*
 
-    * Placed 4th nationally
-    * Gold medal
+* Placed 4th nationally
+* Gold medal
 
 ---
 
