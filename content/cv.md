@@ -52,13 +52,13 @@ TOC: true
 
 ### SAT Subject Tests
 
-*August 2018*
-
-* Math II (Score 800)
-
 *May 2019*
 
 * Physics (Score 800)
+
+*August 2018*
+
+* Math II (Score 800)
 
 ### ACT
 
@@ -75,17 +75,24 @@ TOC: true
 
 ## Scholastic Awards  
 
-* National AP Scholar *2020*
-* AP Scholar with distinction *2019 - 2020*
-* Top 10% *2018 - 2020*
+*2020*
+
+* National AP Scholar
+* AP Scholar with distinction
+* Top 10%
+
+*2019*
+
+* AP Scholar with distinction
+* Top 10%
+
+*2018*
+
+* Top 10%
 
 ---
 
 ## Supplemental Education
-
-**Summer Springboard: Fundamentals of Engineering at University of California Berkeley**
-
-*June 2019*
 
 **Johns Hopkins Center for Talented Youth: Crafting the Essay**
 
@@ -93,16 +100,30 @@ TOC: true
 
 * Completed with an A
 
+**Summer Springboard: Fundamentals of Engineering at University of California Berkeley**
+
+*June 2019*
+
 ---
 
 ## Languages
-Fluent in **English**, **Pусский** (Russian), and **Français** (French)
 
-French-language competition (Le Grand Concours) awards:
+**Fluent in ***English***, ***Pусский*** (Russian), and ***Français*** (French)**
 
-* Placed 4th nationally (gold medal) *2016*
-* Gold medal *2017*
-* Bronze medal *2018*
+**Le Grand Concours (French language competition) awards**
+
+*2018*
+
+* Bronze medal
+
+*2017*
+
+* Gold medal
+
+*2016*
+
+* Placed 4th nationally
+* Gold medal
 
 ---
 
@@ -292,8 +313,10 @@ French-language competition (Le Grand Concours) awards:
 
 ## Licenses/Certifications
 
-* HAM Radio
-* April 2019
+**HAM Radio**
+
+*April 2019*
+
 * Amateur Radio License
 * Technician level
     * Call sign: KC3NJK
