@@ -303,7 +303,7 @@ TOC: true
     * EMAX TinyHawk II indoor
 
 * Controller: Taranis QX7
-  * 2.4 Ghz control link stock
+  * 2.4 Ghz control link stock radio
   * 900 Mhz control link with the TBS Crossfire
 
 * FPV Goggles: Fatshark Dominator V3
