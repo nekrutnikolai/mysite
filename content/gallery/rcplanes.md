@@ -10,6 +10,8 @@ Thanks to them for inviting me, I had an absolute blast.
 
 Looks like it's time for me to get an RC jet!
 
+And yes, we did keep **at least six feet apart**.
+
 |       |       |       |       |
 | :---: | :---: | :---: | :---: |
 |{{< figure src="/img/thumb/1N1A0003.png" link="https://www.dropbox.com/s/7s9rxc18md1hbjd/1N1A0003.png?dl=0" >}}|{{< figure src="/img/thumb/1N1A0008.png" link="https://www.dropbox.com/s/qeadkjhxiwx39o2/1N1A0008.png?dl=0" >}}|{{< figure src="/img/thumb/1N1A0185.png" link="https://www.dropbox.com/s/pe1kwasgj5bwc4t/1N1A0185.png?dl=0" >}}|{{< figure src="/img/thumb/1N1A0195.png" link="https://www.dropbox.com/s/1rto409vqqp0p1x/1N1A0195.png?dl=0" >}}|
