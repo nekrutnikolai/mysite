@@ -22,7 +22,7 @@ TOC: true
     * 3.91 unweighted
 * Projected graduation *January 2021*
 
-**Anticipated to take classes at Penn State** ***2021***
+**I will also be taking classes at Penn State in the** ***Spring 2021 semester***
 
 ---
 
@@ -108,7 +108,7 @@ TOC: true
 
 ## Languages
 
-**Fluent in** ***English***, ***Pусский*** **(Russian), and** ***Français*** **(French)**
+**Fluent in:** ***English***, ***Pусский*** **(Russian), and** ***Français*** **(French)**
 
 **Le Grand Concours (French language competition) awards**
 
@@ -236,64 +236,51 @@ TOC: true
 
 ### Computer Skills
 
-**Operating Systems**
-
-* Linux
-* Mac OS
-* Windows 10
-
 **Programming Languages**
 
 * Python
-    * Jupyter Notebooks
 * C++
-    * Arduino
 
-**Computer Programs**
+**Software**
 
-* Google programs (Drive, Docs, Slides, Chrome, etc.)
-* Mac OS programs (iMovie, Garageband, etc.)
-* Adobe programs (Photoshop, Illustrator, Premiere Pro)
-* Davinci Resolve 16
+* Video editing programs (Adobe Premiere Pro, DaVinci Resolve, Final Cut Pro, iMovie)
+* Photo editing software (Adobe Photoshop)
+* Vector editing software (Adobe Illustrator)
 * 3D design programs (Sketchup, Tinkercad, Fusion 360, Blender)
-* Slicing software (Ultimaker Cura)
+* 3D printing software (Ultimaker Cura)
+* Website design (Hugo, Netlify, GitHub)
 
 **Microcontrollers (Programming and Use)**
 
 * Arduino
 * Raspberry Pi
 
-**Website Design**
-
-* Markdown to format
-* Hugo to generate static pages
-* Github to save to
-* Netlify to host
-
 **Cryptocurrency Mining**
 
 * Nicehash
 * Linux
+  * Pop_OS! and Ubuntu
 * Graphics cards
     * Ethereum (ETH), Ethereum Classic (ETC), Ravencoin (RVN)
 * Processors
     * Monero (XMR)
 
-
 ### Technical Skills
 
 **Laboratory Experience**
 
-* Thin Layer Chromatography, Gas Chromatography, Infrared Spectroscopy, and several other techniques
-* Proper lab technique and etiquette
+* Thin Layer Chromatography
+* Gas Chromatography
+* Infrared Spectroscopy
 
-**Basic understanding of electronic circuitry and components**
+
+**Prototyping skills**
 
 * Soldering
-* Utilization of electronic tools (e.g. multimeter)
-* Usage of construction tools (e.g. table saw, drill, band saw, Dremel, router)
-* Use and cleaning/repairing of FDM & SLA 3D printers, and CNC machines
-
+* Utilization of electronic tools
+* Woodworking
+* CNC machine design and operation
+* 3D design and printing using SLA (Formlabs) and FDM (Ultimaker) systems
 
 ### Other Skills
 
@@ -301,11 +288,26 @@ TOC: true
 
 **Photography & Cinematography**
 
-* Taking pictures with a digital camera
-* Filming with a drone
+* Taking pictures with a digital camera and drone
 * Editing photos and videos
 
 **Flying remote controlled planes and FPV drones**
+
+* Planes
+    * Flying wings
+    * STOL aircraft
+    * Sports aircraft
+
+* Drones
+    * DJI Mavic Air
+    * EMAX TinyHawk II indoor
+
+* Controller: Taranis QX7
+  * 2.4 Ghz control link stock
+  * 900 Mhz control link with the TBS Crossfire
+
+* FPV Goggles: Fatshark Dominator V3
+  * 5.8 Ghz video signal
 
 ---
 
@@ -315,9 +317,8 @@ TOC: true
 
 *April 2019*
 
-* Amateur Radio License
+* Amateur Radio License (Call sign: `KC3NJK`)
 * Technician level
-    * Call sign: KC3NJK
 
 ---
 
@@ -337,13 +338,12 @@ TOC: true
 
 ## Family Responsibilities
 
-**Taking care of my Sister**
+**Taking care of younger sister**
 
 *November 2008 - Present*
 
-* Helping her with homework
-* Going on walks everyday
-* Being a responsible brother
+* In addition to all of the usual responsibilities of a big brother, I pick her up from school and feed her
+* I help her with homework and take her for a walk before my parents come back from work
 
 ---
 
