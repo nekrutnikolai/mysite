@@ -150,7 +150,7 @@ TOC: true
 
 **Science Olympiad**, *State College Area High School*
 
-*February 2020 - March 2020*
+*February 2020 - Present*
 
 * Club which competes in specialized events with different schools
 * Member
