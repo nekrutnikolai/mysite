@@ -288,7 +288,7 @@ TOC: true
 
 **Photography & Cinematography**
 
-* Taking pictures with a digital camera and drone
+* Taking pictures and films with a digital camera and drone
 * Editing photos and videos
 
 **Flying remote controlled planes and FPV drones**
