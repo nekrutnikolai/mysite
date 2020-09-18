@@ -303,11 +303,8 @@ TOC: true
     * EMAX TinyHawk II indoor
 
 * Controller: Taranis QX7
-  * 2.4 Ghz control link stock radio
-  * 900 Mhz control link with the TBS Crossfire
 
 * FPV Goggles: Fatshark Dominator V3
-  * 5.8 Ghz video signal
 
 ---
 
@@ -326,7 +323,7 @@ TOC: true
 
 * Applied physics
 * Engineering
-* Electronic circuitry
+* Electronic circuits
 * Chemistry
 * RC planes and drones (design, construction, and flight)
 * Photography
