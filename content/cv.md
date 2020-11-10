@@ -256,7 +256,6 @@ TOC: true
 
 * Arduino
 * Raspberry Pi
-* Matek F411 (flight controller running INAV)
 
 **Cryptocurrency Mining**
 
@@ -297,14 +296,15 @@ TOC: true
 **Flying remote controlled planes and FPV drones**
 
 * Planes
-    * Some built out of foamboard and cut out using a needle cutter built by myself (https://nikolaiteslovich.github.io/shmac/posts/2020/01/flite-test-tiny-trainer-kits/)
+    * Some built out of foamboard and cut out using a needle cutter built by myself
+    (https://nikolaiteslovich.github.io/shmac/posts/2020/01/flite-test-tiny-trainer-kits/)
     * Sports aircraft
     * Flying wings
     * Autonomous aircraft using INAV (https://github.com/iNavFlight/inav/wiki)
 
 * Drones
     * DJI Mavic Air for cinematography
-    * EMAX TinyHawk II Freestyle
+    * EMAX TinyHawk II Freestyle for flying around and tearing up the air
 
 * Controller: Taranis QX7
   * Crossfire Long Range Module
