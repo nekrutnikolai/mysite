@@ -15,6 +15,4 @@ I don't know why I stopped. I guess it just happened.
 
 These times are now gone, with the commencement of a new Instagram account: [@projectniknek](https://www.instagram.com/projectniknek/) which you should totally follow by the way. I created this to show the world what I'm doing with my time: hobbies and projects.
 
-{{< instagram CEUkxPdHmf6 >}}
-
 **In my opinion, especially with the global pandemic that is going on, everyone is becoming more and more connected through the internet.** It's becoming increasingly important, in my view, to become savvy on these social media platforms. It really doesn't take up any extra time, and I enjoy having my friends, and people who share my interests see what neat things I am doing with my time.
