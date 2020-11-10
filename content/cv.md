@@ -22,7 +22,7 @@ TOC: true
     * 3.91 unweighted
 * Projected graduation *January 2021*
 
-**I will also be taking classes at Penn State in the** ***Spring 2021 semester***
+**I will take courses at Penn State in the Spring 2021 semester as a non-matriculated student**
 
 ---
 
@@ -114,16 +114,11 @@ TOC: true
 
 *2018*
 
-* Bronze medal (3rd in School)
+* Bronze level nationally
 
-*2017*
+*2016 - 2017*
 
-* Gold medal (1st in School)
-
-*2016*
-
-* Placed 4th nationally
-* Gold medal (1st in School)
+* Gold level nationally
 
 ---
 
@@ -137,8 +132,8 @@ TOC: true
 
 * Club focused on learning about Aeronautics through the design, construction, and flight of remote controlled model aircraft
 * Founder and President (*2019 - Present*)
-* [Website](https://nikolaiteslovich.github.io/shmac/)
-* [Instagram](https://www.instagram.com/statehighmodelaeronauticsclub/)
+* Website: https://nikolaiteslovich.github.io/shmac/
+* Instagram: https://www.instagram.com/statehighmodelaeronauticsclub/
 
 **Science Bowl**,  *State College Area High School*
 
@@ -148,9 +143,16 @@ TOC: true
 * President (*2020 - Present*), Treasurer/Secretary (*2019 - 2020*)
 * Compete on the A-team (*2019 - 2020*)
 
+**Rocket Lab Initiative**, *Penn State*
+
+*September 2020 - Present*
+
+* Science outreach from PSU (Dr. Randall Mcentaffer)
+* Prototyping and testing of a Raspberry Pi and sensor payload for a suborbital rocket
+
 **Science Olympiad**, *State College Area High School*
 
-*February 2020 - Present*
+*February 2020 - November 2020*
 
 * Club which competes in specialized events with different schools
 * Member
@@ -254,6 +256,7 @@ TOC: true
 
 * Arduino
 * Raspberry Pi
+* Matek F411 (flight controller running INAV)
 
 **Cryptocurrency Mining**
 
@@ -294,17 +297,20 @@ TOC: true
 **Flying remote controlled planes and FPV drones**
 
 * Planes
-    * Flying wings
-    * STOL aircraft
+    * Some built out of foamboard and cut out using a needle cutter built by myself (https://nikolaiteslovich.github.io/shmac/posts/2020/01/flite-test-tiny-trainer-kits/)
     * Sports aircraft
+    * Flying wings
+    * Autonomous aircraft using INAV (https://github.com/iNavFlight/inav/wiki)
 
 * Drones
-    * DJI Mavic Air
-    * EMAX TinyHawk II indoor
+    * DJI Mavic Air for cinematography
+    * EMAX TinyHawk II Freestyle
 
 * Controller: Taranis QX7
+  * Crossfire Long Range Module
 
 * FPV Goggles: Fatshark Dominator V3
+  * 5.8 Ghz Video Receiver
 
 ---
 
@@ -346,8 +352,15 @@ TOC: true
 
 ## Websites/Social Media
 
-* [Website about my hobbies and interests](/)
-* [Photo gallery](/gallery)
-* [Instagram about my hobbies](https://www.instagram.com/projectniknek/?hl=en)
-* [Youtube channel](https://www.youtube.com/channel/UC-WSQ21Q2Q36urFPc4e5T6Q)
-* [Github profile](https://github.com/NikolaiTeslovich)
+* Personal website (it might not work if ad-blocker is enabled):
+https://nnekrut.netlify.app/  
+
+* Github, including my work for the Rotkin lab: https://github.com/NikolaiTeslovich
+
+* My portfolio: https://youtu.be/z5XOv9TMrPE
+
+* YouTube channel showing my best creations: https://www.youtube.com/channel/UC-WSQ21Q2Q36urFPc4e5T6Q
+
+* A stop motion movie I made (my best one yet!): https://www.youtube.com/watch?v=Srl9ST27SpA
+
+* Photo gallery of my work: https://nnekrut.netlify.app/gallery/  
