@@ -316,7 +316,7 @@ TOC: false
 
 * Planes
     * Some built out of foamboard and cut out using a needle cutter I built
-    (https://nikolaiteslovich.github.io/shmac/posts/2020/01/flite-test-tiny-trainer-kits/)
+    (https://rb.gy/tuxnsl)
     * Sports aircraft
     * Flying wings
     * Autonomous aircraft using INAV (https://github.com/iNavFlight/inav/wiki)
