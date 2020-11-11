@@ -2,7 +2,7 @@
 title: "Curriculum Vitae"
 date: 2020-09-11T16:26:17-04:00
 draft: false
-TOC: true
+TOC: false
 ---
 
 # Nikolai Nekrutenko
@@ -122,6 +122,15 @@ TOC: true
 
 ---
 
+## Academic Interests
+
+* Physics
+* Applied Physics
+* Engineering
+* Chemistry
+
+---
+
 ## Extracurricular Activities and Leadership
 
 ### Science and Technology
@@ -130,8 +139,8 @@ TOC: true
 
 *October 2019 - Present*
 
-* Club focused on learning about Aeronautics through the design, construction, and flight of remote controlled model aircraft
 * Founder and President (*2019 - Present*)
+* Club focused on learning about Aeronautics through the design, construction, and flight of remote controlled model aircraft
 * Website: https://nikolaiteslovich.github.io/shmac/
 * Instagram: https://www.instagram.com/statehighmodelaeronauticsclub/
 
@@ -139,23 +148,23 @@ TOC: true
 
 *September 2017 - Present*
 
-* Club centered around science trivia question that competes annually at Princeton
 * President (*2020 - Present*), Treasurer/Secretary (*2019 - 2020*)
-* Compete on the A-team (*2019 - 2020*)
+* Club centered around science trivia question that competes annually at Princeton
 
 **Rocket Lab Initiative**, *Penn State*
 
 *September 2020 - Present*
 
+* Participant
 * Science outreach from PSU (Dr. Randall Mcentaffer)
-* Prototyping and testing of a Raspberry Pi and sensor payload for a suborbital rocket
+* Prototyping and testing of a Raspberry Pi sensor payload for a suborbital rocket
 
 **Science Olympiad**, *State College Area High School*
 
 *February 2020 - November 2020*
 
-* Club which competes in specialized events with different schools
 * Member
+* Club which competes in specialized events with different schools
 * Science Olympiad Awards (Regionals)
     * *2020*
         * 1st place Detector Building
@@ -165,9 +174,10 @@ TOC: true
 
 *August 2019*
 
-* Volunteered in Dr. Rotkin‘s laboratory
+* Volunteer in Dr. Rotkin‘s laboratory
 * Learned about scanning near-field optical microscopy (SNOM)
 * Developed a Python program using Jupyter Notebooks that filters out background noise from microscope scans
+* Github page https://github.com/NikolaiTeslovich/sSNOM
 
 **Shaver’s Creek Environmental Center**, *State College, PA*
 
@@ -184,11 +194,11 @@ TOC: true
 
 *February 2013 - Present*   
 
-* A Korean martial art
 * Member and instructor
+* A Korean martial art
 * Instruct and help younger students with proper form, technique, and on the practical and philosophical applications
 * Role model for younger students
-* Rank of Cho Dan Bo, Black Belt candidate
+* Rank of Cho Dan Bo (Black Belt candidate)
 * Awards at tournaments
     * *2019*
         * 3rd place sparring
@@ -211,7 +221,7 @@ TOC: true
 
 *December 2018 - Present*
 
-* Enjoy playing and singing anything from David Bowie to Simon and Garfunkel.
+* Enjoy playing and singing anything from David Bowie to Simon and Garfunkel
 
 **Piano**
 
@@ -236,7 +246,15 @@ TOC: true
 
 ## Skills
 
+### Portfolio
+
+* https://youtu.be/z5XOv9TMrPE
+
 ### Computer Skills
+
+**My Github**
+
+* https://github.com/NikolaiTeslovich
 
 **Programming Languages**
 
@@ -271,9 +289,9 @@ TOC: true
 
 **Laboratory Experience**
 
-* Thin Layer Chromatography
-* Gas Chromatography
-* Infrared Spectroscopy
+* Thin layer chromatography
+* Gas chromatography
+* Infrared spectroscopy
 
 
 **Prototyping skills**
@@ -286,17 +304,18 @@ TOC: true
 
 ### Other Skills
 
-**Mentoring, leadership & teamwork experience**
-
 **Photography & Cinematography**
 
 * Taking pictures and films with a digital camera and drone
+  * Photo gallery of my work: https://nnekrut.netlify.app/gallery/  
 * Editing photos and videos
+  * YouTube channel showing my best creations: https://www.youtube.com/channel/UC-WSQ21Q2Q36urFPc4e5T6Q
+  * A stop motion movie I made (my best one yet!): https://www.youtube.com/watch?v=Srl9ST27SpA
 
 **Flying remote controlled planes and FPV drones**
 
 * Planes
-    * Some built out of foamboard and cut out using a needle cutter built by myself
+    * Some built out of foamboard and cut out using a needle cutter I built
     (https://nikolaiteslovich.github.io/shmac/posts/2020/01/flite-test-tiny-trainer-kits/)
     * Sports aircraft
     * Flying wings
@@ -325,42 +344,11 @@ TOC: true
 
 ---
 
-## Interests/Hobbies
-
-* Applied physics
-* Engineering
-* Electronic circuits
-* Chemistry
-* RC planes and drones (design, construction, and flight)
-* Photography
-* Cinematography
-* Cryptocurrencies
-* 3D Animation
-
----
-
 ## Family Responsibilities
 
-**Taking care of younger sister**
+**Taking care of a younger sister**
 
 *November 2008 - Present*
 
 * In addition to all of the usual responsibilities of a big brother, I pick her up from school and feed her
 * I help her with homework and take her for a walk before my parents come back from work
-
----
-
-## Websites/Social Media
-
-* Personal website (it might not work if ad-blocker is enabled):
-https://nnekrut.netlify.app/  
-
-* Github, including my work for the Rotkin lab: https://github.com/NikolaiTeslovich
-
-* My portfolio: https://youtu.be/z5XOv9TMrPE
-
-* YouTube channel showing my best creations: https://www.youtube.com/channel/UC-WSQ21Q2Q36urFPc4e5T6Q
-
-* A stop motion movie I made (my best one yet!): https://www.youtube.com/watch?v=Srl9ST27SpA
-
-* Photo gallery of my work: https://nnekrut.netlify.app/gallery/  
