@@ -141,7 +141,7 @@ nekrutnikolai@gmail.com · https://nnekrut.netlify.app/
 
 * Founder and President (*2019 - Present*)
 * Club focused on learning about Aeronautics through the design, construction, and flight of remote controlled model aircraft
-* Recently acquired a large grant ($1750)
+* Recently acquired the Patrick Wang grant ($1750)
 * Website: https://shmac.netlify.app/
 * Instagram: https://www.instagram.com/statehighmodelaeronauticsclub/
 
