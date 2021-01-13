@@ -11,7 +11,9 @@ tags:
   - flowers
   - arboretum
 ---
-This is just a test to see how well my python program works
+**Note, I have moved on to a [vastly superior method]](https://github.com/mfg92/hugo-shortcode-gallery)**
+
+This is just a test to see how well my python program works.
 
 |       |       |       |
 | :---: | :---: | :---: |

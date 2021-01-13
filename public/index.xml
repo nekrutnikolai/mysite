@@ -8,13 +8,15 @@
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Wed, 13 Jan 2021 10:45:17 -0400</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>The Shortcode Test</title>
-      <link>/gallery/shortcodegallery/</link>
+      <title>Snow</title>
+      <link>/gallery/snow/</link>
       <pubDate>Wed, 13 Jan 2021 10:45:17 -0400</pubDate>
       
-      <guid>/gallery/shortcodegallery/</guid>
-      <description>I walked around the garden and garage to see what pictures I could make. Here are the ones that I liked:
-     .jg-entry img { transition: transform .25s ease-in-out !important; } .jg-entry img:hover { transform: scale(1.1); } /* Changes made here sadly only apply after restarting hugo server */ /* make 5px space between the button(filter options) in the filter bar */ .justified-gallery-filterbar { display: flex; justify-content: flex-start; flex-wrap: wrap; gap: 5px; } .</description>
+      <guid>/gallery/snow/</guid>
+      <description>Happy New Year!
+A major snowstorm recently unleashed its wrath on us, for a grand total of 14in or 35cm of fluffly, dry snow!
+Here are some of my favorite long exposures from the evening.
+     .jg-entry img { transition: transform .25s ease-in-out !important; } .jg-entry img:hover { transform: scale(1.1); }   35mm f/14 30sec ISO 100&#34;     35mm f/5.6 1.3sec ISO 100&#34;</description>
     </item>
     
     <item>
@@ -67,17 +69,6 @@ I know there are a lot of photographs, but I really like all of these.
     </item>
     
     <item>
-      <title>New Instagram Account</title>
-      <link>/posts/new-instagram-account/</link>
-      <pubDate>Tue, 25 Aug 2020 12:58:50 -0400</pubDate>
-      
-      <guid>/posts/new-instagram-account/</guid>
-      <description>It&amp;rsquo;s been a while since I&amp;rsquo;ve posted anything on social media, with YouTube being the only exception. I wouldn&amp;rsquo;t even go as far as to call it social media. In fact, it&amp;rsquo;s almost been three years since I posted anything on my personal instagram account @nikolaiteslovich.
-I don&amp;rsquo;t know why I stopped. I guess it just happened.
-These times are now gone, with the commencement of a new Instagram account: @projectniknek which you should totally follow by the way.</description>
-    </item>
-    
-    <item>
       <title>The Book of Bitcoin - An Analogy to Explain Bitcoin</title>
       <link>/posts/the-book-of-bitcoin-an-analogy-to-explain-bitcoin/</link>
       <pubDate>Sat, 01 Aug 2020 15:57:01 -0400</pubDate>
@@ -107,16 +98,16 @@ I used an Ultimaker 3 to print the parts with eSun PLA+ at a 0.2mm layer height 
       <pubDate>Sat, 25 Jul 2020 20:51:17 -0400</pubDate>
       
       <guid>/gallery/garden/</guid>
-      <description>I walked around the garden and garage to see what pictures I could make. Here are the ones that I liked:
-                                                                                </description>
+      <description>I walked around the garden and garage to see what pictures I could take. Here are the ones that I liked:
+     .jg-entry img { transition: transform .25s ease-in-out !important; } .jg-entry img:hover { transform: scale(1.1); }   35mm f/5.6 0.0012499999720592975sec ISO 100&#34;     35mm f/6.300000190736682 1/200sec ISO 100&#34;     35mm f/5.6 1/320sec ISO 100&#34;     35mm f/5.</description>
     </item>
     
     <item>
       <title>Vacuum Tube Amplifier</title>
-      <link>/gallery/vacuum-tube-amplifier/</link>
+      <link>/gallery/vaccumtubes/</link>
       <pubDate>Thu, 23 Jul 2020 18:09:23 -0400</pubDate>
       
-      <guid>/gallery/vacuum-tube-amplifier/</guid>
+      <guid>/gallery/vaccumtubes/</guid>
       <description>Last night, I was listening to music on a vacuum tube amplifier that I assembled a while back from a kit.
 I really liked the look of the tubes in dark, they had a very retro aesthetic. Since they glowed in a very gentle orange-red color, they were perfect for a long exposure.
 Maybe it has to do with the look of these tubes, but I&amp;rsquo;m convinced that music sounds better on tubes than on a transistor amp.</description>
