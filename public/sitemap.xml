@@ -3,22 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/gallery/</loc>
+    <lastmod>2021-01-13T10:45:17-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2021-01-13T10:45:17-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/gallery/shortcodegallery/</loc>
+    <lastmod>2021-01-13T10:45:17-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/cv/</loc>
     <lastmod>2020-09-11T16:26:17-04:00</lastmod>
   </url>
   
   <url>
     <loc>/gallery/rcplanes/</loc>
-    <lastmod>2020-08-26T15:50:00-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/gallery/</loc>
-    <lastmod>2020-08-26T15:50:00-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/</loc>
     <lastmod>2020-08-26T15:50:00-04:00</lastmod>
   </url>
   

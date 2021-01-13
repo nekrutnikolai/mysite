@@ -6,10 +6,16 @@
     <description>Recent content on Nikolai Nekrutenko</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Wed, 26 Aug 2020 15:50:00 -0400</lastBuildDate>
-    
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Wed, 13 Jan 2021 10:45:17 -0400</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Shortcode Test</title>
+      <link>/gallery/shortcodegallery/</link>
+      <pubDate>Wed, 13 Jan 2021 10:45:17 -0400</pubDate>
+      
+      <guid>/gallery/shortcodegallery/</guid>
+      <description>I walked around the garden and garage to see what pictures I could make. Here are the ones that I liked:
+     .jg-entry img { transition: transform .25s ease-in-out !important; } .jg-entry img:hover { transform: scale(1.1); }   35mm f/2.8 1/320sec ISO 100&#34;     35mm f/10 1/60sec ISO 320&#34;     35mm f/4.5 1/2000sec ISO 100&#34;     35mm f/4.</description>
+    </item>
     
     <item>
       <title>Curriculum Vitae</title>
@@ -17,7 +23,7 @@
       <pubDate>Fri, 11 Sep 2020 16:26:17 -0400</pubDate>
       
       <guid>/cv/</guid>
-      <description>Nikolai Nekrutenko (814) 852-9256 · 618 Glenn Rd, State College PA, 16803 · nekrutnikolai@gmail.com · https://nnekrut.netlify.app/
+      <description>Nikolai Nekrutenko nekrutnikolai@gmail.com · https://nnekrut.netlify.app/
  Education State College Area High School
 August 2017 - Present
  GPA (as of June 2020)  4.73 weighted 3.91 unweighted   Projected graduation January 2021  I will take courses at Penn State in the Spring 2021 semester as a non-matriculated student
@@ -126,6 +132,68 @@ Maybe it has to do with the look of these tubes, but I&amp;rsquo;m convinced tha
 At first, I decided to bring a 35mm macro lens. However, after seeing all of the dragonflies and lilies, I biked home in record time and snagged a telephoto lens.
 I present to you the Water lilies and Dragonflies at The Arboretum at Penn State.
                                                 </description>
+    </item>
+    
+    <item>
+      <title>EOLRC - An Extremely Overkill LEGO RC Car (from Plane Parts)</title>
+      <link>/posts/eolrc-an-extremely-overkill-lego-rc-car-from-plane-parts/</link>
+      <pubDate>Tue, 21 Jul 2020 07:27:42 -0400</pubDate>
+      
+      <guid>/posts/eolrc-an-extremely-overkill-lego-rc-car-from-plane-parts/</guid>
+      <description>It&amp;rsquo;s been a while since I last played around with LEGO Technic. About 4 years to be exact. I can say with absolute confidence that this was my favorite way to spend time in my younger years.
+I recollect building all sorts of crazy things from an automatic crossbow to a massive Mercedes Benz Unimog with a functioning suspension and a pneumatic crane. Over the years, I have acquired an impressive amount of LEGO technic parts that are still scattered everywhere around the house.</description>
+    </item>
+    
+    <item>
+      <title>Solstice Fun</title>
+      <link>/gallery/solstice-fun/</link>
+      <pubDate>Thu, 02 Jul 2020 10:45:11 -0400</pubDate>
+      
+      <guid>/gallery/solstice-fun/</guid>
+      <description>I went camping with my family in the beautiful Northern PA countryside, near the finger lakes.
+To celebrate the longest day of the year, I found a stick about my height and lit both ends of it on fire. It was similar to the staff that I use in Tang Soo Do, so I messed around with various techniques. Particularly, I really enjoy doing the figure-eight technique where you essentially spin the stick in the shape of an infinity sign.</description>
+    </item>
+    
+    <item>
+      <title>Nikolai&#39;s Mowing</title>
+      <link>/mowing/</link>
+      <pubDate>Tue, 30 Jun 2020 15:26:54 -0400</pubDate>
+      
+      <guid>/mowing/</guid>
+      <description>Why am I doing this? Strangely enough, I enjoy lawn mowing and find it to be an effective mind relaxant probably because I like enjoying the outdoors.
+It&amp;rsquo;s the summer in the middle of the COVID-19 pandemic, and I want to earn some cash that I can use to fuel my hobbies and to start saving for the future.
+Business model and info Customer satisfaction is at the core of Nikolai&amp;rsquo;s Mowing.</description>
+    </item>
+    
+    <item>
+      <title>Let&#39;s Kill This MacBook! - How to Mine Monero on a Mac</title>
+      <link>/posts/lets-kill-this-macbook-how-to-mine-monero-on-a-mac/</link>
+      <pubDate>Thu, 11 Jun 2020 10:04:55 -0400</pubDate>
+      
+      <guid>/posts/lets-kill-this-macbook-how-to-mine-monero-on-a-mac/</guid>
+      <description>MacBook Pro 13 without TouchBar   My good friend&amp;rsquo;s Mac is nearing its end He&amp;rsquo;s already had it, the one in the picture above, for a couple of years, and the battery is starting to degrade among several other serious issues. Since it is nearing its end soon, in the time that it isn&amp;rsquo;t being used it could mine some cryptocurrency.
+MacBooks are known for their subpar cooling systems as demonstrated in this video.</description>
+    </item>
+    
+    <item>
+      <title>About Me</title>
+      <link>/about/</link>
+      <pubDate>Thu, 30 Apr 2020 15:26:54 -0400</pubDate>
+      
+      <guid>/about/</guid>
+      <description>Sabino Canyon, AZ   Hi! Nice to meet you. My name is Nikolai Nekrutenko and I live in State College, Pennsylvania. I am a senior at State College Area High School.
+My favorite hobby is model aviation. I fly planes any chance I get, and when they crash, build new ones. I built a homemade Arduino-based CNC cutter. The CNC allows me to quickly cut out new planes for myself and my club.</description>
+    </item>
+    
+    <item>
+      <title>My First Post</title>
+      <link>/posts/my-first-post/</link>
+      <pubDate>Thu, 30 Apr 2020 15:21:48 -0400</pubDate>
+      
+      <guid>/posts/my-first-post/</guid>
+      <description>Hello World!
+Why did I make this website and what even is it? I&amp;rsquo;m glad you asked although you probably didn&amp;rsquo;t! I made and will continue to make this website because I want to learn how to build a website. I also enjoy writing, especially when it isn&amp;rsquo;t tied to a grade.
+I will be posting about everything from a small cryptocurrency mining operation that I run in the basement to my favorite hobby of RC flight to my own ice cream recipes and everything in between.</description>
     </item>
     
   </channel>

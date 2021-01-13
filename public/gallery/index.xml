@@ -6,10 +6,16 @@
     <description>Recent content in Galleries on Nikolai Nekrutenko</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Wed, 26 Aug 2020 15:50:00 -0400</lastBuildDate>
-    
-	<atom:link href="/gallery/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Wed, 13 Jan 2021 10:45:17 -0400</lastBuildDate><atom:link href="/gallery/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Shortcode Test</title>
+      <link>/gallery/shortcodegallery/</link>
+      <pubDate>Wed, 13 Jan 2021 10:45:17 -0400</pubDate>
+      
+      <guid>/gallery/shortcodegallery/</guid>
+      <description>I walked around the garden and garage to see what pictures I could make. Here are the ones that I liked:
+     .jg-entry img { transition: transform .25s ease-in-out !important; } .jg-entry img:hover { transform: scale(1.1); }   35mm f/2.8 1/320sec ISO 100&#34;     35mm f/10 1/60sec ISO 320&#34;     35mm f/4.5 1/2000sec ISO 100&#34;     35mm f/4.</description>
+    </item>
     
     <item>
       <title>Flying RC Jets!</title>

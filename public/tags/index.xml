@@ -6,11 +6,7 @@
     <description>Recent content in Tags on Nikolai Nekrutenko</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Wed, 26 Aug 2020 15:12:36 -0400</lastBuildDate>
-    
-	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 26 Aug 2020 15:12:36 -0400</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>drones</title>
       <link>/tags/drones/</link>
@@ -98,6 +94,51 @@
       <pubDate>Wed, 29 Jul 2020 10:30:15 -0400</pubDate>
       
       <guid>/tags/shenanigans/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mining</title>
+      <link>/tags/mining/</link>
+      <pubDate>Thu, 11 Jun 2020 10:04:55 -0400</pubDate>
+      
+      <guid>/tags/mining/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>XMR</title>
+      <link>/tags/xmr/</link>
+      <pubDate>Thu, 11 Jun 2020 10:04:55 -0400</pubDate>
+      
+      <guid>/tags/xmr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>firstpost</title>
+      <link>/tags/firstpost/</link>
+      <pubDate>Thu, 30 Apr 2020 15:21:48 -0400</pubDate>
+      
+      <guid>/tags/firstpost/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>helloworld</title>
+      <link>/tags/helloworld/</link>
+      <pubDate>Thu, 30 Apr 2020 15:21:48 -0400</pubDate>
+      
+      <guid>/tags/helloworld/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>test</title>
+      <link>/tags/test/</link>
+      <pubDate>Thu, 30 Apr 2020 15:21:48 -0400</pubDate>
+      
+      <guid>/tags/test/</guid>
       <description></description>
     </item>
     
