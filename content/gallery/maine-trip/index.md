@@ -7,3 +7,11 @@ draft: false
 I recently went on a camping/cabining trip with my family around New England, especially Maine.
 
 I know there are a lot of photographs, but I really like all of these.
+
+{{< gallery
+    match="images/*"
+    showExif="true"
+    sortOrder="asc"
+    loadJQuery="true"
+    embedPreview="true"
+>}}
