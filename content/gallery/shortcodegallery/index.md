@@ -1,22 +1,25 @@
 ---
-title: The Shortcode Test
+title: Snow
 date: 2021-01-13T10:45:17-04:00
 draft: false
 ---
 
-I walked around the garden and garage to see what pictures I could make. Here are the ones that I liked:
+**Happy New Year!**
+
+A major snowstorm recently unleashed its wrath on us, for a grand total of *14in* or *35cm* of fluffly, dry snow!
+
+Here are some of my favorite long exposures from the evening.
 
 {{< gallery
     match="images/*"
     showExif="true"
-    sortOrder="desc"
+    sortOrder="asc"
     loadJQuery="true"
     embedPreview="true"
-    filterOptions="[{label: 'All', tags: '.*'}]"
 >}}
 
 
-<!--  -->
+<!-- Options for Filters filterOptions="[{label: 'All', tags: '.*'}]" -->
 
 
 <!-- Testing to see if the dropbox version shall work
