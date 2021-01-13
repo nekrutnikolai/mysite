@@ -3,7 +3,14 @@ title   = "Nikolai Nekrutenko"
 
 DefaultContentLanguage = "en"
 
-theme = "hello-friend-ng"
+# enabled both the default theme and the hugo shortcode gallery
+theme = ["hello-friend-ng", "hugo-shortcode-gallery"]
+
+# Gallery Parameters and configuration
+[imaging.exif]
+    includeFields = ".*"
+
+timeout = 60000 # This is required for larger galleries to be build (60 sec)
 
 PygmentsCodeFences = true
 PygmentsStyle = "monokai"
@@ -48,6 +55,13 @@ disableHugoGeneratorInject = false
   category = "categories"
 
 [params]
+  # Shortcode gallery Parameters
+  galleryRowHeight    = 200
+  galleryMargins      = 10
+  galleryResizeOptions= "600x600 q90 Lanczos"
+  galleryPreviewType  = "blur"
+  galleryThumbnailHoverEffect = "enlarge"
+
   dateform        = "Jan 2, 2006"
   dateformShort   = "Jan 2"
   dateformNum     = "2006-01-02"
