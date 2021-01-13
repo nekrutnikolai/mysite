@@ -6,7 +6,7 @@ draft: false
 
 **Happy New Year!**
 
-A major snowstorm recently unleashed its wrath on us, for a grand total of *14in* or *35cm* of fluffly, dry snow!
+A major snowstorm recently unleashed its wrath on us, for a grand total of *14in* or *35cm* of fluffy, dry snow!
 
 Here are some of my favorite long exposures from the evening.
 

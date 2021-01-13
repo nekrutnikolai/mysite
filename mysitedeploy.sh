@@ -1,7 +1,6 @@
-cd mysite
 
 # build website with hugo
-hugo
+hugo --gc
 
 # add the changes to git
 git add .
