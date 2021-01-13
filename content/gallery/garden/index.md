@@ -13,3 +13,5 @@ I walked around the garden and garage to see what pictures I could take. Here ar
     loadJQuery="true"
     embedPreview="true"
 >}}
+
+The thumbnails are significantly darker than the images themselves because I used the wrong color profile. :cry:

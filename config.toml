@@ -3,6 +3,9 @@ title   = "Nikolai Nekrutenko"
 
 DefaultContentLanguage = "en"
 
+# enabled emoji
+enableEmoji = true
+
 # enabled both the default theme and the hugo shortcode gallery
 theme = ["hello-friend-ng", "hugo-shortcode-gallery"]
 
