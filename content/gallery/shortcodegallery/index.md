@@ -18,6 +18,10 @@ Here are some of my favorite long exposures from the evening.
     embedPreview="true"
 >}}
 
+Yes, you did notice something slightly different about this gallery.
+
+I'm using a [new system](https://github.com/mfg92/hugo-shortcode-gallery) to generate these galleries. No longer do I have to deal with endless markdown tables!
+
 
 <!-- Options for Filters filterOptions="[{label: 'All', tags: '.*'}]" -->
 
