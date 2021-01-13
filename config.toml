@@ -56,7 +56,7 @@ disableHugoGeneratorInject = false
 
 [params]
   # Shortcode gallery Parameters
-  galleryRowHeight    = 200
+  galleryRowHeight    = 150
   galleryMargins      = 10
   galleryResizeOptions= "600x600 q90 Lanczos"
   galleryPreviewType  = "blur"

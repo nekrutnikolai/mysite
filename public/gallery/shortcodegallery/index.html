@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="Nikolai Nekrutenko ">
 <meta name="description" content="I walked around the garden and garage to see what pictures I could make. Here are the ones that I liked:
-     .jg-entry img { transition: transform .25s ease-in-out !important; } .jg-entry img:hover { transform: scale(1.1); }   35mm f/2.8 1/320sec ISO 100&#34;     35mm f/10 1/60sec ISO 320&#34;     35mm f/4.5 1/2000sec ISO 100&#34;     35mm f/4." />
+     .jg-entry img { transition: transform .25s ease-in-out !important; } .jg-entry img:hover { transform: scale(1.1); } /* Changes made here sadly only apply after restarting hugo server */ /* make 5px space between the button(filter options) in the filter bar */ .justified-gallery-filterbar { display: flex; justify-content: flex-start; flex-wrap: wrap; gap: 5px; } ." />
 <meta name="keywords" content="blog, posts" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="#252627" />
@@ -44,10 +44,10 @@
 
 <meta itemprop="name" content="The Shortcode Test">
 <meta itemprop="description" content="I walked around the garden and garage to see what pictures I could make. Here are the ones that I liked:
-     .jg-entry img { transition: transform .25s ease-in-out !important; } .jg-entry img:hover { transform: scale(1.1); }   35mm f/2.8 1/320sec ISO 100&#34;     35mm f/10 1/60sec ISO 320&#34;     35mm f/4.5 1/2000sec ISO 100&#34;     35mm f/4.">
+     .jg-entry img { transition: transform .25s ease-in-out !important; } .jg-entry img:hover { transform: scale(1.1); } /* Changes made here sadly only apply after restarting hugo server */ /* make 5px space between the button(filter options) in the filter bar */ .justified-gallery-filterbar { display: flex; justify-content: flex-start; flex-wrap: wrap; gap: 5px; } .">
 <meta itemprop="datePublished" content="2021-01-13T10:45:17-04:00" />
 <meta itemprop="dateModified" content="2021-01-13T10:45:17-04:00" />
-<meta itemprop="wordCount" content="178">
+<meta itemprop="wordCount" content="647">
 <meta itemprop="image" content="/"/>
 
 
@@ -59,7 +59,7 @@
 
 <meta name="twitter:title" content="The Shortcode Test"/>
 <meta name="twitter:description" content="I walked around the garden and garage to see what pictures I could make. Here are the ones that I liked:
-     .jg-entry img { transition: transform .25s ease-in-out !important; } .jg-entry img:hover { transform: scale(1.1); }   35mm f/2.8 1/320sec ISO 100&#34;     35mm f/10 1/60sec ISO 320&#34;     35mm f/4.5 1/2000sec ISO 100&#34;     35mm f/4."/>
+     .jg-entry img { transition: transform .25s ease-in-out !important; } .jg-entry img:hover { transform: scale(1.1); } /* Changes made here sadly only apply after restarting hugo server */ /* make 5px space between the button(filter options) in the filter bar */ .justified-gallery-filterbar { display: flex; justify-content: flex-start; flex-wrap: wrap; gap: 5px; } ."/>
 
 
 
@@ -203,6 +203,52 @@
 	
 
 	
+		 
+		/* Changes made here sadly only apply after restarting hugo server */
+/* make 5px space between the button(filter options) in the filter bar */
+.justified-gallery-filterbar {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 5px; }
+  .justified-gallery-filterbar button {
+    padding: 6px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    background-color: transparent;
+    font-weight: bold;
+    color: #fff;
+    line-height: 1em; }
+    .justified-gallery-filterbar button:hover {
+      text-decoration: underline; }
+    .justified-gallery-filterbar button.selected {
+      text-decoration: underline;
+      background-color: #fff3; }
+    .justified-gallery-filterbar button svg {
+      width: 1em;
+      height: 1em;
+      transform: rotate(90deg);
+      transition: transform .2s linear; }
+    .justified-gallery-filterbar button:hover svg {
+      transform: rotate(90deg) scale(1.3); }
+
+.fulltab {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  min-height: 100%;
+  background-color: #222; }
+  .fulltab.justified-gallery-filterbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 101;
+    background-color: #222;
+    padding: 5px;
+    margin: 0px; }
+
+	
 </style>
 
 
@@ -213,55 +259,6 @@
 <div id="gallery-0" class="justified-gallery">
 	
 		
-			
-
-			
-			
-			
-				
-			
-
-			
-			
-				
-					
-				
-			
-
-
-			<div>
-				<a href="/gallery/shortcodegallery/images/1N1A2888.jpeg" 
-					class="galleryImg"
-					
-						
-
-						
-							data-description="Canon EOS 7D Mark II + EF-S35mm f/2.8 MACRO IS STM<br/>35mm f/2.8 1/320sec ISO 100"
-						
-
-						
-					
-					>
-					<img			
-						width="600" height="400"
-
-						
-							
-							style="filter: blur(25px);"
-							
-								src="data:image/jpeg;base64,/9j/2wCEAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4&#43;JS5ESUM8SDc9PjsBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O//AABEIABUAIAMBIgACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5&#43;gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4&#43;Tl5ufo6ery8/T19vf4&#43;fr/2gAMAwEAAhEDEQA/AOW0nT0c4mkwe1dFaoiSpEz7tpyPpWBfDyohIp2t2xSWomuGIeYqJI2TOcYyKUo&#43;6awl7yDxtNG2xopQwPUe2cHj2rlYpUfMaL8qD73rVu9uZ4pHt0Uypu2KxG5cex9OentVCeCa2U5T5T1K9KUHylVL1NWdPqkjOgBPSo7VmlZYycA07UfuCmaf/r0rQwLKy4ke2dFcAcEjms2&#43;tvKBKyEg84I4q9/y/wAn0qvqf3fwrmatJ2PQh70Fc//Z"
-							
-							class="lazy"
-							data-src="/gallery/shortcodegallery/images/1N1A2888_hucbc05cb789f33dadd8defc531a6d3499_2762139_600x600_fit_q90_lanczos.jpeg"
-						
-
-						
-							
-						
-					>
-				</a>
-			</div>
-		
 	
 		
 			
@@ -270,515 +267,6 @@
 			
 			
 				
-			
-
-			
-			
-				
-					
-				
-			
-
-
-			<div>
-				<a href="/gallery/shortcodegallery/images/1N1A2882.jpeg" 
-					class="galleryImg"
-					
-						
-
-						
-							data-description="Canon EOS 7D Mark II + EF-S35mm f/2.8 MACRO IS STM<br/>35mm f/10 1/60sec ISO 320"
-						
-
-						
-					
-					>
-					<img			
-						width="600" height="400"
-
-						
-							
-							style="filter: blur(25px);"
-							
-								src="data:image/jpeg;base64,/9j/2wCEAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4&#43;JS5ESUM8SDc9PjsBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O//AABEIABUAIAMBIgACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5&#43;gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4&#43;Tl5ufo6ery8/T19vf4&#43;fr/2gAMAwEAAhEDEQA/AOWuJotUCo1u6SblUNnIA6HFSnwtY28UlzJdyq6IZUGAQAOmR3JNVrf7OL2VbYOqxSBhuHJGcf1q1fT3ICxpJt&#43;b5mfGM5B7&#43;gH614zc1ZQdkb3stR0N/K9souoorWYDCZOAffA5qpcfu2SOZlkD87lB6fjS6cb6ZrmB4Iw0yczFMbc4OM4&#43;tT3NhZ6dClvdnzBICfPTnB&#43;lEZKM&#43;VdewtdWZlleS3OACIy33io&#43;9jn&#43;lWbzUPsMhQQiRl43M2M9&#43;3Pf1rP0j7yfjT9b/wCPmT/e/oK6LXlYzb900F1mSGAzQQRRtv2Z&#43;Zu2c8msW81K5uJTLPIZGA4yeB&#43;FWT/x5H/ruP5VmTdG&#43;lOjTjzXtqNN2R//2Q=="
-							
-							class="lazy"
-							data-src="/gallery/shortcodegallery/images/1N1A2882_hucbc05cb789f33dadd8defc531a6d3499_3943151_600x600_fit_q90_lanczos.jpeg"
-						
-
-						
-							
-						
-					>
-				</a>
-			</div>
-		
-	
-		
-			
-
-			
-			
-			
-				
-			
-
-			
-			
-				
-					
-				
-			
-
-
-			<div>
-				<a href="/gallery/shortcodegallery/images/1N1A2872.jpeg" 
-					class="galleryImg"
-					
-						
-
-						
-							data-description="Canon EOS 7D Mark II + EF-S35mm f/2.8 MACRO IS STM<br/>35mm f/4.5 1/2000sec ISO 100"
-						
-
-						
-					
-					>
-					<img			
-						width="600" height="400"
-
-						
-							
-							style="filter: blur(25px);"
-							
-								src="data:image/jpeg;base64,/9j/2wCEAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4&#43;JS5ESUM8SDc9PjsBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O//AABEIABUAIAMBIgACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5&#43;gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4&#43;Tl5ufo6ery8/T19vf4&#43;fr/2gAMAwEAAhEDEQA/AMCJJVhhjgW2eZsFI/mGF7ZPtz1/pzFeXyLffZJ32xBR5OIskMRgduepHBPOKmg07UbWP/SJkjeYqriFfmjweOSOfTiopNOvVmhs0kS6W2O4GQ7WQZGM5HPTt3NYlF8b7mwtkmjWcyZEhYAjAXp1HP51AdPtrRMwRKyDaEDNuGDgEcnqOcdO3HWoLNriSV5ZZWKSTNGUCHAJ4Kn8zyPbpVydYYmRYZWVG3FeciNsAZye2OPzoGM1W&#43;azn8llaRLiRdw3ng&#43;Yemc8YGMVpxWaC8mdiWV2CAEDIAPQnuOnB9KwvEn/AB&#43;2/wD10H/obV0if61v&#43;up/nQwOb1W4l0bUHVXMyyXQODxtUjOPQ9epHan6o0P2XeluiEy4fH8QBPX8eag8X/8AIRT/AK7p/JafqX/Hkf8Arq3/AKEafQR//9k="
-							
-							class="lazy"
-							data-src="/gallery/shortcodegallery/images/1N1A2872_hucbc05cb789f33dadd8defc531a6d3499_5041872_600x600_fit_q90_lanczos.jpeg"
-						
-
-						
-							
-						
-					>
-				</a>
-			</div>
-		
-	
-		
-			
-
-			
-			
-			
-				
-			
-
-			
-			
-				
-					
-				
-			
-
-
-			<div>
-				<a href="/gallery/shortcodegallery/images/1N1A2871.jpeg" 
-					class="galleryImg"
-					
-						
-
-						
-							data-description="Canon EOS 7D Mark II + EF-S35mm f/2.8 MACRO IS STM<br/>35mm f/4.5 0.0006249999860291491sec ISO 100"
-						
-
-						
-					
-					>
-					<img			
-						width="600" height="400"
-
-						
-							
-							style="filter: blur(25px);"
-							
-								src="data:image/jpeg;base64,/9j/2wCEAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4&#43;JS5ESUM8SDc9PjsBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O//AABEIABUAIAMBIgACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5&#43;gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4&#43;Tl5ufo6ery8/T19vf4&#43;fr/2gAMAwEAAhEDEQA/AOEi1LQ7nw4&#43;nTWAhu9yst0Bls55J9sdq6Sx&#43;FkEllHNfasYHeLzDEi7ioJ&#43;U84/Ee1cloltpkd3Zy6neL5bndLHtyFHYEg9/wD9depf2hZWuqNaR6rBcxz2qeTmXlNuRtLD5efU4rnnzRV4mlOMZSSkeUeIvDd94av/ACLr95C5JguE&#43;7Iueo9D0yO2aoyzK8SRgbtvPIwfpXonxNi8iw0mydAWXdLJk8gHAAz&#43;f5V5wUVmyGCnGcHnFNPmSb3IqKKm1F3RXDHH1q5pupT6fceZCEJZcfMoJHOcg9j71SHSnJ98VqyTY1fXNS1crc6jdNcyFSmWwMAZxgCswBTESq7dqjv1p8//AB7J/vNTF/1D/wC6P51KWgM//9k="
-							
-							class="lazy"
-							data-src="/gallery/shortcodegallery/images/1N1A2871_hucbc05cb789f33dadd8defc531a6d3499_2243039_600x600_fit_q90_lanczos.jpeg"
-						
-
-						
-							
-						
-					>
-				</a>
-			</div>
-		
-	
-		
-			
-
-			
-			
-			
-				
-			
-
-			
-			
-				
-					
-				
-			
-
-
-			<div>
-				<a href="/gallery/shortcodegallery/images/1N1A2870.jpeg" 
-					class="galleryImg"
-					
-						
-
-						
-							data-description="Canon EOS 7D Mark II + EF-S35mm f/2.8 MACRO IS STM<br/>35mm f/4.5 1/1000sec ISO 100"
-						
-
-						
-					
-					>
-					<img			
-						width="600" height="400"
-
-						
-							
-							style="filter: blur(25px);"
-							
-								src="data:image/jpeg;base64,/9j/2wCEAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4&#43;JS5ESUM8SDc9PjsBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O//AABEIABUAIAMBIgACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5&#43;gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4&#43;Tl5ufo6ery8/T19vf4&#43;fr/2gAMAwEAAhEDEQA/APHovOl/cRKzljwijJJrvLPwoLvwzFDJby2Wo&#43;aoLuCoZc9wfYk/WuDikltJklhkMc0bBlZDyp7EGvaLW21HV/CVo97Oi3F1GHaVF24B5Xj&#43;90pxipdDWjCMpWZz/inwnY6bp09/Yai0aqEVIe7OcA/N6kZ4&#43;tclFPmEQtcYdVAO4YOPb1r0fWdM05/C5t7qKWYWhyGjYbkbH3iMgd&#43;noeK8ym2srTxTApnaQf5/TNc9eEVJJIitFQnZbGXckG4bChQOwFah1zVwLGVtQlcWxBhQn5U2nA46VlT/APHw/wBank/49ofx/nWl2krEXsbl14ivb&#43;e&#43;nLtGty3zIjEDA4x&#43;QrGurzfmOOIRLnsetPh/1cn1/rVKT/WN9azSTk2xbvU//9k="
-							
-							class="lazy"
-							data-src="/gallery/shortcodegallery/images/1N1A2870_hucbc05cb789f33dadd8defc531a6d3499_2827314_600x600_fit_q90_lanczos.jpeg"
-						
-
-						
-							
-						
-					>
-				</a>
-			</div>
-		
-	
-		
-			
-
-			
-			
-			
-				
-			
-
-			
-			
-				
-					
-				
-			
-
-
-			<div>
-				<a href="/gallery/shortcodegallery/images/1N1A2862.jpeg" 
-					class="galleryImg"
-					
-						
-
-						
-							data-description="Canon EOS 7D Mark II + EF-S35mm f/2.8 MACRO IS STM<br/>35mm f/4.5 0.0012499999720592975sec ISO 100"
-						
-
-						
-					
-					>
-					<img			
-						width="600" height="400"
-
-						
-							
-							style="filter: blur(25px);"
-							
-								src="data:image/jpeg;base64,/9j/2wCEAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4&#43;JS5ESUM8SDc9PjsBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O//AABEIABUAIAMBIgACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5&#43;gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4&#43;Tl5ufo6ery8/T19vf4&#43;fr/2gAMAwEAAhEDEQA/APMIACWkmLFTkmmA&#43;ZKixMfnYfhVmeLyk8p2GGbaD6YrW0nS4pb3D&#43;WixqWyi5A44yTnPOO1PC01OLmldodNKWplnTby9Tz1lkK8&#43;XGxJZgO/wBKz4reaVGkRsbRn3NeiyPHp1q9zcQxh402wsDjeccDHOOlcBBDOySN829sgkdK0xkIU1Fx0b3Q6sVHYtyuLsRKyhSylzjuf8irNrr9zpumoVjjlMjMpZxyBx0x/XNU4PvQ/wDXI/1qtcf8g2D/AK6N/IVw0ak6btB2/pmMW1sTX2t3mqiI3DL&#43;7JVNoxioGDWzYDk8VWj&#43;4P8Aeq3eff8AwqptuWpZ/9k="
-							
-							class="lazy"
-							data-src="/gallery/shortcodegallery/images/1N1A2862_hucbc05cb789f33dadd8defc531a6d3499_3551960_600x600_fit_q90_lanczos.jpeg"
-						
-
-						
-							
-						
-					>
-				</a>
-			</div>
-		
-	
-		
-			
-
-			
-			
-			
-				
-			
-
-			
-			
-				
-					
-				
-			
-
-
-			<div>
-				<a href="/gallery/shortcodegallery/images/1N1A2857.jpeg" 
-					class="galleryImg"
-					
-						
-
-						
-							data-description="Canon EOS 7D Mark II + EF-S35mm f/2.8 MACRO IS STM<br/>35mm f/4.5 1/125sec ISO 100"
-						
-
-						
-					
-					>
-					<img			
-						width="600" height="400"
-
-						
-							
-							style="filter: blur(25px);"
-							
-								src="data:image/jpeg;base64,/9j/2wCEAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4&#43;JS5ESUM8SDc9PjsBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O//AABEIABUAIAMBIgACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5&#43;gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4&#43;Tl5ufo6ery8/T19vf4&#43;fr/2gAMAwEAAhEDEQA/APO77W5ZwixxiNkxtcDGcDGK7nwhoUdlpzXurRSPezMWSJhkohx/D0yff2rh9DSyd2munZhEMhA23Jxwc4Peu4XW4dasRDNMU85Co2NlQw7np71lBqN0kdcYyk1Umy1daVo13bXUMNtEkkr5kdcZRv8Ae7dPp1rzLUrb7HfSWjESEfdbOARXX2Ni9iJHmn&#43;Vf7rZ3VyGsXRk1Och96qdqsB29Kak5Ru1ZmNeEU7ozN7Es4JBPXFalhdyRWZIwdhyARxmsofdNXrX/jwlqzE0JPEuoTWf2UmNR03quGx6ZrGkdgSOPypy9ajl&#43;8am93qTe71P/9k="
-							
-							class="lazy"
-							data-src="/gallery/shortcodegallery/images/1N1A2857_hucbc05cb789f33dadd8defc531a6d3499_2580489_600x600_fit_q90_lanczos.jpeg"
-						
-
-						
-							
-						
-					>
-				</a>
-			</div>
-		
-	
-		
-			
-
-			
-			
-			
-				
-			
-
-			
-			
-				
-					
-				
-			
-
-
-			<div>
-				<a href="/gallery/shortcodegallery/images/1N1A2851.jpeg" 
-					class="galleryImg"
-					
-						
-
-						
-							data-description="Canon EOS 7D Mark II + EF100-400mm f/4.5-5.6L IS II USM<br/>400mm f/5.6 1/250sec ISO 100"
-						
-
-						
-					
-					>
-					<img			
-						width="600" height="400"
-
-						
-							
-							style="filter: blur(25px);"
-							
-								src="data:image/jpeg;base64,/9j/2wCEAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4&#43;JS5ESUM8SDc9PjsBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O//AABEIABUAIAMBIgACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5&#43;gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4&#43;Tl5ufo6ery8/T19vf4&#43;fr/2gAMAwEAAhEDEQA/AOBtfBPiCdNwstgP/PSRVP5ZrW08a34VjkSSKPzGKhYTKCGBPJ4z/Su/MgdNqxEH&#43;&#43;TxXn3iGGeDUrprveol&#43;aB8/LnPIo5rq72OrCUYVpNVHojfHjFWkSL&#43;yC0zsR8koI4PU5xxWf4gg1FbmK&#43;u9IlSBo8M0ZDleeMgVkW6CFrduZy7qz7H2kr/AHehwfwNaeoeO44UmsRC06j5cpOQh9uP6VnpJaCxlCnTknS2ZkW/jvVoLVoD5UjHpK6gsp7&#43;2KytR12/1Ndt1IrDOeEC/wAqz&#43;5oPet&#43;VI502tiVLq4W3MKzOI35ZQeD9agNOH3R9KaaLCbb3P/Z"
-							
-							class="lazy"
-							data-src="/gallery/shortcodegallery/images/1N1A2851_huc14a8b254487f6746d2b4fb56401a835_2606929_600x600_fit_q90_lanczos.jpeg"
-						
-
-						
-							
-						
-					>
-				</a>
-			</div>
-		
-	
-		
-			
-
-			
-			
-			
-				
-			
-
-			
-			
-				
-					
-				
-			
-
-
-			<div>
-				<a href="/gallery/shortcodegallery/images/1N1A2850.jpeg" 
-					class="galleryImg"
-					
-						
-
-						
-							data-description="Canon EOS 7D Mark II + EF100-400mm f/4.5-5.6L IS II USM<br/>400mm f/5.6 1/500sec ISO 100"
-						
-
-						
-					
-					>
-					<img			
-						width="600" height="400"
-
-						
-							
-							style="filter: blur(25px);"
-							
-								src="data:image/jpeg;base64,/9j/2wCEAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4&#43;JS5ESUM8SDc9PjsBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O//AABEIABUAIAMBIgACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5&#43;gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4&#43;Tl5ufo6ery8/T19vf4&#43;fr/2gAMAwEAAhEDEQA/API57WW3laORfmXrjkYr0j4Y6NJq&#43;lzvPcIbdJGiSLo6nAYtn056YrB0mL7PIb&#43;1hdJIk3SMRuTaeuVIII/A1Y0bxedO1BhBbRwq7fMI8gSH1Iz147UNqUbMRveKfDEFnfSJd30EUH3onALSFeeNoHJ4x6V5xqVmsF0Wt5CYz9wsApI9wOBXY&#43;LvF4lijht4Css8YE05ILKoP3F9M9T9a4y5uRdNxnYMcFskVPKoi2Zej1uWFntxEuEBAweMfSprHT4tTbzrjjJ4CcY/GsZv&#43;P2f6Guj0H/j3X61lUbSTQ3oVNa0pbO1zFcStGDnY5zzXPByDkcV1/iT/jxP1rjq1pybjqC1P//Z"
-							
-							class="lazy"
-							data-src="/gallery/shortcodegallery/images/1N1A2850_huc14a8b254487f6746d2b4fb56401a835_2529184_600x600_fit_q90_lanczos.jpeg"
-						
-
-						
-							
-						
-					>
-				</a>
-			</div>
-		
-	
-		
-			
-
-			
-			
-			
-				
-			
-
-			
-			
-				
-					
-				
-			
-
-
-			<div>
-				<a href="/gallery/shortcodegallery/images/1N1A2847.jpeg" 
-					class="galleryImg"
-					
-						
-
-						
-							data-description="Canon EOS 7D Mark II + EF100-400mm f/4.5-5.6L IS II USM<br/>400mm f/5.6 1/250sec ISO 100"
-						
-
-						
-					
-					>
-					<img			
-						width="600" height="400"
-
-						
-							
-							style="filter: blur(25px);"
-							
-								src="data:image/jpeg;base64,/9j/2wCEAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4&#43;JS5ESUM8SDc9PjsBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O//AABEIABUAIAMBIgACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5&#43;gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4&#43;Tl5ufo6ery8/T19vf4&#43;fr/2gAMAwEAAhEDEQA/AOBtLMSrvZ8KDjA61dW1t4gT5SDIySec1g2t5dW8u6FSxI&#43;ZWBINaF5fi5TzRF5EjNllH8P09qU0&#43;bV6GuHpRq1OWTsiS8tfMjYxWw2jqcgZrIjuPKnMV6u5G9eMVr6Wk99dPtk8uJV5ZjwB6ZpbvR7Iu0kpZjn7&#43;44NZt2tfYK9KNKfKndDo228gClm23Fs4dR0OD6UxelOH/Hu30qUcxz9tfXFm&#43;6CQqD1U8g1of8ACQsyMslsGOOcPgH9KyO1NH8X0rqlCLV7Fn//2Q=="
-							
-							class="lazy"
-							data-src="/gallery/shortcodegallery/images/1N1A2847_huc14a8b254487f6746d2b4fb56401a835_2729632_600x600_fit_q90_lanczos.jpeg"
-						
-
-						
-							
-						
-					>
-				</a>
-			</div>
-		
-	
-		
-			
-
-			
-			
-			
-				
-			
-
-			
-			
-				
-					
-				
-			
-
-
-			<div>
-				<a href="/gallery/shortcodegallery/images/1N1A2845.jpeg" 
-					class="galleryImg"
-					
-						
-
-						
-							data-description="Canon EOS 7D Mark II + EF100-400mm f/4.5-5.6L IS II USM<br/>400mm f/5.6 1/640sec ISO 100"
-						
-
-						
-					
-					>
-					<img			
-						width="600" height="400"
-
-						
-							
-							style="filter: blur(25px);"
-							
-								src="data:image/jpeg;base64,/9j/2wCEAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4&#43;JS5ESUM8SDc9PjsBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O//AABEIABUAIAMBIgACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5&#43;gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4&#43;Tl5ufo6ery8/T19vf4&#43;fr/2gAMAwEAAhEDEQA/AOCR7OJBHdR8&#43;UMEuFDLjjofSq9lCl8Z47S0DhRu3ZII9utYKknjNdd4P1WysILu0u5HSOdciXZuEZGMH6Hp&#43;XSsZLkTa1N6EYzqJS2MvUNJntLXzZJQ6l9owDwo/pyKiyuxRLFLMhxsXcFX8McVp6/rkN1ANOhkMkAOdwXb3zkD34rnI7mSEFQ25D1U9DUpSkrvceJjCNS0HoQZxRkmkpRXSc4pJpDQaKAP/9k="
-							
-							class="lazy"
-							data-src="/gallery/shortcodegallery/images/1N1A2845_huc14a8b254487f6746d2b4fb56401a835_1999824_600x600_fit_q90_lanczos.jpeg"
-						
-
-						
-							
-						
-					>
-				</a>
-			</div>
-		
-	
-		
-			
-
-			
-			
-			
 				
 			
 
@@ -795,11 +283,16 @@
 					class="galleryImg"
 					
 						
+							title="The Filtered Sunset at Toftrees"
+						
 
 						
 							data-description="Canon EOS 7D Mark II + EF-S35mm f/2.8 MACRO IS STM<br/>35mm f/2.8 1/80sec ISO 2000"
 						
 
+						
+							
+							data-meta="{&#34;ColorLabels&#34;:null,&#34;ImageDescription&#34;:&#34;The Filtered Sunset at Toftrees&#34;,&#34;Rating&#34;:null,&#34;Tags&#34;:[&#34;35mm&#34;,&#34;filter&#34;,&#34;dusk&#34;]}"
 						
 					
 					>
@@ -818,10 +311,14 @@
 
 						
 							
+								alt="The Filtered Sunset at Toftrees"
+							
 						
 					>
 				</a>
 			</div>
+		
+	
 		
 	
 		
@@ -830,6 +327,7 @@
 			
 			
 			
+				
 				
 			
 
@@ -846,11 +344,16 @@
 					class="galleryImg"
 					
 						
+							title="Street Sign"
+						
 
 						
 							data-description="Canon EOS 7D Mark II + EF-S35mm f/2.8 MACRO IS STM<br/>35mm f/2.8 1/80sec ISO 800"
 						
 
+						
+							
+							data-meta="{&#34;ColorLabels&#34;:null,&#34;ImageDescription&#34;:&#34;Street Sign&#34;,&#34;Rating&#34;:null,&#34;Tags&#34;:[&#34;35mm&#34;,&#34;filter&#34;,&#34;dusk&#34;]}"
 						
 					
 					>
@@ -869,10 +372,14 @@
 
 						
 							
+								alt="Street Sign"
+							
 						
 					>
 				</a>
 			</div>
+		
+	
 		
 	
 		
@@ -881,6 +388,7 @@
 			
 			
 			
+				
 				
 			
 
@@ -897,11 +405,16 @@
 					class="galleryImg"
 					
 						
+							title="Relatives"
+						
 
 						
 							data-description="Canon EOS 7D Mark II + EF-S35mm f/2.8 MACRO IS STM<br/>35mm f/2.8 1/60sec ISO 1600"
 						
 
+						
+							
+							data-meta="{&#34;ColorLabels&#34;:null,&#34;ImageDescription&#34;:&#34;Relatives&#34;,&#34;Rating&#34;:null,&#34;Tags&#34;:[&#34;35mm&#34;,&#34;filter&#34;,&#34;dusk&#34;]}"
 						
 					
 					>
@@ -919,6 +432,8 @@
 						
 
 						
+							
+								alt="Relatives"
 							
 						
 					>
@@ -939,7 +454,7 @@
 		
 
 		gallery.justifiedGallery({
-			rowHeight :  200 ,
+			rowHeight :  150 ,
 			margins :  5 ,
 			border : 0,
 			waitThumbnailsLoad : false,
@@ -970,9 +485,156 @@
 
 		
 		
+
+			
+			
+			function createMetadataFilter(filterFunction) {
+				return (entry, index, array) => {
+					
+					let meta = $(entry).find("a").attr("data-meta");
+					meta = meta ? JSON.parse(meta) : {};
+					
+					let include = filterFunction(meta);
+
+					
+					
+					if(include) {
+						$(entry).find("a").addClass("galleryImg");
+					} else {
+						$(entry).find("a").removeClass("galleryImg");
+					}
+
+					return include;
+				}
+			}
+
+			
+			
+			function createTagFilter(tagsRegexString) {
+				const tagsRegex = RegExp(tagsRegexString);
+				return createMetadataFilter(meta => {
+					let tags = meta.Tags;
+					tags = tags ? tags : [];
+					return tags.some(tag => tagsRegex.test(tag));
+				});
+			};
+
+			
+			
+			function createImageDescriptionFilter(descriptionRegexString) {
+				const descriptionRegex = RegExp(descriptionRegexString);
+				return createMetadataFilter(meta => {
+					let imageDescription = meta.ImageDescription;
+					return imageDescription !== null && descriptionRegex.test(imageDescription);
+				});
+			};
+
+			
+			
+			function createRatingFilter(min, max) {
+				return createMetadataFilter(meta => {
+					let rating = meta.Rating;
+					if(rating === null){
+						rating = -1;
+					}
+					return rating >= min && rating <= max;
+				});
+			};
+
+			
+			
+			function createColorLabelFilter(color) {
+				color = color.charAt(0).toLowerCase()
+				return createMetadataFilter(meta => {
+					let colors = meta.ColorLabels;
+					return colors && colors.includes(color);
+				});
+			};
+
+			const filterOptions = [{label: 'All', tags: '.*'}];
+			
+			
+			const filterbar = $("<div class='justified-gallery-filterbar'/>");
+			gallery.before(filterbar);
+
+			var wrapper = document.getElementById("gallery-0-wrapper");
+
+			
+			const expandIcon = '\u003csvg aria-hidden=\u0022true\u0022 focusable=\u0022false\u0022 data-prefix=\u0022fas\u0022 data-icon=\u0022expand-alt\u0022 role=\u0022img\u0022 xmlns=\u0022http:\/\/www.w3.org\/2000\/svg\u0022 viewBox=\u00220 0 448 512\u0022\u003e\u003cpath fill=\u0022currentColor\u0022 d=\u0022M212.686 315.314L120 408l32.922 31.029c15.12 15.12 4.412 40.971-16.97 40.971h-112C10.697 480 0 469.255 0 456V344c0-21.382 25.803-32.09 40.922-16.971L72 360l92.686-92.686c6.248-6.248 16.379-6.248 22.627 0l25.373 25.373c6.249 6.248 6.249 16.378 0 22.627zm22.628-118.628L328 104l-32.922-31.029C279.958 57.851 290.666 32 312.048 32h112C437.303 32 448 42.745 448 56v112c0 21.382-25.803 32.09-40.922 16.971L376 152l-92.686 92.686c-6.248 6.248-16.379 6.248-22.627 0l-25.373-25.373c-6.249-6.248-6.249-16.378 0-22.627z\u0022\u003e\u003c\/path\u003e\u003c\/svg\u003e';
+			const compressIcon = '\u003csvg aria-hidden=\u0022true\u0022 focusable=\u0022false\u0022 data-prefix=\u0022fas\u0022 data-icon=\u0022compress-alt\u0022 role=\u0022img\u0022 xmlns=\u0022http:\/\/www.w3.org\/2000\/svg\u0022 viewBox=\u00220 0 448 512\u0022\u003e\u003cpath fill=\u0022currentColor\u0022 d=\u0022M4.686 427.314L104 328l-32.922-31.029C55.958 281.851 66.666 256 88.048 256h112C213.303 256 224 266.745 224 280v112c0 21.382-25.803 32.09-40.922 16.971L152 376l-99.314 99.314c-6.248 6.248-16.379 6.248-22.627 0L4.686 449.941c-6.248-6.248-6.248-16.379 0-22.627zM443.314 84.686L344 184l32.922 31.029c15.12 15.12 4.412 40.971-16.97 40.971h-112C234.697 256 224 245.255 224 232V120c0-21.382 25.803-32.09 40.922-16.971L296 136l99.314-99.314c6.248-6.248 16.379-6.248 22.627 0l25.373 25.373c6.248 6.248 6.248 16.379 0 22.627z\u0022\u003e\u003c\/path\u003e\u003c\/svg\u003e';
+
+			function setFulltab(activate) {
+				if(activate == wrapper.classList.contains("fulltab")){
+					return;
+				}
+
+				wrapper.classList.toggle("fulltab");
+				gallery.justifiedGallery({
+					rowHeight :  150  * (activate ? 1.5 : 1.0),
+					lastRow: (activate ? "nojustify": "justify"),
+					
+					refreshTime: 0,
+				});
+				
+				gallery.data('jg.controller').startImgAnalyzer();
+				fullTabButton.html(wrapper.classList.contains("fulltab") ? compressIcon : expandIcon)
+			};
+
+			const fullTabButton = $("<button/>");
+			fullTabButton.html(expandIcon);
+			fullTabButton.click(() => setFulltab(!wrapper.classList.contains("fulltab")));
+			filterbar.append(fullTabButton);
+			$(document).keyup(e => {
+				
+				if (e.keyCode === 27){
+					setFulltab(false);
+				}
+			});
+	
+			let first = true;
+			
+			filterOptions.forEach(filterConfig => {
+				let filter; 
+				if(filterConfig.tags) {
+					filter = createTagFilter(filterConfig.tags);
+				} else if(filterConfig.rating){
+					if(filterConfig.rating.includes("-")){
+						minMax = filterConfig.rating.split("-");  
+					} else {
+						minMax = [filterConfig.rating, filterConfig.rating];  
+					}
+					filter = createRatingFilter(parseInt(minMax[0]), parseInt(minMax[1]));
+				} else if(filterConfig.color_label){
+					filter = createColorLabelFilter(filterConfig.color_label);
+				} else if(filterConfig.description){
+					filter = createImageDescriptionFilter(filterConfig.description);
+				} else {
+					
+					filter = createMetadataFilter(meta => true);
+				}
+
+				const filterButton = $("<button/>");
+				filterButton.text(filterConfig.label);
+				filterButton.click(() => {
+					gallery.justifiedGallery({filter : filter});
+					
+					filterbar.find('.selected').removeClass('selected');
+					filterButton.addClass("selected");
+				});
+				filterbar.append(filterButton);
+
+				if(first) {
+					filterButton.trigger("click");
+					first = false;
+				}
+			});
+		
 	});
 </script>
 
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 
             </div>
         </article>

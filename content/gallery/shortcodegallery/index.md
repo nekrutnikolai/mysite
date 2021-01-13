@@ -12,4 +12,19 @@ I walked around the garden and garage to see what pictures I could make. Here ar
     sortOrder="desc"
     loadJQuery="true"
     embedPreview="true"
->}} 
+    filterOptions="[{label: 'All', tags: '.*'}]"
+>}}
+
+
+<!--  -->
+
+
+<!-- Testing to see if the dropbox version shall work
+
+{{< gallery
+    match="https://dl.dropboxusercontent.com/s/dusc33wmga8rz33/1N1A3284.png"
+    showExif="true"
+    sortOrder="desc"
+    loadJQuery="true"
+    embedPreview="true"
+>}} -->

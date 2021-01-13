@@ -14,7 +14,7 @@
       
       <guid>/gallery/shortcodegallery/</guid>
       <description>I walked around the garden and garage to see what pictures I could make. Here are the ones that I liked:
-     .jg-entry img { transition: transform .25s ease-in-out !important; } .jg-entry img:hover { transform: scale(1.1); }   35mm f/2.8 1/320sec ISO 100&#34;     35mm f/10 1/60sec ISO 320&#34;     35mm f/4.5 1/2000sec ISO 100&#34;     35mm f/4.</description>
+     .jg-entry img { transition: transform .25s ease-in-out !important; } .jg-entry img:hover { transform: scale(1.1); } /* Changes made here sadly only apply after restarting hugo server */ /* make 5px space between the button(filter options) in the filter bar */ .justified-gallery-filterbar { display: flex; justify-content: flex-start; flex-wrap: wrap; gap: 5px; } .</description>
     </item>
     
     <item>
