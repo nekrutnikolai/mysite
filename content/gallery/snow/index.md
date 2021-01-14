@@ -16,7 +16,6 @@ Here are some of my favorite long exposures from the evening.
     sortOrder="asc"
     loadJQuery="true"
     embedPreview="true"
-    filterOptions="[{label: 'All', tags: '.*'}]"
 >}}
 
 Yes, you did notice something slightly different about this gallery. Actually, I probably already converted all of my existing galleries by now, so whatever.
