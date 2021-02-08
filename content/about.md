@@ -1,14 +1,18 @@
 ---
-title: "About Me"
-date: 2020-04-30T15:26:54-04:00
+title: "About"
+date: 2021-02-07T21:26:54-04:00
 draft: false
 ---
 {{< figure src="/img/nikolai2.jpg" alt="A pic of me" position="center" style="border-radius: 8px;" title="Jo Hays Vista" titlePosition="center">}}
 
 ## Hi! Nice to meet you.
 
-My name is Nikolai Nekrutenko. 
+I'm Nikolai—a **well-rounded individual** with an **appreciation for nature** who is an **aspiring engineer—a tinkerer at heart**.
 
-My favorite hobby is model aviation. I fly planes any chance I get, and when they crash, build new ones. I built a [homemade Arduino-based CNC cutter](https://nikolaiteslovich.github.io/shmac/posts/2020/01/flite-test-tiny-trainer-kits/). The CNC allows me to quickly cut out new planes for myself and my club. The planes I fly do not last for very long anyway, on the order of a few weeks. This passion for aviation prompted me to start an [aeronautics club](https://nikolaiteslovich.github.io/shmac/) at my high school.
+I enjoy spending time in the untouched wilderness with a [camera at my side](/gallery).
 
-Over the course of the pandemic, I have been indulging myself with more and more hobbies and projects. Particularly in no particular order: photography, drones, cryptocurrencies, microcontrollers, electronics, programming in Python, and—how could I forget—this website. **This is what this website is about, my hobbies!**
+I also find satisfaction in building, flying, and ultimately crashing RC aircraft and drones. This passion for aviation prompted me to start an [aeronautics club](https://shmac.netlify.app/) at my high school.
+
+Some of my other passions include, in no particular order, photography, content creation, drones, cryptocurrencies, electonics, programming, martial arts, languages, playing the guitar, and of course this website. 
+
+
