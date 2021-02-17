@@ -9,7 +9,7 @@ tags:
   - cryptocurrency
   - mining
 ---
-{{<figure src="/img/skylerdontlikemacs.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="MacBook Pro 13 without TouchBar" titlePosition="center">}}
+{{< figure src="/img/skylerdontlikemacs.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="MacBook Pro 13 without TouchBar" titlePosition="center" >}}
 
 # My good friend's Mac is nearing its end
 
