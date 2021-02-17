@@ -1,9 +1,5 @@
-# mysite
+# [mysite](https://nnekrut.netlify.app/)
 
-This is just my personal website, built in [Hugo](https://gohugo.io/) and hosted on [Netlify](https://www.netlify.com/).
+This is my website, built in [Hugo](https://gohugo.io/) and hosted on [Netlify](https://www.netlify.com/) [using the hello-friend-ng theme](https://themes.gohugo.io/hugo-theme-hello-friend-ng/).
 
-You should **totally** check it the cool blogs and photo galleries, and even my CV at [nnekrut.netlify.app](https://nnekrut.netlify.app/)!
-
-# To Do
-
-- Figure out another way to host images, perhaps on another website
+You should **totally** check out the cool blogs and photo galleries, and even my CV!
