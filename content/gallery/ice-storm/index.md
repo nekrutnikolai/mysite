@@ -1,5 +1,5 @@
 ---
-title: "Ice Storm!"
+title: "Ice Storm"
 date: 2021-02-17T09:15:23-04:00
 draft: false
 ---

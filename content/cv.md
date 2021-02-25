@@ -15,20 +15,24 @@ nekrutnikolai@gmail.com · https://nnekrut.netlify.app/
 
 **State College Area High School**
 
-*August 2017 - Present*
+*August 2017 - January 2021*
 
-* GPA (as of *June 2020*)
-    * 4.73 weighted
-    * 3.91 unweighted
-* Projected graduation *January 2021*
+* Graduated *January 2021* with a GPA of 4.66
 
-**I will take courses at Penn State in the Spring 2021 semester as a non-matriculated student**
+**Pennsylvania State University**
+
+*January 2021 - Present*
+
+* Taking three courses as a **non-degree student** for a total of 10 credits
+  * MATH 141 (Calculus with Analytic Geometry II)
+  * CHEM 112 (Chemical Principles II)
+  * CHEM 110 (Chemical Principles I)
 
 ---
 
 ## Standardized Exams
 
-### AP Exams
+### AP
 
 *May 2020*
 
@@ -50,7 +54,7 @@ nekrutnikolai@gmail.com · https://nnekrut.netlify.app/
 * Human Geography (Score 5)
 * Biology (Score 4)
 
-### SAT Subject Tests
+### SAT Subject
 
 *May 2019*
 
@@ -124,9 +128,9 @@ nekrutnikolai@gmail.com · https://nnekrut.netlify.app/
 
 ## Academic Interests
 
-* Physics
 * Applied Physics
 * Engineering
+* Blockchain and cryptocurrencies
 * Chemistry
 
 ---
@@ -141,16 +145,18 @@ nekrutnikolai@gmail.com · https://nnekrut.netlify.app/
 
 * Founder and President (*2019 - Present*)
 * Club focused on learning about Aeronautics through the design, construction, and flight of remote controlled model aircraft
-* Recently acquired the Patrick Y. Wang Technology Innovation Fund grant ($1750): https://centre-foundation.org/funds/patrick-y-wang-technology-innovation-fund/ 
+* Recently acquired the Patrick Y. Wang Technology Innovation Fund grant ($1750): https://centre-foundation.org/funds/patrick-y-wang-technology-innovation-fund/
 * Website: https://shmac.netlify.app/
 * Instagram: https://www.instagram.com/statehighmodelaeronauticsclub/
 
-**Science Bowl**,  *State College Area High School*
+**National Science Bowl**,  *State College Area High School*
 
 *September 2017 - Present*
 
 * President (*2020 - Present*), Treasurer/Secretary (*2019 - 2020*)
 * Club centered around science trivia question that competes annually at Princeton
+  * 2021
+    * 4th place New Jersey Regionals
 
 **Rocket Lab Initiative**, *Penn State*
 
@@ -178,7 +184,7 @@ nekrutnikolai@gmail.com · https://nnekrut.netlify.app/
 * Volunteer in Dr. Rotkin‘s laboratory
 * Learned about scanning near-field optical microscopy (SNOM)
 * Developed a Python program using Jupyter Notebooks that filters out background noise from microscope scans
-* Github page https://github.com/NikolaiTeslovich/sSNOM
+* Github page: https://github.com/NikolaiTeslovich/sSNOM
 
 **Shaver’s Creek Environmental Center**, *State College, PA*
 
@@ -261,6 +267,15 @@ nekrutnikolai@gmail.com · https://nnekrut.netlify.app/
 
 * Python
 * C++
+* Shell scripting
+  * Actively developing shell scripts to simplify headless mining on Linux: https://github.com/NikolaiTeslovich/minerwrangler
+
+**Website Design**
+
+* Using Hugo, Netlify, and Github
+  * Personal website: https://nnekrut.netlify.app/
+  * State High Model Aeronautics Club website: https://shmac.netlify.app/
+  * CryptoClarified (aiming to simplify the complex concept of cryptocurrencies and blockchain): https://cryptoclarified.netlify.app/
 
 **Software**
 
@@ -269,7 +284,6 @@ nekrutnikolai@gmail.com · https://nnekrut.netlify.app/
 * Vector editing software (Adobe Illustrator)
 * 3D design programs (Sketchup, Tinkercad, Fusion 360, Blender)
 * 3D printing software (Ultimaker Cura)
-* Website design (Hugo, Netlify, GitHub)
 
 **Microcontrollers (Programming and Use)**
 
@@ -278,9 +292,8 @@ nekrutnikolai@gmail.com · https://nnekrut.netlify.app/
 
 **Cryptocurrency Mining**
 
-* Nicehash
 * Linux
-  * Pop_OS! and Ubuntu
+  * Ubuntu Server
 * Graphics cards
     * Ethereum (ETH), Ethereum Classic (ETC), Ravencoin (RVN)
 * Processors
@@ -305,26 +318,26 @@ nekrutnikolai@gmail.com · https://nnekrut.netlify.app/
 
 ### Other Skills
 
-**Photography & Cinematography**
+**Photography**
 
-* Taking pictures and films with a digital camera and drone
-  * Photo gallery of my work: https://nnekrut.netlify.app/gallery/  
-* Editing photos and videos
-  * YouTube channel showing my best creations: https://www.youtube.com/channel/UC-WSQ21Q2Q36urFPc4e5T6Q
-  * A stop motion movie I made (my best one yet!): https://www.youtube.com/watch?v=Srl9ST27SpA
+* Photo gallery: https://nnekrut.netlify.app/gallery/  
 
-**Flying remote controlled planes and FPV drones**
+**Cinematography**
+
+* YouTube channel showing my best creations: https://www.youtube.com/channel/UC-WSQ21Q2Q36urFPc4e5T6Q
+* A stop motion movie I made (my best one yet!): https://www.youtube.com/watch?v=Srl9ST27SpA
+
+**Remote Controlled Flying Objects**
 
 * Planes
-    * Some built out of foamboard and cut out using a needle cutter I built
-    (https://rb.gy/tuxnsl)
+    * Some built out of foamboard and cut out using a needle cutter I built: https://rb.gy/tuxnsl
     * Sports aircraft
     * Flying wings
-    * Autonomous aircraft using INAV (https://github.com/iNavFlight/inav/wiki)
+    * Autonomous aircraft using INAV: https://github.com/iNavFlight/inav/wiki
 
 * Drones
     * DJI Mavic Air for cinematography
-    * EMAX TinyHawk II Freestyle for flying around and tearing up the air
+    * Newly built 6" FPV freestyle drone
 
 * Controller: Taranis QX7
   * Crossfire Long Range Module
@@ -347,7 +360,7 @@ nekrutnikolai@gmail.com · https://nnekrut.netlify.app/
 
 ## Family Responsibilities
 
-**Taking care of a younger sister**
+**Taking Care of a Younger Sister**
 
 *November 2008 - Present*
 
