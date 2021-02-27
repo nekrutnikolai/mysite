@@ -3,7 +3,7 @@ title: "About"
 date: 2021-02-07T21:26:54-04:00
 draft: false
 ---
-{{< figure src="/img/skiing.jpg" alt="A pic of me" position="center" style="border-radius: 8px;" title="Skiing on Black Moshannon" titlePosition="center">}}
+{{< figure src="/img/skiing.jpg" alt="A pic of me" position="center" style="border-radius: 8px;" title="Skiing on Black Moshannon Lake" titlePosition="center">}}
 
 ## Hi! Nice to meet you.
 
