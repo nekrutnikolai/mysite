@@ -4,7 +4,7 @@ date: 2021-03-2T10:10:33-04:00
 draft: false
 ---
 
-{{< figure src="/img/unclesam.png" alt="You Need a Website" position="center" width=50% style="border-radius: 8px;" title="I want you to have a website" titlePosition="center">}}
+{{< figurehalf src="/img/unclesam.png" alt="You Need a Website" position="center" width=50% style="" caption="I want you to have a website" titlePosition="center">}}
 
 So far, I have built websites for [**bloggers & photographers**](/), [**documentation**](https://cryptoclarified.netlify.app/)
 & [**organizations**](https://shmac.netlify.app/).
