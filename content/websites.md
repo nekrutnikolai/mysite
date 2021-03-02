@@ -19,7 +19,7 @@ So far, I have built [*documentation websites*](https://cryptoclarified.netlify.
 - [x] Favicon support
 - [x] Deployable on Netlify
 
-### If you would like a website
+## If you would like a website
 
 1. Pick a [Hugo theme](https://themes.gohugo.io/)
 2. Test it on both mobile and desktop to make sure that you like it
@@ -27,7 +27,7 @@ So far, I have built [*documentation websites*](https://cryptoclarified.netlify.
 4. Enjoy your gorgeous website in a matter of days
 5. If you don't like it, I will try my best until you do
 
-### Payment options
+## Payment options
 
 - PayPal
 - Cryptocurrency
