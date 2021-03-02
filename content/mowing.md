@@ -1,7 +1,7 @@
 ---
 title: "Nikolai's Mowing"
 date: 2020-06-30T15:26:54-04:00
-draft: false
+draft: true
 ---
 ## Why am I doing this?
 

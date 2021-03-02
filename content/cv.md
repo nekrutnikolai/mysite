@@ -5,9 +5,9 @@ draft: false
 TOC: false
 ---
 
-# Nikolai Nekrutenko
+## Nikolai Nekrutenko
 
-nekrutnikolai@gmail.com · https://nnekrut.netlify.app/
+nekrutnikolai@gmail.com · https://nnekrut.netlify.app/ · https://github.com/NikolaiTeslovich
 
 ---
 

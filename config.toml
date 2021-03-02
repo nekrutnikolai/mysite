@@ -105,7 +105,7 @@ disableHugoGeneratorInject = false
     theme = "#252627"
 
   [params.logo]
-    logoText     = "cd ~"
+    logoText     = "cd home"
     logoHomeLink = "/"
     # Set true to remove the logo cursor entirely.
     logoCursorDisabled = false
@@ -156,7 +156,8 @@ disableHugoGeneratorInject = false
     identifier = "cv"
     name       = "CV"
     url        = "cv/"
-  #[[menu.main]]
-  #  identifier = "lawn"
-  #  name       = "Nikolai's Mowing"
-  #  url        = "mowing/"
+  [[menu.main]]
+    identifier = "websites"
+    name       = "I build websites"
+    url        = "websites/"
+    weight     = 10
