@@ -7,7 +7,7 @@ toc: false
 
 {{< figurehalf src="/img/unclesam.png" alt="You Need a Website" position="center" width=50% style="" caption="I want you to have a website" titlePosition="center">}}
 
-So far, I have built [*documentation websites*](https://cryptoclarified.netlify.app/docs/minerwrangler/), [*organization websites*](https://shmac.netlify.app/), and [*personal websites*](/) that are integrated with a [*photo gallery*](/gallery).
+So far, I have built [*documentation websites*](https://cryptoclarified.netlify.app/docs/minerwrangler/), [*organization websites*](https://shmac.netlify.app/), and [*personal websites*](/) integrated with a [*photo gallery*](/gallery).
 
 ## What makes these websites special
 
@@ -19,13 +19,21 @@ So far, I have built [*documentation websites*](https://cryptoclarified.netlify.
 - [x] Favicon support
 - [x] Deployable on Netlify
 
-## If you would like a website
+### If you would like a website
 
 1. Pick a [Hugo theme](https://themes.gohugo.io/)
 2. Test it on both mobile and desktop to make sure that you like it
-3. Please send me an email at nekrutnikolai@gmail.com to chat
+3. Please send me an email at nekrutnikolai@gmail.com
 4. Enjoy your gorgeous website in a matter of days
 5. If you don't like it, I will try my best until you do
+
+### Payment options
+
+- PayPal
+- CryptoCurrency
+  - ETH, BTC, XMR, ADA, RVN, USDT, ETC, ERC-20 Tokens, UNI, etc.
+
+You almost thought I was going to build it for free, didn't you?
 
 ## Why you should choose me
 
