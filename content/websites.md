@@ -32,6 +32,7 @@ So far, I have built [*documentation websites*](https://cryptoclarified.netlify.
 - PayPal
 - Cryptocurrency
   - ETH, BTC, XMR, ADA, RVN, USDT, ETC, ERC-20 Tokens, UNI, etc.
+- Graphics cards
 
 You almost thought I was going to build it for free, didn't you?
 
