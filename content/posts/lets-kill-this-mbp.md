@@ -2,16 +2,17 @@
 title: "Let's Kill This MacBook! - How to Mine Monero on a Mac"
 date: 2020-06-11T10:04:55-04:00
 draft: false
-toc: true
+toc: false
 images:
 tags:
   - XMR
   - cryptocurrency
   - mining
 ---
+
 {{< figure src="/img/skylerdontlikemacs.png" alt="Hello Friend" position="center" style="border-radius: 8px;" title="MacBook Pro 13 without TouchBar" titlePosition="center" >}}
 
-# My good friend's Mac is nearing its end
+# My friend's Mac is nearing its end
 
 He's already had it, the one in the picture above, for a couple of years, and the battery is starting to degrade among several other serious issues. Since it is nearing its end soon, in the time that it isn't being used it could mine some cryptocurrency.
 
@@ -77,7 +78,7 @@ Navigate to the **Backends** tab and only turn on the **CPU** option. You can us
 
 Next, select the **Misc** tab and set a donation percentage, I chose to leave the **HTTP API** option off.
 
-Finally, navigate the the **Result** tab, click on macOS option under the **Command line**. Copy the line of code.
+Finally, navigate to the **Result** tab, click on macOS option under the **Command line**. Copy the line of code.
 
 # Making an executable shell script
 
@@ -111,7 +112,7 @@ Type the following into it, each on a separate line:
 
 `copy and paste the code that we generated earlier from the configurator`
 
-Press control x, press y to apply the changes, and then press enter to save the edits made to the file.
+Press control x, and then press y followed by enter to save the edits made to the file.
 
 # Running the shell script
 
@@ -121,7 +122,7 @@ It's actually really easy, type the following into terminal from the **~** direc
 
 To stop the program press control c.
 
-You can monitor all sorts of statistics on the pool's home page, logging in with your wallet address as your username.
+You can monitor all sorts of statistics on the pool's home page, logging in with your wallet address.
 
 # Updating xmrig
 
