@@ -41,78 +41,12 @@ nekrutnikolai@gmail.com · https://nnekrut.netlify.app/ · https://github.com/Ni
 
 ---
 
-## Standardized Exams
-
-### AP
-
-*May 2020*
-
-* Physics C Electricity and Magnetism (Score 5)
-* Physics C Mechanics (Score 5)
-* United States History (Score 5)
-* Statistics (Score 4)
-* Computer Science Principles (Score 4)
-
-*May 2019*
-
-* Physics I (Score 5)
-* Calculus BC (Score 5)
-    * Calculus BC: AB Subscore (Score 5)
-* French Language and Culture (Score 5)
-
-*May 2018*
-
-* Human Geography (Score 5)
-* Biology (Score 4)
-
-### SAT Subject
-
-*May 2019*
-
-* Physics (Score 800)
-
-*August 2018*
-
-* Math II (Score 800)
-
-### ACT
-
-*February 2020*
-
-* Composite (Score 34)
-    * Reading (Score 36)
-    * Science (Score 36)
-    * Math (Score 35)
-    * English (Score 30)
-    * Essay (Score 8)
-
----
-
 ## Academic Interests
 
 * Applied Physics
 * Engineering
 * Blockchain and cryptocurrencies
 * Science communication and education
-
----
-
-## Scholastic Awards  
-
-*2020*
-
-* National AP Scholar
-* AP Scholar with distinction
-* Top 10%
-
-*2019*
-
-* AP Scholar with distinction
-* Top 10%
-
-*2018*
-
-* Top 10%
 
 ---
 
@@ -133,16 +67,6 @@ nekrutnikolai@gmail.com · https://nnekrut.netlify.app/ · https://github.com/Ni
 ## Languages
 
 **Fluent in:** ***English***, ***Pусский*** **(Russian), and** ***Français*** **(French)**
-
-**Le Grand Concours (French language competition) awards**
-
-*2018*
-
-* Bronze level nationally
-
-*2016 - 2017*
-
-* Gold level nationally
 
 ---
 
@@ -343,3 +267,83 @@ nekrutnikolai@gmail.com · https://nnekrut.netlify.app/ · https://github.com/Ni
 **Taking Care of a Younger Sister**
 
 *November 2008 - Present*
+
+---
+
+## Scholastic Awards  
+
+**Le Grand Concours (French language competition) awards**
+
+*2018*
+
+* Bronze level nationally
+
+*2016 - 2017*
+
+* Gold level nationally
+
+**School Awards**
+
+*2020*
+
+* National AP Scholar
+* AP Scholar with distinction
+* Top 10%
+
+*2019*
+
+* AP Scholar with distinction
+* Top 10%
+
+*2018*
+
+* Top 10%
+
+---
+
+## Standardized Exams
+
+### AP
+
+*May 2020*
+
+* Physics C Electricity and Magnetism (Score 5)
+* Physics C Mechanics (Score 5)
+* United States History (Score 5)
+* Statistics (Score 4)
+* Computer Science Principles (Score 4)
+
+*May 2019*
+
+* Physics I (Score 5)
+* Calculus BC (Score 5)
+    * Calculus BC: AB Subscore (Score 5)
+* French Language and Culture (Score 5)
+
+*May 2018*
+
+* Human Geography (Score 5)
+* Biology (Score 4)
+
+### SAT Subject
+
+*May 2019*
+
+* Physics (Score 800)
+
+*August 2018*
+
+* Math II (Score 800)
+
+### ACT
+
+*February 2020*
+
+* Composite (Score 34)
+    * Reading (Score 36)
+    * Science (Score 36)
+    * Math (Score 35)
+    * English (Score 30)
+    * Essay (Score 8)
+
+---
