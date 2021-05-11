@@ -345,5 +345,3 @@ nekrutnikolai@gmail.com · https://nnekrut.netlify.app/ · https://github.com/Ni
     * Math (Score 35)
     * English (Score 30)
     * Essay (Score 8)
-
----
