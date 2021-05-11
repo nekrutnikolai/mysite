@@ -1,13 +1,18 @@
 ---
-title: "Curriculum Vitae"
+title: "Nikolai Nekrutenko's Resume/CV"
 date: 2020-09-11T16:26:17-04:00
 draft: false
 TOC: false
 ---
 
-## Nikolai Nekrutenko
-
 nekrutnikolai@gmail.com · https://nnekrut.netlify.app/ · https://github.com/NikolaiTeslovich
+
+---
+
+## Covid-19 Vaccinations
+
+* First Dose (Moderna): *4/6/21*
+* Second Dose (Moderna): *5/4/21*
 
 ---
 
@@ -21,12 +26,18 @@ nekrutnikolai@gmail.com · https://nnekrut.netlify.app/ · https://github.com/Ni
 
 **Pennsylvania State University**
 
-*January 2021 - Present*
+*January 2021 - May 2021*
 
-* Taking three courses as a **non-degree student** for a total of 10 credits
+* Took three courses as a **non-degree student** for a total of 10 credits
   * MATH 141 (Calculus with Analytic Geometry II)
   * CHEM 112 (Chemical Principles II)
   * CHEM 110 (Chemical Principles I)
+
+**Cornell University**
+
+*September 2021 - May 2025*
+
+* Majoring in Physics
 
 ---
 
@@ -77,6 +88,15 @@ nekrutnikolai@gmail.com · https://nnekrut.netlify.app/ · https://github.com/Ni
 
 ---
 
+## Academic Interests
+
+* Applied Physics
+* Engineering
+* Blockchain and cryptocurrencies
+* Science communication and education
+
+---
+
 ## Scholastic Awards  
 
 *2020*
@@ -123,15 +143,6 @@ nekrutnikolai@gmail.com · https://nnekrut.netlify.app/ · https://github.com/Ni
 *2016 - 2017*
 
 * Gold level nationally
-
----
-
-## Academic Interests
-
-* Applied Physics
-* Engineering
-* Blockchain and cryptocurrencies
-* Chemistry
 
 ---
 
@@ -201,8 +212,6 @@ nekrutnikolai@gmail.com · https://nnekrut.netlify.app/ · https://github.com/Ni
 
 *February 2013 - Present*   
 
-* Member and instructor
-* A Korean martial art
 * Instruct and help younger students with proper form, technique, and on the practical and philosophical applications
 * Role model for younger students
 * Rank of Cho Dan Bo (Black Belt candidate)
@@ -215,12 +224,7 @@ nekrutnikolai@gmail.com · https://nnekrut.netlify.app/ · https://github.com/Ni
         * 2nd place forms
         * 3rd place sparring
 
-**Tennis**, *State College, PA*
-
-*Spring - Fall 2014 - 2019*
-
-* Took tennis lessons
-
+---
 
 ### Music
 
@@ -230,45 +234,27 @@ nekrutnikolai@gmail.com · https://nnekrut.netlify.app/ · https://github.com/Ni
 
 * Enjoy playing and singing anything from David Bowie to Simon and Garfunkel
 
-**Piano**
-
-*Spring 2008 - Fall 2016*
-
-* Took weekly lessons and practiced
-
-**Clarinet**
-
-*August 2012 - May 2016*
-
-* Played in elementary and middle school band
-
-**Choir**
-
-*Fall 2009 - Spring 2017*
-
-* Nittany Valley Children’s Choir
-* Sang in the white and blue choir
-
 ---
 
 ## Skills
 
-### Portfolio
-
-* https://youtu.be/z5XOv9TMrPE
-
 ### Computer Skills
 
-**My Github**
+**GitHub**
 
 * https://github.com/NikolaiTeslovich
 
 **Programming Languages**
 
 * Python
+* Javascrupt
 * C++
 * Shell scripting
   * Actively developing shell scripts to simplify headless mining on Linux: https://github.com/NikolaiTeslovich/minerwrangler
+
+**Data Analysis**
+
+* With Jupyter and/or Observable
 
 **Website Design**
 
@@ -339,12 +325,6 @@ nekrutnikolai@gmail.com · https://nnekrut.netlify.app/ · https://github.com/Ni
     * DJI Mavic Air for cinematography
     * Newly built 6" FPV freestyle drone
 
-* Controller: Taranis QX7
-  * Crossfire Long Range Module
-
-* FPV Goggles: Fatshark Dominator V3
-  * 5.8 Ghz Video Receiver
-
 ---
 
 ## Licenses/Certifications
@@ -363,6 +343,3 @@ nekrutnikolai@gmail.com · https://nnekrut.netlify.app/ · https://github.com/Ni
 **Taking Care of a Younger Sister**
 
 *November 2008 - Present*
-
-* In addition to all of the usual responsibilities of a big brother, I pick her up from school and feed her
-* I help her with homework and take her for a walk before my parents come back from work
