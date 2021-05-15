@@ -28,6 +28,8 @@ nekrutnikolai@gmail.com · https://nnekrut.netlify.app/ · https://github.com/Ni
 
 *January 2021 - May 2021*
 
+* GPA of 4.0
+
 * Took three courses as a **non-degree student** for a total of 10 credits
   * MATH 141 (Calculus with Analytic Geometry II)
   * CHEM 112 (Chemical Principles II)
