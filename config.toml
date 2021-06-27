@@ -160,4 +160,3 @@ disableHugoGeneratorInject = false
     identifier = "websites"
     name       = "I build websites"
     url        = "websites/"
-    weight     = 10
