@@ -1,7 +1,7 @@
 ---
 title: "Black Belt Essay - How to Build a Website for Your Studio"
 date: 2021-06-27T10:38:15-04:00
-draft: true
+draft: false
 toc: true
 images:
 tags:
@@ -9,6 +9,8 @@ tags:
   - WTSDA
   - tutorial
 ---
+
+# Work in progress
 
 **Written by Nikolai Nekrutenko**
 
