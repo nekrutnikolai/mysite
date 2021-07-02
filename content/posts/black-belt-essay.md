@@ -46,7 +46,7 @@ Make an account with [GitHub](https://github.com/join) so that we can store the 
 
 Press the New button under Repositories to create a GitHub repository.
 
-### Clone the repository to your computer [reorganize the order of these st]
+### Clone the repository to your computer [reorganize the order of these steps]
 
 ### Opening terminal
 
@@ -78,6 +78,12 @@ And hit enter.
 
 ```
 brew install hugo
+```
+
+### Initializing the repository on your computer
+
+```
+git pull https://github.com/NikolaiTeslovich/website.git
 ```
 
 ### Navigating the file system of your computer
