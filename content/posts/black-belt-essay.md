@@ -38,6 +38,16 @@ If you’ve never used the command line, there’s nothing to be scared about. I
 
 ***Add commenting to this post so I can answer questions***
 
+### Make an account with GitHub
+
+Make an account with [GitHub](https://github.com/join) so that we can store the website securely on the cloud and store revisions.
+
+### Make a repository for your website
+
+Press the New button under Repositories to create a GitHub repository.
+
+### Clone the repository to your computer [reorganize the order of these st]
+
 ### Opening terminal
 
 Open the Macintosh application **Terminal**. It should look like this:
@@ -92,4 +102,17 @@ cd myamazingwebsite
 mkdir myamazingwebsite && cd myamazingwebsite
 ```
 
+### Initializing a GitHub repository
+
+#### Using ssh as GitHub security
+
 ### Importing the website theme
+
+Once you are in the website's directory, we will add the theme as a submodule [explain the GitHub structure]:
+
+```
+$ git submodule add https://github.com/rhazdon/hugo-theme-hello-friend-ng.git themes/hello-friend-ng
+```
+### Using markdown to write articles
+
+### Adding menu bar items and social icons
