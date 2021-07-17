@@ -1,5 +1,5 @@
 ---
-title: "How to Build a Website: A step by Step Guide"
+title: "How to Build a Website: A Guide for Command-Line Novices"
 date: 2021-06-27T10:38:15-04:00
 draft: false
 toc: true
