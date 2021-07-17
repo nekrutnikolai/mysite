@@ -1,5 +1,5 @@
 ---
-title: "Black Belt Essay - How to Build a Website for Your Studio"
+title: "How to Build a Website: A step by Step Guide"
 date: 2021-06-27T10:38:15-04:00
 draft: false
 toc: true
@@ -9,6 +9,8 @@ tags:
   - WTSDA
   - tutorial
 ---
+
+# Formerly titled: How to Build a Website for Your Studio: A Step by Step Guide
 
 # Work in progress
 
@@ -21,8 +23,6 @@ tags:
 **Studio Head: Master Susan Strohm, Sah Dan**
 
 # Abstract
-
-  > “A book really is judged by its cover—for better or worse”
 
 Explained in terms for someone who has never interacted with the command line
 Mac OS and Linux supported
@@ -102,12 +102,6 @@ Now, to enter the directory, use `cd`:
 cd myamazingwebsite
 ```
 
-*Just for fun: this can be done in a single command*:
-
-```
-mkdir myamazingwebsite && cd myamazingwebsite
-```
-
 ### Initializing a GitHub repository
 
 #### Using ssh as GitHub security
@@ -117,7 +111,7 @@ mkdir myamazingwebsite && cd myamazingwebsite
 Once you are in the website's directory, we will add the theme as a submodule [explain the GitHub structure]:
 
 ```
-$ git submodule add https://github.com/rhazdon/hugo-theme-hello-friend-ng.git themes/hello-friend-ng
+git submodule add https://github.com/rhazdon/hugo-theme-hello-friend-ng.git themes/hello-friend-ng
 ```
 ### Using markdown to write articles
 
