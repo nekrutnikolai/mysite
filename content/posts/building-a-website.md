@@ -10,7 +10,7 @@ tags:
   - tutorial
 ---
 
-# Formerly titled: How to Build a Website for Your Studio: A Step by Step Guide
+# Formerly titled: How to Build a Website for Your Studio (or Anything): A Step by Step Guide
 
 # Work in progress
 
