@@ -7,5 +7,5 @@ You should **totally** check out the cool blogs and photo galleries, and even my
 after git clone:
 
 ```
-git submodule init && git submodule update
+cd mysite && git submodule init && git submodule update
 ```
