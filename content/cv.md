@@ -9,14 +9,27 @@ nekrutnikolai@gmail.com · https://nnekrut.netlify.app/ · https://github.com/Ni
 
 ---
 
-## Covid-19 Vaccinations
-
-* First Dose (Moderna): *4/6/21*
-* Second Dose (Moderna): *5/4/21*
-
----
+I highly recommend viewing this document online: https://nnekrut.netlify.app/cv/
 
 ## Education
+
+**Cornell University**
+
+*September 2021 - May 2025*
+
+* College of Arts & Sciences
+  * Majoring in Physics
+
+**Pennsylvania State University**
+
+*January 2021 - May 2021*
+
+* 4.0 GPA
+
+* Took three courses as a non-matriculated student for a total of 10 credits
+  * MATH 141 (Calculus with Analytical Geometry II)
+  * CHEM 112 (Chemical Principles II)
+  * CHEM 110 (Chemical Principles I)
 
 **State College Area High School**
 
@@ -24,22 +37,6 @@ nekrutnikolai@gmail.com · https://nnekrut.netlify.app/ · https://github.com/Ni
 
 * Graduated *January 2021* with a GPA of 4.66
 
-**Pennsylvania State University**
-
-*January 2021 - May 2021*
-
-* GPA of 4.0
-
-* Took three courses as a **non-degree student** for a total of 10 credits
-  * MATH 141 (Calculus with Analytic Geometry II)
-  * CHEM 112 (Chemical Principles II)
-  * CHEM 110 (Chemical Principles I)
-
-**Cornell University**
-
-*September 2021 - May 2025*
-
-* Majoring in Physics
 
 ---
 
@@ -58,8 +55,6 @@ nekrutnikolai@gmail.com · https://nnekrut.netlify.app/ · https://github.com/Ni
 
 *August 2019 - March 2020*
 
-* Completed with an A
-
 **Summer Springboard: Fundamentals of Engineering at University of California Berkeley**
 
 *June 2019*
@@ -68,7 +63,11 @@ nekrutnikolai@gmail.com · https://nnekrut.netlify.app/ · https://github.com/Ni
 
 ## Languages
 
-**Fluent in:** ***English***, ***Pусский*** **(Russian), and** ***Français*** **(French)**
+**Fluent in:**
+
+* English
+* Russian
+* French
 
 ---
 
@@ -78,9 +77,9 @@ nekrutnikolai@gmail.com · https://nnekrut.netlify.app/ · https://github.com/Ni
 
 **State College Area High School Model Aeronautics Club**, *State College Area High School*		
 
-*October 2019 - Present*
+*October 2019 - June 2021*
 
-* Founder and President (*2019 - Present*)
+* Founder and President (*2019 - 2021*)
 * Club focused on learning about Aeronautics through the design, construction, and flight of remote controlled model aircraft
 * Recently acquired the Patrick Y. Wang Technology Innovation Fund grant ($1750): https://centre-foundation.org/funds/patrick-y-wang-technology-innovation-fund/
 * Website: https://shmac.netlify.app/
@@ -88,19 +87,18 @@ nekrutnikolai@gmail.com · https://nnekrut.netlify.app/ · https://github.com/Ni
 
 **National Science Bowl**,  *State College Area High School*
 
-*September 2017 - Present*
+*September 2017 - June 2021*
 
-* President (*2020 - Present*), Treasurer/Secretary (*2019 - 2020*)
+* President (*2020 - 2021*), Treasurer/Secretary (*2019 - 2020*)
 * Club centered around science trivia question that competes annually at Princeton
   * 2021
     * 4th place New Jersey Regionals
 
 **Rocket Lab Initiative**, *Penn State*
 
-*September 2020 - Present*
-
-* Participant
-* Science outreach from PSU (Dr. Randall Mcentaffer)
+*September 2020 - June 2021*
+* https://github.com/NikolaiTeslovich/RISE
+* Science outreach from PSU (Dr. Randall McEntaffer)
 * Prototyping and testing of a Raspberry Pi sensor payload for a suborbital rocket
 
 **Science Olympiad**, *State College Area High School*
@@ -121,7 +119,7 @@ nekrutnikolai@gmail.com · https://nnekrut.netlify.app/ · https://github.com/Ni
 * Volunteer in Dr. Rotkin‘s laboratory
 * Learned about scanning near-field optical microscopy (SNOM)
 * Developed a Python program using Jupyter Notebooks that filters out background noise from microscope scans
-* Github page: https://github.com/NikolaiTeslovich/sSNOM
+* https://github.com/NikolaiTeslovich/sSNOM
 
 **Shaver’s Creek Environmental Center**, *State College, PA*
 
@@ -145,7 +143,7 @@ nekrutnikolai@gmail.com · https://nnekrut.netlify.app/ · https://github.com/Ni
     * *2019*
         * 3rd place sparring
         * 3rd place weapons
-        * Certificate of appreciation for assisting at the tournament
+        * Certificate of appreciation for helping organize the tournament
     * *2014*
         * 2nd place forms
         * 3rd place sparring
@@ -180,7 +178,7 @@ nekrutnikolai@gmail.com · https://nnekrut.netlify.app/ · https://github.com/Ni
 
 **Data Analysis**
 
-* With Jupyter and/or Observable
+* With Google Colab (Jupyter Notebooks) and/or Observable
 
 **Website Design**
 
@@ -195,7 +193,7 @@ nekrutnikolai@gmail.com · https://nnekrut.netlify.app/ · https://github.com/Ni
 * Photo editing software (Adobe Photoshop)
 * Vector editing software (Adobe Illustrator)
 * 3D design programs (Sketchup, Tinkercad, Fusion 360, Blender)
-* 3D printing software (Ultimaker Cura)
+* 3D printing software (Ultimaker Cura, PreForm)
 
 **Microcontrollers (Programming and Use)**
 
@@ -226,7 +224,25 @@ nekrutnikolai@gmail.com · https://nnekrut.netlify.app/ · https://github.com/Ni
 * Utilization of electronic tools
 * Woodworking
 * CNC machine design and operation
-* 3D design and printing using SLA (Formlabs) and FDM (Ultimaker) systems
+* 3D design and printing using SLA and FDM systems
+
+**Flying Objects**
+
+* Planes
+  * Some made of foam board using a needle cutter that I built: https://rb.gy/tuxnsl
+  * Sports aircraft
+  * Flying wings
+  * Autonomous aircraft using INAV: https://github.com/iNavFlight/inav/wiki
+
+* Drones
+  * Newly built 6" FPV freestyle drone
+  * TinyHawk II Freestyle drone
+  * DJI Mavic Air for cinematography
+
+* Model Rockets
+  * Designed a model rocket in OpenRocket Simulator
+  * Built the rocket along with a data-collecting payload based on a Raspberry Pi
+  * The launch was surprisingly successful!
 
 ### Other Skills
 
@@ -239,28 +255,18 @@ nekrutnikolai@gmail.com · https://nnekrut.netlify.app/ · https://github.com/Ni
 * YouTube channel showing my best creations: https://www.youtube.com/channel/UC-WSQ21Q2Q36urFPc4e5T6Q
 * A stop motion movie I made (my best one yet!): https://www.youtube.com/watch?v=Srl9ST27SpA
 
-**Remote Controlled Flying Objects**
-
-* Planes
-    * Some built out of foamboard and cut out using a needle cutter I built: https://rb.gy/tuxnsl
-    * Sports aircraft
-    * Flying wings
-    * Autonomous aircraft using INAV: https://github.com/iNavFlight/inav/wiki
-
-* Drones
-    * DJI Mavic Air for cinematography
-    * Newly built 6" FPV freestyle drone
-
 ---
 
 ## Licenses/Certifications
 
 **HAM Radio**
 
-*April 2019*
-
 * Amateur Radio License (Call sign: `KC3NJK`)
 * Technician level
+
+**The Recreational UAS Safety Test (TRUST)**
+
+* Can legally fly drones or aircraft for recreational purposes
 
 ---
 
@@ -283,67 +289,3 @@ nekrutnikolai@gmail.com · https://nnekrut.netlify.app/ · https://github.com/Ni
 *2016 - 2017*
 
 * Gold level nationally
-
-**School Awards**
-
-*2020*
-
-* National AP Scholar
-* AP Scholar with distinction
-* Top 10%
-
-*2019*
-
-* AP Scholar with distinction
-* Top 10%
-
-*2018*
-
-* Top 10%
-
----
-
-## Standardized Exams
-
-### AP
-
-*May 2020*
-
-* Physics C Electricity and Magnetism (Score 5)
-* Physics C Mechanics (Score 5)
-* United States History (Score 5)
-* Statistics (Score 4)
-* Computer Science Principles (Score 4)
-
-*May 2019*
-
-* Physics I (Score 5)
-* Calculus BC (Score 5)
-    * Calculus BC: AB Subscore (Score 5)
-* French Language and Culture (Score 5)
-
-*May 2018*
-
-* Human Geography (Score 5)
-* Biology (Score 4)
-
-### SAT Subject
-
-*May 2019*
-
-* Physics (Score 800)
-
-*August 2018*
-
-* Math II (Score 800)
-
-### ACT
-
-*February 2020*
-
-* Composite (Score 34)
-    * Reading (Score 36)
-    * Science (Score 36)
-    * Math (Score 35)
-    * English (Score 30)
-    * Essay (Score 8)
