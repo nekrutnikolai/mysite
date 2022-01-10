@@ -160,7 +160,3 @@ disableHugoGeneratorInject = false
     identifier = "websites"
     name       = "I build websites"
     url        = "websites/"
-  [[menu.main]]
-    identifier = "college apps"
-    name       = "College Apps"
-    url        = "collegeapps/"
