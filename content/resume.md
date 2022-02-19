@@ -195,8 +195,6 @@ I highly recommend viewing this document online: https://nnekrut.netlify.app/cv/
 **Flying Objects**
 
 * Planes
-  * Some made of foam board using a needle cutter that I built: https://rb.gy/tuxnsl
-  * Flying wings
   * Autonomous aircraft using INAV: https://github.com/iNavFlight/inav/wiki
 * Drones
   * Newly built 6" FPV freestyle drone
