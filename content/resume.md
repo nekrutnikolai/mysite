@@ -1,5 +1,5 @@
 ---
-title: "Nikolai Nekrutenko's Resume/CV"
+title: "Nikolai Nekrutenko's Resume"
 date: 2020-09-11T16:26:17-04:00
 draft: false
 TOC: false
@@ -19,6 +19,7 @@ I highly recommend viewing this document online: https://nnekrut.netlify.app/cv/
 
 * College of Arts & Sciences
   * Majoring in Physics
+  * Minoring in Computer Science
 
 **Pennsylvania State University**
 
@@ -42,7 +43,7 @@ I highly recommend viewing this document online: https://nnekrut.netlify.app/cv/
 
 ## Academic Interests
 
-* Applied Physics
+* Applied and experimental physics
 * Engineering
 * Blockchain and cryptocurrencies
 * Science communication and education
@@ -77,22 +78,12 @@ I highly recommend viewing this document online: https://nnekrut.netlify.app/cv/
 
 **State College Area High School Model Aeronautics Club**, *State College Area High School*		
 
-*October 2019 - June 2021*
+**Founder & President**, *Oct 2019 - Jun 2021*
 
-* Founder and President (*2019 - 2021*)
 * Club focused on learning about Aeronautics through the design, construction, and flight of remote controlled model aircraft
 * Recently acquired the Patrick Y. Wang Technology Innovation Fund grant ($1750): https://centre-foundation.org/funds/patrick-y-wang-technology-innovation-fund/
 * Website: https://shmac.netlify.app/
 * Instagram: https://www.instagram.com/statehighmodelaeronauticsclub/
-
-**National Science Bowl**,  *State College Area High School*
-
-*September 2017 - June 2021*
-
-* President (*2020 - 2021*), Treasurer/Secretary (*2019 - 2020*)
-* Club centered around science trivia question that competes annually at Princeton
-  * 2021
-    * 4th place New Jersey Regionals
 
 **Rocket Lab Initiative**, *Penn State*
 
@@ -100,17 +91,6 @@ I highly recommend viewing this document online: https://nnekrut.netlify.app/cv/
 * https://github.com/NikolaiTeslovich/RISE
 * Science outreach from PSU (Dr. Randall McEntaffer)
 * Prototyping and testing of a Raspberry Pi sensor payload for a suborbital rocket
-
-**Science Olympiad**, *State College Area High School*
-
-*February 2020 - November 2020*
-
-* Member
-* Club which competes in specialized events with different schools
-* Science Olympiad Awards (Regionals)
-    * *2020*
-        * 1st place Detector Building
-        * 1st place Circuit Lab
 
 **Research at the Penn State Materials Research Institute**, *Penn State*
 
@@ -171,7 +151,7 @@ I highly recommend viewing this document online: https://nnekrut.netlify.app/cv/
 **Programming Languages**
 
 * Python
-* Javascrupt
+* Javascript
 * C++
 * Shell scripting
   * Actively developing shell scripts to simplify headless mining on Linux: https://github.com/NikolaiTeslovich/minerwrangler
