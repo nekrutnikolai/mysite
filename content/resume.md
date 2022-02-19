@@ -5,8 +5,6 @@ draft: false
 TOC: false
 ---
 
----
-
 nekrutnikolai@gmail.com · https://nnekrut.netlify.app/ · https://github.com/NikolaiTeslovich
 
 Ithaca, NY 14850
