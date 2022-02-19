@@ -67,7 +67,7 @@ TOC: false
 * Volunteer researcher in Dr. Rotkin‘s laboratory
 * Learned about scanning near-field optical microscopy (SNOM)
 * Developed a Python program using Jupyter Notebooks to filter out background noise from microscope scans
-* GitHub repo: https://github.com/NikolaiTeslovich/sSNOM
+* GitHub repo: https://bit.ly/3sWNeWJ
 
 ### Science and Technology
 
@@ -83,7 +83,7 @@ TOC: false
 *Sep 2020 - Jun 2021*
 
 * Prototyped and developed a Raspberry Pi sensor payload for a suborbital model rocket
-* GitHub repo: https://github.com/NikolaiTeslovich/RISE
+* GitHub repo: https://bit.ly/34M8JS1
 
 **Founder of State High Model Aeronautics Club**, *State College Area High School*		
 
@@ -92,7 +92,7 @@ TOC: false
 * Co-Founder & president
 * Club focused on learning about aeronautics through the design, construction, and flight of remote controlled model aircraft
 * Recently acquired a grant from Centre County to purchase equipment and parts
-* Website: https://shmac.netlify.app/
+* Website: https://bit.ly/3H1aXd1
 
 ### Volunteering
 
@@ -245,7 +245,7 @@ TOC: false
 
 * Building a community-run website to demystify and clarify cryptocurrencies
 * Using Hugo and Netlify
-* Website: https://cryptoclarified.netlify.app
+* Website: https://bit.ly/3I9wfXp
 
 **Developed EthWrangler**
 
@@ -253,15 +253,15 @@ TOC: false
 
 * Wrote a set of bash scripts that automatically configure everything and enable control of a mining rig on Ubuntu Server
 * Documented the installation process and usage guide in great detail
-* GitHub repo: https://github.com/NikolaiTeslovich/minerwrangler
+* GitHub repo: https://bit.ly/3BCPFRZ
 
 **Building and Maintaining a Personal Website**
 
 *Apr 2020 - Present*
 
 * Built and regularly update my personal website using Hugo and Netlify
-* Website: https://nnekrut.netlify.app/
-* Github repo: https://github.com/NikolaiTeslovich/mysite
+* Website: https://bit.ly/3I779s9
+* Github repo: https://bit.ly/3LK6O0M
 
 **Producing Content for YouTube**
 
@@ -269,7 +269,7 @@ TOC: false
 
 * Manage a YouTube channel of over 100 subscribers
 * Create videos about science, technology, drones and nature
-* Channel: https://www.youtube.com/channel/UC-WSQ21Q2Q36urFPc4e5T6Q
+* Youtube channel: https://bit.ly/3sZxT7Q
 
 **Building and Flying Drones and Aircraft**
 
@@ -278,11 +278,11 @@ TOC: false
 * Assemble, fly and repair FPV drones and aircraft
 * Prototyped an autonomous fixed-wing aircraft with INAV
 * Built a CNC router to mass produce foam airplane templates
-* CNC post: https://shmac.netlify.app/posts/2020/01/flite-test-tiny-trainer-kits/
+* CNC blog post: https://bit.ly/359XJNS
 
 **Photography**
 
 *May 2012 - Present*
 
 * Macro, landscape, and telephoto photography of the natural world
-* Gallery: https://nnekrut.netlify.app/gallery/
+* Photo gallery: https://bit.ly/33zJmC9
