@@ -13,6 +13,8 @@ Ithaca, NY 14850
 
 Viewing this document online is recommended: https://nnekrut.netlify.app/resume/
 
+---
+
 ## Education
 
 **Cornell University**, *Physics Major & CS Minor in the College of Arts and Sciences*
