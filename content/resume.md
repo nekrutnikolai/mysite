@@ -123,7 +123,7 @@ TOC: false
 * Helped run a small (4 acre) organic farm
 * Weeded beds, fed animals, tilled soil with a tractor, harvested crops, etc.
 
-**Lawn Mowing & Yard Care**, *State College, PA*
+**Nikolai's Mowing & Yard Care**, *State College, PA*
 
 *Summers 2017 - 2021*
 
