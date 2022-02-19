@@ -1,17 +1,20 @@
 ---
-title: "Nikolai Nekrutenko"
+title: ""
 date: 2020-09-11T16:26:17-04:00
 draft: false
 TOC: false
---- 
-
-nekrutnikolai@gmail.com · https://nnekrut.netlify.app/ · https://github.com/NikolaiTeslovich
-
-Ithaca, NY 14850
-
 ---
 
-Viewing this document online is recommended: https://nnekrut.netlify.app/resume/
+<h1 align="center">
+  Nikolai Nekrutenko
+</h1>
+
+<p align="center">
+  nan34@cornell.edu · <a href="https://github.com/NikolaiTeslovich">https://github.com/NikolaiTeslovich</a> · Ithaca, NY 14850
+</p>
+
+<p align="center">
+</p>
 
 ---
 
@@ -63,7 +66,7 @@ Viewing this document online is recommended: https://nnekrut.netlify.app/resume/
 
 * Volunteer researcher in Dr. Rotkin‘s laboratory
 * Learned about scanning near-field optical microscopy (SNOM)
-* Developed a Python program using Jupyter Notebooks that filters out background noise from microscope scans
+* Developed a Python program using Jupyter Notebooks to filter out background noise from microscope scans
 * GitHub repo: https://github.com/NikolaiTeslovich/sSNOM
 
 ### Science and Technology
@@ -72,17 +75,8 @@ Viewing this document online is recommended: https://nnekrut.netlify.app/resume/
 
 *Sep 2021 - Present*
 
-* Part of the R&D team
+* Part of the research and development team
 * Currently working on establishing a DAO for the club
-
-**Founder of State High Model Aeronautics Club**, *State College Area High School*		
-
-*Oct 2019 - Jun 2021*
-
-* Co-Founder & President
-* Club focused on learning about Aeronautics through the design, construction, and flight of remote controlled model aircraft
-* Recently acquired the Patrick Y. Wang Technology Innovation Fund grant ($1750)
-* Website: https://shmac.netlify.app/
 
 **Member of Rocket Lab Initiative**, *Pennsylvania State University*
 
@@ -91,15 +85,24 @@ Viewing this document online is recommended: https://nnekrut.netlify.app/resume/
 * Prototyped and developed a Raspberry Pi sensor payload for a suborbital model rocket
 * GitHub repo: https://github.com/NikolaiTeslovich/RISE
 
+**Founder of State High Model Aeronautics Club**, *State College Area High School*		
+
+*Oct 2019 - Jun 2021*
+
+* Co-Founder & president
+* Club focused on learning about aeronautics through the design, construction, and flight of remote controlled model aircraft
+* Recently acquired a grant from Centre County to purchase equipment and parts
+* Website: https://shmac.netlify.app/
+
 ### Volunteering
 
 **Leader at Shaver’s Creek Environmental Center**, *Pensylvania State University*
 
 *Summers 2017 - 2019*
 
-* Volunteered in a summer camp for elementary and middle school children
-* Performed various leadership activities such as games, and songs to make the club enjoyable, memorable and educational for all
+* Volunteered as a counselor in a summer camp for elementary and middle school children
 * Nature awareness and appreciation education
+* Performed various activities such as games, and hikes around the forest to make the enjoyable, memorable and educational for all
 
 **Instructor at A Mountain Wind Martial Arts**, *State College, PA*
 
@@ -110,7 +113,6 @@ Viewing this document online is recommended: https://nnekrut.netlify.app/resume/
 * Awards at at the regional 2019 tournament
   * 3rd place sparring
   * 3rd place weapons
-  * Certificate of appreciation for helping organize the tournament
 
 ### Work Experience
 
@@ -118,27 +120,26 @@ Viewing this document online is recommended: https://nnekrut.netlify.app/resume/
 
 *Jun 2021 - Aug 2021*
 
-* Worked on the farm, learned how to drive tractors, etc.
+* Helped run a small (4 acre) organic farm
+* Weeded beds, fed animals, tilled soil with a tractor, harvested crops, etc.
 
 **Lawn Mowing & Yard Care**, *State College, PA*
 
 *Summers 2017 - 2021*
 
-* Had a side-hustle
-
----
-
-## Languages
-
-**Fluent in:**
-
-* English
-* Russian
-* French
+* Mowed and took care of lawns for a dozen clients around State College
 
 ---
 
 ## Skills
+
+### Languages
+
+**Fluent In:**
+
+* English
+* French
+* Russian
 
 ### Computer Skills
 
@@ -147,7 +148,7 @@ Viewing this document online is recommended: https://nnekrut.netlify.app/resume/
 * Python
 * Javascript
 * C++
-* Shell scripting
+* Shell
 
 **Data Analysis**
 
@@ -157,17 +158,20 @@ Viewing this document online is recommended: https://nnekrut.netlify.app/resume/
 
 **Website Design**
 
-* Using Hugo and Netlify
+* Hugo
+* Netlify
+* GitHub Pages
 
 **Software**
 
-* Video editing programs (Adobe Premiere Pro, DaVinci Resolve, Final Cut Pro, iMovie)
-* Photo editing software (Adobe Photoshop, Pixelmator Pro)
-* Vector editing software (Adobe Illustrator)
 * 3D design programs (Sketchup, Tinkercad, Fusion 360, Blender)
 * 3D printing software (Ultimaker Cura, PreForm)
+* Photo editing software (Adobe Photoshop, Pixelmator Pro)
+* Vector editing software (Adobe Illustrator)
+* Video editing programs (Adobe Premiere Pro, DaVinci Resolve, Final Cut Pro)
+* Model rocket design software (OpenRocket)
 
-**Microcontrollers (Programming and Use)**
+**Microcontrollers**
 
 * Arduino
 * Raspberry Pi
@@ -183,7 +187,7 @@ Viewing this document online is recommended: https://nnekrut.netlify.app/resume/
 
 **Smart Contract Development**
 
-* Introductory knowledge of SoliditI’m y and Brownie
+* Basic knowledge of Solidity and Brownie
 
 ### Technical Skills
 
@@ -193,8 +197,7 @@ Viewing this document online is recommended: https://nnekrut.netlify.app/resume/
 * Gas chromatography
 * Infrared spectroscopy
 
-
-**Prototyping skills**
+**Prototyping Skills**
 
 * Soldering
 * Utilization of electronic tools
@@ -202,39 +205,18 @@ Viewing this document online is recommended: https://nnekrut.netlify.app/resume/
 * CNC machine design and operation
 * 3D design and printing using SLA and FDM systems
 
-**Flying Objects**
-
-* Repairing and flying FPV drones and aircraft
-* Planes
-  * Autonomous aircraft using INAV: https://github.com/iNavFlight/inav/wiki
-* Drones
-  * Newly built 6" FPV freestyle drone
-  * DJI Mavic Air for cinematography
-* Model Rockets
-  * Designed a model rocket in OpenRocket Simulator
-  * Built the rocket along with a data-collecting payload based on a Raspberry Pi
-
 ### Soft Skills
 
-**Communication**
-
-**Leadership**
-
-**Team Work
+* Communication
+* Collaboration
+* Teamwork
+* Leadership
 
 ### Other Skills
 
 * Nature photography
 * Macro photography
 * Cinematography
-
----
-
-## Personal Projects
-
-### Technical
-
-### Educational
 
 ---
 
@@ -252,3 +234,55 @@ Viewing this document online is recommended: https://nnekrut.netlify.app/resume/
 **The Recreational UAS Safety Test (TRUST)**
 
 * Certified fly drones or aircraft for recreational purposes
+
+---
+
+## Personal Projects
+
+**Developing CryptoClarified**
+
+*Feb 2021 - Present*
+
+* Building a community-run website to demystify and clarify cryptocurrencies
+* Using Hugo and Netlify
+* Website: https://cryptoclarified.netlify.app
+
+**Developed EthWrangler**
+
+*Nov 2020 - Apr 2021*
+
+* Wrote a set of bash scripts that automatically configure everything and enable control of a mining rig on Ubuntu Server
+* Documented the installation process and usage guide in great detail
+* GitHub repo: https://github.com/NikolaiTeslovich/minerwrangler
+
+**Building and Maintaining a Personal Website**
+
+*Apr 2020 - Present*
+
+* Built and regularly update my personal website using Hugo and Netlify
+* Website: https://nnekrut.netlify.app/
+* Github repo: https://github.com/NikolaiTeslovich/mysite
+
+**Producing Content for YouTube**
+
+*Jun 2019 - Present*
+
+* Manage a YouTube channel of over 100 subscribers
+* Create videos about science, technology, drones and nature
+* Channel: https://www.youtube.com/channel/UC-WSQ21Q2Q36urFPc4e5T6Q
+
+**Building and Flying Drones and Aircraft**
+
+*Oct 2018 - Present*
+
+* Assemble, fly and repair FPV drones and aircraft
+* Prototyped an autonomous fixed-wing aircraft with INAV
+* Built a CNC router to mass produce foam airplane templates
+* CNC post: https://shmac.netlify.app/posts/2020/01/flite-test-tiny-trainer-kits/
+
+**Photography**
+
+*May 2012 - Present*
+
+* Macro, landscape, and telephoto photography of the natural world
+* Gallery: https://nnekrut.netlify.app/gallery/

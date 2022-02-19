@@ -160,3 +160,10 @@ disableHugoGeneratorInject = false
     identifier = "websites"
     name       = "I build websites"
     url        = "websites/"
+
+# enables html to actually render
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
