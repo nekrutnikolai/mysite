@@ -22,11 +22,11 @@ I highly recommend viewing this document online: https://nnekrut.netlify.app/cv/
 * College of Arts & Sciences
   * Majoring in Physics
   * Minoring in Computer Science
-* Sem 1
+* Semester 1
   * AEP 1200 - Intro to Nanoscience and Nanoengineering
   * MATH 1920 - Multivariable Calculus for Engineers
   * PHYS 1116 - Physics I: Mechanics and Special Relativity
-* Sem 2 (in progress)
+* Semester 2 (in progress)
   * CS 1110 - Intro to Computing with Python
   * MATH 2930 - Differential Equations for Engineers
   * PHYS 2217 - Physics II: Electricity and Magnetism
@@ -215,7 +215,8 @@ I highly recommend viewing this document online: https://nnekrut.netlify.app/cv/
 
 **FCC Radio License**
 
-* Technician Radio License (Call sign: `KC3NJK`)
+* Technician Radio License
+* Call sign: KC3NJK
 
 **General Laser Safety Training**
 
