@@ -1,5 +1,5 @@
 ---
-title: "Nikolai Nekrutenko's Resume"
+title: "Nikolai Nekrutenko"
 date: 2020-09-11T16:26:17-04:00
 draft: false
 TOC: false
@@ -11,11 +11,11 @@ Ithaca, NY
 
 ---
 
-Viewing this document online is recommended: https://nnekrut.netlify.app/cv/
+Viewing this document online is recommended: https://nnekrut.netlify.app/resume/
 
 ## Education
 
-**Cornell University**, *College of Arts and Sciences - Major in Physics & Minor in CS*
+**Cornell University**, *Physics Major & CS Minor in the College of Arts and Sciences*
 
 *September 2021 - May 2025*
 
@@ -51,19 +51,9 @@ Viewing this document online is recommended: https://nnekrut.netlify.app/cv/
 
 ---
 
-## Languages
-
-**Fluent in:**
-
-* English
-* Russian
-* French
-
----
-
 ## Activities and Experience
 
-### Research Experience
+### Research
 
 **Researcher at Penn State Materials Research Institute**, *Pennsylvania State University*
 
@@ -96,7 +86,7 @@ Viewing this document online is recommended: https://nnekrut.netlify.app/cv/
 
 *Sep 2020 - Jun 2021*
 
-* Prototyping and developing a Raspberry Pi sensor payload for a suborbital rocket
+* Prototyped and developed a Raspberry Pi sensor payload for a suborbital model rocket
 * GitHub repo: https://github.com/NikolaiTeslovich/RISE
 
 ### Volunteering
@@ -133,6 +123,16 @@ Viewing this document online is recommended: https://nnekrut.netlify.app/cv/
 *Summers 2017 - 2021*
 
 * Had a side-hustle
+
+---
+
+## Languages
+
+**Fluent in:**
+
+* English
+* Russian
+* French
 
 ---
 
@@ -202,6 +202,7 @@ Viewing this document online is recommended: https://nnekrut.netlify.app/cv/
 
 **Flying Objects**
 
+* Repairing and flying FPV drones and aircraft
 * Planes
   * Autonomous aircraft using INAV: https://github.com/iNavFlight/inav/wiki
 * Drones
@@ -211,6 +212,14 @@ Viewing this document online is recommended: https://nnekrut.netlify.app/cv/
   * Designed a model rocket in OpenRocket Simulator
   * Built the rocket along with a data-collecting payload based on a Raspberry Pi
 
+### Soft Skills
+
+**Communication**
+
+**Leadership**
+
+**Team Work
+
 ### Other Skills
 
 * Nature photography
@@ -219,7 +228,15 @@ Viewing this document online is recommended: https://nnekrut.netlify.app/cv/
 
 ---
 
-## Licenses/Certifications
+## Personal Projects
+
+### Technical
+
+### Educational 
+
+---
+
+## Licenses and Certifications
 
 **FCC Radio License**
 
