@@ -6,11 +6,7 @@
     <description>Recent content in cryptocurrency on Nikolai Nekrutenko</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 01 Aug 2020 15:57:01 -0400</lastBuildDate>
-    
-	<atom:link href="/tags/cryptocurrency/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 01 Aug 2020 15:57:01 -0400</lastBuildDate><atom:link href="/tags/cryptocurrency/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Book of Bitcoin - An Analogy to Explain Bitcoin</title>
       <link>/posts/the-book-of-bitcoin-an-analogy-to-explain-bitcoin/</link>
@@ -29,8 +25,8 @@ What do you think of when you hear the word “Bitcoin”? According to a 2017 Y
       <pubDate>Thu, 11 Jun 2020 10:04:55 -0400</pubDate>
       
       <guid>/posts/lets-kill-this-macbook-how-to-mine-monero-on-a-mac/</guid>
-      <description>MacBook Pro 13 without TouchBar   My good friend&amp;rsquo;s Mac is nearing its end He&amp;rsquo;s already had it, the one in the picture above, for a couple of years, and the battery is starting to degrade among several other serious issues. Since it is nearing its end soon, in the time that it isn&amp;rsquo;t being used it could mine some cryptocurrency.
-MacBooks are known for their subpar cooling systems as demonstrated in this video.</description>
+      <description>My friend&amp;rsquo;s Mac is nearing its end He&amp;rsquo;s already had it, the one in the picture above, for a couple of years, and the battery is starting to degrade among several other serious issues. Since it is nearing its end soon, in the time that it isn&amp;rsquo;t being used it could mine some cryptocurrency.
+MacBooks are known for their subpar cooling systems as demonstrated in this video. We are going to set up this mac for mining Monero(XMR), a type of cryptocurrency that can be mined with a CPU.</description>
     </item>
     
   </channel>

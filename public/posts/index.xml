@@ -5,8 +5,390 @@
         <description>Recent content in Posts on Nikolai Nekrutenko</description>
         <generator>Hugo -- gohugo.io</generator>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Wed, 26 Aug 2020 15:12:36 -0400</lastBuildDate>
+        <lastBuildDate>Sun, 27 Jun 2021 10:38:15 -0400</lastBuildDate>
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>How to Build a Website: A Guide for Command-Line Novices</title>
+            <link>/posts/how-to-build-a-website-a-guide-for-command-line-novices/</link>
+            <pubDate>Sun, 27 Jun 2021 10:38:15 -0400</pubDate>
+            
+            <guid>/posts/how-to-build-a-website-a-guide-for-command-line-novices/</guid>
+            <description>Formerly titled: How to Build a Website for Your Studio (or Anything): A Step by Step Guide
+ Introduction This guide is intended for Macintosh users who have never programmed before. With a bit of searching, the same steps can easily be applied to Windows and Linux machines.
+Most will agree that a book is judged by its cover—for better or worse. Websites are the covers of your studio, organization, or even yourself, which are the books.</description>
+            <content type="html"><![CDATA[<p><strong>Formerly titled: How to Build a Website for Your Studio (or Anything): A Step by Step Guide</strong></p>
+
+    <figure class="center" >
+        <img src="/img/BBEssay/helloworld.png"  alt="Hello World"   style="border-radius: 8px;"  />
+
+        
+    </figure>
+
+
+<h1 id="introduction">Introduction</h1>
+<p>This guide is intended for Macintosh users who have never programmed before. With a bit of searching, the same steps can easily be applied to Windows and Linux machines.</p>
+<p>Most will agree that a book is judged by its cover—for better or worse. Websites are the covers of your studio, organization, or even yourself, which are the books. Well-constructed websites build credibility and legitimacy. They are the bridge between your members and the outer world. A good-looking, well functioning website is essential to making your mark in the modern world. In contrast, a poorly built website can have the opposite effect, negatively affecting your reputation.</p>
+<p>The key to a great first website is simplicity and understanding how all of the gears of the machine mesh together. Like learning a hyung for the first time, this guide will give you the order and intended moves. It is up to you, however, to experiment and envision applications for these moves. Following this guide, you will build a great, simple website for anything you want to using the <a href="https://github.com/rhazdon/hugo-theme-hello-friend-ng">Hello Friend NG theme by Djordje Atlialp</a>.</p>
+<p>If you’ve never used the command line, there’s nothing to be afraid of. I guarantee you it will soon become your preferred way of doing things.</p>
+<h1 id="part-1-initial-setup">Part 1: Initial Setup</h1>
+<p>The website made from guide can be viewed at: <a href="https://inspiring-thompson-3f793d.netlify.app">https://inspiring-thompson-3f793d.netlify.app</a></p>
+<p>The repository I made following this guide is at: <a href="https://github.com/NikolaiTeslovich/testsite">https://github.com/NikolaiTeslovich/testsite</a></p>
+<ol>
+<li>
+<p>The first step is to go to <a href="https://github.com/">GitHub</a> and sign up for an account, which is where the website will be stored on the cloud. GitHub is an online implementation of Git, which is a version control system. A version control system is a kind of software that helps the developer efficiently communicate and track all the changes that have been made to the code, or website in our scenario. Since it tracks every change, any of the changes can be undone, this means that you shouldn’t be discouraged to play around with your website!</p>
+</li>
+<li>
+<p>Once you have your account created in GitHub, make a repository by pressing the “new” button. A repository is a folder to store your project in. Pick a repository name that is brief. The description can be filled if you would like. I suggest making the repository public, but it won’t affect the website’s functionality. A README file (in which you can document your project) is not necessary. Please choose an appropriate license. If you want to open-source everything, use the MIT license. For more information about licenses, visit <a href="https://choosealicense.com/">https://choosealicense.com/</a>.</p>
+</li>
+<li>
+<p>With that done, open the Terminal application. Here is what it looks like:</p>
+</li>
+</ol>
+
+    <figure class="center" >
+        <img src="/img/BBEssay/terminal.png"  alt="Mac OS Terminal"   style="border-radius: 8px;"  />
+
+        
+    </figure>
+
+
+<p><strong>Code starting with a “&gt;” should be copied and pasted into the Terminal, followed by pressing the “enter” key. Code without the “&gt;” should be edited in a code editor.</strong></p>
+<ol start="4">
+<li>Before we can use Terminal to its full potential, some tools need to be installed that will allow us to make the website. You will be asked for your password, and this process will take several minutes. Go outside, for once, while you wait for this to complete. The first tool being Xcode, which is installed with:</li>
+</ol>
+<pre tabindex="0"><code>&gt; xcode-select --install
+</code></pre><ol start="5">
+<li>Next, we will install Homebrew, which is an open-source package manager. In other words, it automates the process of installing and keeping software up to date. Install it with the following command:</li>
+</ol>
+<pre tabindex="0"><code>&gt; /bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;
+</code></pre><ol start="6">
+<li>A static website contains web pages with fixed content, so each page displays the same information to every visitor. Static sites are the most basic type of website and are the easiest to create. Let’s install Hugo, an open-source static site generator, which is the skeleton of the website:</li>
+</ol>
+<pre tabindex="0"><code>&gt; brew install hugo
+</code></pre><ol start="7">
+<li>Then, we need something to edit the code with! While we could use something like TextEdit, using a tool specifically designed for the job—such as a dedicated code editor—is better. I recommend Atom, but Visual Studio Code works just as well. After deciding which one you’d like to use, instead of manually downloading it and going through the installer, either can also be installed with Homebrew:</li>
+</ol>
+<pre tabindex="0"><code>&gt; brew install --cask atom or  &gt; brew install --cask visual-studio-code
+</code></pre><h1 id="part-2-creating-and-working-on-your-website">Part 2: Creating and Working on Your Website</h1>
+<ol>
+<li>Duplicate (clone) the repository onto your computer. Use the url in the search bar of your web browser as the “repository-link”:</li>
+</ol>
+<pre tabindex="0"><code>&gt; git clone repository-link
+</code></pre><ol start="2">
+<li>Create a folder for your website with Hugo (name it in one word for simplicity):</li>
+</ol>
+<pre tabindex="0"><code>&gt; hugo new site mysite --force
+</code></pre><p>If you accidentally make a mistake in your spelling, the folder can be removed with:</p>
+<pre tabindex="0"><code>&gt; rm -rf mysite or &gt; rm -rf 'my site'
+</code></pre><ol start="3">
+<li>Enter the project folder through the terminal:</li>
+</ol>
+<pre tabindex="0"><code>&gt; cd mysite
+</code></pre><p>“cd” is a way of telling Terminal to go into a folder, which in my case is the “mysite” folder. For more information about these, and other useful commands to do all sorts of things with folders, visit: <a href="https://www.javatpoint.com/linux-directories">https://www.javatpoint.com/linux-directories</a></p>
+<ol start="4">
+<li>We will import the theme into the project folder as a submodule. All we are doing in this step is linking the theme project inside of your website, meaning that everything inside of that folder will be up to date, which is good for bug fixes and security improvements:</li>
+</ol>
+<pre tabindex="0"><code>&gt; git submodule add https://GitHub.com/rhazdon/hugo-theme-hello-friend-ng.git themes/hello-friend-ng
+</code></pre><ol start="5">
+<li>Let’s start up your website! While still in the repository’s folder, we’re going to start Hugo and access the website locally, meaning that it is not online yet:</li>
+</ol>
+<pre tabindex="0"><code class="language->" data-lang=">">To learn more about Hugo commands, visit: https://gohugo.io/getting-started/usage/
+</code></pre><ol start="6">
+<li>
+<p>To view the website on your web browser, visit the local port at <a href="http://localhost:1313/">http://localhost:1313/</a>. It will update with every change you make in the code editor.</p>
+</li>
+<li>
+<p>If at any point you need to type something into the command line while the server is running, like when you want to make a new post or publish the website, press “control” and “c” at the same time on your keyboard to stop the server. The server can be resumed the same way that it was started in step 5.</p>
+</li>
+<li>
+<p>Now, you will surely notice that something is off. Is it a blank page? Yes it is, because we never touched the config.toml file. This is the place where you tell Hugo how to show and configure the website. So, in your code editor, open up the website project and navigate to config.toml. This is what it should look like:</p>
+</li>
+</ol>
+<pre tabindex="0"><code>baseURL = &quot;http://example.org/&quot;
+languageCode = &quot;en-us&quot;
+title = &quot;My New Hugo Site&quot;
+… there is barely anything there.
+</code></pre><ol start="9">
+<li>
+<p>To fix this, in the place of these three lines, simply copy and paste the example configuration file on page 15. Don’t forget to save the now edited file so that the website updates. The code is commented, for your experimentation and understanding.</p>
+</li>
+<li>
+<p>Great, you have a front page, but not much else. What good is a website without any content, just like what good is a hyung without strong stances? Let’s create a first blog post and call it hello-world:</p>
+</li>
+</ol>
+<pre tabindex="0"><code>&gt; hugo new posts/hello-world.md
+</code></pre><ol start="11">
+<li>Now, navigate to the hello-world post in your code editor, which is in the content, then post folder. You’ll see that there is this interesting heading, with the title, time, and other options:</li>
+</ol>
+<pre tabindex="0"><code>---
+title: &quot;Hello World&quot;
+date: 2021-07-11T17:52:30-04:00
+draft: true
+toc: false
+images:
+tags:
+  - untagged
+---
+</code></pre><ol start="12">
+<li>The title is pretty self-explanatory. The date was the exact time when you entered the command in step 10, to create the “Hello World” post. The draft option is what hides or shows this post to the world when we make the website live. Table of Contents is short for toc, the images option can be ignored, and you should add a tag, or a few, if you want.</li>
+</ol>
+<h1 id="part-3-writing-content-in-markdown">Part 3: Writing Content in Markdown</h1>
+<p>Using Markdown is different than using an application like Microsoft Word, where you click buttons to format words and phrases, and the changes are visible immediately. When you create a Markdown-formatted file, you add Markdown code to the text to indicate which words and phrases should look different. A piece of software, such as Hugo, interprets this notation and makes it look as intended on your website. Here is a little table inspired by <a href="https://www.markdownguide.org/cheat-sheet/">Markdown Guide’s Cheat Sheet</a>:</p>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Markdown Code</th>
+<th>Markdown Appearance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>italicized</td>
+<td><code>*italicized*</code></td>
+<td><em>italicized</em></td>
+</tr>
+<tr>
+<td>bold</td>
+<td><code>**bold**</code></td>
+<td><strong>bold</strong></td>
+</tr>
+<tr>
+<td>italicized &amp; bold</td>
+<td><code>***italicized &amp; bold***</code></td>
+<td><em><strong>italicized &amp; bold</strong></em></td>
+</tr>
+<tr>
+<td>headings</td>
+<td><code># heading 1</code></td>
+<td># heading 1</td>
+</tr>
+<tr>
+<td></td>
+<td><code>## heading 2</code></td>
+<td>## heading 2</td>
+</tr>
+<tr>
+<td></td>
+<td><code>### heading 3</code></td>
+<td>### heading 3</td>
+</tr>
+<tr>
+<td>code</td>
+<td><code>this is already code</code></td>
+<td><code>code</code></td>
+</tr>
+<tr>
+<td>lines of code</td>
+<td><code>```</code></td>
+<td>will not render in a table</td>
+</tr>
+<tr>
+<td></td>
+<td><code>lines</code></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><code>of code</code></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><code>```</code></td>
+<td></td>
+</tr>
+<tr>
+<td>blockquote</td>
+<td><code>&gt; block quote</code></td>
+<td>will not render in a table</td>
+</tr>
+<tr>
+<td>list</td>
+<td><code>- one</code></td>
+<td>- one</td>
+</tr>
+<tr>
+<td></td>
+<td><code>- two</code></td>
+<td>- two</td>
+</tr>
+<tr>
+<td></td>
+<td><code>- three</code></td>
+<td>- three</td>
+</tr>
+<tr>
+<td>ordered list</td>
+<td><code>1. first</code></td>
+<td>1. first</td>
+</tr>
+<tr>
+<td></td>
+<td><code>2. second</code></td>
+<td>2. second</td>
+</tr>
+<tr>
+<td></td>
+<td><code>3. third</code></td>
+<td>3. third</td>
+</tr>
+<tr>
+<td>link</td>
+<td><code>[title](http://www.example.com)</code></td>
+<td><a href="http://www.example.com">title</a></td>
+</tr>
+<tr>
+<td>image</td>
+<td><code>![](path/to/image.png)</code></td>
+<td><img src="/img/BBEssay/helloworldsmall.png" alt=""></td>
+</tr>
+</tbody>
+</table>
+<p>Applying this to the “Hello World” post, there are no limits to our creativity:</p>
+<p><img src="/img/BBEssay/helloworldpage.png" alt=""></p>
+<p>hello-world.md looks like this:</p>
+<pre tabindex="0"><code>---
+title: &quot;Hello World&quot;
+date: 2021-07-11T17:52:30-04:00
+draft: true
+toc: false
+images:
+tags:
+  - firstpost
+---
+
+# Wow,
+
+I just wrote the *first* **post** of [this ***website***](/).
+
+- In a few
+- short steps
+- a **beautiful**
+- website was born
+
+&gt; A book really is judged by its cover for better or for worse
+
+`Now this wasn't that hard, now was it?`
+
+![](/img/wtsda.png)
+</code></pre><h1 id="part-4-about-the-structure-of-our-website">Part 4: About the Structure of Our Website</h1>
+<p>Here is the structure of the website so far (I’ve omitted some things for clarity). The items with the asterisk in from of them (*) are the things that we’ve edited or created apart from the original website structure:</p>
+<p>How to interpret this chart:</p>
+<pre tabindex="0"><code>.  — the . means the current directory or folder.
+├── folder2 (/folder2)
+│   └── folder3 (/folder2/folder3)
+│       └── image.png (/folder2/folder3/image.png) — image.png is in
+folder 3, which is in folder 2, which is in the current directory.
+</code></pre><p>For our website:</p>
+<pre tabindex="0"><code>.
+├── archetypes
+├── *config.toml
+├── content
+│   └── *posts
+│       └── *hello-world.md
+├── data
+├── layouts
+├── resources
+├── static
+│   └── *img
+│       └── *wtsda.png
+└── themes
+    └── hello-friend-ng
+</code></pre><p>Looking back at our “Hello World” post, Markdown was used to insert the image—<code>![](/img/wtsda.png)</code>. Hugo defaults to the static folder as a place for items that can be inserted, like images. I made an image folder and names it <code>img</code> for organizational purposes. Then, I dragged the image into that folder with the Finder application. As a result, the path for the Markdown code was <code>/img/wtsda.png</code> instead of <code>static/img/wtsda.png</code>.</p>
+<p>The “Hello World” post itself has the path <code>/content/posts/hello-world.md</code>. Just like for the image, however, Hugo defaults to the content folder as the place for pages and blog posts. So, in reality it is <code>posts/hello-world.md</code>. This can be seen in the command we used to create the post (don’t run this command again, I just put it in below as a reference):</p>
+<pre tabindex="0"><code>&gt; hugo new posts/hello-world.md
+</code></pre><h1 id="part-5-making-an-about-page">Part 5: Making an About Page</h1>
+<p>What’s the use of having a website without an “About” page to explain what you or your organization is? There would be no credibility without one. So it is only natural to make one.</p>
+<ol>
+<li>Similar to making the “Hello World” post, we are going to use a Hugo command to create your “About” page:</li>
+</ol>
+<pre tabindex="0"><code>&gt; hugo new about.md
+</code></pre><ol start="2">
+<li>How can we actually look at this page, since it isn’t a post? Well, we have to edit our config.toml, so that it displays an “About” in the menu bar. Edit the end of the config.toml, just under the command which creates a menu:</li>
+</ol>
+<pre tabindex="0"><code>  	[[menu.main]]
+   	 identifier = &quot;blog&quot;
+   	 name       = &quot;Blog&quot;
+   	 url        = &quot;/posts&quot;
+# Here is the part we are adding:
+# Make sure it’s indented correctly!
+[[menu.main]]
+ 	 identifier = &quot;about&quot;
+  	 name       = &quot;About&quot;
+  	 url        = &quot;/about&quot;
+</code></pre><ol start="3">
+<li>Then, just like we did for the “Hello World” post, write some content for it in Markdown.</li>
+</ol>
+<h1 id="part-6-backing-up-updating--deploying-your-website">Part 6: Backing up, Updating &amp; Deploying your Website</h1>
+<p>With that out of the way, your website is fully functional—only on your computer, that is! We have to publish it, or in other words, make it live for the world to see.</p>
+<ol>
+<li>
+<p>First of all, change the draft: true to draft: false in the header of the posts and pages that you want everyone to see.</p>
+</li>
+<li>
+<p>We need to manually add the files for git to see them:</p>
+</li>
+</ol>
+<pre tabindex="0"><code>&gt; git add .
+</code></pre><ol start="3">
+<li>Then, git needs to know that this is a commit, or in other words, a save of the data. Write a message so that it’s easier to reference later, should any mistakes come up.</li>
+</ol>
+<pre tabindex="0"><code>&gt; git commit -m 'your message'
+</code></pre><ol start="4">
+<li>Upload (push) the data to your repository:</li>
+</ol>
+<pre tabindex="0"><code>&gt; git push
+</code></pre><p>We still need to figure out how to actually make it live, since right now, it’s just sitting in that repository as a bunch of code and files. Fortunately, there is this tool called Netlify, which uses data from the GitHub repository, to make a website which updates everytime you push new data to your repository.</p>
+<ol start="5">
+<li>
+<p>Go make an account on <a href="netlify.com">Netlify</a>, signing up with your GitHub.</p>
+</li>
+<li>
+<p>Next, to actually make the website, press the “New site from Git” button. Then select our single repository, and leave all the options at their defaults. And we should have a working website? But when we click on the link Netlify has provided for us, nothing comes up. That’s because there is a thing left to change in config.toml.</p>
+</li>
+<li>
+<p>How about we change the link to something that we can actually remember, before editing the config.toml. You can make a custom link for free with Netlify, buy one from a service such as Google, or use one that you already own. To change the domain through Netlify, click on the “Domain Settings” button, then press the “Options” button, and change the domain from there. If you own, or have just bought your own domain, press the “Add custom domain” button.</p>
+</li>
+<li>
+<p>In config.toml, edit the “baseurl” line by changing “localhost” to the link you are using for your site:</p>
+</li>
+</ol>
+<pre tabindex="0"><code>From: baseurl = &quot;localhost&quot;  
+To: baseurl = http://my-new-url.org
+</code></pre><ol start="9">
+<li>Now, push those changes again using steps 1-3. Now you website should be live and functional! It also looks just as good, if not better, on your phone.</li>
+</ol>
+<h1 id="part-7-restoring-and-modifying-your-website-in-the-future">Part 7: Restoring and Modifying your Website in the Future</h1>
+<p>What if on one fine day your computer just crashes permanently. What if you just accidentally, or purposefully close Terminal and the code editor. It may seem like all of your progress is forever lost. How do you revert to the state you had previously, to continuing working on your amazing, new website?</p>
+<ol>
+<li>
+<p>If you haven’t worked on your website in a while, and something happened to your computer, that caused you to reinstall the operating system, repeat “Part 1: Initial Setup” being sure to skip steps 1 and 2. Those first steps are skipped because you did them already, and they’re safe on the cloud. With all of the tools installed again, continue to the next step.</p>
+</li>
+<li>
+<p>Otherwise, with Terminal and the code editors open again, enter into the project’s repository with the following command:</p>
+</li>
+</ol>
+<pre tabindex="0"><code>&gt; cd mysite
+</code></pre><ol start="3">
+<li>
+<p>Start the website following steps 5-7 in “Part 2: Creating and Working on the Website”.</p>
+</li>
+<li>
+<p>After you are content with the edits you’ve made, follow steps 1-4 keeping in “Part 6: Backing up, Updating &amp; Deploying your Website”.</p>
+</li>
+<li>
+<p>That’s it, repeat these steps should anything happen. Eventually, with enough practice, all of this will become muscle memory.</p>
+</li>
+</ol>
+<h1 id="the-end">The End</h1>
+<p><em>Note: this ending is intended for my target audience, the World Tang Soo Do Association testing panel, which will test me for black belt in Septmber of 2021. This is why some of the terms are in Korean and are not easily relatable to others.</em></p>
+<p>With the first version of your website successfully published, give yourself a pat on the back!</p>
+<p>After hours, or even days of blood, sweat, and tears, you have successfully learned the moves in the Sae Kye Hyungs of website building by making a beautiful, and at the same time, functional website all by yourself! You are that one in a hundred Gup student who persevered despite the difficulties and stuck with Tang Soo Do, becoming a Cho Dan. Except in addition to Tang Soo Do, you managed to build a website that actually works, and you mostly understand how and why it functions!</p>
+<p>Now it is up to you to pass the probationary period, and ascend the ranks if you so choose by developing your website further.</p>
+]]></content>
+        </item>
         
         <item>
             <title>The Mostly Maine Trip Video</title>
@@ -25,12 +407,13 @@ I actually have a drone, an EMAX Tinyhawk 2, which note to self I still need to 
 
 <p>I finally convinced my best friend to lend me his drone after days of trying.</p>
 <p>I actually have a drone, an EMAX Tinyhawk 2, which <strong>note to self</strong> I still need to fix. I crashed it pretty hard flying on the porch of my house against a metal support beam and one of the ESC&rsquo;s is burned out.</p>
-<figure>
-    <img src="/img/tinyhawkII.png"
-         alt="Hello Friend"/> <figcaption>
-            <h4>EMAX Tinyhawk II with the Luminier AXII modification</h4>
-        </figcaption>
-</figure>
+
+    <figure class="center" >
+        <img src="/img/tinyhawkII.png"  alt="Hello Friend"   style="border-radius: 8px;"  />
+
+        
+    </figure>
+
 
 <p>Enough about my drone. My friend lent me a DJI Mavic Air which is very different from my drone. My drone is meant for flying around and exploring. Crashing it is okay, and it doesn&rsquo;t record any video. The DJI Mavic Air, on the other hand, can record beautiful video at 4k 30fps. It&rsquo;s much larger and can fly for much longer, 15 mins vs 3 mins for my drone.</p>
 <p>I just came back from a <a href="/gallery/maine-trip/">trip exploring New England</a>, and captured some astonishing footage with his drone. The DJI Mavic air is pictured in the thumbnail of this video.</p>
@@ -96,12 +479,13 @@ I used an Ultimaker 3 to print the parts with eSun PLA+ at a 0.2mm layer height 
 <p>I recommend printing the All_parts_arranged.stl</p>
 <p>I used an Ultimaker 3 to print the parts with eSun PLA+ at a 0.2mm layer height at 215C, 35% infill, along with a PETG brim for easy cleanup. They were printed relatively slow at 60mm/s.</p>
 <p>The print took about an hour and a half and used under 20 grams of filament.</p>
-<figure>
-    <img src="/img/EOLRC_build/EOLRC1.png"
-         alt="Hello Friend"/> <figcaption>
-            <h4>3D printed parts fresh off the printer</h4>
-        </figcaption>
-</figure>
+
+    <figure class="center" >
+        <img src="/img/EOLRC_build/EOLRC1.png"  alt="Hello Friend"   style="border-radius: 8px;"  />
+
+        
+    </figure>
+
 
 <h1 id="bill-of-parts">Bill of parts</h1>
 <ul>
@@ -121,12 +505,13 @@ I used an Ultimaker 3 to print the parts with eSun PLA+ at a 0.2mm layer height 
 </ul>
 </li>
 </ul>
-<figure>
-    <img src="/img/EOLRC_build/EOLRC2.png"
-         alt="Hello Friend"/> <figcaption>
-            <h4>Parts laid out</h4>
-        </figcaption>
-</figure>
+
+    <figure class="center" >
+        <img src="/img/EOLRC_build/EOLRC2.png"  alt="Hello Friend"   style="border-radius: 8px;"  />
+
+        
+    </figure>
+
 
 <h1 id="bill-of-tools">Bill of tools</h1>
 <ul>
@@ -135,29 +520,34 @@ I used an Ultimaker 3 to print the parts with eSun PLA+ at a 0.2mm layer height 
 <li>Radio control transmitter/remote</li>
 <li>FPV goggles with a 5.8GHz system</li>
 </ul>
-<figure>
-    <img src="/img/EOLRC_build/EOLRC3.png"
-         alt="Hello Friend"/> <figcaption>
-            <h4>Tools laid out</h4>
-        </figcaption>
-</figure>
+
+    <figure class="center" >
+        <img src="/img/EOLRC_build/EOLRC3.png"  alt="Hello Friend"   style="border-radius: 8px;"  />
+
+        
+    </figure>
+
 
 <h1 id="lets-put-the-parts-together-damn-it">Let&rsquo;s put the parts together damn it!</h1>
 <h2 id="step-1---binding-the-receiver">Step 1 - Binding the receiver</h2>
-<figure>
-    <img src="/img/EOLRC_build/EOLRC4.png"
-         alt="Hello Friend"/> <figcaption>
-            <h4>Sample binding circuit</h4>
-        </figcaption>
-</figure>
+
+    <figure class="center" >
+        <img src="/img/EOLRC_build/EOLRC4.png"  alt="Hello Friend"   style="border-radius: 8px;"  />
+
+        
+    </figure>
+
 
 <p>Make a new model with zero trims. Check with your manufacturer&rsquo;s instructions on binding the radio with the receiver.</p>
 <p>We&rsquo;ll need this for a later step.</p>
 <h2 id="step-2---attaching-the-motor-to-axle-adapter-to-the-motor">Step 2 - Attaching the motor to axle adapter to the motor</h2>
-<figure>
-    <img src="/img/EOLRC_build/EOLRC5.png"
-         alt="Hello Friend"/> 
-</figure>
+
+    <figure class="center" >
+        <img src="/img/EOLRC_build/EOLRC5.png"  alt="Hello Friend"   style="border-radius: 8px;"  />
+
+        
+    </figure>
+
 
 <h3 id="partstools">Parts/Tools</h3>
 <ul>
@@ -170,16 +560,22 @@ I used an Ultimaker 3 to print the parts with eSun PLA+ at a 0.2mm layer height 
 <ol>
 <li>Screw on the motor to axle adapter onto the motor while making sure that it is screwed all the way down.</li>
 </ol>
-<figure>
-    <img src="/img/EOLRC_build/EOLRC6.png"
-         alt="Hello Friend"/> 
-</figure>
+
+    <figure class="center" >
+        <img src="/img/EOLRC_build/EOLRC6.png"  alt="Hello Friend"   style="border-radius: 8px;"  />
+
+        
+    </figure>
+
 
 <h2 id="step-3---affixing-the-motor-to-the-motor-mount">Step 3 - Affixing the motor to the motor mount</h2>
-<figure>
-    <img src="/img/EOLRC_build/EOLRC7.png"
-         alt="Hello Friend"/> 
-</figure>
+
+    <figure class="center" >
+        <img src="/img/EOLRC_build/EOLRC7.png"  alt="Hello Friend"   style="border-radius: 8px;"  />
+
+        
+    </figure>
+
 
 <h3 id="partstools-1">Parts/Tools</h3>
 <ul>
@@ -192,16 +588,22 @@ I used an Ultimaker 3 to print the parts with eSun PLA+ at a 0.2mm layer height 
 <ol>
 <li>Attach the motor to the motor mount using the screws</li>
 </ol>
-<figure>
-    <img src="/img/EOLRC_build/EOLRC8.png"
-         alt="Hello Friend"/> 
-</figure>
+
+    <figure class="center" >
+        <img src="/img/EOLRC_build/EOLRC8.png"  alt="Hello Friend"   style="border-radius: 8px;"  />
+
+        
+    </figure>
+
 
 <h2 id="step-4---mounting-the-servo-to-the-servo-holder">Step 4 - Mounting the servo to the servo holder</h2>
-<figure>
-    <img src="/img/EOLRC_build/EOLRC9.png"
-         alt="Hello Friend"/> 
-</figure>
+
+    <figure class="center" >
+        <img src="/img/EOLRC_build/EOLRC9.png"  alt="Hello Friend"   style="border-radius: 8px;"  />
+
+        
+    </figure>
+
 
 <h3 id="partstools-2">Parts/Tools</h3>
 <ul>
@@ -215,16 +617,22 @@ I used an Ultimaker 3 to print the parts with eSun PLA+ at a 0.2mm layer height 
 <li>Push the servo into the mount until it is flush</li>
 <li>Screw in the screws to secure the Servo</li>
 </ol>
-<figure>
-    <img src="/img/EOLRC_build/EOLRC10.png"
-         alt="Hello Friend"/> 
-</figure>
+
+    <figure class="center" >
+        <img src="/img/EOLRC_build/EOLRC10.png"  alt="Hello Friend"   style="border-radius: 8px;"  />
+
+        
+    </figure>
+
 
 <h2 id="step-5---securing-the-servo-arm-to-the-servo">Step 5 - Securing the servo arm to the servo</h2>
-<figure>
-    <img src="/img/EOLRC_build/EOLRC11.png"
-         alt="Hello Friend"/> 
-</figure>
+
+    <figure class="center" >
+        <img src="/img/EOLRC_build/EOLRC11.png"  alt="Hello Friend"   style="border-radius: 8px;"  />
+
+        
+    </figure>
+
 
 <h3 id="partstools-3">Parts/Tools</h3>
 <ul>
@@ -245,16 +653,22 @@ I used an Ultimaker 3 to print the parts with eSun PLA+ at a 0.2mm layer height 
 <li>Test that the servo works by moving the sticks on the controller</li>
 <li>While leaving the sticks of the radio centered, line up the servo arm parallel to the long side of the servo mount and screw it in. (This is so that the servo arm is centered)</li>
 </ol>
-<figure>
-    <img src="/img/EOLRC_build/EOLRC12.png"
-         alt="Hello Friend"/> 
-</figure>
+
+    <figure class="center" >
+        <img src="/img/EOLRC_build/EOLRC12.png"  alt="Hello Friend"   style="border-radius: 8px;"  />
+
+        
+    </figure>
+
 
 <h2 id="step-6---fixing-the-aio-fpv-camera-to-the-camera-mount">Step 6 - Fixing the AIO FPV camera to the camera mount</h2>
-<figure>
-    <img src="/img/EOLRC_build/EOLRC13.png"
-         alt="Hello Friend"/> 
-</figure>
+
+    <figure class="center" >
+        <img src="/img/EOLRC_build/EOLRC13.png"  alt="Hello Friend"   style="border-radius: 8px;"  />
+
+        
+    </figure>
+
 
 <h3 id="partstools-4">Parts/Tools</h3>
 <ul>
@@ -267,19 +681,23 @@ I used an Ultimaker 3 to print the parts with eSun PLA+ at a 0.2mm layer height 
 <li>(Optional) Put hot glue inside the camera mount. This will secure the camera much more than just pushing it in and having it stay attached due to friction.</li>
 <li>Carefully yet forcefully push the camera into the Camera mount. The camera lens should be flush with the exterior of the mount.</li>
 </ol>
-<figure>
-    <img src="/img/EOLRC_build/EOLRC14.png"
-         alt="Hello Friend"/> 
-</figure>
+
+    <figure class="center" >
+        <img src="/img/EOLRC_build/EOLRC14.png"  alt="Hello Friend"   style="border-radius: 8px;"  />
+
+        
+    </figure>
+
 
 <h1 id="making-sure-that-the-whole-system-works">Making sure that the whole system works</h1>
 <p>These gifs were recorded through the FPV camera, so at least I know that that works.</p>
-<figure>
-    <img src="/img/EOLRC_build/controller.gif"
-         alt="Hello Friend"/> <figcaption>
-            <h4>Moving the controller&#39;s sticks</h4>
-        </figcaption>
-</figure>
+
+    <figure class="center" >
+        <img src="/img/EOLRC_build/controller.gif"  alt="Hello Friend"   style="border-radius: 8px;"  />
+
+        
+    </figure>
+
 
 <p>With everything properly wired up, it was time to test all the parts.</p>
 <ul>
@@ -291,12 +709,13 @@ I used an Ultimaker 3 to print the parts with eSun PLA+ at a 0.2mm layer height 
 </ul>
 <p>When I moved the left stick of the controller vertically, the motor span up. When I moved the right stick on the controller horizontally, the servo turned.</p>
 <p><strong>If you want to reverse the motor direction, just swap any two of the three motor wires</strong></p>
-<figure>
-    <img src="/img/EOLRC_build/servomotor.gif"
-         alt="Hello Friend"/> <figcaption>
-            <h4>Servo and motor responding to my inputs</h4>
-        </figcaption>
-</figure>
+
+    <figure class="center" >
+        <img src="/img/EOLRC_build/servomotor.gif"  alt="Hello Friend"   style="border-radius: 8px;"  />
+
+        
+    </figure>
+
 
 <h1 id="what-next">What next?</h1>
 <p><strong>Congratulations, you&rsquo;re finally done. Now give yourself a big pat on the back</strong></p>
@@ -326,46 +745,51 @@ younger years.</p>
 <p>I recollect building all sorts of crazy things from an automatic crossbow to a massive Mercedes Benz Unimog with a functioning suspension and a pneumatic crane. Over the years, I have acquired an impressive amount of LEGO technic parts that are still scattered everywhere around the house.</p>
 <h2 id="i-recently-had-to-decommission">I recently had to decommission</h2>
 <p>one of my favorite birds of all time. It was a <a href="https://www.flitetest.com/articles/ft-versa-wing">FT(Flite Test) Versa wing</a> with the <a href="https://www.flitetest.com/articles/blunt-nose-conversion-ft-versa-build">Blunt Nose modification</a>. It had to be put out of service due to a combination of old age and abuse like trying to hit a small gap between the trees.</p>
-<figure>
-    <img src="/img/versa1.png"
-         alt="Hello Friend"/> <figcaption>
-            <h4>FT Blunt Nose Versa</h4>
-        </figcaption>
-</figure>
+
+    <figure class="center" >
+        <img src="/img/versa1.png"  alt="Hello Friend"   style="border-radius: 8px;"  />
+
+        
+    </figure>
+
 
 <p>This gave me several spare electronic components including a 20A BLHeli brushless ESC(electronic speed controller), a radio receiver, a Flite Test Radial 2212-1050kV motor, and an AIO(all in one) FPV camera.</p>
 <h2 id="i-hopped-onto-fusion-360">I hopped onto Fusion 360</h2>
 <p>and started modeling adapters to those electronic components so that they could be compatible with LEGO Technic. I&rsquo;ll be honest, it took multiple iterations to design parts that interfaced well with the plane and LEGO parts.</p>
 <p>In the end, I designed and printed four parts: a servo holder so that the RC car could steer, a motor to lego axle adapter, a FPV camera holder, and last but not least a motor mount. Later on, I also designed an arm from the servo to the lego steering mechanism, but this is not in the pictures shown below.</p>
 <p><strong>A build guide will also be written soon, so stay posted.</strong> <em><strong>Update</strong></em> <a href="/posts/eolrc-build-guide/">It&rsquo;s already written.</a></p>
-<figure>
-    <img src="/img/rclego1.png"
-         alt="Hello Friend"/> <figcaption>
-            <h4>3D printed parts</h4>
-        </figcaption>
-</figure>
 
-<figure>
-    <img src="/img/rclego2.png"
-         alt="Hello Friend"/> <figcaption>
-            <h4>3D printed parts with the electronics in them</h4>
-        </figcaption>
-</figure>
+    <figure class="center" >
+        <img src="/img/rclego1.png"  alt="Hello Friend"   style="border-radius: 8px;"  />
+
+        
+    </figure>
+
+
+
+    <figure class="center" >
+        <img src="/img/rclego2.png"  alt="Hello Friend"   style="border-radius: 8px;"  />
+
+        
+    </figure>
+
 
 <h2 id="here-is-the-final-result">Here is the final result:</h2>
-<figure>
-    <img src="/img/rclego3.png"
-         alt="Hello Friend"/> <figcaption>
-            <h4>The RC car in all its might</h4>
-        </figcaption>
-</figure>
 
-<figure>
-    <img src="/img/rclego4.png"
-         alt="Hello Friend"/> <figcaption>
-            <h4>The RC car at night</h4>
-        </figcaption>
-</figure>
+    <figure class="center" >
+        <img src="/img/rclego3.png"  alt="Hello Friend"   style="border-radius: 8px;"  />
+
+        
+    </figure>
+
+
+
+    <figure class="center" >
+        <img src="/img/rclego4.png"  alt="Hello Friend"   style="border-radius: 8px;"  />
+
+        
+    </figure>
+
 
 <h2 id="i-have-to-say">I have to say</h2>
 <p>I am very impressed with the performance of this car. It has enough torque to just about climb over anything and on a 3S 2200mAh LiPo, the battery lasts for ages, about 1.5 hrs of regular use.</p>
@@ -394,24 +818,26 @@ younger years.</p>
             <pubDate>Thu, 11 Jun 2020 10:04:55 -0400</pubDate>
             
             <guid>/posts/lets-kill-this-macbook-how-to-mine-monero-on-a-mac/</guid>
-            <description>MacBook Pro 13 without TouchBar   My good friend&amp;rsquo;s Mac is nearing its end He&amp;rsquo;s already had it, the one in the picture above, for a couple of years, and the battery is starting to degrade among several other serious issues. Since it is nearing its end soon, in the time that it isn&amp;rsquo;t being used it could mine some cryptocurrency.
-MacBooks are known for their subpar cooling systems as demonstrated in this video.</description>
-            <content type="html"><![CDATA[<figure>
-    <img src="/img/skylerdontlikemacs.png"
-         alt="Hello Friend"/> <figcaption>
-            <h4>MacBook Pro 13 without TouchBar</h4>
-        </figcaption>
-</figure>
+            <description>My friend&amp;rsquo;s Mac is nearing its end He&amp;rsquo;s already had it, the one in the picture above, for a couple of years, and the battery is starting to degrade among several other serious issues. Since it is nearing its end soon, in the time that it isn&amp;rsquo;t being used it could mine some cryptocurrency.
+MacBooks are known for their subpar cooling systems as demonstrated in this video. We are going to set up this mac for mining Monero(XMR), a type of cryptocurrency that can be mined with a CPU.</description>
+            <content type="html"><![CDATA[
+    <figure class="center" >
+        <img src="/img/skylerdontlikemacs.png"  alt="Hello Friend"   style="border-radius: 8px;"  />
 
-<h1 id="my-good-friends-mac-is-nearing-its-end">My good friend&rsquo;s Mac is nearing its end</h1>
+        
+    </figure>
+
+
+<h1 id="my-friends-mac-is-nearing-its-end">My friend&rsquo;s Mac is nearing its end</h1>
 <p>He&rsquo;s already had it, the one in the picture above, for a couple of years, and the battery is starting to degrade among several other serious issues. Since it is nearing its end soon, in the time that it isn&rsquo;t being used it could mine some cryptocurrency.</p>
 <p>MacBooks are known for their subpar cooling systems as demonstrated in <a href="https://www.youtube.com/watch?v=MlOPPuNv4Ec">this video</a>. We are going to set up this mac for mining <a href="https://www.getmonero.org/">Monero(XMR)</a>, a type of cryptocurrency that can be mined with a CPU. He is only going to earn a couple pennies per day, but it&rsquo;s better than nothing. I don&rsquo;t know how he&rsquo;ll be able to sleep through the insane fan noise. Maybe he&rsquo;ll have to run an extension cable to his closet.</p>
-<figure>
-    <img src="/img/monero.png"
-         alt="Hello Friend"/> <figcaption>
-            <h4>Official Monero Logo</h4>
-        </figcaption>
-</figure>
+
+    <figure class="center" >
+        <img src="/img/monero.png"  alt="Hello Friend"   style="border-radius: 8px;"  />
+
+        
+    </figure>
+
 
 <h1 id="disclaimer">Disclaimer</h1>
 <p>You have been warned that there are risks such as damage to the computer keeping it at a high temperature for long periods of time.</p>
@@ -442,7 +868,7 @@ MacBooks are known for their subpar cooling systems as demonstrated in this vide
 <p>Then there will be a pop-up where it asks for the <strong>Monero wallet address</strong>, where you type in your wallet. You can also choose to set a <strong>Worker name</strong>, something like MacBookPro13.</p>
 <p>Navigate to the <strong>Backends</strong> tab and only turn on the <strong>CPU</strong> option. You can use a GPU if you have one, but I don&rsquo;t recommend it as there are far more profitable currencies to mine with a GPU.</p>
 <p>Next, select the <strong>Misc</strong> tab and set a donation percentage, I chose to leave the <strong>HTTP API</strong> option off.</p>
-<p>Finally, navigate the the <strong>Result</strong> tab, click on macOS option under the <strong>Command line</strong>. Copy the line of code.</p>
+<p>Finally, navigate to the <strong>Result</strong> tab, click on macOS option under the <strong>Command line</strong>. Copy the line of code.</p>
 <h1 id="making-an-executable-shell-script">Making an executable shell script</h1>
 <p>While this is not a required step, I recommend that you do it for ease of use.</p>
 <p>Go back to the terminal app.</p>
@@ -459,12 +885,12 @@ MacBooks are known for their subpar cooling systems as demonstrated in this vide
 <p>Type the following into it, each on a separate line:</p>
 <p><code>cd xmrig/build</code></p>
 <p><code>copy and paste the code that we generated earlier from the configurator</code></p>
-<p>Press control x, press y to apply the changes, and then press enter to save the edits made to the file.</p>
+<p>Press control x, and then press y followed by enter to save the edits made to the file.</p>
 <h1 id="running-the-shell-script">Running the shell script</h1>
 <p>It&rsquo;s actually really easy, type the following into terminal from the <strong>~</strong> directory, which is the default when you open Terminal:</p>
 <p><code>./xmr.sh</code></p>
 <p>To stop the program press control c.</p>
-<p>You can monitor all sorts of statistics on the pool&rsquo;s home page, logging in with your wallet address as your username.</p>
+<p>You can monitor all sorts of statistics on the pool&rsquo;s home page, logging in with your wallet address.</p>
 <h1 id="updating-xmrig">Updating xmrig</h1>
 <p>Navigate to the build directory:</p>
 <p><code>cd xmrig/build</code></p>

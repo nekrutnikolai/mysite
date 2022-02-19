@@ -6,13 +6,31 @@
     <description>Recent content on Nikolai Nekrutenko</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Wed, 17 Feb 2021 09:15:23 -0400</lastBuildDate>
-    
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Sun, 27 Jun 2021 10:38:15 -0400</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Build a Website: A Guide for Command-Line Novices</title>
+      <link>/posts/how-to-build-a-website-a-guide-for-command-line-novices/</link>
+      <pubDate>Sun, 27 Jun 2021 10:38:15 -0400</pubDate>
+      
+      <guid>/posts/how-to-build-a-website-a-guide-for-command-line-novices/</guid>
+      <description>Formerly titled: How to Build a Website for Your Studio (or Anything): A Step by Step Guide
+ Introduction This guide is intended for Macintosh users who have never programmed before. With a bit of searching, the same steps can easily be applied to Windows and Linux machines.
+Most will agree that a book is judged by its cover—for better or worse. Websites are the covers of your studio, organization, or even yourself, which are the books.</description>
+    </item>
     
     <item>
-      <title>Ice Storm!</title>
+      <title>Ice Storm Pt. 2</title>
+      <link>/gallery/ice-storm-2/</link>
+      <pubDate>Thu, 25 Feb 2021 13:20:17 -0400</pubDate>
+      
+      <guid>/gallery/ice-storm-2/</guid>
+      <description>I&amp;rsquo;ve had enough sitting at home, not leaving my neighborhood for a week. So, I ventured out to Jo Hays Vista with my newly built FPV freestyle drone and camera at my side.
+Unfortunately I forgot to charge the FPV goggles before hand, so the drone was practically useless. I&amp;rsquo;m still glad I saw the harsh, wind-chiseled ice.
+     .jg-entry img { transition: transform .25s ease-in-out !</description>
+    </item>
+    
+    <item>
+      <title>Ice Storm</title>
       <link>/gallery/ice-storm/</link>
       <pubDate>Wed, 17 Feb 2021 09:15:23 -0400</pubDate>
       
@@ -39,7 +57,7 @@ These were made by leaving the shutter open for a few seconds (30) and using my 
       <pubDate>Sun, 07 Feb 2021 21:26:54 -0400</pubDate>
       
       <guid>/about/</guid>
-      <description>Jo Hays Vista   Hi! Nice to meet you. I&amp;rsquo;m Nikolai—an aspiring engineer or physicist with an appreciation for nature—a tinkerer at heart.
+      <description>Hi! Nice to meet you. I&amp;rsquo;m Nikolai—an aspiring engineer or physicist with an appreciation for nature—a tinkerer at heart.
 I enjoy spending time in the untouched wilderness with a camera at my side.
 I also find satisfaction in building, flying, and ultimately crashing RC aircraft and drones. This passion for aviation prompted me to start an aeronautics club at my high school.
 Some of my other passions include, in no particular order, photography, content creation, drones, cryptocurrencies, electonics, programming, martial arts, languages, playing the guitar, and of course this website.</description>
@@ -80,17 +98,36 @@ Here are some of my favorite long exposures from the evening.
     </item>
     
     <item>
-      <title>Curriculum Vitae</title>
-      <link>/cv/</link>
+      <title>Nikolai Nekrutenko&#39;s OLD Resume</title>
+      <link>/resume_old/</link>
       <pubDate>Fri, 11 Sep 2020 16:26:17 -0400</pubDate>
       
-      <guid>/cv/</guid>
-      <description>Nikolai Nekrutenko nekrutnikolai@gmail.com · https://nnekrut.netlify.app/
- Education State College Area High School
-August 2017 - Present
- GPA (as of June 2020)  4.73 weighted 3.91 unweighted   Projected graduation January 2021  I will take courses at Penn State in the Spring 2021 semester as a non-matriculated student
- Standardized Exams AP Exams May 2020
- Physics C Electricity and Magnetism (Score 5) Physics C Mechanics (Score 5) United States History (Score 5) Statistics (Score 4) Computer Science Principles (Score 4)  May 2019</description>
+      <guid>/resume_old/</guid>
+      <description>nekrutnikolai@gmail.com · https://nnekrut.netlify.app/ · https://github.com/NikolaiTeslovich
+ I highly recommend viewing this document online: https://nnekrut.netlify.app/cv/
+Education Cornell University
+September 2021 - May 2025
+ College of Arts &amp;amp; Sciences  Majoring in Physics Minoring in Computer Science    Pennsylvania State University
+January 2021 - May 2021
+  4.0 GPA
+  Took three courses as a non-matriculated student for a total of 10 credits
+ MATH 141 (Calculus with Analytical Geometry II) CHEM 112 (Chemical Principles II) CHEM 110 (Chemical Principles I)    State College Area High School</description>
+    </item>
+    
+    <item>
+      <title>Nikolai Nekrutenko&#39;s Resume</title>
+      <link>/resume/</link>
+      <pubDate>Fri, 11 Sep 2020 16:26:17 -0400</pubDate>
+      
+      <guid>/resume/</guid>
+      <description>Ithaca, NY
+nekrutnikolai@gmail.com · https://nnekrut.netlify.app/ · https://github.com/NikolaiTeslovich
+ I highly recommend viewing this document online: https://nnekrut.netlify.app/cv/
+Education Cornell University
+September 2021 - May 2025
+  College of Arts &amp;amp; Sciences
+ Majoring in Physics Minoring in Computer Science    Sem 1
+ AEP 1200 - Intro to Nanoscience and Nanoengineering MATH 1920 - Multivariable Calculus for Engineers PHYS 1116 - Physics I: Mechanics and Special Relativity    Sem 2 (in progress)</description>
     </item>
     
     <item>
@@ -206,24 +243,13 @@ To celebrate the longest day of the year, I found a stick about my height and li
     </item>
     
     <item>
-      <title>Nikolai&#39;s Mowing</title>
-      <link>/mowing/</link>
-      <pubDate>Tue, 30 Jun 2020 15:26:54 -0400</pubDate>
-      
-      <guid>/mowing/</guid>
-      <description>Why am I doing this? Strangely enough, I enjoy lawn mowing and find it to be an effective mind relaxant probably because I like enjoying the outdoors.
-It&amp;rsquo;s the summer in the middle of the COVID-19 pandemic, and I want to earn some cash that I can use to fuel my hobbies and to start saving for the future.
-Business model and info Customer satisfaction is at the core of Nikolai&amp;rsquo;s Mowing.</description>
-    </item>
-    
-    <item>
       <title>Let&#39;s Kill This MacBook! - How to Mine Monero on a Mac</title>
       <link>/posts/lets-kill-this-macbook-how-to-mine-monero-on-a-mac/</link>
       <pubDate>Thu, 11 Jun 2020 10:04:55 -0400</pubDate>
       
       <guid>/posts/lets-kill-this-macbook-how-to-mine-monero-on-a-mac/</guid>
-      <description>MacBook Pro 13 without TouchBar   My good friend&amp;rsquo;s Mac is nearing its end He&amp;rsquo;s already had it, the one in the picture above, for a couple of years, and the battery is starting to degrade among several other serious issues. Since it is nearing its end soon, in the time that it isn&amp;rsquo;t being used it could mine some cryptocurrency.
-MacBooks are known for their subpar cooling systems as demonstrated in this video.</description>
+      <description>My friend&amp;rsquo;s Mac is nearing its end He&amp;rsquo;s already had it, the one in the picture above, for a couple of years, and the battery is starting to degrade among several other serious issues. Since it is nearing its end soon, in the time that it isn&amp;rsquo;t being used it could mine some cryptocurrency.
+MacBooks are known for their subpar cooling systems as demonstrated in this video. We are going to set up this mac for mining Monero(XMR), a type of cryptocurrency that can be mined with a CPU.</description>
     </item>
     
     <item>
@@ -235,6 +261,28 @@ MacBooks are known for their subpar cooling systems as demonstrated in this vide
       <description>Hello World!
 Why did I make this website and what even is it? I&amp;rsquo;m glad you asked although you probably didn&amp;rsquo;t! I made and will continue to make this website because I want to learn how to build a website. I also enjoy writing, especially when it isn&amp;rsquo;t tied to a grade.
 I will be posting about everything from a small cryptocurrency mining operation that I run in the basement to my favorite hobby of RC flight to my own ice cream recipes and everything in between.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/collegeapps/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/collegeapps/</guid>
+      <description>Note: this article is still in progress
+Applying to colleges is a daunting and uniformed process. So, in an effort to make the process more transparent, I&amp;rsquo;ll share everything about my process, my essays, my high school extracurricular activities, and much more.
+First of all Here are the statistics on where I applied to, where I got in, and where I actually decided to go:
+In total, I applied to about 15 places.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/websites/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/websites/</guid>
+      <description>I want you to have a website  So far, I have built documentation websites, organization websites, and personal websites integrated with a photo gallery.
+What makes these websites special  Astonishing on both desktop and mobile Secure, fast, and SEO-ready Google Analytics and Search Console supported Infinitely customizable Photo gallery support with hugo-shortcode-gallery Favicon support Deployable on Netlify  If you would like a website  Pick a Hugo theme Test it on both mobile and desktop to make sure that you like it Please send me an email at nekrutnikolai@gmail.</description>
     </item>
     
   </channel>

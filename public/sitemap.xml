@@ -1,194 +1,137 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
+    <loc>/posts/how-to-build-a-website-a-guide-for-command-line-novices/</loc>
+    <lastmod>2021-06-27T10:38:15-04:00</lastmod>
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2021-06-27T10:38:15-04:00</lastmod>
+  </url><url>
+    <loc>/posts/</loc>
+    <lastmod>2021-06-27T10:38:15-04:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2021-06-27T10:38:15-04:00</lastmod>
+  </url><url>
+    <loc>/tags/tutorial/</loc>
+    <lastmod>2021-06-27T10:38:15-04:00</lastmod>
+  </url><url>
+    <loc>/tags/website/</loc>
+    <lastmod>2021-06-27T10:38:15-04:00</lastmod>
+  </url><url>
+    <loc>/tags/wtsda/</loc>
+    <lastmod>2021-06-27T10:38:15-04:00</lastmod>
+  </url><url>
     <loc>/gallery/</loc>
-    <lastmod>2021-02-17T09:15:23-04:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2021-02-25T13:20:17-04:00</lastmod>
+  </url><url>
+    <loc>/gallery/ice-storm-2/</loc>
+    <lastmod>2021-02-25T13:20:17-04:00</lastmod>
+  </url><url>
     <loc>/gallery/ice-storm/</loc>
     <lastmod>2021-02-17T09:15:23-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2021-02-17T09:15:23-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/gallery/light-drawings/</loc>
     <lastmod>2021-02-08T16:07:27-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/about/</loc>
     <lastmod>2021-02-07T21:26:54-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/gallery/stonevalley/</loc>
     <lastmod>2021-01-14T22:25:09-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/gallery/snow/</loc>
     <lastmod>2021-01-13T10:45:17-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/gallery/snow-aftermath/</loc>
     <lastmod>2021-01-13T10:45:17-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/cv/</loc>
+  </url><url>
+    <loc>/resume_old/</loc>
     <lastmod>2020-09-11T16:26:17-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>/resume/</loc>
+    <lastmod>2020-09-11T16:26:17-04:00</lastmod>
+  </url><url>
     <loc>/gallery/rcplanes/</loc>
     <lastmod>2020-08-26T15:50:00-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/drones/</loc>
     <lastmod>2020-08-26T15:12:36-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/</loc>
-    <lastmod>2020-08-26T15:12:36-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/rc/</loc>
     <lastmod>2020-08-26T15:12:36-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2020-08-26T15:12:36-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/posts/the-mostly-maine-trip-video/</loc>
     <lastmod>2020-08-26T15:12:36-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/gallery/maine-trip/</loc>
     <lastmod>2020-08-26T15:01:19-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/bitcoin/</loc>
     <lastmod>2020-08-01T15:57:01-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/cryptocurrency/</loc>
     <lastmod>2020-08-01T15:57:01-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/speech/</loc>
     <lastmod>2020-08-01T15:57:01-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/posts/the-book-of-bitcoin-an-analogy-to-explain-bitcoin/</loc>
     <lastmod>2020-08-01T15:57:01-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/eolrc/</loc>
     <lastmod>2020-07-29T10:30:15-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/posts/eolrc-build-guide/</loc>
     <lastmod>2020-07-29T10:30:15-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/flitetest/</loc>
     <lastmod>2020-07-29T10:30:15-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/shenanigans/</loc>
     <lastmod>2020-07-29T10:30:15-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/gallery/garden/</loc>
     <lastmod>2020-07-25T20:51:17-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/gallery/vaccumtubes/</loc>
     <lastmod>2020-07-23T18:09:23-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/gallery/waterlilies-dragonflies/</loc>
     <lastmod>2020-07-21T16:51:17-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/posts/eolrc-an-extremely-overkill-lego-rc-car-from-plane-parts/</loc>
     <lastmod>2020-07-21T07:27:42-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/gallery/solstice-fun/</loc>
     <lastmod>2020-07-02T10:45:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/mowing/</loc>
-    <lastmod>2020-06-30T15:26:54-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/posts/lets-kill-this-macbook-how-to-mine-monero-on-a-mac/</loc>
     <lastmod>2020-06-11T10:04:55-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/mining/</loc>
     <lastmod>2020-06-11T10:04:55-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/xmr/</loc>
     <lastmod>2020-06-11T10:04:55-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/firstpost/</loc>
     <lastmod>2020-04-30T15:21:48-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/helloworld/</loc>
     <lastmod>2020-04-30T15:21:48-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/posts/my-first-post/</loc>
     <lastmod>2020-04-30T15:21:48-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/test/</loc>
     <lastmod>2020-04-30T15:21:48-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>/collegeapps/</loc>
+  </url><url>
+    <loc>/websites/</loc>
+  </url><url>
     <loc>/categories/</loc>
   </url>
-  
 </urlset>
