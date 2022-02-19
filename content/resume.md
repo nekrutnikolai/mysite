@@ -3,7 +3,7 @@ title: "Nikolai Nekrutenko"
 date: 2020-09-11T16:26:17-04:00
 draft: false
 TOC: false
----
+--- 
 
 nekrutnikolai@gmail.com · https://nnekrut.netlify.app/ · https://github.com/NikolaiTeslovich
 
