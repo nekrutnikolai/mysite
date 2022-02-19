@@ -1,11 +1,9 @@
 ---
-title: "Nikolai Nekrutenko's Resume"
+title: "Nikolai Nekrutenko's OLD Resume"
 date: 2020-09-11T16:26:17-04:00
 draft: false
 TOC: false
 ---
-
-Ithaca, NY
 
 nekrutnikolai@gmail.com · https://nnekrut.netlify.app/ · https://github.com/NikolaiTeslovich
 
@@ -23,28 +21,22 @@ I highly recommend viewing this document online: https://nnekrut.netlify.app/cv/
   * Majoring in Physics
   * Minoring in Computer Science
 
-* Sem 1
-  * AEP 1200 - Intro to Nanoscience and Nanoengineering
-  * MATH 1920 - Multivariable Calculus for Engineers
-  * PHYS 1116 - Physics I: Mechanics and Special Relativity
-
-* Sem 2 (in progress)
-  * CS 1110 - Intro to Computing with Python
-  * MATH 2930 - Differential Equations for Engineers
-  * PHYS 2217 - Physics II: Electricity and Magnetism
-
 **Pennsylvania State University**
 
 *January 2021 - May 2021*
 
+* 4.0 GPA
+
 * Took three courses as a non-matriculated student for a total of 10 credits
-  * CHEM 110 - Chemical Principles I
-  * CHEM 112 - Chemical Principles II
-  * MATH 141 - Calculus with Analytical Geometry II
+  * MATH 141 (Calculus with Analytical Geometry II)
+  * CHEM 112 (Chemical Principles II)
+  * CHEM 110 (Chemical Principles I)
 
 **State College Area High School**
 
 *August 2017 - January 2021*
+
+* GPA of 4.66
 
 ---
 
@@ -53,6 +45,18 @@ I highly recommend viewing this document online: https://nnekrut.netlify.app/cv/
 * Applied and experimental physics
 * Blockchain and cryptocurrencies
 * Science communication and education
+
+---
+
+## Supplemental Education
+
+**Johns Hopkins Center for Talented Youth: Crafting the Essay**
+
+*August 2019 - March 2020*
+
+**Summer Springboard: Fundamentals of Engineering at University of California Berkeley**
+
+*June 2019*
 
 ---
 
@@ -75,58 +79,62 @@ I highly recommend viewing this document online: https://nnekrut.netlify.app/cv/
 **Founder & President**, *Oct 2019 - Jun 2021*
 
 * Club focused on learning about Aeronautics through the design, construction, and flight of remote controlled model aircraft
-* Recently acquired the Patrick Y. Wang Technology Innovation Fund grant ($1750)
+* Recently acquired the Patrick Y. Wang Technology Innovation Fund grant ($1750): https://centre-foundation.org/funds/patrick-y-wang-technology-innovation-fund/
 * Website: https://shmac.netlify.app/
-
-**Research at the Penn State Materials Research Institute**, *Penn State*
-
-*July 2019 - August 2019*
-
-* Volunteer researcher in Dr. Rotkin‘s laboratory
-* Learned about scanning near-field optical microscopy (SNOM)
-* Developed a Python program using Jupyter Notebooks that filters out background noise from microscope scans
-* GitHub repo: https://github.com/NikolaiTeslovich/sSNOM
+* Instagram: https://www.instagram.com/statehighmodelaeronauticsclub/
 
 **Rocket Lab Initiative**, *Penn State*
 
 *September 2020 - June 2021*
+* https://github.com/NikolaiTeslovich/RISE
+* Science outreach from PSU (Dr. Randall McEntaffer)
+* Prototyping and testing of a Raspberry Pi sensor payload for a suborbital rocket
 
-* Prototyping and developing a Raspberry Pi sensor payload for a suborbital rocket
-* GitHub repo: https://github.com/NikolaiTeslovich/RISE
+**Research at the Penn State Materials Research Institute**, *Penn State*
 
-### Volunteering
+*August 2019*
+
+* Volunteer in Dr. Rotkin‘s laboratory
+* Learned about scanning near-field optical microscopy (SNOM)
+* Developed a Python program using Jupyter Notebooks that filters out background noise from microscope scans
+* https://github.com/NikolaiTeslovich/sSNOM
 
 **Shaver’s Creek Environmental Center**, *State College, PA*
 
 *Summers 2017 - 2019*
 
+* Leader-in-training
 * Volunteered in a summer camp for elementary and middle school children
 * Performed various leadership activities such as games, and songs to make the club enjoyable, memorable and educational for all
-* Nature awareness educational outreach
+
+
+### Sports
 
 **Tang Soo Do**, *A Mountain Wind Martial Arts, State College, PA*
 
 *February 2013 - Present*   
 
-* Rank of Black Belt (Cho Dan)
-* Instruct and help younger students with proper form, technique, and on practical and philosophical applications of the art
+* Instruct and help younger students with proper form, technique, and on the practical and philosophical applications
+* Role model for younger students
+* Rank of Cho Dan Bo (Black Belt candidate)
 * Awards at tournaments
     * *2019*
         * 3rd place sparring
         * 3rd place weapons
         * Certificate of appreciation for helping organize the tournament
+    * *2014*
+        * 2nd place forms
+        * 3rd place sparring
 
 ---
 
-## Supplemental Education
+### Music
 
-**Johns Hopkins Center for Talented Youth: Crafting the Essay**
+**Guitar**
 
-*August 2019 - March 2020*
+*December 2018 - Present*
 
-**Summer Springboard: Fundamentals of Engineering at University of California Berkeley**
-
-*June 2019*
+* Enjoy playing and singing anything from David Bowie to Simon and Garfunkel
 
 ---
 
@@ -134,27 +142,33 @@ I highly recommend viewing this document online: https://nnekrut.netlify.app/cv/
 
 ### Computer Skills
 
+**GitHub**
+
+* https://github.com/NikolaiTeslovich
+
 **Programming Languages**
 
 * Python
 * Javascript
 * C++
 * Shell scripting
+  * Actively developing shell scripts to simplify headless mining on Linux: https://github.com/NikolaiTeslovich/minerwrangler
 
 **Data Analysis**
 
-* Jupyter Notebooks
-* Pandas
-* Vega-lite
+* With Google Colab (Jupyter Notebooks) and/or Observable
 
 **Website Design**
 
-* Using Hugo and Netlify
+* Using Hugo, Netlify, and Github
+  * Personal website: https://nnekrut.netlify.app/
+  * State High Model Aeronautics Club website: https://shmac.netlify.app/
+  * CryptoClarified (aiming to simplify the complex concept of cryptocurrencies and blockchain): https://cryptoclarified.netlify.app/
 
 **Software**
 
 * Video editing programs (Adobe Premiere Pro, DaVinci Resolve, Final Cut Pro, iMovie)
-* Photo editing software (Adobe Photoshop, Pixelmator Pro)
+* Photo editing software (Adobe Photoshop)
 * Vector editing software (Adobe Illustrator)
 * 3D design programs (Sketchup, Tinkercad, Fusion 360, Blender)
 * 3D printing software (Ultimaker Cura, PreForm)
@@ -172,10 +186,6 @@ I highly recommend viewing this document online: https://nnekrut.netlify.app/cv/
     * Ethereum (ETH), Ethereum Classic (ETC), Ravencoin (RVN)
 * Processors
     * Monero (XMR)
-
-**Smart Contract Development**
-
-* Introductory knowledge of SoliditI’m y and Brownie
 
 ### Technical Skills
 
@@ -198,37 +208,62 @@ I highly recommend viewing this document online: https://nnekrut.netlify.app/cv/
 
 * Planes
   * Some made of foam board using a needle cutter that I built: https://rb.gy/tuxnsl
+  * Sports aircraft
   * Flying wings
   * Autonomous aircraft using INAV: https://github.com/iNavFlight/inav/wiki
 
 * Drones
   * Newly built 6" FPV freestyle drone
+  * TinyHawk II Freestyle drone
   * DJI Mavic Air for cinematography
 
 * Model Rockets
   * Designed a model rocket in OpenRocket Simulator
   * Built the rocket along with a data-collecting payload based on a Raspberry Pi
+  * The launch was surprisingly successful!
 
 ### Other Skills
 
-* Nature photography
-* Macro photography
-* Cinematography
+**Photography**
+
+* Photo gallery: https://nnekrut.netlify.app/gallery/  
+
+**Cinematography**
+
+* YouTube channel showing my best creations: https://www.youtube.com/channel/UC-WSQ21Q2Q36urFPc4e5T6Q
+* A stop motion movie I made (my best one yet!): https://www.youtube.com/watch?v=Srl9ST27SpA
 
 ---
 
 ## Licenses/Certifications
 
-**FCC Radio License**
+**HAM Radio**
 
-* Technician Radio License (Call sign: `KC3NJK`)
-
-**General Laser Safety Training**
-
-* Trained to operate lasers in labs at Penn State
+* Amateur Radio License (Call sign: `KC3NJK`)
+* Technician level
 
 **The Recreational UAS Safety Test (TRUST)**
 
-* Certified fly drones or aircraft for recreational purposes
+* Can legally fly drones or aircraft for recreational purposes
 
 ---
+
+## Family Responsibilities
+
+**Taking Care of a Younger Sister**
+
+*November 2008 - Present*
+
+---
+
+## Scholastic Awards  
+
+**Le Grand Concours (French language competition) awards**
+
+*2018*
+
+* Bronze level nationally
+
+*2016 - 2017*
+
+* Gold level nationally
