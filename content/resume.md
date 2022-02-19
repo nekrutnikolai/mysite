@@ -5,23 +5,20 @@ draft: false
 TOC: false
 ---
 
-Ithaca, NY
-
 nekrutnikolai@gmail.com · https://nnekrut.netlify.app/ · https://github.com/NikolaiTeslovich
+
+Ithaca, NY
 
 ---
 
-I highly recommend viewing this document online: https://nnekrut.netlify.app/cv/
+Viewing this document online is recommended: https://nnekrut.netlify.app/cv/
 
 ## Education
 
-**Cornell University**
+**Cornell University**, *College of Arts and Sciences - Major in Physics & Minor in CS*
 
 *September 2021 - May 2025*
 
-* College of Arts & Sciences
-  * Majoring in Physics
-  * Minoring in Computer Science
 * Semester 1
   * AEP 1200 - Intro to Nanoscience and Nanoengineering
   * MATH 1920 - Multivariable Calculus for Engineers
@@ -31,11 +28,11 @@ I highly recommend viewing this document online: https://nnekrut.netlify.app/cv/
   * MATH 2930 - Differential Equations for Engineers
   * PHYS 2217 - Physics II: Electricity and Magnetism
 
-**Pennsylvania State University**
+**Pennsylvania State University**, *Non-matriculated Student*
 
 *January 2021 - May 2021*
 
-* Took three courses as a non-matriculated student for a total of 10 credits
+* Semester 1
   * CHEM 110 - Chemical Principles I
   * CHEM 112 - Chemical Principles II
   * MATH 141 - Calculus with Analytical Geometry II
@@ -64,27 +61,11 @@ I highly recommend viewing this document online: https://nnekrut.netlify.app/cv/
 
 ---
 
-## Extracurricular Activities and Leadership
+## Activities and Experience
 
-### Science and Technology
+### Research Experience
 
-**Cornell Blockchain**, *Cornell University*
-
-*Sep 2021 - Present*
-
-* Member of the R&D team
-* Currently working on establishing CornellDAO
-
-**State College Area High School Model Aeronautics Club**, *State College Area High School*		
-
-*Oct 2019 - Jun 2021*
-
-* Co-Founder & President
-* Club focused on learning about Aeronautics through the design, construction, and flight of remote controlled model aircraft
-* Recently acquired the Patrick Y. Wang Technology Innovation Fund grant ($1750)
-* Website: https://shmac.netlify.app/
-
-**Research at the Penn State Materials Research Institute**, *Pennsylvania State University*
+**Researcher at Penn State Materials Research Institute**, *Pennsylvania State University*
 
 *Jul 2019 - Aug 2019*
 
@@ -93,7 +74,25 @@ I highly recommend viewing this document online: https://nnekrut.netlify.app/cv/
 * Developed a Python program using Jupyter Notebooks that filters out background noise from microscope scans
 * GitHub repo: https://github.com/NikolaiTeslovich/sSNOM
 
-**Rocket Lab Initiative**, *Pennsylvania State University*
+### Science and Technology
+
+**Member of Cornell Blockchain**, *Cornell University*
+
+*Sep 2021 - Present*
+
+* Part of the R&D team
+* Currently working on establishing a DAO for the club
+
+**Founder of State High Model Aeronautics Club**, *State College Area High School*		
+
+*Oct 2019 - Jun 2021*
+
+* Co-Founder & President
+* Club focused on learning about Aeronautics through the design, construction, and flight of remote controlled model aircraft
+* Recently acquired the Patrick Y. Wang Technology Innovation Fund grant ($1750)
+* Website: https://shmac.netlify.app/
+
+**Member of Rocket Lab Initiative**, *Pennsylvania State University*
 
 *Sep 2020 - Jun 2021*
 
@@ -102,21 +101,21 @@ I highly recommend viewing this document online: https://nnekrut.netlify.app/cv/
 
 ### Volunteering
 
-**Shaver’s Creek Environmental Center**, *State College, PA*
+**Leader at Shaver’s Creek Environmental Center**, *Pensylvania State University*
 
 *Summers 2017 - 2019*
 
 * Volunteered in a summer camp for elementary and middle school children
 * Performed various leadership activities such as games, and songs to make the club enjoyable, memorable and educational for all
-* Nature awareness educational outreach
+* Nature awareness and appreciation education
 
-**Tang Soo Do**, *A Mountain Wind Martial Arts, State College, PA*
+**Instructor at A Mountain Wind Martial Arts**, *State College, PA*
 
 *Feb 2013 - Present*   
 
-* Rank of Black Belt (Cho Dan)
+* Black Belt (Cho Dan) in Tang Soo Do, a Korean Martial Art
 * Instruct and help younger students with proper form, technique, and on practical and philosophical applications of the art
-* Awards at tournaments (2019)
+* Awards at at the regional 2019 tournament
   * 3rd place sparring
   * 3rd place weapons
   * Certificate of appreciation for helping organize the tournament
@@ -127,25 +126,13 @@ I highly recommend viewing this document online: https://nnekrut.netlify.app/cv/
 
 *Jun 2021 - Aug 2021*
 
-* Worked on the farm, learned how to drive tractors, etc. 
+* Worked on the farm, learned how to drive tractors, etc.
 
 **Lawn Mowing & Yard Care**, *State College, PA*
 
 *Summers 2017 - 2021*
 
 * Had a side-hustle
-
----
-
-## Supplemental Education
-
-**Johns Hopkins Center for Talented Youth: Crafting the Essay**
-
-*August 2019 - March 2020*
-
-**Summer Springboard: Fundamentals of Engineering at University of California Berkeley**
-
-*June 2019*
 
 ---
 
@@ -246,5 +233,3 @@ I highly recommend viewing this document online: https://nnekrut.netlify.app/cv/
 **The Recreational UAS Safety Test (TRUST)**
 
 * Certified fly drones or aircraft for recreational purposes
-
----
