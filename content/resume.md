@@ -247,7 +247,7 @@ TOC: false
 * Using Hugo and Netlify
 * Website: https://bit.ly/3I9wfXp
 
-**Developed EthWrangler**
+**Developing MinerWrangler**
 
 *Nov 2020 - Apr 2021*
 
