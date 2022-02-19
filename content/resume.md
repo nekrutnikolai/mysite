@@ -68,6 +68,13 @@ I highly recommend viewing this document online: https://nnekrut.netlify.app/cv/
 
 ### Science and Technology
 
+**Cornell Blockchain**, *Cornell University*
+
+*Sep 2021 - Present*
+
+* Member of the R&D team
+* Currently working on establishing CornellDAO
+
 **State College Area High School Model Aeronautics Club**, *State College Area High School*		
 
 *Oct 2019 - Jun 2021*
@@ -77,18 +84,18 @@ I highly recommend viewing this document online: https://nnekrut.netlify.app/cv/
 * Recently acquired the Patrick Y. Wang Technology Innovation Fund grant ($1750)
 * Website: https://shmac.netlify.app/
 
-**Research at the Penn State Materials Research Institute**, *Penn State*
+**Research at the Penn State Materials Research Institute**, *Pennsylvania State University*
 
-*July 2019 - August 2019*
+*Jul 2019 - Aug 2019*
 
 * Volunteer researcher in Dr. Rotkin‘s laboratory
 * Learned about scanning near-field optical microscopy (SNOM)
 * Developed a Python program using Jupyter Notebooks that filters out background noise from microscope scans
 * GitHub repo: https://github.com/NikolaiTeslovich/sSNOM
 
-**Rocket Lab Initiative**, *Penn State*
+**Rocket Lab Initiative**, *Pennsylvania State University*
 
-*September 2020 - June 2021*
+*Sep 2020 - Jun 2021*
 
 * Prototyping and developing a Raspberry Pi sensor payload for a suborbital rocket
 * GitHub repo: https://github.com/NikolaiTeslovich/RISE
@@ -105,7 +112,7 @@ I highly recommend viewing this document online: https://nnekrut.netlify.app/cv/
 
 **Tang Soo Do**, *A Mountain Wind Martial Arts, State College, PA*
 
-*February 2013 - Present*   
+*Feb 2013 - Present*   
 
 * Rank of Black Belt (Cho Dan)
 * Instruct and help younger students with proper form, technique, and on practical and philosophical applications of the art
@@ -113,6 +120,20 @@ I highly recommend viewing this document online: https://nnekrut.netlify.app/cv/
   * 3rd place sparring
   * 3rd place weapons
   * Certificate of appreciation for helping organize the tournament
+
+### Work Experience
+
+**Cramer Farm & CSA**, *Howard, PA*
+
+*Jun 2021 - Aug 2021*
+
+* Worked on the farm, learned how to drive tractors, etc. 
+
+**Lawn Mowing & Yard Care**, *State College, PA*
+
+*Summers 2017 - 2021*
+
+* Had a side-hustle
 
 ---
 
