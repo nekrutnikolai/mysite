@@ -22,12 +22,10 @@ I highly recommend viewing this document online: https://nnekrut.netlify.app/cv/
 * College of Arts & Sciences
   * Majoring in Physics
   * Minoring in Computer Science
-
 * Sem 1
   * AEP 1200 - Intro to Nanoscience and Nanoengineering
   * MATH 1920 - Multivariable Calculus for Engineers
   * PHYS 1116 - Physics I: Mechanics and Special Relativity
-
 * Sem 2 (in progress)
   * CS 1110 - Intro to Computing with Python
   * MATH 2930 - Differential Equations for Engineers
@@ -72,8 +70,9 @@ I highly recommend viewing this document online: https://nnekrut.netlify.app/cv/
 
 **State College Area High School Model Aeronautics Club**, *State College Area High School*		
 
-**Founder & President**, *Oct 2019 - Jun 2021*
+*Oct 2019 - Jun 2021*
 
+* Co-Founder & President
 * Club focused on learning about Aeronautics through the design, construction, and flight of remote controlled model aircraft
 * Recently acquired the Patrick Y. Wang Technology Innovation Fund grant ($1750)
 * Website: https://shmac.netlify.app/
@@ -110,11 +109,10 @@ I highly recommend viewing this document online: https://nnekrut.netlify.app/cv/
 
 * Rank of Black Belt (Cho Dan)
 * Instruct and help younger students with proper form, technique, and on practical and philosophical applications of the art
-* Awards at tournaments
-    * *2019*
-        * 3rd place sparring
-        * 3rd place weapons
-        * Certificate of appreciation for helping organize the tournament
+* Awards at tournaments (2019)
+  * 3rd place sparring
+  * 3rd place weapons
+  * Certificate of appreciation for helping organize the tournament
 
 ---
 
@@ -200,11 +198,9 @@ I highly recommend viewing this document online: https://nnekrut.netlify.app/cv/
   * Some made of foam board using a needle cutter that I built: https://rb.gy/tuxnsl
   * Flying wings
   * Autonomous aircraft using INAV: https://github.com/iNavFlight/inav/wiki
-
 * Drones
   * Newly built 6" FPV freestyle drone
   * DJI Mavic Air for cinematography
-
 * Model Rockets
   * Designed a model rocket in OpenRocket Simulator
   * Built the rocket along with a data-collecting payload based on a Raspberry Pi
