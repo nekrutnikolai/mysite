@@ -7,7 +7,7 @@ TOC: false
 
 nekrutnikolai@gmail.com · https://nnekrut.netlify.app/ · https://github.com/NikolaiTeslovich
 
-Ithaca, NY
+Ithaca, NY 14850
 
 ---
 
@@ -232,7 +232,7 @@ Viewing this document online is recommended: https://nnekrut.netlify.app/resume/
 
 ### Technical
 
-### Educational 
+### Educational
 
 ---
 
