@@ -13,9 +13,6 @@ TOC: false
   nan34@cornell.edu · <a href="https://github.com/NikolaiTeslovich">https://github.com/NikolaiTeslovich</a> · Ithaca, NY 14850
 </p>
 
-<p align="center">
-</p>
-
 ---
 
 ## Education
@@ -60,16 +57,27 @@ TOC: false
 
 ### Research
 
-**Researcher at Penn State Materials Research Institute**, *Pennsylvania State University*
+**Researcher at the Department of Applied and Engineering Physics**, *Cornell University*
+
+*Mar 2022 - Present*
+
+* Researcher in Dr. Fatemi's laboratory
+* Building and configuring an Arduino-based DAC
+* Learning to use QCoDeS (a quantum computer acquisition library)
+* Interfacing with equipment by developing drivers in Python
+* Go to websites and reference specific items that are saved in my Safari bookmarks
+
+
+**Researcher at the Penn State Materials Research Institute**, *Pennsylvania State University*
 
 *Jul 2019 - Aug 2019*
 
-* Volunteer researcher in Dr. Rotkin‘s laboratory
+* Researcher in Dr. Rotkin‘s laboratory
 * Learned about scanning near-field optical microscopy (SNOM)
 * Developed a Python program using Jupyter Notebooks to filter out background noise from microscope scans
 * GitHub repo: https://bit.ly/3sWNeWJ
 
-### Science and Technology
+### Science and Technology-Related Organizations
 
 **Member of Cornell Blockchain**, *Cornell University*
 
@@ -77,6 +85,7 @@ TOC: false
 
 * Part of the research and development team
 * Currently working on establishing a DAO for the club
+* Interview potential members and determine if they are a good fit for the club
 
 **Member of Rocket Lab Initiative**, *Pennsylvania State University*
 
