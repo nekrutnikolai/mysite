@@ -57,7 +57,7 @@ TOC: false
 
 ### Research
 
-**Researcher at the Department of Applied and Engineering Physics**, *Cornell University*
+**Department of Applied and Engineering Physics**, *Cornell University*
 
 *Mar 2022 - Present*
 
@@ -66,7 +66,7 @@ TOC: false
 * Using QCoDeS (a quantum computer data acquisition framework) to run and setup experiments
 * Interfacing with equipment and sensors over GPIB by developing drivers in Python
 
-**Researcher at the Penn State Materials Research Institute**, *Pennsylvania State University*
+**Penn State Materials Research Institute**, *Pennsylvania State University*
 
 *Jul 2019 - Aug 2019*
 
@@ -75,7 +75,7 @@ TOC: false
 * Developed a Python program using Jupyter Notebooks to filter out background noise from microscope scans
 * GitHub repo: https://bit.ly/3sWNeWJ
 
-### Science and Technology-Related Organizations
+### Science and Technology
 
 **Member of Cornell Blockchain**, *Cornell University*
 
