@@ -61,18 +61,16 @@ TOC: false
 
 *Mar 2022 - Present*
 
-* Researcher in Dr. Fatemi's laboratory
-* Building and configuring an Arduino-based DAC
-* Learning to use QCoDeS (a quantum computer acquisition library)
-* Interfacing with equipment by developing drivers in Python
-* Go to websites and reference specific items that are saved in my Safari bookmarks
-
+* Researcher in Dr. Valla Fatemi's laboratory
+* Building and configuring an Arduino-based OpenDAC
+* Using QCoDeS (a quantum computer data acquisition framework) to run and setup experiments
+* Interfacing with equipment and sensors over GPIB by developing drivers in Python
 
 **Researcher at the Penn State Materials Research Institute**, *Pennsylvania State University*
 
 *Jul 2019 - Aug 2019*
 
-* Researcher in Dr. Rotkin‘s laboratory
+* Researcher in Dr. Slava Rotkin‘s laboratory
 * Learned about scanning near-field optical microscopy (SNOM)
 * Developed a Python program using Jupyter Notebooks to filter out background noise from microscope scans
 * GitHub repo: https://bit.ly/3sWNeWJ
