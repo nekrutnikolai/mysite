@@ -48,8 +48,8 @@ TOC: false
 ## Academic Interests
 
 * Applied and experimental physics
-* Blockchain and cryptocurrencies
 * Science communication and education
+* Blockchain and cryptocurrencies
 
 ---
 
@@ -154,12 +154,11 @@ TOC: false
 
 * Python
 * Javascript
-* C++
 * Shell
 
 **Data Analysis**
 
-* Jupyter Notebooks
+* Jupyter Lab
 * Pandas
 * Vega-lite
 
@@ -187,10 +186,10 @@ TOC: false
 
 * Linux
   * Ubuntu Server
-* Graphics cards
-    * Ethereum (ETH), Ethereum Classic (ETC), Ravencoin (RVN)
-* Processors
-    * Monero (XMR)
+* GPUs
+  * Ethereum (ETH), Ethereum Classic (ETC), Ravencoin (RVN)
+* CPUs
+  * Monero (XMR)
 
 **Smart Contract Development**
 
