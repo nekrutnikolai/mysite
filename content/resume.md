@@ -10,7 +10,7 @@ TOC: false
 </h1>
 
 <p align="center">
-  nan34@cornell.edu · <a href="https://github.com/NikolaiTeslovich">https://github.com/NikolaiTeslovich</a> · Ithaca, NY 14850
+  nan34@cornell.edu · <a href="https://github.com/NikolaiTeslovich">https://github.com/NikolaiTeslovich</a> · State College, PA 16803
 </p>
 
 ---
