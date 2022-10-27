@@ -155,7 +155,7 @@ disableHugoGeneratorInject = false
   [[menu.main]]
     identifier = "resume"
     name       = "Resume"
-    url        = "https://github.com/NikolaiTeslovich/resume/raw/main/Resume.pdf"
+    url        = "Resume.pdf"
   [[menu.main]]
     identifier = "websites"
     name       = "I build websites"
