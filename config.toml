@@ -157,9 +157,9 @@ disableHugoGeneratorInject = false
     name       = "Resume"
     url        = "Resume.pdf"
   [[menu.main]]
-    identifier = "websites"
-    name       = "I build websites"
-    url        = "websites/"
+    identifier = "portfolio"
+    name       = "Portfolio"
+    url        = "https://drive.google.com/drive/folders/1GJooZ28H6ohynlJBanPe7AEgmVSgBJKH?usp=sharing"
 
 # enables html to actually render
 
