@@ -155,7 +155,7 @@ disableHugoGeneratorInject = false
   [[menu.main]]
     identifier = "resume"
     name       = "Resume"
-    url        = "Resume.pdf"
+    url        = "NikolaiNekrutenkoResume.pdf"
   [[menu.main]]
     identifier = "portfolio"
     name       = "Portfolio"
