@@ -17,4 +17,4 @@ I enjoy spending time going on adventures in the wilderness with a [camera by my
 
 I find satisfaction in building, flying, and ultimately crashing RC aircraft and drones. This passion for aviation prompted me to start an [aeronautics club](https://shmac.netlify.app/) at my high school.
 
-Some of my other passions include, in no particular order, photography, content creation, drones, cryptocurrencies, electonics, programming, martial arts, languages, playing the guitar, and of course this website.
+Some of my other passions include, in no particular order, photography, content creation, drones, cryptocurrencies, electronics, programming, martial arts, languages, playing the guitar, and of course this website.
