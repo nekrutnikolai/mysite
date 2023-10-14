@@ -5,8 +5,31 @@
     <link>/</link>
     <description>Recent content on Nikolai Nekrutenko</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 27 Jun 2021 10:38:15 -0400</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Oct 2023 23:37:23 -0400</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Adirondacks Adventures</title>
+      <link>/gallery/adirondacks/</link>
+      <pubDate>Fri, 13 Oct 2023 23:37:23 -0400</pubDate>
+      
+      <guid>/gallery/adirondacks/</guid>
+      <description>Went up to the Adirondacks for Labor Day Weekend!</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>/about/</link>
+      <pubDate>Fri, 13 Oct 2023 21:26:54 -0400</pubDate>
+      
+      <guid>/about/</guid>
+      <description>Columbia Icefield, Jasper National Park
+Hi, nice to meet you! I&amp;rsquo;m Nikolai! I am an aspiring applied physicist and engineer with an appreciation for nature, and a tinkerer at heart.
+I&amp;rsquo;m looking for an internship for the summer of 2024 that is applied physics and engineering-related, preferably something Research and Development oriented!
+I enjoy spending time going on adventures in the wilderness with a camera by my side.
+I find satisfaction in building, flying, and ultimately crashing RC aircraft and drones.</description>
+    </item>
+    
     <item>
       <title>How to Build a Website: A Guide for Command-Line Novices</title>
       <link>/posts/how-to-build-a-website-a-guide-for-command-line-novices/</link>
@@ -14,7 +37,7 @@
       
       <guid>/posts/how-to-build-a-website-a-guide-for-command-line-novices/</guid>
       <description>Formerly titled: How to Build a Website for Your Studio (or Anything): A Step by Step Guide
- Introduction This guide is intended for Macintosh users who have never programmed before. With a bit of searching, the same steps can easily be applied to Windows and Linux machines.
+Introduction This guide is intended for Macintosh users who have never programmed before. With a bit of searching, the same steps can easily be applied to Windows and Linux machines.
 Most will agree that a book is judged by its cover—for better or worse. Websites are the covers of your studio, organization, or even yourself, which are the books.</description>
     </item>
     
@@ -25,8 +48,7 @@ Most will agree that a book is judged by its cover—for better or worse. Websit
       
       <guid>/gallery/ice-storm-2/</guid>
       <description>I&amp;rsquo;ve had enough sitting at home, not leaving my neighborhood for a week. So, I ventured out to Jo Hays Vista with my newly built FPV freestyle drone and camera at my side.
-Unfortunately I forgot to charge the FPV goggles before hand, so the drone was practically useless. I&amp;rsquo;m still glad I saw the harsh, wind-chiseled ice.
-     .jg-entry img { transition: transform .25s ease-in-out !</description>
+Unfortunately I forgot to charge the FPV goggles before hand, so the drone was practically useless. I&amp;rsquo;m still glad I saw the harsh, wind-chiseled ice.</description>
     </item>
     
     <item>
@@ -36,8 +58,7 @@ Unfortunately I forgot to charge the FPV goggles before hand, so the drone was p
       
       <guid>/gallery/ice-storm/</guid>
       <description>A massive ice storm just passed by State College. So while most people were scared of slipping and breaking an arm, I decided to venture out into the neighborhood and nearby golf course with my macro 35mm lens.
-I find the texture of the ice fascinating—it resembles a network of plant cells, or looks like some carbonated drink.
-     .jg-entry img { transition: transform .25s ease-in-out !</description>
+I find the texture of the ice fascinating—it resembles a network of plant cells, or looks like some carbonated drink.</description>
     </item>
     
     <item>
@@ -47,20 +68,7 @@ I find the texture of the ice fascinating—it resembles a network of plant cell
       
       <guid>/gallery/light-drawings/</guid>
       <description>It&amp;rsquo;s been a while since I did something overly creative, like drawing circles with fire. So, here&amp;rsquo;s a remedy to that!
-These were made by leaving the shutter open for a few seconds (30) and using my phone&amp;rsquo;s flashlight to draw while the sensor gathered light.
-     .jg-entry img { transition: transform .25s ease-in-out !important; } .jg-entry img:hover { transform: scale(1.1); }   35mm f/20 30sec ISO 200&#34;</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>/about/</link>
-      <pubDate>Sun, 07 Feb 2021 21:26:54 -0400</pubDate>
-      
-      <guid>/about/</guid>
-      <description>Hi! Nice to meet you. I&amp;rsquo;m Nikolai—an aspiring engineer or physicist with an appreciation for nature—a tinkerer at heart.
-I enjoy spending time in the untouched wilderness with a camera at my side.
-I also find satisfaction in building, flying, and ultimately crashing RC aircraft and drones. This passion for aviation prompted me to start an aeronautics club at my high school.
-Some of my other passions include, in no particular order, photography, content creation, drones, cryptocurrencies, electonics, programming, martial arts, languages, playing the guitar, and of course this website.</description>
+These were made by leaving the shutter open for a few seconds (30) and using my phone&amp;rsquo;s flashlight to draw while the sensor gathered light.</description>
     </item>
     
     <item>
@@ -70,8 +78,7 @@ Some of my other passions include, in no particular order, photography, content 
       
       <guid>/gallery/stonevalley/</guid>
       <description>Explored the areas around the frozen Lake Perez—where I used to sail in the summer—one of my favorite places of all time.
-I also attempted the tilt-shift effect in Photoshop from a nearby overlook of State College. I think the house turned out the best!
-     .jg-entry img { transition: transform .25s ease-in-out !important; } .jg-entry img:hover { transform: scale(1.1); }   400mm f/10 1/400sec ISO 100&#34;</description>
+I also attempted the tilt-shift effect in Photoshop from a nearby overlook of State College. I think the house turned out the best!</description>
     </item>
     
     <item>
@@ -83,7 +90,8 @@ I also attempted the tilt-shift effect in Photoshop from a nearby overlook of St
       <description>Happy New Year!
 A major snowstorm recently unleashed its wrath on us, for a grand total of 14in or 35cm of fluffy, dry snow!
 Here are some of my favorite long exposures from the evening.
-     .jg-entry img { transition: transform .25s ease-in-out !important; } .jg-entry img:hover { transform: scale(1.1); }   35mm f/14 30sec ISO 100&#34;     35mm f/5.6 1.3sec ISO 100&#34;</description>
+Yes, you did notice something slightly different about this gallery. Actually, I probably already converted all of my existing galleries by now, so whatever.
+I&amp;rsquo;m using a new system to generate these galleries. No longer do I have to deal with endless markdown tables!</description>
     </item>
     
     <item>
@@ -93,8 +101,18 @@ Here are some of my favorite long exposures from the evening.
       
       <guid>/gallery/snow-aftermath/</guid>
       <description>It was one of those fictional, silent winter mornings
-14in or 35cm of fluffy, dry snow had just finished precipitating
-     .jg-entry img { transition: transform .25s ease-in-out !important; } .jg-entry img:hover { transform: scale(1.1); }   35mm f/5.6 0.0012499999720592975sec ISO 100&#34;     35mm f/5.6 1/1000sec ISO 100&#34;     35mm f/5.6 1/500sec ISO 100&#34;     35mm f/5.</description>
+14in or 35cm of fluffy, dry snow had just finished precipitating</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/resume/</link>
+      <pubDate>Fri, 11 Sep 2020 16:26:17 -0400</pubDate>
+      
+      <guid>/resume/</guid>
+      <description>Nikolai Nekrutenko nan34@cornell.edu · https://github.com/NikolaiTeslovich · State College, PA 16803 Education Cornell University, Physics Major &amp;amp; CS Minor in the College of Arts and Sciences
+September 2021 - May 2025
+Semester 1 AEP 1200 - Intro to Nanoscience and Nanoengineering MATH 1920 - Multivariable Calculus for Engineers PHYS 1116 - Physics I: Mechanics and Special Relativity Semester 2 (in progress) CS 1110 - Intro to Computing with Python MATH 2930 - Differential Equations for Engineers PHYS 2217 - Physics II: Electricity and Magnetism Pennsylvania State University, Non-matriculated Student</description>
     </item>
     
     <item>
@@ -104,30 +122,14 @@ Here are some of my favorite long exposures from the evening.
       
       <guid>/resume_old/</guid>
       <description>nekrutnikolai@gmail.com · https://nnekrut.netlify.app/ · https://github.com/NikolaiTeslovich
- I highly recommend viewing this document online: https://nnekrut.netlify.app/cv/
+I highly recommend viewing this document online: https://nnekrut.netlify.app/cv/
 Education Cornell University
 September 2021 - May 2025
- College of Arts &amp;amp; Sciences  Majoring in Physics Minoring in Computer Science    Pennsylvania State University
+College of Arts &amp;amp; Sciences Majoring in Physics Minoring in Computer Science Pennsylvania State University
 January 2021 - May 2021
-  4.0 GPA
-  Took three courses as a non-matriculated student for a total of 10 credits
- MATH 141 (Calculus with Analytical Geometry II) CHEM 112 (Chemical Principles II) CHEM 110 (Chemical Principles I)    State College Area High School</description>
-    </item>
-    
-    <item>
-      <title>Nikolai Nekrutenko&#39;s Resume</title>
-      <link>/resume/</link>
-      <pubDate>Fri, 11 Sep 2020 16:26:17 -0400</pubDate>
-      
-      <guid>/resume/</guid>
-      <description>Ithaca, NY
-nekrutnikolai@gmail.com · https://nnekrut.netlify.app/ · https://github.com/NikolaiTeslovich
- I highly recommend viewing this document online: https://nnekrut.netlify.app/cv/
-Education Cornell University
-September 2021 - May 2025
-  College of Arts &amp;amp; Sciences
- Majoring in Physics Minoring in Computer Science    Sem 1
- AEP 1200 - Intro to Nanoscience and Nanoengineering MATH 1920 - Multivariable Calculus for Engineers PHYS 1116 - Physics I: Mechanics and Special Relativity    Sem 2 (in progress)</description>
+4.0 GPA
+Took three courses as a non-matriculated student for a total of 10 credits
+MATH 141 (Calculus with Analytical Geometry II) CHEM 112 (Chemical Principles II) CHEM 110 (Chemical Principles I) State College Area High School</description>
     </item>
     
     <item>
@@ -139,8 +141,7 @@ September 2021 - May 2025
       <description>Here are some pictures of my friends over at @teamsketchyfpv flying some of their planes.
 Thanks to them for inviting me, I had an absolute blast.
 Looks like it&amp;rsquo;s time for me to get an RC jet!
-And yes, we did keep at least six feet apart.
-     .jg-entry img { transition: transform .25s ease-in-out !important; } .jg-entry img:hover { transform: scale(1.1); }   135mm f/5.</description>
+And yes, we did keep at least six feet apart.</description>
     </item>
     
     <item>
@@ -150,8 +151,9 @@ And yes, we did keep at least six feet apart.
       
       <guid>/posts/the-mostly-maine-trip-video/</guid>
       <description>Enjoy this video, I&amp;rsquo;m really proud of how it turned out!
-  I finally convinced my best friend to lend me his drone after days of trying.
-I actually have a drone, an EMAX Tinyhawk 2, which note to self I still need to fix. I crashed it pretty hard flying on the porch of my house against a metal support beam and one of the ESC&amp;rsquo;s is burned out.</description>
+I finally convinced my best friend to lend me his drone after days of trying.
+I actually have a drone, an EMAX Tinyhawk 2, which note to self I still need to fix. I crashed it pretty hard flying on the porch of my house against a metal support beam and one of the ESC&amp;rsquo;s is burned out.
+Enough about my drone.</description>
     </item>
     
     <item>
@@ -161,8 +163,7 @@ I actually have a drone, an EMAX Tinyhawk 2, which note to self I still need to 
       
       <guid>/gallery/maine-trip/</guid>
       <description>I recently went on a camping/cabining trip with my family around New England, especially Maine.
-I know there are a lot of photographs, but I really like all of these.
-     .jg-entry img { transition: transform .25s ease-in-out !important; } .jg-entry img:hover { transform: scale(1.1); }   400mm f/5.6 1/60sec ISO 4000&#34;     100mm f/4.5 1/60sec ISO 250&#34;     35mm f/4.</description>
+I know there are a lot of photographs, but I really like all of these.</description>
     </item>
     
     <item>
@@ -173,8 +174,8 @@ I know there are a lot of photographs, but I really like all of these.
       <guid>/posts/the-book-of-bitcoin-an-analogy-to-explain-bitcoin/</guid>
       <description>This was a project for my speech and debate class, the sources are in the video&amp;rsquo;s description.
 Here&amp;rsquo;s the video version of the speech:
-  Here&amp;rsquo;s the transcript of the speech:
-What do you think of when you hear the word “Bitcoin”? According to a 2017 YouGov survey, 62% of Americans believe that cryptocurrencies, like Bitcoin, are used for illegal purchases or don’t know what they’re used for at all.</description>
+Here&amp;rsquo;s the transcript of the speech:
+What do you think of when you hear the word “Bitcoin”? According to a 2017 YouGov survey, 62% of Americans believe that cryptocurrencies, like Bitcoin, are used for illegal purchases or don’t know what they’re used for at all. Yet, all the cryptocurrencies combined are estimated to be worth about $230 billion.</description>
     </item>
     
     <item>
@@ -196,7 +197,7 @@ I used an Ultimaker 3 to print the parts with eSun PLA+ at a 0.2mm layer height 
       
       <guid>/gallery/garden/</guid>
       <description>I walked around the garden and garage to see what pictures I could take. Here are the ones that I liked:
-     .jg-entry img { transition: transform .25s ease-in-out !important; } .jg-entry img:hover { transform: scale(1.1); }   35mm f/5.6 0.001249999972058798sec ISO 100&#34;     35mm f/6.300000190736682 1/200sec ISO 100&#34;     35mm f/5.6 1/320sec ISO 100&#34;     35mm f/5.</description>
+The thumbnails are significantly darker than the images themselves because I used the wrong color profile. 😢</description>
     </item>
     
     <item>
@@ -218,8 +219,7 @@ Maybe it has to do with the look of these tubes, but I&amp;rsquo;m convinced tha
       <guid>/gallery/waterlilies-dragonflies/</guid>
       <description>Today, I headed down to The Arboretum at Penn State to see what flowers and insects were in store for me.
 At first, I decided to bring a 35mm macro lens. However, after seeing all of the dragonflies and lilies, I biked home in record time and snagged a telephoto lens.
-I present to you the Water lilies and Dragonflies at The Arboretum at Penn State.
-     .</description>
+I present to you the Water lilies and Dragonflies at The Arboretum at Penn State.</description>
     </item>
     
     <item>
@@ -281,8 +281,8 @@ In total, I applied to about 15 places.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/websites/</guid>
-      <description>I want you to have a website  So far, I have built documentation websites, organization websites, and personal websites integrated with a photo gallery.
-What makes these websites special  Astonishing on both desktop and mobile Secure, fast, and SEO-ready Google Analytics and Search Console supported Infinitely customizable Photo gallery support with hugo-shortcode-gallery Favicon support Deployable on Netlify  If you would like a website  Pick a Hugo theme Test it on both mobile and desktop to make sure that you like it Please send me an email at nekrutnikolai@gmail.</description>
+      <description>I want you to have a website So far, I have built documentation websites, organization websites, and personal websites integrated with a photo gallery.
+What makes these websites special Astonishing on both desktop and mobile Secure, fast, and SEO-ready Google Analytics and Search Console supported Infinitely customizable Photo gallery support with hugo-shortcode-gallery Favicon support Deployable on Netlify If you would like a website Pick a Hugo theme Test it on both mobile and desktop to make sure that you like it Please send me an email at nekrutnikolai@gmail.</description>
     </item>
     
   </channel>

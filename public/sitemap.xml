@@ -2,10 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/posts/how-to-build-a-website-a-guide-for-command-line-novices/</loc>
-    <lastmod>2021-06-27T10:38:15-04:00</lastmod>
+    <loc>/gallery/adirondacks/</loc>
+    <lastmod>2023-10-13T23:37:23-04:00</lastmod>
+  </url><url>
+    <loc>/gallery/</loc>
+    <lastmod>2023-10-13T23:37:23-04:00</lastmod>
   </url><url>
     <loc>/</loc>
+    <lastmod>2023-10-13T23:37:23-04:00</lastmod>
+  </url><url>
+    <loc>/about/</loc>
+    <lastmod>2023-10-13T21:26:54-04:00</lastmod>
+  </url><url>
+    <loc>/posts/how-to-build-a-website-a-guide-for-command-line-novices/</loc>
     <lastmod>2021-06-27T10:38:15-04:00</lastmod>
   </url><url>
     <loc>/posts/</loc>
@@ -23,9 +32,6 @@
     <loc>/tags/wtsda/</loc>
     <lastmod>2021-06-27T10:38:15-04:00</lastmod>
   </url><url>
-    <loc>/gallery/</loc>
-    <lastmod>2021-02-25T13:20:17-04:00</lastmod>
-  </url><url>
     <loc>/gallery/ice-storm-2/</loc>
     <lastmod>2021-02-25T13:20:17-04:00</lastmod>
   </url><url>
@@ -34,9 +40,6 @@
   </url><url>
     <loc>/gallery/light-drawings/</loc>
     <lastmod>2021-02-08T16:07:27-04:00</lastmod>
-  </url><url>
-    <loc>/about/</loc>
-    <lastmod>2021-02-07T21:26:54-04:00</lastmod>
   </url><url>
     <loc>/gallery/stonevalley/</loc>
     <lastmod>2021-01-14T22:25:09-05:00</lastmod>
@@ -47,10 +50,10 @@
     <loc>/gallery/snow-aftermath/</loc>
     <lastmod>2021-01-13T10:45:17-04:00</lastmod>
   </url><url>
-    <loc>/resume_old/</loc>
+    <loc>/resume/</loc>
     <lastmod>2020-09-11T16:26:17-04:00</lastmod>
   </url><url>
-    <loc>/resume/</loc>
+    <loc>/resume_old/</loc>
     <lastmod>2020-09-11T16:26:17-04:00</lastmod>
   </url><url>
     <loc>/gallery/rcplanes/</loc>

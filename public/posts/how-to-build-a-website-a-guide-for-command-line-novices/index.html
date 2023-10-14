@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="Nikolai Nekrutenko ">
 <meta name="description" content="Formerly titled: How to Build a Website for Your Studio (or Anything): A Step by Step Guide
- Introduction This guide is intended for Macintosh users who have never programmed before. With a bit of searching, the same steps can easily be applied to Windows and Linux machines.
+Introduction This guide is intended for Macintosh users who have never programmed before. With a bit of searching, the same steps can easily be applied to Windows and Linux machines.
 Most will agree that a book is judged by its cover—for better or worse. Websites are the covers of your studio, organization, or even yourself, which are the books." />
 <meta name="keywords" content="blog, posts, website, WTSDA, tutorial" />
 <meta name="robots" content="noodp" />
@@ -45,17 +45,17 @@ Most will agree that a book is judged by its cover—for better or worse. Websit
 
 <meta itemprop="name" content="How to Build a Website: A Guide for Command-Line Novices">
 <meta itemprop="description" content="Formerly titled: How to Build a Website for Your Studio (or Anything): A Step by Step Guide
- Introduction This guide is intended for Macintosh users who have never programmed before. With a bit of searching, the same steps can easily be applied to Windows and Linux machines.
+Introduction This guide is intended for Macintosh users who have never programmed before. With a bit of searching, the same steps can easily be applied to Windows and Linux machines.
 Most will agree that a book is judged by its cover—for better or worse. Websites are the covers of your studio, organization, or even yourself, which are the books."><meta itemprop="datePublished" content="2021-06-27T10:38:15-04:00" />
 <meta itemprop="dateModified" content="2021-06-27T10:38:15-04:00" />
-<meta itemprop="wordCount" content="2750"><meta itemprop="image" content="/"/>
+<meta itemprop="wordCount" content="2749"><meta itemprop="image" content="/"/>
 <meta itemprop="keywords" content="website,WTSDA,tutorial," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="/"/>
 
 <meta name="twitter:title" content="How to Build a Website: A Guide for Command-Line Novices"/>
 <meta name="twitter:description" content="Formerly titled: How to Build a Website for Your Studio (or Anything): A Step by Step Guide
- Introduction This guide is intended for Macintosh users who have never programmed before. With a bit of searching, the same steps can easily be applied to Windows and Linux machines.
+Introduction This guide is intended for Macintosh users who have never programmed before. With a bit of searching, the same steps can easily be applied to Windows and Linux machines.
 Most will agree that a book is judged by its cover—for better or worse. Websites are the covers of your studio, organization, or even yourself, which are the books."/>
 
 
@@ -97,7 +97,7 @@ Most will agree that a book is judged by its cover—for better or worse. Websit
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="/about/">About</a></li><li><a href="/gallery/">Gallery</a></li><li><a href="/websites/">I build websites</a></li><li><a href="/posts/">Posts</a></li><li><a href="/resume/">Resume</a></li>
+    <ul class="menu__inner"><li><a href="/about/">About</a></li><li><a href="/gallery/">Gallery</a></li><li><a href="https://docs.google.com/document/d/194nrFYKdKdbkx7I2i50hc1jcLhoVnoOVjvUvvnJuMVE/edit">Portfolio</a></li><li><a href="/posts/">Posts</a></li><li><a href="/NikolaiNekrutenkoResume.pdf">Resume</a></li>
     </ul>
 </nav>
 
@@ -190,7 +190,7 @@ Most will agree that a book is judged by its cover—for better or worse. Websit
 </code></pre><ol start="5">
 <li>Next, we will install Homebrew, which is an open-source package manager. In other words, it automates the process of installing and keeping software up to date. Install it with the following command:</li>
 </ol>
-<pre tabindex="0"><code>&gt; /bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;
+<pre tabindex="0"><code>&gt; /bin/bash -c &#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&#34;
 </code></pre><ol start="6">
 <li>A static website contains web pages with fixed content, so each page displays the same information to every visitor. Static sites are the most basic type of website and are the easiest to create. Let’s install Hugo, an open-source static site generator, which is the skeleton of the website:</li>
 </ol>
@@ -209,7 +209,7 @@ Most will agree that a book is judged by its cover—for better or worse. Websit
 </ol>
 <pre tabindex="0"><code>&gt; hugo new site mysite --force
 </code></pre><p>If you accidentally make a mistake in your spelling, the folder can be removed with:</p>
-<pre tabindex="0"><code>&gt; rm -rf mysite or &gt; rm -rf 'my site'
+<pre tabindex="0"><code>&gt; rm -rf mysite or &gt; rm -rf &#39;my site&#39;
 </code></pre><ol start="3">
 <li>Enter the project folder through the terminal:</li>
 </ol>
@@ -234,9 +234,9 @@ Most will agree that a book is judged by its cover—for better or worse. Websit
 <p>Now, you will surely notice that something is off. Is it a blank page? Yes it is, because we never touched the config.toml file. This is the place where you tell Hugo how to show and configure the website. So, in your code editor, open up the website project and navigate to config.toml. This is what it should look like:</p>
 </li>
 </ol>
-<pre tabindex="0"><code>baseURL = &quot;http://example.org/&quot;
-languageCode = &quot;en-us&quot;
-title = &quot;My New Hugo Site&quot;
+<pre tabindex="0"><code>baseURL = &#34;http://example.org/&#34;
+languageCode = &#34;en-us&#34;
+title = &#34;My New Hugo Site&#34;
 … there is barely anything there.
 </code></pre><ol start="9">
 <li>
@@ -251,7 +251,7 @@ title = &quot;My New Hugo Site&quot;
 <li>Now, navigate to the hello-world post in your code editor, which is in the content, then post folder. You’ll see that there is this interesting heading, with the title, time, and other options:</li>
 </ol>
 <pre tabindex="0"><code>---
-title: &quot;Hello World&quot;
+title: &#34;Hello World&#34;
 date: 2021-07-11T17:52:30-04:00
 draft: true
 toc: false
@@ -379,7 +379,7 @@ tags:
 <p><img src="/img/BBEssay/helloworldpage.png" alt=""></p>
 <p>hello-world.md looks like this:</p>
 <pre tabindex="0"><code>---
-title: &quot;Hello World&quot;
+title: &#34;Hello World&#34;
 date: 2021-07-11T17:52:30-04:00
 draft: true
 toc: false
@@ -399,7 +399,7 @@ I just wrote the *first* **post** of [this ***website***](/).
 
 &gt; A book really is judged by its cover for better or for worse
 
-`Now this wasn't that hard, now was it?`
+`Now this wasn&#39;t that hard, now was it?`
 
 ![](/img/wtsda.png)
 </code></pre><h1 id="part-4-about-the-structure-of-our-website">Part 4: About the Structure of Our Website</h1>
@@ -438,15 +438,15 @@ folder 3, which is in folder 2, which is in the current directory.
 <li>How can we actually look at this page, since it isn’t a post? Well, we have to edit our config.toml, so that it displays an “About” in the menu bar. Edit the end of the config.toml, just under the command which creates a menu:</li>
 </ol>
 <pre tabindex="0"><code>  	[[menu.main]]
-   	 identifier = &quot;blog&quot;
-   	 name       = &quot;Blog&quot;
-   	 url        = &quot;/posts&quot;
+   	 identifier = &#34;blog&#34;
+   	 name       = &#34;Blog&#34;
+   	 url        = &#34;/posts&#34;
 # Here is the part we are adding:
 # Make sure it’s indented correctly!
 [[menu.main]]
- 	 identifier = &quot;about&quot;
-  	 name       = &quot;About&quot;
-  	 url        = &quot;/about&quot;
+ 	 identifier = &#34;about&#34;
+  	 name       = &#34;About&#34;
+  	 url        = &#34;/about&#34;
 </code></pre><ol start="3">
 <li>Then, just like we did for the “Hello World” post, write some content for it in Markdown.</li>
 </ol>
@@ -464,7 +464,7 @@ folder 3, which is in folder 2, which is in the current directory.
 </code></pre><ol start="3">
 <li>Then, git needs to know that this is a commit, or in other words, a save of the data. Write a message so that it’s easier to reference later, should any mistakes come up.</li>
 </ol>
-<pre tabindex="0"><code>&gt; git commit -m 'your message'
+<pre tabindex="0"><code>&gt; git commit -m &#39;your message&#39;
 </code></pre><ol start="4">
 <li>Upload (push) the data to your repository:</li>
 </ol>
@@ -484,7 +484,7 @@ folder 3, which is in folder 2, which is in the current directory.
 <p>In config.toml, edit the “baseurl” line by changing “localhost” to the link you are using for your site:</p>
 </li>
 </ol>
-<pre tabindex="0"><code>From: baseurl = &quot;localhost&quot;  
+<pre tabindex="0"><code>From: baseurl = &#34;localhost&#34;  
 To: baseurl = http://my-new-url.org
 </code></pre><ol start="9">
 <li>Now, push those changes again using steps 1-3. Now you website should be live and functional! It also looks just as good, if not better, on your phone.</li>
@@ -527,7 +527,7 @@ To: baseurl = http://my-new-url.org
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="/tags/website">website</a></span><span class="tag"><a href="/tags/wtsda">WTSDA</a></span><span class="tag"><a href="/tags/tutorial">tutorial</a></span>
                 </p>
 
-            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>2750 Words</p>
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>2749 Words</p>
 
             <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2021-06-27 10:38 -0400</p>
         </div>
@@ -561,7 +561,7 @@ To: baseurl = http://my-new-url.org
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2022</span>
+            <span>&copy; 2023</span>
             
                 <span><a href="/">Nikolai Nekrutenko</a></span>
             
@@ -583,7 +583,7 @@ To: baseurl = http://my-new-url.org
 
 
 
-<script type="text/javascript" src="/bundle.min.59ecdc8ddd50b30e6dd7ad4a5372c3fd24a26db671cc1575443b150ceb9d4bc8e73618fb298596b5c336cf5d8c2db90bd7e72a648479e97884e5398722f962fa.js" integrity="sha512-Wezcjd1Qsw5t161KU3LD/SSibbZxzBV1RDsVDOudS8jnNhj7KYWWtcM2z12MLbkL1&#43;cqZIR56XiE5TmHIvli&#43;g=="></script>
+<script type="text/javascript" src="/bundle.min.25e7450041457077dff0c3ed632fa0f249fed68835b94ed32e34667d8782a640dc1bcf2eb900a6a72e1d6455f7e02d7368bbb9b1045317d705aa9008f6f20b9e.js" integrity="sha512-JedFAEFFcHff8MPtYy&#43;g8kn&#43;1og1uU7TLjRmfYeCpkDcG88uuQCmpy4dZFX34C1zaLu5sQRTF9cFqpAI9vILng=="></script>
 
 
 

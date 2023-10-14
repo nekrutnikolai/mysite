@@ -4,6 +4,7 @@
         <link>/posts/</link>
         <description>Recent content in Posts on Nikolai Nekrutenko</description>
         <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
         <lastBuildDate>Sun, 27 Jun 2021 10:38:15 -0400</lastBuildDate>
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +16,7 @@
             
             <guid>/posts/how-to-build-a-website-a-guide-for-command-line-novices/</guid>
             <description>Formerly titled: How to Build a Website for Your Studio (or Anything): A Step by Step Guide
- Introduction This guide is intended for Macintosh users who have never programmed before. With a bit of searching, the same steps can easily be applied to Windows and Linux machines.
+Introduction This guide is intended for Macintosh users who have never programmed before. With a bit of searching, the same steps can easily be applied to Windows and Linux machines.
 Most will agree that a book is judged by its cover—for better or worse. Websites are the covers of your studio, organization, or even yourself, which are the books.</description>
             <content type="html"><![CDATA[<p><strong>Formerly titled: How to Build a Website for Your Studio (or Anything): A Step by Step Guide</strong></p>
 
@@ -61,7 +62,7 @@ Most will agree that a book is judged by its cover—for better or worse. Websit
 </code></pre><ol start="5">
 <li>Next, we will install Homebrew, which is an open-source package manager. In other words, it automates the process of installing and keeping software up to date. Install it with the following command:</li>
 </ol>
-<pre tabindex="0"><code>&gt; /bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;
+<pre tabindex="0"><code>&gt; /bin/bash -c &#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&#34;
 </code></pre><ol start="6">
 <li>A static website contains web pages with fixed content, so each page displays the same information to every visitor. Static sites are the most basic type of website and are the easiest to create. Let’s install Hugo, an open-source static site generator, which is the skeleton of the website:</li>
 </ol>
@@ -80,7 +81,7 @@ Most will agree that a book is judged by its cover—for better or worse. Websit
 </ol>
 <pre tabindex="0"><code>&gt; hugo new site mysite --force
 </code></pre><p>If you accidentally make a mistake in your spelling, the folder can be removed with:</p>
-<pre tabindex="0"><code>&gt; rm -rf mysite or &gt; rm -rf 'my site'
+<pre tabindex="0"><code>&gt; rm -rf mysite or &gt; rm -rf &#39;my site&#39;
 </code></pre><ol start="3">
 <li>Enter the project folder through the terminal:</li>
 </ol>
@@ -105,9 +106,9 @@ Most will agree that a book is judged by its cover—for better or worse. Websit
 <p>Now, you will surely notice that something is off. Is it a blank page? Yes it is, because we never touched the config.toml file. This is the place where you tell Hugo how to show and configure the website. So, in your code editor, open up the website project and navigate to config.toml. This is what it should look like:</p>
 </li>
 </ol>
-<pre tabindex="0"><code>baseURL = &quot;http://example.org/&quot;
-languageCode = &quot;en-us&quot;
-title = &quot;My New Hugo Site&quot;
+<pre tabindex="0"><code>baseURL = &#34;http://example.org/&#34;
+languageCode = &#34;en-us&#34;
+title = &#34;My New Hugo Site&#34;
 … there is barely anything there.
 </code></pre><ol start="9">
 <li>
@@ -122,7 +123,7 @@ title = &quot;My New Hugo Site&quot;
 <li>Now, navigate to the hello-world post in your code editor, which is in the content, then post folder. You’ll see that there is this interesting heading, with the title, time, and other options:</li>
 </ol>
 <pre tabindex="0"><code>---
-title: &quot;Hello World&quot;
+title: &#34;Hello World&#34;
 date: 2021-07-11T17:52:30-04:00
 draft: true
 toc: false
@@ -250,7 +251,7 @@ tags:
 <p><img src="/img/BBEssay/helloworldpage.png" alt=""></p>
 <p>hello-world.md looks like this:</p>
 <pre tabindex="0"><code>---
-title: &quot;Hello World&quot;
+title: &#34;Hello World&#34;
 date: 2021-07-11T17:52:30-04:00
 draft: true
 toc: false
@@ -270,7 +271,7 @@ I just wrote the *first* **post** of [this ***website***](/).
 
 &gt; A book really is judged by its cover for better or for worse
 
-`Now this wasn't that hard, now was it?`
+`Now this wasn&#39;t that hard, now was it?`
 
 ![](/img/wtsda.png)
 </code></pre><h1 id="part-4-about-the-structure-of-our-website">Part 4: About the Structure of Our Website</h1>
@@ -309,15 +310,15 @@ folder 3, which is in folder 2, which is in the current directory.
 <li>How can we actually look at this page, since it isn’t a post? Well, we have to edit our config.toml, so that it displays an “About” in the menu bar. Edit the end of the config.toml, just under the command which creates a menu:</li>
 </ol>
 <pre tabindex="0"><code>  	[[menu.main]]
-   	 identifier = &quot;blog&quot;
-   	 name       = &quot;Blog&quot;
-   	 url        = &quot;/posts&quot;
+   	 identifier = &#34;blog&#34;
+   	 name       = &#34;Blog&#34;
+   	 url        = &#34;/posts&#34;
 # Here is the part we are adding:
 # Make sure it’s indented correctly!
 [[menu.main]]
- 	 identifier = &quot;about&quot;
-  	 name       = &quot;About&quot;
-  	 url        = &quot;/about&quot;
+ 	 identifier = &#34;about&#34;
+  	 name       = &#34;About&#34;
+  	 url        = &#34;/about&#34;
 </code></pre><ol start="3">
 <li>Then, just like we did for the “Hello World” post, write some content for it in Markdown.</li>
 </ol>
@@ -335,7 +336,7 @@ folder 3, which is in folder 2, which is in the current directory.
 </code></pre><ol start="3">
 <li>Then, git needs to know that this is a commit, or in other words, a save of the data. Write a message so that it’s easier to reference later, should any mistakes come up.</li>
 </ol>
-<pre tabindex="0"><code>&gt; git commit -m 'your message'
+<pre tabindex="0"><code>&gt; git commit -m &#39;your message&#39;
 </code></pre><ol start="4">
 <li>Upload (push) the data to your repository:</li>
 </ol>
@@ -355,7 +356,7 @@ folder 3, which is in folder 2, which is in the current directory.
 <p>In config.toml, edit the “baseurl” line by changing “localhost” to the link you are using for your site:</p>
 </li>
 </ol>
-<pre tabindex="0"><code>From: baseurl = &quot;localhost&quot;  
+<pre tabindex="0"><code>From: baseurl = &#34;localhost&#34;  
 To: baseurl = http://my-new-url.org
 </code></pre><ol start="9">
 <li>Now, push those changes again using steps 1-3. Now you website should be live and functional! It also looks just as good, if not better, on your phone.</li>
@@ -397,8 +398,9 @@ To: baseurl = http://my-new-url.org
             
             <guid>/posts/the-mostly-maine-trip-video/</guid>
             <description>Enjoy this video, I&amp;rsquo;m really proud of how it turned out!
-  I finally convinced my best friend to lend me his drone after days of trying.
-I actually have a drone, an EMAX Tinyhawk 2, which note to self I still need to fix. I crashed it pretty hard flying on the porch of my house against a metal support beam and one of the ESC&amp;rsquo;s is burned out.</description>
+I finally convinced my best friend to lend me his drone after days of trying.
+I actually have a drone, an EMAX Tinyhawk 2, which note to self I still need to fix. I crashed it pretty hard flying on the porch of my house against a metal support beam and one of the ESC&amp;rsquo;s is burned out.
+Enough about my drone.</description>
             <content type="html"><![CDATA[<p><strong>Enjoy this video, I&rsquo;m really proud of how it turned out!</strong></p>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
@@ -428,8 +430,8 @@ I actually have a drone, an EMAX Tinyhawk 2, which note to self I still need to 
             <guid>/posts/the-book-of-bitcoin-an-analogy-to-explain-bitcoin/</guid>
             <description>This was a project for my speech and debate class, the sources are in the video&amp;rsquo;s description.
 Here&amp;rsquo;s the video version of the speech:
-  Here&amp;rsquo;s the transcript of the speech:
-What do you think of when you hear the word “Bitcoin”? According to a 2017 YouGov survey, 62% of Americans believe that cryptocurrencies, like Bitcoin, are used for illegal purchases or don’t know what they’re used for at all.</description>
+Here&amp;rsquo;s the transcript of the speech:
+What do you think of when you hear the word “Bitcoin”? According to a 2017 YouGov survey, 62% of Americans believe that cryptocurrencies, like Bitcoin, are used for illegal purchases or don’t know what they’re used for at all. Yet, all the cryptocurrencies combined are estimated to be worth about $230 billion.</description>
             <content type="html"><![CDATA[<p>This was a project for my speech and debate class, the sources are in the video&rsquo;s description.</p>
 <p><strong>Here&rsquo;s the video version of the speech:</strong></p>
 

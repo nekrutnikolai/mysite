@@ -5,8 +5,18 @@
     <link>/gallery/</link>
     <description>Recent content in Galleries on Nikolai Nekrutenko</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Thu, 25 Feb 2021 13:20:17 -0400</lastBuildDate><atom:link href="/gallery/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Oct 2023 23:37:23 -0400</lastBuildDate><atom:link href="/gallery/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Adirondacks Adventures</title>
+      <link>/gallery/adirondacks/</link>
+      <pubDate>Fri, 13 Oct 2023 23:37:23 -0400</pubDate>
+      
+      <guid>/gallery/adirondacks/</guid>
+      <description>Went up to the Adirondacks for Labor Day Weekend!</description>
+    </item>
+    
     <item>
       <title>Ice Storm Pt. 2</title>
       <link>/gallery/ice-storm-2/</link>
@@ -14,8 +24,7 @@
       
       <guid>/gallery/ice-storm-2/</guid>
       <description>I&amp;rsquo;ve had enough sitting at home, not leaving my neighborhood for a week. So, I ventured out to Jo Hays Vista with my newly built FPV freestyle drone and camera at my side.
-Unfortunately I forgot to charge the FPV goggles before hand, so the drone was practically useless. I&amp;rsquo;m still glad I saw the harsh, wind-chiseled ice.
-     .jg-entry img { transition: transform .25s ease-in-out !</description>
+Unfortunately I forgot to charge the FPV goggles before hand, so the drone was practically useless. I&amp;rsquo;m still glad I saw the harsh, wind-chiseled ice.</description>
     </item>
     
     <item>
@@ -25,8 +34,7 @@ Unfortunately I forgot to charge the FPV goggles before hand, so the drone was p
       
       <guid>/gallery/ice-storm/</guid>
       <description>A massive ice storm just passed by State College. So while most people were scared of slipping and breaking an arm, I decided to venture out into the neighborhood and nearby golf course with my macro 35mm lens.
-I find the texture of the ice fascinating—it resembles a network of plant cells, or looks like some carbonated drink.
-     .jg-entry img { transition: transform .25s ease-in-out !</description>
+I find the texture of the ice fascinating—it resembles a network of plant cells, or looks like some carbonated drink.</description>
     </item>
     
     <item>
@@ -36,8 +44,7 @@ I find the texture of the ice fascinating—it resembles a network of plant cell
       
       <guid>/gallery/light-drawings/</guid>
       <description>It&amp;rsquo;s been a while since I did something overly creative, like drawing circles with fire. So, here&amp;rsquo;s a remedy to that!
-These were made by leaving the shutter open for a few seconds (30) and using my phone&amp;rsquo;s flashlight to draw while the sensor gathered light.
-     .jg-entry img { transition: transform .25s ease-in-out !important; } .jg-entry img:hover { transform: scale(1.1); }   35mm f/20 30sec ISO 200&#34;</description>
+These were made by leaving the shutter open for a few seconds (30) and using my phone&amp;rsquo;s flashlight to draw while the sensor gathered light.</description>
     </item>
     
     <item>
@@ -47,8 +54,7 @@ These were made by leaving the shutter open for a few seconds (30) and using my 
       
       <guid>/gallery/stonevalley/</guid>
       <description>Explored the areas around the frozen Lake Perez—where I used to sail in the summer—one of my favorite places of all time.
-I also attempted the tilt-shift effect in Photoshop from a nearby overlook of State College. I think the house turned out the best!
-     .jg-entry img { transition: transform .25s ease-in-out !important; } .jg-entry img:hover { transform: scale(1.1); }   400mm f/10 1/400sec ISO 100&#34;</description>
+I also attempted the tilt-shift effect in Photoshop from a nearby overlook of State College. I think the house turned out the best!</description>
     </item>
     
     <item>
@@ -60,7 +66,8 @@ I also attempted the tilt-shift effect in Photoshop from a nearby overlook of St
       <description>Happy New Year!
 A major snowstorm recently unleashed its wrath on us, for a grand total of 14in or 35cm of fluffy, dry snow!
 Here are some of my favorite long exposures from the evening.
-     .jg-entry img { transition: transform .25s ease-in-out !important; } .jg-entry img:hover { transform: scale(1.1); }   35mm f/14 30sec ISO 100&#34;     35mm f/5.6 1.3sec ISO 100&#34;</description>
+Yes, you did notice something slightly different about this gallery. Actually, I probably already converted all of my existing galleries by now, so whatever.
+I&amp;rsquo;m using a new system to generate these galleries. No longer do I have to deal with endless markdown tables!</description>
     </item>
     
     <item>
@@ -70,8 +77,7 @@ Here are some of my favorite long exposures from the evening.
       
       <guid>/gallery/snow-aftermath/</guid>
       <description>It was one of those fictional, silent winter mornings
-14in or 35cm of fluffy, dry snow had just finished precipitating
-     .jg-entry img { transition: transform .25s ease-in-out !important; } .jg-entry img:hover { transform: scale(1.1); }   35mm f/5.6 0.0012499999720592975sec ISO 100&#34;     35mm f/5.6 1/1000sec ISO 100&#34;     35mm f/5.6 1/500sec ISO 100&#34;     35mm f/5.</description>
+14in or 35cm of fluffy, dry snow had just finished precipitating</description>
     </item>
     
     <item>
@@ -83,8 +89,7 @@ Here are some of my favorite long exposures from the evening.
       <description>Here are some pictures of my friends over at @teamsketchyfpv flying some of their planes.
 Thanks to them for inviting me, I had an absolute blast.
 Looks like it&amp;rsquo;s time for me to get an RC jet!
-And yes, we did keep at least six feet apart.
-     .jg-entry img { transition: transform .25s ease-in-out !important; } .jg-entry img:hover { transform: scale(1.1); }   135mm f/5.</description>
+And yes, we did keep at least six feet apart.</description>
     </item>
     
     <item>
@@ -94,8 +99,7 @@ And yes, we did keep at least six feet apart.
       
       <guid>/gallery/maine-trip/</guid>
       <description>I recently went on a camping/cabining trip with my family around New England, especially Maine.
-I know there are a lot of photographs, but I really like all of these.
-     .jg-entry img { transition: transform .25s ease-in-out !important; } .jg-entry img:hover { transform: scale(1.1); }   400mm f/5.6 1/60sec ISO 4000&#34;     100mm f/4.5 1/60sec ISO 250&#34;     35mm f/4.</description>
+I know there are a lot of photographs, but I really like all of these.</description>
     </item>
     
     <item>
@@ -105,7 +109,7 @@ I know there are a lot of photographs, but I really like all of these.
       
       <guid>/gallery/garden/</guid>
       <description>I walked around the garden and garage to see what pictures I could take. Here are the ones that I liked:
-     .jg-entry img { transition: transform .25s ease-in-out !important; } .jg-entry img:hover { transform: scale(1.1); }   35mm f/5.6 0.001249999972058798sec ISO 100&#34;     35mm f/6.300000190736682 1/200sec ISO 100&#34;     35mm f/5.6 1/320sec ISO 100&#34;     35mm f/5.</description>
+The thumbnails are significantly darker than the images themselves because I used the wrong color profile. 😢</description>
     </item>
     
     <item>
@@ -127,8 +131,7 @@ Maybe it has to do with the look of these tubes, but I&amp;rsquo;m convinced tha
       <guid>/gallery/waterlilies-dragonflies/</guid>
       <description>Today, I headed down to The Arboretum at Penn State to see what flowers and insects were in store for me.
 At first, I decided to bring a 35mm macro lens. However, after seeing all of the dragonflies and lilies, I biked home in record time and snagged a telephoto lens.
-I present to you the Water lilies and Dragonflies at The Arboretum at Penn State.
-     .</description>
+I present to you the Water lilies and Dragonflies at The Arboretum at Penn State.</description>
     </item>
     
     <item>
