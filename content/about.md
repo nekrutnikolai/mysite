@@ -8,13 +8,13 @@ draft: false
 Columbia Icefield, Jasper National Park
 
 ## Hi, nice to meet you! I'm Nikolai!
- 
-I am an **aspiring applied physicist and engineer** with an **appreciation for nature**, and a **tinkerer at heart**.
 
-I'm **looking for an internship** for the summer of 2024 that is applied physics and engineering-related, preferably something Research and Development oriented! 
+I am a tinker and a doer. I thrive by working on complex and open-ended projects that challenge me.
+
+I'm looking for an internship for the summer of 2024 that is applied physics and engineering-related, specifically something Research and Development oriented! 
+
+I am a junior majoring in Physics with a concentration in Electrical Engineering at Cornell University. I plan to pursue a M.Eng. in Electrical Engineering to build up my engineering background and graduate with a Bachelor’s and Master’s in May 2025.
 
 I enjoy spending time going on adventures in the wilderness with a [camera by my side](/gallery).
-
-I find satisfaction in building, flying, and ultimately crashing RC aircraft and drones. This passion for aviation prompted me to start an [aeronautics club](https://shmac.netlify.app/) at my high school.
 
 Some of my other passions include, in no particular order, photography, content creation, drones, cryptocurrencies, electronics, programming, martial arts, languages, playing the guitar, and of course this website.
