@@ -1,24 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>bitcoin on Nikolai Nekrutenko</title>
+    <title>Bitcoin on Nikolai Nekrutenko</title>
     <link>/tags/bitcoin/</link>
-    <description>Recent content in bitcoin on Nikolai Nekrutenko</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Bitcoin on Nikolai Nekrutenko</description>
+    <generator>Hugo</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 01 Aug 2020 15:57:01 -0400</lastBuildDate><atom:link href="/tags/bitcoin/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 Aug 2020 15:57:01 -0400</lastBuildDate>
+    <atom:link href="/tags/bitcoin/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Book of Bitcoin - An Analogy to Explain Bitcoin</title>
       <link>/posts/the-book-of-bitcoin-an-analogy-to-explain-bitcoin/</link>
       <pubDate>Sat, 01 Aug 2020 15:57:01 -0400</pubDate>
-      
       <guid>/posts/the-book-of-bitcoin-an-analogy-to-explain-bitcoin/</guid>
-      <description>This was a project for my speech and debate class, the sources are in the video&amp;rsquo;s description.
-Here&amp;rsquo;s the video version of the speech:
-Here&amp;rsquo;s the transcript of the speech:
-What do you think of when you hear the word “Bitcoin”? According to a 2017 YouGov survey, 62% of Americans believe that cryptocurrencies, like Bitcoin, are used for illegal purchases or don’t know what they’re used for at all. Yet, all the cryptocurrencies combined are estimated to be worth about $230 billion.</description>
+      <description>This was a project for my speech and debate class, the sources are in the video&amp;rsquo;s description.&#xA;Here&amp;rsquo;s the video version of the speech:&#xA;Here&amp;rsquo;s the transcript of the speech:&#xA;What do you think of when you hear the word “Bitcoin”? According to a 2017 YouGov survey, 62% of Americans believe that cryptocurrencies, like Bitcoin, are used for illegal purchases or don’t know what they’re used for at all. Yet, all the cryptocurrencies combined are estimated to be worth about $230 billion.</description>
     </item>
-    
   </channel>
 </rss>

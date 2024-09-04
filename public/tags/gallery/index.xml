@@ -1,25 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>gallery on Nikolai Nekrutenko</title>
-    <link>/tags/gallery/</link>
-    <description>Recent content in gallery on Nikolai Nekrutenko</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Gallery on Nikolai Nekrutenko</title>
+    <link>//localhost:1313/tags/gallery/</link>
+    <description>Recent content in Gallery on Nikolai Nekrutenko</description>
+    <generator>Hugo</generator>
+    <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 29 Jun 2020 10:18:07 -0400</lastBuildDate>
-    
-	<atom:link href="/tags/gallery/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 13 Jan 2021 15:42:54 -0500</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/gallery/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Galleries With Hugo</title>
+      <link>//localhost:1313/posts/galleries-with-hugo/</link>
+      <pubDate>Wed, 13 Jan 2021 15:42:54 -0500</pubDate>
+      <guid>//localhost:1313/posts/galleries-with-hugo/</guid>
+      <description>Definitely need to do this at some point in the future.&#xA;Finally I find an excellent, easy to use photo gallery viewer with Hugo </description>
+    </item>
     <item>
       <title>Gallerytest</title>
-      <link>/gallery/gallerytest/</link>
+      <link>//localhost:1313/gallery/gallerytest/</link>
       <pubDate>Mon, 29 Jun 2020 10:18:07 -0400</pubDate>
-      
-      <guid>/gallery/gallerytest/</guid>
-      <description>This is just a test to see how well my python program works
-                                                    ​      </description>
+      <guid>//localhost:1313/gallery/gallerytest/</guid>
+      <description>Note, I have moved on to a [vastly superior method]](https://github.com/mfg92/hugo-shortcode-gallery)&#xA;This is just a test to see how well my python program works.&#xA;I wrote a program in python that helps displaying the images about by generating a table in markdown, which is the format that I use to code this website. The images are clickable!&#xA;Here&amp;rsquo;s the program if you wanna take a look:&#xA;Please note that I am no longer maintaining the code.</description>
     </item>
-    
   </channel>
 </rss>

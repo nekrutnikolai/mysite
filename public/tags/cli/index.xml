@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CLI on Nikolai Nekrutenko</title>
+    <link>//localhost:1313/tags/cli/</link>
+    <description>Recent content in CLI on Nikolai Nekrutenko</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Mon, 10 Jan 2022 16:50:50 +0100</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/cli/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Make Windows Install Media on MacOS</title>
+      <link>//localhost:1313/posts/how-to-make-windows-install-media-on-macos/</link>
+      <pubDate>Mon, 10 Jan 2022 16:50:50 +0100</pubDate>
+      <guid>//localhost:1313/posts/how-to-make-windows-install-media-on-macos/</guid>
+      <description>Creating a bootable, functional windows installation media is done wrongly in so many of the guides I checked, that it can truly send someone down a rabbit hole of confusion figuring what messed up. It took me several attempts and countless hours to finally figure out a way that works.&#xA;So, let us begin:&#xA;Note: All command-line formatted entries like the one below will need to be run in terminal.</description>
+    </item>
+  </channel>
+</rss>

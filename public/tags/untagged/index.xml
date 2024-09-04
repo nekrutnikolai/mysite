@@ -1,24 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>untagged on Nikolai Nekrutenko</title>
-    <link>/tags/untagged/</link>
-    <description>Recent content in untagged on Nikolai Nekrutenko</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Untagged on Nikolai Nekrutenko</title>
+    <link>//localhost:1313/tags/untagged/</link>
+    <description>Recent content in Untagged on Nikolai Nekrutenko</description>
+    <generator>Hugo</generator>
+    <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 29 Jun 2020 10:18:07 -0400</lastBuildDate>
-    
-	<atom:link href="/tags/untagged/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 14 Sep 2020 17:44:05 -0400</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/untagged/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Gallerytest</title>
-      <link>/posts/gallerytest/</link>
-      <pubDate>Mon, 29 Jun 2020 10:18:07 -0400</pubDate>
-      
-      <guid>/posts/gallerytest/</guid>
-      <description>   Syntax Description Test Text       Steve Francia      Steve Francia      Steve Francia      Paragraph Text And more    </description>
+      <title>Tailcamera for any RC Aircraft</title>
+      <link>//localhost:1313/posts/tailcamera-for-any-rc-aircraft/</link>
+      <pubDate>Mon, 14 Sep 2020 17:44:05 -0400</pubDate>
+      <guid>//localhost:1313/posts/tailcamera-for-any-rc-aircraft/</guid>
+      <description></description>
     </item>
-    
   </channel>
 </rss>

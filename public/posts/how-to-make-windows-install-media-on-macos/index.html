@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Nikolai Nekrutenko ">
+<meta name="description" content="Creating a bootable, functional windows installation media is done wrongly in so many of the guides I checked, that it can truly send someone down a rabbit hole of confusion figuring what messed up. It took me several attempts and countless hours to finally figure out a way that works.
+So, let us begin:
+Note: All command-line formatted entries like the one below will need to be run in terminal." />
+<meta name="keywords" content="blog, posts, Windows, MacOS, CLI" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="//localhost:1313/posts/how-to-make-windows-install-media-on-macos/" />
+
+
+    <title>
+        
+            How to Make Windows Install Media on MacOS :: Nikolai Nekrutenko 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.min.be63fa1eef108613bbae7f59056f56c9a3f3f51f251e4940e13f1e0f789cf5aa.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="#252627">
+    <meta name="theme-color" content="#252627">
+
+
+
+
+  <meta itemprop="name" content="How to Make Windows Install Media on MacOS">
+  <meta itemprop="description" content="Creating a bootable, functional windows installation media is done wrongly in so many of the guides I checked, that it can truly send someone down a rabbit hole of confusion figuring what messed up. It took me several attempts and countless hours to finally figure out a way that works.
+So, let us begin:
+Note: All command-line formatted entries like the one below will need to be run in terminal.">
+  <meta itemprop="datePublished" content="2022-01-10T16:50:50+01:00">
+  <meta itemprop="dateModified" content="2022-01-10T16:50:50+01:00">
+  <meta itemprop="wordCount" content="394">
+  <meta itemprop="image" content="//localhost:1313/">
+  <meta itemprop="keywords" content="Windows,MacOS,CLI">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="//localhost:1313/">
+  <meta name="twitter:title" content="How to Make Windows Install Media on MacOS">
+  <meta name="twitter:description" content="Creating a bootable, functional windows installation media is done wrongly in so many of the guides I checked, that it can truly send someone down a rabbit hole of confusion figuring what messed up. It took me several attempts and countless hours to finally figure out a way that works.
+So, let us begin:
+Note: All command-line formatted entries like the one below will need to be run in terminal.">
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2022-01-10 16:50:50 &#43;0100 &#43;0100" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">nⁿ</span>
+            <span class="logo__cursor" style=
+                  "
+                   background-color:#67a2c9;
+                   animation-duration:1s;">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="//localhost:1313/about/">About</a></li><li><a href="//localhost:1313/gallery/">Gallery</a></li><li><a href="https://docs.google.com/document/d/194nrFYKdKdbkx7I2i50hc1jcLhoVnoOVjvUvvnJuMVE/edit">Portfolio</a></li><li><a href="//localhost:1313/posts/">Posts</a></li><li><a href="//localhost:1313/NikolaiNekrutenkoResume.pdf">Resume</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>2 minutes
+
+            
+
+            </p>
+        </div>
+
+        <article>
+            <h1 class="post-title">
+                <a href="//localhost:1313/posts/how-to-make-windows-install-media-on-macos/">How to Make Windows Install Media on MacOS</a>
+            </h1>
+
+            
+
+            <div class="post-content">
+                <p>Creating a bootable, functional windows installation media is done wrongly in so many of the guides I checked, that it can truly send someone down a rabbit hole of confusion figuring what messed up. It took me several attempts and countless hours to finally figure out a way that works.</p>
+<p><strong>So, let us begin:</strong></p>
+<p><em>Note:</em> All command-line formatted entries like the one below will need to be run in terminal.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Just copy and paste into terminal
+</span></span></code></pre></div><p>First of all, the latest Windows 10 Recovery Image needs to be downloaded from <a href="https://www.microsoft.com/en-us/software-download/windows10ISO">Microsoft&rsquo;s website</a>.</p>
+<p>Select the version, language and either the 64 or 32 bit version depending on your system (most likely the 64 bit version).</p>
+<p>While that is downloading, there is something that you must know, which may offend you. Windows, Microsoft in particular, is dumb.</p>
+<p>Let me elaborate: For some reason, they decided to make the <code>install.wim</code> file larger than 4GB, the file size limit for the FAT format which our drive is now formatted in. So, we have to split this file up into two pieces, which requires special software called <a href="https://wimlib.net">wimlib</a>.</p>
+<p>I strongly suggest installing wimlib with <a href="https://brew.sh">Homebrew</a>, a truly amazing package manager for MacOS:</p>
+<p>If you don&rsquo;t already have Homebrew installed:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/bin/bash -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><p>Install wimlib:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install wimlib
+</span></span></code></pre></div><p>Once that is downloaded, click on the downloaded file to mount it. In a sense, we are attaching it like a thumb-drive to copy data from it to our actual usb stick or other kind of storage drive. Anything that can be plugged into the computer that windows is going to be installed on is fair game and will be referred to as an installation media throughout this guide.</p>
+<p>Alternatively, the following command can be run</p>
+<p>Next, we will use the MacOS terminal to find and format the external drive that will be our installation media.</p>
+<p>Then, run the following command:</p>
+<p>There&rsquo;s no harm in running it if you&rsquo;re not sure, it&rsquo;ll let you know if you already having it before going ahead with the install.</p>
+<p>Go grab a coffee or tea, or go on a walk while the files are copied over to the external storage media, particularly if using an old USB drive.</p>
+<p>Now go and enjoy your windows machine for whatever your mac apparently isn&rsquo;t already good enough.</p>
+<p>This guide was greatly inspired by <a href="https://www.youtube.com/watch?v=ZVW7FyIEoDQ&list=PLWoHVszdLgEzdxylAmHhAVaxHe-1BfzpT&index=9&t=337s">this youtube video</a></p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="//localhost:1313/tags/windows">Windows</a></span><span class="tag"><a href="//localhost:1313/tags/macos">MacOS</a></span><span class="tag"><a href="//localhost:1313/tags/cli">CLI</a></span>
+                </p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>394 Words</p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2022-01-10 10:50 -0500</p>
+        </div>
+
+        
+            <div class="pagination">
+                <div class="pagination__title">
+                    <span class="pagination__title-h"></span>
+                    <hr />
+                </div>
+
+                <div class="pagination__buttons">
+                    
+
+                    
+                        <span class="button next">
+                            <a href="//localhost:1313/posts/how-to-build-a-website-a-guide-for-command-line-novices/">
+                                <span class="button__text">How to Build a Website: A Guide for Command-Line Novices</span>
+                                <span class="button__icon">→</span>
+                            </a>
+                        </span>
+                    
+                </div>
+            </div>
+        
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2024</span>
+            
+                <span><a href="//localhost:1313/">Nikolai Nekrutenko</a></span>
+            
+            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="/bundle.min.c5e55ba9f26a0589568847149fbe08c67fd9ba767178bd302da177d441e23fd0c071ecdaab41932a1eed7600c252d307677d4fc5a67dc7489cb951e23ef3d5e5.js" integrity="sha512-xeVbqfJqBYlWiEcUn74Ixn/ZunZxeL0wLaF31EHiP9DAcezaq0GTKh7tdgDCUtMHZ31PxaZ9x0icuVHiPvPV5Q=="></script>
+
+
+
+    </body>
+</html>

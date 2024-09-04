@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>mining on Nikolai Nekrutenko</title>
+    <title>Mining on Nikolai Nekrutenko</title>
     <link>/tags/mining/</link>
-    <description>Recent content in mining on Nikolai Nekrutenko</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Mining on Nikolai Nekrutenko</description>
+    <generator>Hugo</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Thu, 11 Jun 2020 10:04:55 -0400</lastBuildDate><atom:link href="/tags/mining/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 11 Jun 2020 10:04:55 -0400</lastBuildDate>
+    <atom:link href="/tags/mining/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Let&#39;s Kill This MacBook! - How to Mine Monero on a Mac</title>
       <link>/posts/lets-kill-this-macbook-how-to-mine-monero-on-a-mac/</link>
       <pubDate>Thu, 11 Jun 2020 10:04:55 -0400</pubDate>
-      
       <guid>/posts/lets-kill-this-macbook-how-to-mine-monero-on-a-mac/</guid>
-      <description>My friend&amp;rsquo;s Mac is nearing its end He&amp;rsquo;s already had it, the one in the picture above, for a couple of years, and the battery is starting to degrade among several other serious issues. Since it is nearing its end soon, in the time that it isn&amp;rsquo;t being used it could mine some cryptocurrency.
-MacBooks are known for their subpar cooling systems as demonstrated in this video. We are going to set up this mac for mining Monero(XMR), a type of cryptocurrency that can be mined with a CPU.</description>
+      <description>My friend&amp;rsquo;s Mac is nearing its end He&amp;rsquo;s already had it, the one in the picture above, for a couple of years, and the battery is starting to degrade among several other serious issues. Since it is nearing its end soon, in the time that it isn&amp;rsquo;t being used it could mine some cryptocurrency.&#xA;MacBooks are known for their subpar cooling systems as demonstrated in this video. We are going to set up this mac for mining Monero(XMR), a type of cryptocurrency that can be mined with a CPU.</description>
     </item>
-    
   </channel>
 </rss>

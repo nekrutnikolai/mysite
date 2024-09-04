@@ -1,25 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>arboretum on Nikolai Nekrutenko</title>
-    <link>/tags/arboretum/</link>
-    <description>Recent content in arboretum on Nikolai Nekrutenko</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Arboretum on Nikolai Nekrutenko</title>
+    <link>//localhost:1313/tags/arboretum/</link>
+    <description>Recent content in Arboretum on Nikolai Nekrutenko</description>
+    <generator>Hugo</generator>
+    <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Mon, 29 Jun 2020 10:18:07 -0400</lastBuildDate>
-    
-	<atom:link href="/tags/arboretum/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="//localhost:1313/tags/arboretum/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Gallerytest</title>
-      <link>/gallery/gallerytest/</link>
+      <link>//localhost:1313/gallery/gallerytest/</link>
       <pubDate>Mon, 29 Jun 2020 10:18:07 -0400</pubDate>
-      
-      <guid>/gallery/gallerytest/</guid>
-      <description>This is just a test to see how well my python program works
-                                                    ​      </description>
+      <guid>//localhost:1313/gallery/gallerytest/</guid>
+      <description>Note, I have moved on to a [vastly superior method]](https://github.com/mfg92/hugo-shortcode-gallery)&#xA;This is just a test to see how well my python program works.&#xA;I wrote a program in python that helps displaying the images about by generating a table in markdown, which is the format that I use to code this website. The images are clickable!&#xA;Here&amp;rsquo;s the program if you wanna take a look:&#xA;Please note that I am no longer maintaining the code.</description>
     </item>
-    
   </channel>
 </rss>

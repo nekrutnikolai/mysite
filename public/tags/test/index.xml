@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>test on Nikolai Nekrutenko</title>
+    <title>Test on Nikolai Nekrutenko</title>
     <link>/tags/test/</link>
-    <description>Recent content in test on Nikolai Nekrutenko</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Test on Nikolai Nekrutenko</description>
+    <generator>Hugo</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Thu, 30 Apr 2020 15:21:48 -0400</lastBuildDate><atom:link href="/tags/test/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Apr 2020 15:21:48 -0400</lastBuildDate>
+    <atom:link href="/tags/test/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My First Post</title>
       <link>/posts/my-first-post/</link>
       <pubDate>Thu, 30 Apr 2020 15:21:48 -0400</pubDate>
-      
       <guid>/posts/my-first-post/</guid>
-      <description>Hello World!
-Why did I make this website and what even is it? I&amp;rsquo;m glad you asked although you probably didn&amp;rsquo;t! I made and will continue to make this website because I want to learn how to build a website. I also enjoy writing, especially when it isn&amp;rsquo;t tied to a grade.
-I will be posting about everything from a small cryptocurrency mining operation that I run in the basement to my favorite hobby of RC flight to my own ice cream recipes and everything in between.</description>
+      <description>Hello World!&#xA;Why did I make this website and what even is it? I&amp;rsquo;m glad you asked although you probably didn&amp;rsquo;t! I made and will continue to make this website because I want to learn how to build a website. I also enjoy writing, especially when it isn&amp;rsquo;t tied to a grade.&#xA;I will be posting about everything from a small cryptocurrency mining operation that I run in the basement to my favorite hobby of RC flight to my own ice cream recipes and everything in between.</description>
     </item>
-    
   </channel>
 </rss>

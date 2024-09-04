@@ -1,34 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>flitetest on Nikolai Nekrutenko</title>
+    <title>Flitetest on Nikolai Nekrutenko</title>
     <link>/tags/flitetest/</link>
-    <description>Recent content in flitetest on Nikolai Nekrutenko</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Flitetest on Nikolai Nekrutenko</description>
+    <generator>Hugo</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Wed, 29 Jul 2020 10:30:15 -0400</lastBuildDate><atom:link href="/tags/flitetest/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Jul 2020 10:30:15 -0400</lastBuildDate>
+    <atom:link href="/tags/flitetest/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>EOLRC - Build Guide</title>
       <link>/posts/eolrc-build-guide/</link>
       <pubDate>Wed, 29 Jul 2020 10:30:15 -0400</pubDate>
-      
       <guid>/posts/eolrc-build-guide/</guid>
-      <description>Note that this is not a build guide of the car itself. Rather, how to integrate the 3D printed parts with the plane parts for your own projects.
-Printing the parts The parts can be found in the plans GitHub repo.
-I recommend printing the All_parts_arranged.stl
-I used an Ultimaker 3 to print the parts with eSun PLA+ at a 0.2mm layer height at 215C, 35% infill, along with a PETG brim for easy cleanup.</description>
+      <description>Note that this is not a build guide of the car itself. Rather, how to integrate the 3D printed parts with the plane parts for your own projects.&#xA;Printing the parts The parts can be found in the plans GitHub repo.&#xA;I recommend printing the All_parts_arranged.stl&#xA;I used an Ultimaker 3 to print the parts with eSun PLA+ at a 0.2mm layer height at 215C, 35% infill, along with a PETG brim for easy cleanup.</description>
     </item>
-    
     <item>
       <title>EOLRC - An Extremely Overkill LEGO RC Car (from Plane Parts)</title>
       <link>/posts/eolrc-an-extremely-overkill-lego-rc-car-from-plane-parts/</link>
       <pubDate>Tue, 21 Jul 2020 07:27:42 -0400</pubDate>
-      
       <guid>/posts/eolrc-an-extremely-overkill-lego-rc-car-from-plane-parts/</guid>
-      <description>It&amp;rsquo;s been a while since I last played around with LEGO Technic. About 4 years to be exact. I can say with absolute confidence that this was my favorite way to spend time in my younger years.
-I recollect building all sorts of crazy things from an automatic crossbow to a massive Mercedes Benz Unimog with a functioning suspension and a pneumatic crane. Over the years, I have acquired an impressive amount of LEGO technic parts that are still scattered everywhere around the house.</description>
+      <description>It&amp;rsquo;s been a while since I last played around with LEGO Technic. About 4 years to be exact. I can say with absolute confidence that this was my favorite way to spend time in my younger years.&#xA;I recollect building all sorts of crazy things from an automatic crossbow to a massive Mercedes Benz Unimog with a functioning suspension and a pneumatic crane. Over the years, I have acquired an impressive amount of LEGO technic parts that are still scattered everywhere around the house.</description>
     </item>
-    
   </channel>
 </rss>
