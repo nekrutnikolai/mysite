@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tutorial on Nikolai Nekrutenko</title>
-    <link>/tags/tutorial/</link>
+    <link>//localhost:1313/tags/tutorial/</link>
     <description>Recent content in Tutorial on Nikolai Nekrutenko</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Sun, 27 Jun 2021 10:38:15 -0400</lastBuildDate>
-    <atom:link href="/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to Build a Website: A Guide for Command-Line Novices</title>
-      <link>/posts/how-to-build-a-website-a-guide-for-command-line-novices/</link>
+      <link>//localhost:1313/posts/how-to-build-a-website-a-guide-for-command-line-novices/</link>
       <pubDate>Sun, 27 Jun 2021 10:38:15 -0400</pubDate>
-      <guid>/posts/how-to-build-a-website-a-guide-for-command-line-novices/</guid>
-      <description>Formerly titled: How to Build a Website for Your Studio (or Anything): A Step by Step Guide&#xA;Introduction This guide is intended for Macintosh users who have never programmed before. With a bit of searching, the same steps can easily be applied to Windows and Linux machines.&#xA;Most will agree that a book is judged by its cover—for better or worse. Websites are the covers of your studio, organization, or even yourself, which are the books.</description>
+      <guid>//localhost:1313/posts/how-to-build-a-website-a-guide-for-command-line-novices/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Formerly titled: How to Build a Website for Your Studio (or Anything): A Step by Step Guide&lt;/strong&gt;&lt;/p&gt;&#xA;&#xA;    &lt;figure class=&#34;center&#34; &gt;&#xA;        &lt;img src=&#34;//localhost:1313/img/BBEssay/helloworld.png&#34;  alt=&#34;Hello World&#34;   style=&#34;border-radius: 8px;&#34;  /&gt;&#xA;&#xA;        &#xA;    &lt;/figure&gt;&#xA;&#xA;&#xA;&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;This guide is intended for Macintosh users who have never programmed before. With a bit of searching, the same steps can easily be applied to Windows and Linux machines.&lt;/p&gt;&#xA;&lt;p&gt;Most will agree that a book is judged by its cover—for better or worse. Websites are the covers of your studio, organization, or even yourself, which are the books. Well-constructed websites build credibility and legitimacy. They are the bridge between your members and the outer world. A good-looking, well functioning website is essential to making your mark in the modern world. In contrast, a poorly built website can have the opposite effect, negatively affecting your reputation.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

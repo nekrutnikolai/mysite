@@ -14,7 +14,7 @@
       <link>//localhost:1313/posts/how-to-make-windows-install-media-on-macos/</link>
       <pubDate>Mon, 10 Jan 2022 16:50:50 +0100</pubDate>
       <guid>//localhost:1313/posts/how-to-make-windows-install-media-on-macos/</guid>
-      <description>Creating a bootable, functional windows installation media is done wrongly in so many of the guides I checked, that it can truly send someone down a rabbit hole of confusion figuring what messed up. It took me several attempts and countless hours to finally figure out a way that works.&#xA;So, let us begin:&#xA;Note: All command-line formatted entries like the one below will need to be run in terminal.</description>
+      <description>&lt;p&gt;Creating a bootable, functional windows installation media is done wrongly in so many of the guides I checked, that it can truly send someone down a rabbit hole of confusion figuring what messed up. It took me several attempts and countless hours to finally figure out a way that works.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;So, let us begin:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Note:&lt;/em&gt; All command-line formatted entries like the one below will need to be run in terminal.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

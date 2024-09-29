@@ -11,7 +11,7 @@ Columbia Icefield, Jasper National Park
 
 I am a senior Physics major at Cornell University, also pursuing a Master of Engineering in Electrical and Computer Engineering through the Early M.Eng. program. I will graduate with my Bachelor’s in December 2024 and my M.Eng. in May 2025. I am eager to bring my background in physics and electrical engineering, my hands-on experience in software and hardware engineering, physics-based modeling and simulation, data analysis and intuitive visualization towards solving problems. I thrive by working on complex and open-ended projects that challenge me.
 
-I'm seeking a full-time job after graduation! If you'd like to get in touch, email me at [nekrutnikolai@gmail.com](mailto:nekrutnikolai@gmail.com).
+I'm seeking a full-time job after graduation! If you'd like to get in touch, email me at [nan34@cornell.edu](mailto:nan34@cornell.edu).
 
 I enjoy spending time going on adventures in the wilderness with a [camera by my side](/gallery).
 

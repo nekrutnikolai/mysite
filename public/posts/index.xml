@@ -1,23 +1,65 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Posts on Nikolai Nekrutenko</title>
-        <link>/posts/</link>
+        <link>//localhost:1313/posts/</link>
         <description>Recent content in Posts on Nikolai Nekrutenko</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
         <lastBuildDate>Mon, 10 Jan 2022 16:50:50 +0100</lastBuildDate>
-        <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="//localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>How to Make Windows Install Media on MacOS</title>
+            <link>//localhost:1313/posts/how-to-make-windows-install-media-on-macos/</link>
+            <pubDate>Mon, 10 Jan 2022 16:50:50 +0100</pubDate>
+            
+            <guid>//localhost:1313/posts/how-to-make-windows-install-media-on-macos/</guid>
+            <description>&lt;p&gt;Creating a bootable, functional windows installation media is done wrongly in so many of the guides I checked, that it can truly send someone down a rabbit hole of confusion figuring what messed up. It took me several attempts and countless hours to finally figure out a way that works.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;So, let us begin:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Note:&lt;/em&gt; All command-line formatted entries like the one below will need to be run in terminal.&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<p>Creating a bootable, functional windows installation media is done wrongly in so many of the guides I checked, that it can truly send someone down a rabbit hole of confusion figuring what messed up. It took me several attempts and countless hours to finally figure out a way that works.</p>
+<p><strong>So, let us begin:</strong></p>
+<p><em>Note:</em> All command-line formatted entries like the one below will need to be run in terminal.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Just copy and paste into terminal
+</span></span></code></pre></div><p>First of all, the latest Windows 10 Recovery Image needs to be downloaded from <a href="https://www.microsoft.com/en-us/software-download/windows10ISO">Microsoft&rsquo;s website</a>.</p>
+<p>Select the version, language and either the 64 or 32 bit version depending on your system (most likely the 64 bit version).</p>
+<p>While that is downloading, there is something that you must know, which may offend you. Windows, Microsoft in particular, is dumb.</p>
+<p>Let me elaborate: For some reason, they decided to make the <code>install.wim</code> file larger than 4GB, the file size limit for the FAT format which our drive is now formatted in. So, we have to split this file up into two pieces, which requires special software called <a href="https://wimlib.net">wimlib</a>.</p>
+<p>I strongly suggest installing wimlib with <a href="https://brew.sh">Homebrew</a>, a truly amazing package manager for MacOS:</p>
+<p>If you don&rsquo;t already have Homebrew installed:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/bin/bash -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><p>Install wimlib:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install wimlib
+</span></span></code></pre></div><p>Once that is downloaded, click on the downloaded file to mount it. In a sense, we are attaching it like a thumb-drive to copy data from it to our actual usb stick or other kind of storage drive. Anything that can be plugged into the computer that windows is going to be installed on is fair game and will be referred to as an installation media throughout this guide.</p>
+<p>Alternatively, the following command can be run</p>
+<p>Next, we will use the MacOS terminal to find and format the external drive that will be our installation media.</p>
+<p>Then, run the following command:</p>
+<p>There&rsquo;s no harm in running it if you&rsquo;re not sure, it&rsquo;ll let you know if you already having it before going ahead with the install.</p>
+<p>Go grab a coffee or tea, or go on a walk while the files are copied over to the external storage media, particularly if using an old USB drive.</p>
+<p>Now go and enjoy your windows machine for whatever your mac apparently isn&rsquo;t already good enough.</p>
+<p>This guide was greatly inspired by <a href="https://www.youtube.com/watch?v=ZVW7FyIEoDQ&list=PLWoHVszdLgEzdxylAmHhAVaxHe-1BfzpT&index=9&t=337s">this youtube video</a></p>
+]]></content>
+        </item>
         
         <item>
             <title>How to Build a Website: A Guide for Command-Line Novices</title>
-            <link>/posts/how-to-build-a-website-a-guide-for-command-line-novices/</link>
+            <link>//localhost:1313/posts/how-to-build-a-website-a-guide-for-command-line-novices/</link>
             <pubDate>Sun, 27 Jun 2021 10:38:15 -0400</pubDate>
             
-            <guid>/posts/how-to-build-a-website-a-guide-for-command-line-novices/</guid>
-            <description>Formerly titled: How to Build a Website for Your Studio (or Anything): A Step by Step Guide
-Introduction This guide is intended for Macintosh users who have never programmed before. With a bit of searching, the same steps can easily be applied to Windows and Linux machines.
-Most will agree that a book is judged by its cover—for better or worse. Websites are the covers of your studio, organization, or even yourself, which are the books.</description>
+            <guid>//localhost:1313/posts/how-to-build-a-website-a-guide-for-command-line-novices/</guid>
+            <description>&lt;p&gt;&lt;strong&gt;Formerly titled: How to Build a Website for Your Studio (or Anything): A Step by Step Guide&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;figure class=&#34;center&#34; &gt;
+        &lt;img src=&#34;//localhost:1313/img/BBEssay/helloworld.png&#34;  alt=&#34;Hello World&#34;   style=&#34;border-radius: 8px;&#34;  /&gt;
+
+        
+    &lt;/figure&gt;
+
+
+&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;This guide is intended for Macintosh users who have never programmed before. With a bit of searching, the same steps can easily be applied to Windows and Linux machines.&lt;/p&gt;
+&lt;p&gt;Most will agree that a book is judged by its cover—for better or worse. Websites are the covers of your studio, organization, or even yourself, which are the books. Well-constructed websites build credibility and legitimacy. They are the bridge between your members and the outer world. A good-looking, well functioning website is essential to making your mark in the modern world. In contrast, a poorly built website can have the opposite effect, negatively affecting your reputation.&lt;/p&gt;</description>
             <content type="html"><![CDATA[<p><strong>Formerly titled: How to Build a Website for Your Studio (or Anything): A Step by Step Guide</strong></p>
 
     <figure class="center" >
@@ -137,115 +179,115 @@ tags:
 <h1 id="part-3-writing-content-in-markdown">Part 3: Writing Content in Markdown</h1>
 <p>Using Markdown is different than using an application like Microsoft Word, where you click buttons to format words and phrases, and the changes are visible immediately. When you create a Markdown-formatted file, you add Markdown code to the text to indicate which words and phrases should look different. A piece of software, such as Hugo, interprets this notation and makes it look as intended on your website. Here is a little table inspired by <a href="https://www.markdownguide.org/cheat-sheet/">Markdown Guide’s Cheat Sheet</a>:</p>
 <table>
-<thead>
-<tr>
-<th>Element</th>
-<th>Markdown Code</th>
-<th>Markdown Appearance</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>italicized</td>
-<td><code>*italicized*</code></td>
-<td><em>italicized</em></td>
-</tr>
-<tr>
-<td>bold</td>
-<td><code>**bold**</code></td>
-<td><strong>bold</strong></td>
-</tr>
-<tr>
-<td>italicized &amp; bold</td>
-<td><code>***italicized &amp; bold***</code></td>
-<td><em><strong>italicized &amp; bold</strong></em></td>
-</tr>
-<tr>
-<td>headings</td>
-<td><code># heading 1</code></td>
-<td># heading 1</td>
-</tr>
-<tr>
-<td></td>
-<td><code>## heading 2</code></td>
-<td>## heading 2</td>
-</tr>
-<tr>
-<td></td>
-<td><code>### heading 3</code></td>
-<td>### heading 3</td>
-</tr>
-<tr>
-<td>code</td>
-<td><code>this is already code</code></td>
-<td><code>code</code></td>
-</tr>
-<tr>
-<td>lines of code</td>
-<td><code>```</code></td>
-<td>will not render in a table</td>
-</tr>
-<tr>
-<td></td>
-<td><code>lines</code></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td><code>of code</code></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td><code>```</code></td>
-<td></td>
-</tr>
-<tr>
-<td>blockquote</td>
-<td><code>&gt; block quote</code></td>
-<td>will not render in a table</td>
-</tr>
-<tr>
-<td>list</td>
-<td><code>- one</code></td>
-<td>- one</td>
-</tr>
-<tr>
-<td></td>
-<td><code>- two</code></td>
-<td>- two</td>
-</tr>
-<tr>
-<td></td>
-<td><code>- three</code></td>
-<td>- three</td>
-</tr>
-<tr>
-<td>ordered list</td>
-<td><code>1. first</code></td>
-<td>1. first</td>
-</tr>
-<tr>
-<td></td>
-<td><code>2. second</code></td>
-<td>2. second</td>
-</tr>
-<tr>
-<td></td>
-<td><code>3. third</code></td>
-<td>3. third</td>
-</tr>
-<tr>
-<td>link</td>
-<td><code>[title](http://www.example.com)</code></td>
-<td><a href="http://www.example.com">title</a></td>
-</tr>
-<tr>
-<td>image</td>
-<td><code>![](path/to/image.png)</code></td>
-<td><img src="/img/BBEssay/helloworldsmall.png"></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Element</th>
+          <th style="text-align: left">Markdown Code</th>
+          <th style="text-align: left">Markdown Appearance</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">italicized</td>
+          <td style="text-align: left"><code>*italicized*</code></td>
+          <td style="text-align: left"><em>italicized</em></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">bold</td>
+          <td style="text-align: left"><code>**bold**</code></td>
+          <td style="text-align: left"><strong>bold</strong></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">italicized &amp; bold</td>
+          <td style="text-align: left"><code>***italicized &amp; bold***</code></td>
+          <td style="text-align: left"><em><strong>italicized &amp; bold</strong></em></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">headings</td>
+          <td style="text-align: left"><code># heading 1</code></td>
+          <td style="text-align: left"># heading 1</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"><code>## heading 2</code></td>
+          <td style="text-align: left">## heading 2</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"><code>### heading 3</code></td>
+          <td style="text-align: left">### heading 3</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">code</td>
+          <td style="text-align: left"><code>this is already code</code></td>
+          <td style="text-align: left"><code>code</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">lines of code</td>
+          <td style="text-align: left"><code>```</code></td>
+          <td style="text-align: left">will not render in a table</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"><code>lines</code></td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"><code>of code</code></td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"><code>```</code></td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">blockquote</td>
+          <td style="text-align: left"><code>&gt; block quote</code></td>
+          <td style="text-align: left">will not render in a table</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">list</td>
+          <td style="text-align: left"><code>- one</code></td>
+          <td style="text-align: left">- one</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"><code>- two</code></td>
+          <td style="text-align: left">- two</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"><code>- three</code></td>
+          <td style="text-align: left">- three</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">ordered list</td>
+          <td style="text-align: left"><code>1. first</code></td>
+          <td style="text-align: left">1. first</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"><code>2. second</code></td>
+          <td style="text-align: left">2. second</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"><code>3. third</code></td>
+          <td style="text-align: left">3. third</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">link</td>
+          <td style="text-align: left"><code>[title](http://www.example.com)</code></td>
+          <td style="text-align: left"><a href="http://www.example.com">title</a></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">image</td>
+          <td style="text-align: left"><code>![](path/to/image.png)</code></td>
+          <td style="text-align: left"><img src="/img/BBEssay/helloworldsmall.png"></td>
+      </tr>
+  </tbody>
 </table>
 <p>Applying this to the “Hello World” post, there are no limits to our creativity:</p>
 <p><img src="/img/BBEssay/helloworldpage.png"></p>
@@ -392,15 +434,45 @@ To: baseurl = http://my-new-url.org
         </item>
         
         <item>
+            <title>Galleries With Hugo</title>
+            <link>//localhost:1313/posts/galleries-with-hugo/</link>
+            <pubDate>Wed, 13 Jan 2021 15:42:54 -0500</pubDate>
+            
+            <guid>//localhost:1313/posts/galleries-with-hugo/</guid>
+            <description>&lt;p&gt;Definitely need to do this at some point in the future.&lt;/p&gt;
+&lt;h1 id=&#34;finally-i-find-an-excellent-easy-to-use-photo-gallery-viewer-with-hugo&#34;&gt;Finally I find an excellent, easy to use photo gallery viewer with Hugo&lt;/h1&gt;</description>
+            <content type="html"><![CDATA[<p>Definitely need to do this at some point in the future.</p>
+<h1 id="finally-i-find-an-excellent-easy-to-use-photo-gallery-viewer-with-hugo">Finally I find an excellent, easy to use photo gallery viewer with Hugo</h1>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Tailcamera for any RC Aircraft</title>
+            <link>//localhost:1313/posts/tailcamera-for-any-rc-aircraft/</link>
+            <pubDate>Mon, 14 Sep 2020 17:44:05 -0400</pubDate>
+            
+            <guid>//localhost:1313/posts/tailcamera-for-any-rc-aircraft/</guid>
+            <description></description>
+            <content type="html"><![CDATA[]]></content>
+        </item>
+        
+        <item>
             <title>The Mostly Maine Trip Video</title>
-            <link>/posts/the-mostly-maine-trip-video/</link>
+            <link>//localhost:1313/posts/the-mostly-maine-trip-video/</link>
             <pubDate>Wed, 26 Aug 2020 15:12:36 -0400</pubDate>
             
-            <guid>/posts/the-mostly-maine-trip-video/</guid>
-            <description>Enjoy this video, I&amp;rsquo;m really proud of how it turned out!
-I finally convinced my best friend to lend me his drone after days of trying.
-I actually have a drone, an EMAX Tinyhawk 2, which note to self I still need to fix. I crashed it pretty hard flying on the porch of my house against a metal support beam and one of the ESC&amp;rsquo;s is burned out.
-Enough about my drone.</description>
+            <guid>//localhost:1313/posts/the-mostly-maine-trip-video/</guid>
+            <description>&lt;p&gt;&lt;strong&gt;Enjoy this video, I&amp;rsquo;m really proud of how it turned out!&lt;/strong&gt;&lt;/p&gt;
+
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/RvZXMa7au5k?autoplay=1&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=1&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;p&gt;I finally convinced my best friend to lend me his drone after days of trying.&lt;/p&gt;
+&lt;p&gt;I actually have a drone, an EMAX Tinyhawk 2, which &lt;strong&gt;note to self&lt;/strong&gt; I still need to fix. I crashed it pretty hard flying on the porch of my house against a metal support beam and one of the ESC&amp;rsquo;s is burned out.&lt;/p&gt;</description>
             <content type="html"><![CDATA[<p><strong>Enjoy this video, I&rsquo;m really proud of how it turned out!</strong></p>
 
 
@@ -426,15 +498,85 @@ Enough about my drone.</description>
         </item>
         
         <item>
+            <title>New Instagram Account</title>
+            <link>//localhost:1313/posts/new-instagram-account/</link>
+            <pubDate>Tue, 25 Aug 2020 12:58:50 -0400</pubDate>
+            
+            <guid>//localhost:1313/posts/new-instagram-account/</guid>
+            <description>&lt;p&gt;It&amp;rsquo;s been a while since I&amp;rsquo;ve posted anything on social media, with YouTube being the only exception. I wouldn&amp;rsquo;t even go as far as to call it social media. In fact, it&amp;rsquo;s almost been three years since I posted anything on my personal instagram account &lt;a href=&#34;https://www.instagram.com/nikolaiteslovich/&#34;&gt;@nikolaiteslovich&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I don&amp;rsquo;t know why I stopped. I guess it just happened.&lt;/p&gt;
+&lt;p&gt;These times are now gone, with the commencement of a new Instagram account: &lt;a href=&#34;https://www.instagram.com/projectniknek/&#34;&gt;@projectniknek&lt;/a&gt; which you should totally follow by the way. I created this to show the world what I&amp;rsquo;m doing with my time: hobbies and projects.&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<p>It&rsquo;s been a while since I&rsquo;ve posted anything on social media, with YouTube being the only exception. I wouldn&rsquo;t even go as far as to call it social media. In fact, it&rsquo;s almost been three years since I posted anything on my personal instagram account <a href="https://www.instagram.com/nikolaiteslovich/">@nikolaiteslovich</a>.</p>
+<p>I don&rsquo;t know why I stopped. I guess it just happened.</p>
+<p>These times are now gone, with the commencement of a new Instagram account: <a href="https://www.instagram.com/projectniknek/">@projectniknek</a> which you should totally follow by the way. I created this to show the world what I&rsquo;m doing with my time: hobbies and projects.</p>
+<p><strong>In my opinion, especially with the global pandemic that is going on, everyone is becoming more and more connected through the internet.</strong> It&rsquo;s becoming increasingly important, in my view, to become savvy on these social media platforms. It really doesn&rsquo;t take up any extra time, and I enjoy having my friends, and people who share my interests see what neat things I am doing with my time.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>A Tribute to National Parks</title>
+            <link>//localhost:1313/posts/a-tribute-to-national-parks/</link>
+            <pubDate>Mon, 24 Aug 2020 12:09:18 -0400</pubDate>
+            
+            <guid>//localhost:1313/posts/a-tribute-to-national-parks/</guid>
+            <description>&lt;p&gt;Theodore Roosevelt once said,&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;There is nothing so American as our national parks. The scenery and the wildlife are native. The fundamental idea behind the parks is native. It is, in brief, that the country belongs to the people, that it is in process of making for the enrichment of the lives of all of us. The parks stand as the outward symbol of the great human principle.”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The first national park—Yellowstone—was formed when president Ulysses S. Grant signed the landmark bill into law in 1875, nearly 150 years ago. Congress established Yellowstone National Park in the Territories of Montana and Wyoming &amp;ldquo;as a public park or pleasuring-ground for the benefit and enjoyment of the people&amp;rdquo;&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<p>Theodore Roosevelt once said,</p>
+<blockquote>
+<p>&ldquo;There is nothing so American as our national parks. The scenery and the wildlife are native. The fundamental idea behind the parks is native. It is, in brief, that the country belongs to the people, that it is in process of making for the enrichment of the lives of all of us. The parks stand as the outward symbol of the great human principle.”</p>
+</blockquote>
+<p>The first national park—Yellowstone—was formed when president Ulysses S. Grant signed the landmark bill into law in 1875, nearly 150 years ago. Congress established Yellowstone National Park in the Territories of Montana and Wyoming &ldquo;as a public park or pleasuring-ground for the benefit and enjoyment of the people&rdquo;</p>
+<p>Congress placed this territory &ldquo;under exclusive control of the Secretary of the Interior.&rdquo; There is plenty of interesting history regarding national parks, however this speech is about the impact that they have directly on us and what they mean to me personally.</p>
+<p>Last summer, I went on a road trip with my family across the country; from here in State College all the way to the North Western tip of Wyoming was over 2,000 miles of road. It took about 4 days one-way sitting in the car to arrive at our final destination: Yellowstone.</p>
+<p>Don’t worry, though, those 4 days were completely worth it. Before I get into any stories, let me paint a picture for you of my typical vacation. A trip somewhere usually consists of hikes from sunrise to sunset with little time to spare.</p>
+<p>When my family goes on vacation, I wouldn’t really call it a vacation, I would instead call it a workday. Although some prefer to actually rest and relax when they’re on vacation, my family prefers to be active—quite the opposite of relaxing.</p>
+<p>I enjoy this up to a point, the point being where my legs hurt and I am ready to collapse on the trail and just take a nap. But I usually just keep going, inspired by the natural beauty around me with no time to think about the battery acid burning through my leg and back muscles.</p>
+<p>I haul around a heavy camera everywhere I go on trips, the camera body, a Canon Digital SLR itself isn’t really that heavy. However the camera lens is a whole different story, it is a very heavy piece of glass. Some of the photos I took during this trip made it into this slideshow. Infact, this slideshow is almost purely made up of these photographs.</p>
+<p>Like the intensity of my family’s vacations, the alarm clock blared into my ear as I lifted my heavy eyelids, my sister was still asleep. I looked out the window and noticed the sun peeking over the mountains, its majestic and warm rays just barely lighting and awakening the Yellowstone landscape from its somber.</p>
+<p>Our parents agreed to rise early to evade the large crowds who would be bison roaming around the park, staying in large groups oftenly on tour busses hugging the road. I put on my hiking clothes, and woke up my sister by pulling back the blanket to expose her to the cold, fresh air of the wilderness.</p>
+<p>We exited the shack we were staying in and drove out on the road. After what seemed like an eternity, we finally arrived at the trailhead of Fairy Falls Trail. We got out of the car only to be treated by the frigid, yet comforting breeze. We walked through the partially burned coniferous forest for a while.</p>
+<p>It probably seemed longer than it actually was because I was still tired. As we were nearing the middle of the loop, a sharp smell overtook my nose. It smelled like rotten eggs. Then, I heard the sound of a small explosion. Above the treeline, I could see a column of water rise, like the most magnificent fountain.</p>
+<p>Finally, we arrived at an opening between the trees and were greeted by something that seemed like it was not from this planet, maybe it should have been in Mars instead? It was a geyser in the middle of a small, geothermal lake. It was as colorful as a rainbow, covering the whole spectrum from dark blue to the bright orange.</p>
+<p>Steam was steadily rising from the whole surface, and water would erupt out of the geyser every couple of minutes, easily reaching heights of the surrounding pine trees. A steaming, yellow river would flow from this lake, boiling everything alive in its path. I was no longer tired, but rather, stood excited and inspired.</p>
+<p>Yellowstone was the first national park for a reason. The first people to set foot on that magical land noticed something unique. Everything from the pink sunrises to the magnificent orange-red sunsets. From the flaming hot, boiling, geothermal geysers to the bone-biting cold of the bare mountain peaks still covered in snow.</p>
+<p>From the pine tree forests smelling of fresh sap, to the lifeless, silent forests that were scorched alive in a forest fire. From the comforting ground squirrels, to the vicious black bears. From the gentle wildflowers, to the fierce hawkmoths,. Everything about Yellowstone National Park was simply put: spectacular.</p>
+<p>National parks are nature’s vital organs. Like the large intestine, they provide a safe home for native plants and animals. Like the kidneys and the liver, they clean air and water. Studies show that spending time in nature is good for your physical and mental health. Nature encourages physical activity, recreation and tranquility, and has even been shown to reduce depression. National parks give us places to enjoy and appreciate nature.</p>
+<p>I want to thank all of the people who bought this land and converted it to a national park. I want to thank the people who understood and continue to understand the value in nature conservation. I also want to thank the rangers that take care of these parks to ensure they last for eternity and beyond.</p>
+<p>Most importantly, I want to thank my parents for forcing me to go on hikes with them ever since I could remember, often against my will. Over time, they managed to successfully instill an appreciation for nature in me that I will carry with me as a part of me until I die and become one with nature.</p>
+<p>As Transcendentalist Henry David Thoreau one wrote in his book Walden,</p>
+<blockquote>
+<p>“We need the tonic of wildness&hellip;At the same time that we are earnest to explore and learn all things, we require that all things be mysterious and unexplorable, that land and sea be indefinitely wild, unsurveyed and unfathomed by us because unfathomable. We can never have enough nature.”</p>
+</blockquote>
+<p>Thank you!</p>
+]]></content>
+        </item>
+        
+        <item>
             <title>The Book of Bitcoin - An Analogy to Explain Bitcoin</title>
-            <link>/posts/the-book-of-bitcoin-an-analogy-to-explain-bitcoin/</link>
+            <link>//localhost:1313/posts/the-book-of-bitcoin-an-analogy-to-explain-bitcoin/</link>
             <pubDate>Sat, 01 Aug 2020 15:57:01 -0400</pubDate>
             
-            <guid>/posts/the-book-of-bitcoin-an-analogy-to-explain-bitcoin/</guid>
-            <description>This was a project for my speech and debate class, the sources are in the video&amp;rsquo;s description.
-Here&amp;rsquo;s the video version of the speech:
-Here&amp;rsquo;s the transcript of the speech:
-What do you think of when you hear the word “Bitcoin”? According to a 2017 YouGov survey, 62% of Americans believe that cryptocurrencies, like Bitcoin, are used for illegal purchases or don’t know what they’re used for at all. Yet, all the cryptocurrencies combined are estimated to be worth about $230 billion.</description>
+            <guid>//localhost:1313/posts/the-book-of-bitcoin-an-analogy-to-explain-bitcoin/</guid>
+            <description>&lt;p&gt;This was a project for my speech and debate class, the sources are in the video&amp;rsquo;s description.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Here&amp;rsquo;s the video version of the speech:&lt;/strong&gt;&lt;/p&gt;
+
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/IN7gkAQoszo?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Here&amp;rsquo;s the transcript of the speech:&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&#34;what-do-you-think-of-when-you-hear-the-word-bitcoin&#34;&gt;What do you think of when you hear the word “Bitcoin”?&lt;/h1&gt;
+&lt;p&gt;According to a 2017 YouGov survey, 62% of Americans believe that cryptocurrencies, like Bitcoin, are used for illegal purchases or don’t know what they’re used for at all.
+Yet, all the cryptocurrencies combined are estimated to be worth about $230 billion. How much is that exactly? With that amount of money, the US Navy could buy about 20 of the latest Gerald R. Ford-class aircraft carriers.
+$230 billion is about the whole GDP of Portugal. I have been interested in Cryptocurrencies ever since I started mining them with my computer at the start of this year.
+Only recently, however, did I start to take them seriously through the preparation of this speech.
+My name is Nikolai Nekrutenko and today I will attempt to explain what Bitcoin is along with the promise that it and other cryptocurrencies hold for the world’s future.&lt;/p&gt;</description>
             <content type="html"><![CDATA[<p>This was a project for my speech and debate class, the sources are in the video&rsquo;s description.</p>
 <p><strong>Here&rsquo;s the video version of the speech:</strong></p>
 
@@ -473,14 +615,15 @@ My name is Nikolai Nekrutenko and today I will attempt to explain what Bitcoin i
         
         <item>
             <title>EOLRC - Build Guide</title>
-            <link>/posts/eolrc-build-guide/</link>
+            <link>//localhost:1313/posts/eolrc-build-guide/</link>
             <pubDate>Wed, 29 Jul 2020 10:30:15 -0400</pubDate>
             
-            <guid>/posts/eolrc-build-guide/</guid>
-            <description>Note that this is not a build guide of the car itself. Rather, how to integrate the 3D printed parts with the plane parts for your own projects.
-Printing the parts The parts can be found in the plans GitHub repo.
-I recommend printing the All_parts_arranged.stl
-I used an Ultimaker 3 to print the parts with eSun PLA+ at a 0.2mm layer height at 215C, 35% infill, along with a PETG brim for easy cleanup.</description>
+            <guid>//localhost:1313/posts/eolrc-build-guide/</guid>
+            <description>&lt;p&gt;Note that this is not a build guide of the car itself. Rather, how to integrate the 3D printed parts with the plane parts for your own projects.&lt;/p&gt;
+&lt;h1 id=&#34;printing-the-parts&#34;&gt;Printing the parts&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;The parts can be found in the &lt;a href=&#34;https://github.com/NikolaiTeslovich/plans/tree/master/EOLRC&#34;&gt;plans GitHub repo&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I recommend printing the All_parts_arranged.stl&lt;/p&gt;
+&lt;p&gt;I used an Ultimaker 3 to print the parts with eSun PLA+ at a 0.2mm layer height at 215C, 35% infill, along with a PETG brim for easy cleanup. They were printed relatively slow at 60mm/s.&lt;/p&gt;</description>
             <content type="html"><![CDATA[<p>Note that this is not a build guide of the car itself. Rather, how to integrate the 3D printed parts with the plane parts for your own projects.</p>
 <h1 id="printing-the-parts">Printing the parts</h1>
 <p><strong>The parts can be found in the <a href="https://github.com/NikolaiTeslovich/plans/tree/master/EOLRC">plans GitHub repo</a>.</strong></p>
@@ -736,12 +879,19 @@ I used an Ultimaker 3 to print the parts with eSun PLA+ at a 0.2mm layer height 
         
         <item>
             <title>EOLRC - An Extremely Overkill LEGO RC Car (from Plane Parts)</title>
-            <link>/posts/eolrc-an-extremely-overkill-lego-rc-car-from-plane-parts/</link>
+            <link>//localhost:1313/posts/eolrc-an-extremely-overkill-lego-rc-car-from-plane-parts/</link>
             <pubDate>Tue, 21 Jul 2020 07:27:42 -0400</pubDate>
             
-            <guid>/posts/eolrc-an-extremely-overkill-lego-rc-car-from-plane-parts/</guid>
-            <description>It&amp;rsquo;s been a while since I last played around with LEGO Technic. About 4 years to be exact. I can say with absolute confidence that this was my favorite way to spend time in my younger years.
-I recollect building all sorts of crazy things from an automatic crossbow to a massive Mercedes Benz Unimog with a functioning suspension and a pneumatic crane. Over the years, I have acquired an impressive amount of LEGO technic parts that are still scattered everywhere around the house.</description>
+            <guid>//localhost:1313/posts/eolrc-an-extremely-overkill-lego-rc-car-from-plane-parts/</guid>
+            <description>&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/VaGnldsxeiA?autoplay=1&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=1&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;h2 id=&#34;its-been-a-while&#34;&gt;It&amp;rsquo;s been a while&lt;/h2&gt;
+&lt;p&gt;since I last played around with LEGO Technic. About 4 years to be exact. I can say with absolute confidence that this was my favorite way to spend time in my
+younger years.&lt;/p&gt;
+&lt;p&gt;I recollect building all sorts of crazy things from an automatic crossbow to a massive Mercedes Benz Unimog with a functioning suspension and a pneumatic crane. Over the years, I have acquired an impressive amount of LEGO technic parts that are still scattered everywhere around the house.&lt;/p&gt;</description>
             <content type="html"><![CDATA[
 
     
@@ -825,12 +975,20 @@ younger years.</p>
         
         <item>
             <title>Let&#39;s Kill This MacBook! - How to Mine Monero on a Mac</title>
-            <link>/posts/lets-kill-this-macbook-how-to-mine-monero-on-a-mac/</link>
+            <link>//localhost:1313/posts/lets-kill-this-macbook-how-to-mine-monero-on-a-mac/</link>
             <pubDate>Thu, 11 Jun 2020 10:04:55 -0400</pubDate>
             
-            <guid>/posts/lets-kill-this-macbook-how-to-mine-monero-on-a-mac/</guid>
-            <description>My friend&amp;rsquo;s Mac is nearing its end He&amp;rsquo;s already had it, the one in the picture above, for a couple of years, and the battery is starting to degrade among several other serious issues. Since it is nearing its end soon, in the time that it isn&amp;rsquo;t being used it could mine some cryptocurrency.
-MacBooks are known for their subpar cooling systems as demonstrated in this video. We are going to set up this mac for mining Monero(XMR), a type of cryptocurrency that can be mined with a CPU.</description>
+            <guid>//localhost:1313/posts/lets-kill-this-macbook-how-to-mine-monero-on-a-mac/</guid>
+            <description>&lt;figure class=&#34;center&#34; &gt;
+        &lt;img src=&#34;//localhost:1313/img/skylerdontlikemacs.png&#34;  alt=&#34;Hello Friend&#34;   style=&#34;border-radius: 8px;&#34;  /&gt;
+
+        
+    &lt;/figure&gt;
+
+
+&lt;h1 id=&#34;my-friends-mac-is-nearing-its-end&#34;&gt;My friend&amp;rsquo;s Mac is nearing its end&lt;/h1&gt;
+&lt;p&gt;He&amp;rsquo;s already had it, the one in the picture above, for a couple of years, and the battery is starting to degrade among several other serious issues. Since it is nearing its end soon, in the time that it isn&amp;rsquo;t being used it could mine some cryptocurrency.&lt;/p&gt;
+&lt;p&gt;MacBooks are known for their subpar cooling systems as demonstrated in &lt;a href=&#34;https://www.youtube.com/watch?v=MlOPPuNv4Ec&#34;&gt;this video&lt;/a&gt;. We are going to set up this mac for mining &lt;a href=&#34;https://www.getmonero.org/&#34;&gt;Monero(XMR)&lt;/a&gt;, a type of cryptocurrency that can be mined with a CPU. He is only going to earn a couple pennies per day, but it&amp;rsquo;s better than nothing. I don&amp;rsquo;t know how he&amp;rsquo;ll be able to sleep through the insane fan noise. Maybe he&amp;rsquo;ll have to run an extension cable to his closet.&lt;/p&gt;</description>
             <content type="html"><![CDATA[
     <figure class="center" >
         <img src="/img/skylerdontlikemacs.png"  alt="Hello Friend"   style="border-radius: 8px;"  />
@@ -924,13 +1082,14 @@ MacBooks are known for their subpar cooling systems as demonstrated in this vide
         
         <item>
             <title>My First Post</title>
-            <link>/posts/my-first-post/</link>
+            <link>//localhost:1313/posts/my-first-post/</link>
             <pubDate>Thu, 30 Apr 2020 15:21:48 -0400</pubDate>
             
-            <guid>/posts/my-first-post/</guid>
-            <description>Hello World!
-Why did I make this website and what even is it? I&amp;rsquo;m glad you asked although you probably didn&amp;rsquo;t! I made and will continue to make this website because I want to learn how to build a website. I also enjoy writing, especially when it isn&amp;rsquo;t tied to a grade.
-I will be posting about everything from a small cryptocurrency mining operation that I run in the basement to my favorite hobby of RC flight to my own ice cream recipes and everything in between.</description>
+            <guid>//localhost:1313/posts/my-first-post/</guid>
+            <description>&lt;p&gt;Hello World!&lt;/p&gt;
+&lt;h2 id=&#34;why-did-i-make-this-website-and-what-even-is-it&#34;&gt;Why did I make this website and what even is it?&lt;/h2&gt;
+&lt;p&gt;I&amp;rsquo;m glad you asked although you probably didn&amp;rsquo;t! I made and &lt;strong&gt;will continue&lt;/strong&gt; to make this website because I want to learn how to build a website. I also enjoy writing, especially when it isn&amp;rsquo;t tied to a grade.&lt;/p&gt;
+&lt;p&gt;I will be posting about everything from a small cryptocurrency mining operation that I run in the basement to my favorite hobby of RC flight to my own ice cream recipes and everything in between. In short, the things that I do to keep myself sane, especially during quarantine. I&amp;rsquo;ll post at least every week. This is my blog site.&lt;/p&gt;</description>
             <content type="html"><![CDATA[<p>Hello World!</p>
 <h2 id="why-did-i-make-this-website-and-what-even-is-it">Why did I make this website and what even is it?</h2>
 <p>I&rsquo;m glad you asked although you probably didn&rsquo;t! I made and <strong>will continue</strong> to make this website because I want to learn how to build a website. I also enjoy writing, especially when it isn&rsquo;t tied to a grade.</p>

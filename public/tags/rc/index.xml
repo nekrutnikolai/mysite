@@ -2,33 +2,33 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>RC on Nikolai Nekrutenko</title>
-    <link>/tags/rc/</link>
+    <link>//localhost:1313/tags/rc/</link>
     <description>Recent content in RC on Nikolai Nekrutenko</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Wed, 26 Aug 2020 15:12:36 -0400</lastBuildDate>
-    <atom:link href="/tags/rc/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/tags/rc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Mostly Maine Trip Video</title>
-      <link>/posts/the-mostly-maine-trip-video/</link>
+      <link>//localhost:1313/posts/the-mostly-maine-trip-video/</link>
       <pubDate>Wed, 26 Aug 2020 15:12:36 -0400</pubDate>
-      <guid>/posts/the-mostly-maine-trip-video/</guid>
-      <description>Enjoy this video, I&amp;rsquo;m really proud of how it turned out!&#xA;I finally convinced my best friend to lend me his drone after days of trying.&#xA;I actually have a drone, an EMAX Tinyhawk 2, which note to self I still need to fix. I crashed it pretty hard flying on the porch of my house against a metal support beam and one of the ESC&amp;rsquo;s is burned out.&#xA;Enough about my drone.</description>
+      <guid>//localhost:1313/posts/the-mostly-maine-trip-video/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Enjoy this video, I&amp;rsquo;m really proud of how it turned out!&lt;/strong&gt;&lt;/p&gt;&#xA;&#xA;&#xA;    &#xA;    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;&#xA;      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/RvZXMa7au5k?autoplay=1&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=1&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&#xA;      &gt;&lt;/iframe&gt;&#xA;    &lt;/div&gt;&#xA;&#xA;&lt;p&gt;I finally convinced my best friend to lend me his drone after days of trying.&lt;/p&gt;&#xA;&lt;p&gt;I actually have a drone, an EMAX Tinyhawk 2, which &lt;strong&gt;note to self&lt;/strong&gt; I still need to fix. I crashed it pretty hard flying on the porch of my house against a metal support beam and one of the ESC&amp;rsquo;s is burned out.&lt;/p&gt;</description>
     </item>
     <item>
       <title>EOLRC - Build Guide</title>
-      <link>/posts/eolrc-build-guide/</link>
+      <link>//localhost:1313/posts/eolrc-build-guide/</link>
       <pubDate>Wed, 29 Jul 2020 10:30:15 -0400</pubDate>
-      <guid>/posts/eolrc-build-guide/</guid>
-      <description>Note that this is not a build guide of the car itself. Rather, how to integrate the 3D printed parts with the plane parts for your own projects.&#xA;Printing the parts The parts can be found in the plans GitHub repo.&#xA;I recommend printing the All_parts_arranged.stl&#xA;I used an Ultimaker 3 to print the parts with eSun PLA+ at a 0.2mm layer height at 215C, 35% infill, along with a PETG brim for easy cleanup.</description>
+      <guid>//localhost:1313/posts/eolrc-build-guide/</guid>
+      <description>&lt;p&gt;Note that this is not a build guide of the car itself. Rather, how to integrate the 3D printed parts with the plane parts for your own projects.&lt;/p&gt;&#xA;&lt;h1 id=&#34;printing-the-parts&#34;&gt;Printing the parts&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;The parts can be found in the &lt;a href=&#34;https://github.com/NikolaiTeslovich/plans/tree/master/EOLRC&#34;&gt;plans GitHub repo&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;I recommend printing the All_parts_arranged.stl&lt;/p&gt;&#xA;&lt;p&gt;I used an Ultimaker 3 to print the parts with eSun PLA+ at a 0.2mm layer height at 215C, 35% infill, along with a PETG brim for easy cleanup. They were printed relatively slow at 60mm/s.&lt;/p&gt;</description>
     </item>
     <item>
       <title>EOLRC - An Extremely Overkill LEGO RC Car (from Plane Parts)</title>
-      <link>/posts/eolrc-an-extremely-overkill-lego-rc-car-from-plane-parts/</link>
+      <link>//localhost:1313/posts/eolrc-an-extremely-overkill-lego-rc-car-from-plane-parts/</link>
       <pubDate>Tue, 21 Jul 2020 07:27:42 -0400</pubDate>
-      <guid>/posts/eolrc-an-extremely-overkill-lego-rc-car-from-plane-parts/</guid>
-      <description>It&amp;rsquo;s been a while since I last played around with LEGO Technic. About 4 years to be exact. I can say with absolute confidence that this was my favorite way to spend time in my younger years.&#xA;I recollect building all sorts of crazy things from an automatic crossbow to a massive Mercedes Benz Unimog with a functioning suspension and a pneumatic crane. Over the years, I have acquired an impressive amount of LEGO technic parts that are still scattered everywhere around the house.</description>
+      <guid>//localhost:1313/posts/eolrc-an-extremely-overkill-lego-rc-car-from-plane-parts/</guid>
+      <description>&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;&#xA;      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/VaGnldsxeiA?autoplay=1&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=1&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&#xA;      &gt;&lt;/iframe&gt;&#xA;    &lt;/div&gt;&#xA;&#xA;&lt;h2 id=&#34;its-been-a-while&#34;&gt;It&amp;rsquo;s been a while&lt;/h2&gt;&#xA;&lt;p&gt;since I last played around with LEGO Technic. About 4 years to be exact. I can say with absolute confidence that this was my favorite way to spend time in my&#xA;younger years.&lt;/p&gt;&#xA;&lt;p&gt;I recollect building all sorts of crazy things from an automatic crossbow to a massive Mercedes Benz Unimog with a functioning suspension and a pneumatic crane. Over the years, I have acquired an impressive amount of LEGO technic parts that are still scattered everywhere around the house.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
