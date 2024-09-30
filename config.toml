@@ -162,11 +162,11 @@ disableHugoGeneratorInject = false
   [[menu.main]]
     identifier = "resume"
     name       = "Resume"
-    url        = "NikolaiNekrutenkoResume.pdf"
+    url        = "Resume.pdf"
   [[menu.main]]
     identifier = "portfolio"
     name       = "Portfolio"
-    url        = "https://docs.google.com/document/d/194nrFYKdKdbkx7I2i50hc1jcLhoVnoOVjvUvvnJuMVE/edit"
+    url        = "Portfolio.pdf"
 
 # enables html to actually render
 

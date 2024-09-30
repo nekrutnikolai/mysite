@@ -13,7 +13,7 @@ I'm seeking a full-time job after graduation!
 
 If you'd like to get in touch, email me at [nan34@cornell.edu](mailto:nan34@cornell.edu).
 
-My [resume](NikolaiNekrutenkoResume.pdf) and [portfolio](https://docs.google.com/document/d/194nrFYKdKdbkx7I2i50hc1jcLhoVnoOVjvUvvnJuMVE/edit) can be found in the menu above. 
+My [resume](Resume.pdf) and [portfolio](Portfolio.pdf) can be found in the menu above. 
 
 I am a senior Physics major at Cornell University, also pursuing a Master of Engineering in Electrical and Computer Engineering. I will graduate with my Bachelor’s in December 2024 and my M.Eng. in May 2025.
 
