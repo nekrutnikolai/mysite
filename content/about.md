@@ -7,17 +7,15 @@ draft: false
 
 Columbia Icefield, Jasper National Park
 
-## Hi, nice to meet you! I'm Nikolai!
+## Hi, nice to meet you! I'm Nikolai
 
 I'm seeking a full-time job after graduation!
 
 If you'd like to get in touch, email me at [nan34@cornell.edu](mailto:nan34@cornell.edu).
 
-My [resume](Resume.pdf) and [portfolio](Portfolio.pdf) can be found in the menu above. 
+My [resume](Resume.pdf) and [portfolio](/portfolio) can be found in the menu above. 
 
-I am a senior Physics major at Cornell University, also pursuing a Master of Engineering in Electrical and Computer Engineering. I will graduate with my Bachelor’s in December 2024 and my M.Eng. in May 2025.
-
-I have hands-on experience in hardware engineering, embedded systems, technical and user-facing documentation, data analysis and intuitive visualization. I thrive by tackling complex and open ended projects and problems that challenge me.
+I am an Electrical and Computer Engineering M.Eng. student at Cornell University, having completed a bachelor’s degree in Physics also at Cornell in Dec. 2024. I will graduate with my M.Eng. in May 2025. I am eager to bring my background in physics and electrical engineering, my hands-on experience in software and hardware engineering particularly in the are of embedded systems and sensors, physics-based modeling and simulation, data analysis and visualization towards solving complex, open-ended problems.
 
 I enjoy spending time going on adventures in the wilderness with a [camera by my side](/gallery).
 

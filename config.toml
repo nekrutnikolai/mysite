@@ -51,9 +51,6 @@ disableHugoGeneratorInject = false
 [permalinks]
   posts = "/posts/:title/"
 
-[author]
-  name = "Nikolai Nekrutenko"
-
 [blackfriday]
   hrefTargetBlank = true
 
@@ -102,6 +99,9 @@ disableHugoGeneratorInject = false
   defaultTheme = "light"
   themeColor = "#252627"
 
+  [params.author]
+    name = "Nikolai Nekrutenko"
+
   # Colors for favicons
   [params.favicon.color]
     mask = "#252627"
@@ -112,7 +112,7 @@ disableHugoGeneratorInject = false
     logoText     = "nⁿ"
     logoHomeLink = "/"
     # Set true to remove the logo cursor entirely.
-    logoCursorDisabled = false
+    logoCursorDisabled = true
     # Set to a valid CSS color to change the cursor in the logo.
     logoCursorColor    = "#67a2c9"
     # Set to a valid CSS time value to change the animation duration, "0s" to disable.
@@ -124,16 +124,12 @@ disableHugoGeneratorInject = false
     url  = "mailto:nan34@cornell.edu"
 
   [[params.social]]
-    name = "github"
-    url  = "https://github.com/nekrutnikolai?tab=repositories"
-
-  [[params.social]]
     name = "linkedin"
     url  = "https://www.linkedin.com/in/nikolai-nekrutenko/"
 
   [[params.social]]
-    name = "instagram"
-    url  = "https://www.instagram.com/nekrutnikolai/"
+    name = "github"
+    url  = "https://github.com/nekrutnikolai?tab=repositories"
 
   [[params.social]]
     name = "youtube"
@@ -166,7 +162,7 @@ disableHugoGeneratorInject = false
   [[menu.main]]
     identifier = "portfolio"
     name       = "Portfolio"
-    url        = "Portfolio.pdf"
+    url        = "portfolio/"
 
 # enables html to actually render
 
