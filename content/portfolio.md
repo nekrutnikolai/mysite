@@ -17,7 +17,11 @@ Hi, nice to meet you! My name is Nikolai Nekrutenko and here is my portfolio:
 
 Researching and developing a custom sensor mechanism and embedded systems module in
 collaboration with Dr. Hunter Adams and the Woods Hole Oceanographic Institution for depths
-up to 2000 meters. 
+up to 2000 meters.
+
+Developing a cost-effective pressure-sensing module to measure depths up to 2000 meters underwater, focusing on affordability, robustness, and ease of integration with Woods Hole Oceanographic Institution (WHOI) instruments. 
+
+Advised by Dr. Hunter Adams from the Cornell Electrical and Computer Engineering Department and Jonathan Pfeifer from Woods Hole Oceanographic Institution.
 
 Documentation and updates to come as the project progresses.
 
@@ -141,7 +145,7 @@ Co-designed and wrote a program that visualizes the waveform and intensity of mu
 
 **Sep 2020 - Jun 2021 | Penn State University**
 
-| ![SensorPayload Side 1](https://github.com/nekrutnikolai/RISE/blob/main/resources/payload1.jpg?raw=true) | ![SensorPayload Side 2](https://github.com/nekrutnikolai/RISE/blob/main/resources/payload2.jpg?raw=true) |
+| {{< figure src="https://github.com/nekrutnikolai/RISE/blob/main/resources/payload1.jpg?raw=true" alt="A pic of me" position="center" style="border-radius: 8px;" title="IR selfie" titlePosition="center" >}} | {{< figure src="https://github.com/nekrutnikolai/RISE/blob/main/resources/payload2.jpg?raw=true" alt="A pic of me" position="center" style="border-radius: 8px; width: 99%" title="IR selfie" titlePosition="center" >}} |
 | :---: | :---: |
 |  *Camera, sensor & voltage regulator*  |  *Raspberry Pi Zero W*  |
 
