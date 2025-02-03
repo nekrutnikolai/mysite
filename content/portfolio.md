@@ -15,10 +15,6 @@ Hi, nice to meet you! My name is Nikolai Nekrutenko and here is my portfolio:
 
 **Sep 2024 - Present | Master's Thesis**
 
-Researching and developing a custom sensor mechanism and embedded systems module in
-collaboration with Dr. Hunter Adams and the Woods Hole Oceanographic Institution for depths
-up to 2000 meters.
-
 Developing a cost-effective pressure-sensing module to measure depths up to 2000 meters underwater, focusing on affordability, robustness, and ease of integration with Woods Hole Oceanographic Institution (WHOI) instruments. 
 
 Advised by Dr. Hunter Adams from the Cornell Electrical and Computer Engineering Department and Jonathan Pfeifer from Woods Hole Oceanographic Institution.
