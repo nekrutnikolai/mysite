@@ -33,7 +33,7 @@ Documentation and updates to come as the project progresses.
 {{< figure src="/img/portfolio/thermal_selfie.png" alt="A pic of me" position="center" style="border-radius: 8px;" title="IR selfie" titlePosition="center" >}}
 
 Devised an experimental setup and methods to evaluate thermopile array infra-red (IR) sensors for next-gen
-SLS printing technology to maximize performance and dimensional accuracy. 
+SLS printing technology at Formlabs to maximize performance and dimensional accuracy. 
 
 Calculated the off-axis projection of sensor pixels and made an interactive tool in Observable JavaScript.
 
@@ -69,7 +69,7 @@ communicate with the team.
 
 **Jan 2024 - Apr 2024 | Cornell University Mechanical and Aerospace Engineering Department**
 
-{{< figure src="https://github.com/cornellmotionstudio/DylanDronev2/raw/master/assets/DylanV2.jpg" alt="A pic of me" position="center" style="border-radius: 8px;" title="IR selfie" titlePosition="center" >}}
+{{< figure src="/img/portfolio/drone_dylan.jpg" alt="A pic of me" position="center" style="border-radius: 8px;" title="IR selfie" titlePosition="center" >}}
 
 Developing a robust, low-cost quadcopter platform to be used in mechanical, aerospace, and electrical
 engineering course labs as a supplementary hands-on lab component.
