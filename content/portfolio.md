@@ -15,7 +15,11 @@ Hi, nice to meet you! My name is Nikolai Nekrutenko and here is my portfolio:
 
 **Sep 2024 - Present | Master's Thesis**
 
+{{< figure src="/img/portfolio/depth_sensor_sch.png" alt="A pic of me" position="center" style="border-radius: 8px;" title="IR selfie" titlePosition="center" >}}
+
 Developing a cost-effective pressure-sensing module to measure depths up to 2000 meters underwater, focusing on affordability, robustness, and ease of integration with Woods Hole Oceanographic Institution (WHOI) instruments. 
+
+The sesnor leverages slightly compressible fluids such as H₂O and their linear relationship between change in volume and pressure as the physical mechanism for this sensor. This change in volume will drive a piston made from a magnet that is then non-invaisively sensed with Hall Effect (magnetic field) sensors to determine the position of the piston and from that determine the depth that the submersible is at.
 
 Advised by Dr. Hunter Adams from the Cornell Electrical and Computer Engineering Department and Jonathan Pfeifer from Woods Hole Oceanographic Institution.
 
@@ -52,9 +56,11 @@ across varying environmental conditions and sensor configurations using NumPy an
 
 **Jan 2024 - Apr 2024 | Freefly Systems**
 
+{{< figure src="/img/portfolio/gimbal.png" alt="A pic of me" position="center" style="border-radius: 8px;" title="IR selfie" titlePosition="center" >}}
+
 Derived a physics-based model of the forward and inverse kinematics for an experimental non-orthogonal gimbal to be used in a future product. 
 
-Assessed its experimental performance with modeled IMU data in Python. 
+Assessed its experimental performance with modeled IMU data in Python and in Blender to visualize gimbal motion. 
 
 Throughout this experience I learned about how to analyze and verify
 assumptions with experimental data, research and derive difficult concepts on my own, and
@@ -129,6 +135,8 @@ Python data acquisition framework.
 ## NeoPixel FFT Audio Visualizer 
 
 **Jun 2022 - Jan 2023 | Personal Project**
+
+{{< youtube "8n3pdwqUpAA" >}}
 
 Co-designed and wrote a program that visualizes the waveform and intensity of music for a custom-built individually-addressable RGB led matrix using FFTs in Python on a Raspberry Pi and a few components beautifully hacked together on a breadboard using output from the Raspberry Pi’s GPIO pins.
 
