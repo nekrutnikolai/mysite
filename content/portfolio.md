@@ -19,7 +19,7 @@ Hi, nice to meet you! My name is Nikolai Nekrutenko and here is my portfolio:
 
 Developing a cost-effective pressure-sensing module to measure depths up to 2000 meters underwater, focusing on affordability, robustness, and ease of integration with Woods Hole Oceanographic Institution (WHOI) instruments. 
 
-The sesnor leverages slightly compressible fluids such as H₂O and their linear relationship between change in volume and pressure as the physical mechanism for this sensor. This change in volume will drive a piston made from a magnet that is then non-invaisively sensed with Hall Effect (magnetic field) sensors to determine the position of the piston and from that determine the depth that the submersible is at.
+The sensor leverages slightly compressible fluids such as H₂O and their linear relationship between change in volume and pressure as the physical mechanism for this sensor. This change in volume will drive a piston made from a magnet that is then non-invaisively sensed with Hall Effect (magnetic field) sensors to determine the position of the piston and from that determine the depth that the submersible is at.
 
 Advised by Dr. Hunter Adams from the Cornell Electrical and Computer Engineering Department and Jonathan Pfeifer from Woods Hole Oceanographic Institution.
 
