@@ -15,7 +15,7 @@ Hi, nice to meet you! My name is Nikolai Nekrutenko and here is my portfolio:
 
 **Sep 2024 - Present | Master's Thesis**
 
-{{< figure src="/img/portfolio/depth_sensor_sch.png" alt="A pic of me" position="center" style="border-radius: 8px;" title="IR selfie" titlePosition="center" >}}
+{{< figure src="/img/portfolio/sensor_sketch.png" alt="A pic of me" position="center" style="border-radius: 8px;" title="IR selfie" titlePosition="center" >}}
 
 Developing a cost-effective pressure-sensing module to measure depths up to 2000 meters underwater, focusing on affordability, robustness, and ease of integration with Woods Hole Oceanographic Institution (WHOI) instruments. 
 
