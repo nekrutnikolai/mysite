@@ -30,6 +30,23 @@ Documentation and updates to come as the project progresses.
 
 ---
 
+## Low-Power Earth Horizon Sensor for Small Satellites
+
+**Oct 2024 - Dec 2024 | Group Final Project for Analog IC Circuits (ECE 5530)**
+
+{{< figure src="/img/portfolio/horizon_sensor.png" alt="A pic of me" position="center" style="border-radius: 8px;" title="Horizon Sensor" titlePosition="center" >}}
+
+Developed, simulated, and layed out a micrometer scale integrated circuit sensor for detecting the earth's horizon in a single plane of motion in Cadence Virtuoso.
+
+The sensor occupies a footprint of 70 μm x 70 μm x 70 μm while consuming 2.4mW and providing a differential output of up to 1.5V that can be interfaced with an attitude control system.
+
+Two photodiodes are utilized, each outputting a current that is fed into a current mirror and a series of differential amplifiers.
+
+**Links:**
+- [Project Report](e_horiz_report.pdf)
+
+---
+
 ## Infrared Sensor Integration for Next-Gen SLS products
 
 **Jun 2024 - Aug 2024 | Formlabs**
