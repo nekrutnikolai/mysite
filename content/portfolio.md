@@ -43,7 +43,7 @@ The sensor occupies a footprint of 70 μm x 70 μm x 70 μm while consuming 2.4m
 Two photodiodes are utilized, each outputting a current that is fed into a current mirror and a series of differential amplifiers.
 
 **Links:**
-- [Project Report](e_horiz_report.pdf)
+- [Project Report](/e_horiz_report.pdf)
 
 ---
 
