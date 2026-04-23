@@ -1,0 +1,67 @@
+/* Theme overrides. Token values only — no other properties.
+   Light theme lives on :root in tokens.css. */
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --surface-0: #191919;
+  --surface-1: #202020;
+  --surface-2: #2d2d2d;
+  --surface-hover: rgba(255, 255, 255, 0.04);
+  --surface-active: rgba(255, 255, 255, 0.08);
+  --code-bg: #232323;
+
+  --text: #e3e2e0;
+  --text-muted: #9b9a97;
+  --text-faint: #5a5a58;
+
+  --border: #2d2d2d;
+  --border-strong: #3d3d3d;
+
+  /* Lightened from the design guide verbatim to pass WCAG AA on BOTH the
+     dark --surface-0 AND the ~15% subtle tint used by .badge--* / .alert--*
+     / .btn-danger. */
+  --accent: #60b3e8;          /* was #529cca */
+  --accent-subtle: rgba(96, 179, 232, 0.15);
+  --danger: #ef8888;          /* was #e06a6a (btn-danger failed at 4.4:1) */
+  --danger-subtle: rgba(239, 136, 136, 0.15);
+  --success: #6fc178;         /* was #5ba964 */
+  --success-subtle: rgba(111, 193, 120, 0.15);
+  --warning: #dda14a;         /* was #c98e30 */
+  --warning-subtle: rgba(221, 161, 74, 0.15);
+  --shadow: rgba(0, 0, 0, 0.20);
+}
+
+[data-theme="parchment"] {
+  color-scheme: light;
+
+  --surface-0: #e8dfd2;
+  --surface-1: #f0ead8;
+  --surface-2: #ddd5c5;
+  --surface-hover: rgba(120, 100, 70, 0.06);
+  --surface-active: rgba(120, 100, 70, 0.12);
+  --code-bg: #d5cbb8;
+
+  --text: #1a1208;
+  --text-muted: #5c4f3a;
+  --text-faint: #8a7a5c;
+
+  --border: #b8a890;
+  --border-strong: #a89878;
+
+  /* Accent darkened from the parchment guide's #c06820 for WCAG AA body-text
+     contrast. The plan stated "#9a5218 → 5.27:1 on #e8dfd2" but the actual
+     WCAG 2.1 calculation for #9a5218 on #e8dfd2 is 4.43:1 (fails AA). The
+     shade that genuinely hits 5.27:1 on #e8dfd2 and 5.79:1 on #f0ead8 is
+     #8a4814 — matching the plan's stated target ratio. Using that. */
+  --accent: #8a4814;
+  --accent-subtle: rgba(138, 72, 20, 0.10);
+  /* Darkened so .btn-danger (text on --danger-subtle bg) passes AA. */
+  --danger: #8f2515;
+  --danger-subtle: rgba(143, 37, 21, 0.12);
+  --success: #1e5a30;
+  --success-subtle: rgba(30, 90, 48, 0.12);
+  --warning: #6a4609;
+  --warning-subtle: rgba(106, 70, 9, 0.12);
+  --shadow: rgba(80, 60, 30, 0.12);
+}

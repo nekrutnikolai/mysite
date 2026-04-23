@@ -1,0 +1,9 @@
+.DS_Store
+.hugo_build.lock
+dist/
+node_modules/
+site/cache/
+test-results/
+playwright-report/
+tests/snapshots/*-actual.png
+tests/snapshots/*-diff.png

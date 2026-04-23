@@ -1,0 +1,10 @@
+<nav class="toc" aria-label="Table of contents">
+  <div class="toc-label">Contents</div>
+  <ul class="toc-list">
+    {{#toc}}
+      <li class="toc-item toc-level-{{ depth }}">
+        <a href="#{{ id }}">{{ text }}</a>
+      </li>
+    {{/toc}}
+  </ul>
+</nav>

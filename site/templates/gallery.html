@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+{{> head }}
+</head>
+<body>
+{{> header }}
+<main class="content{{#wide}} wide{{/wide}}">
+<article class="gallery-page">
+  <header class="gallery-header">
+    <h1>{{ title }}</h1>
+    <p class="gallery-meta"><time datetime="{{ dateISO }}">{{ dateHuman }}</time> · {{ imageCount }} photo{{#imagesPlural}}s{{/imagesPlural}}</p>
+  </header>
+
+  {{#intro}}<div class="gallery-intro">{{{ intro }}}</div>{{/intro}}
+
+  <ul class="gallery" role="list">
+    {{#images}}
+      <li class="gallery-item gallery-item--{{ widthHint }}" data-exif='{{{ exifJson }}}' data-preview="{{ previewUrl }}" data-full="{{ originalUrl }}" data-caption="{{ captionPlain }}">
+        <a class="gallery-trigger" href="{{ originalUrl }}" aria-label="Open {{ captionPlain }} in lightbox">
+          <img class="gallery-thumb"
+               src="{{ thumbUrl }}"
+               srcset="{{ thumbUrl }} {{ thumbW }}w, {{ previewUrl }} 1200w"
+               sizes="(max-width: 640px) 50vw, 300px"
+               width="{{ thumbW }}"
+               height="{{ thumbH }}"
+               alt="{{ captionPlain }}"
+               loading="lazy"
+               style="background-image: url('{{ blurDataUri }}')">
+          <span class="gallery-exif" aria-hidden="true">{{ captionShort }}</span>
+        </a>
+      </li>
+    {{/images}}
+  </ul>
+
+  <p class="gallery-back"><a href="/gallery/">&larr; All galleries</a></p>
+</article>
+</main>
+{{> footer }}
+<script src="/assets/js/theme.js" defer></script>
+<script src="/assets/js/lightbox.js" defer></script>
+</body>
+</html>

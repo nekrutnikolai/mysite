@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude Code — Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body, #root { height: 100%; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  code { font-family: 'IBM Plex Mono', monospace; font-size: 12px; background: var(--code-bg); padding: 2px 5px; border-radius: 3px; }
+  strong { font-weight: 600; color: var(--text); }
+  button:hover { opacity: 0.85; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { useState } = React;
+
+const SECTIONS = [
+  { id: "philosophy", label: "Philosophy" },
+  { id: "colors", label: "Colors" },
+  { id: "typography", label: "Typography" },
+  { id: "spacing", label: "Spacing" },
+  { id: "components", label: "Components" },
+  { id: "inputs", label: "Inputs" },
+  { id: "feedback", label: "Feedback" },
+  { id: "motion", label: "Motion" },
+  { id: "layout", label: "Layout" },
+  { id: "dos-donts", label: "Dos & Don'ts" },
+];
+
+const tokens = {
+  light: {
+    bg: "#ffffff", bgSecondary: "#f7f7f5", bgTertiary: "#f1f1ef",
+    bgHover: "rgba(55,53,47,0.04)", bgActive: "rgba(55,53,47,0.08)",
+    text: "#37352f", textSecondary: "#787774", textTertiary: "#b4b4b0",
+    border: "#e9e9e7", borderStrong: "#d3d3d0",
+    accent: "#2eaadc", accentSubtle: "rgba(46,170,220,0.1)",
+    red: "#eb5757", redSubtle: "rgba(235,87,87,0.1)",
+    green: "#4daa57", greenSubtle: "rgba(77,170,87,0.1)",
+    yellow: "#cb912f", yellowSubtle: "rgba(203,145,47,0.1)",
+    shadow: "rgba(15,15,15,0.04)", codeBg: "#f7f6f3",
+  },
+  dark: {
+    bg: "#191919", bgSecondary: "#202020", bgTertiary: "#2d2d2d",
+    bgHover: "rgba(255,255,255,0.04)", bgActive: "rgba(255,255,255,0.08)",
+    text: "#e3e2e0", textSecondary: "#9b9a97", textTertiary: "#5a5a58",
+    border: "#2d2d2d", borderStrong: "#3d3d3d",
+    accent: "#529cca", accentSubtle: "rgba(82,156,202,0.15)",
+    red: "#e06a6a", redSubtle: "rgba(224,106,106,0.15)",
+    green: "#5ba964", greenSubtle: "rgba(91,169,100,0.15)",
+    yellow: "#c98e30", yellowSubtle: "rgba(201,142,48,0.15)",
+    shadow: "rgba(0,0,0,0.2)", codeBg: "#232323",
+  },
+};
+
+const styles = {
+  h2: { fontSize: 22, fontWeight: 700, color: "var(--text)", fontFamily: "'Source Serif 4', Georgia, serif", marginBottom: 8, letterSpacing: "-0.02em" },
+  body: { fontSize: 14, lineHeight: 1.65, color: "var(--text-secondary)", maxWidth: 600 },
+  label: { fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--text-tertiary)", marginBottom: 12, display: "block" },
+};
+
+function Swatch({ name, value }) {
+  return (
+    <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 8 }}>
+      <div style={{ width: 36, height: 36, borderRadius: 6, background: value, border: "1px solid var(--border)", flexShrink: 0 }} />
+      <div>
+        <div style={{ fontSize: 13, color: "var(--text)", fontWeight: 500 }}>{name}</div>
+        <div style={{ fontSize: 12, color: "var(--text-secondary)", fontFamily: "'IBM Plex Mono', monospace" }}>{value}</div>
+      </div>
+    </div>
+  );
+}
+
+function ComponentPreview({ children, label }) {
+  return (
+    <div style={{ marginBottom: 24 }}>
+      {label && <div style={styles.label}>{label}</div>}
+      <div style={{ border: "1px solid var(--border)", borderRadius: 8, padding: 24, background: "var(--bg)" }}>{children}</div>
+    </div>
+  );
+}
+
+function Sidebar({ active, onNav, isDark, onToggle }) {
+  return (
+    <div style={{ width: 220, borderRight: "1px solid var(--border)", padding: "24px 12px", flexShrink: 0, display: "flex", flexDirection: "column", gap: 2, position: "fixed", top: 0, left: 0, height: "100vh", overflowY: "auto", background: "var(--bg)" }}>
+      <div style={{ fontSize: 13, fontWeight: 700, color: "var(--text)", padding: "6px 10px", marginBottom: 4, letterSpacing: "-0.01em", fontFamily: "'Source Serif 4', Georgia, serif" }}>Claude Code</div>
+      <div style={{ fontSize: 11, fontWeight: 500, color: "var(--text-tertiary)", padding: "2px 10px 10px", textTransform: "uppercase", letterSpacing: "0.06em" }}>Design System</div>
+      {SECTIONS.map(s => (
+        <button key={s.id} onClick={() => onNav(s.id)} style={{ display: "block", width: "100%", textAlign: "left", padding: "6px 10px", borderRadius: 5, border: "none", cursor: "pointer", fontSize: 13, fontWeight: active === s.id ? 600 : 400, color: active === s.id ? "var(--text)" : "var(--text-secondary)", background: active === s.id ? "var(--bg-active)" : "transparent", transition: "all 0.15s ease", fontFamily: "inherit" }}>{s.label}</button>
+      ))}
+      <div style={{ marginTop: "auto", padding: "12px 10px 0" }}>
+        <button onClick={onToggle} style={{ fontSize: 12, color: "var(--text-secondary)", background: "var(--bg-secondary)", border: "1px solid var(--border)", borderRadius: 6, padding: "6px 12px", cursor: "pointer", width: "100%", fontFamily: "inherit" }}>{isDark ? "☀ Light" : "● Dark"}</button>
+      </div>
+    </div>
+  );
+}
+
+function Philosophy() {
+  const principles = [
+    { title: "Content-first", desc: "The interface should disappear. Every pixel exists to serve the user's code and conversation — not to decorate." },
+    { title: "Calm confidence", desc: "No shouting. No unnecessary color. Communicate hierarchy through spacing and weight, not visual noise." },
+    { title: "Predictable motion", desc: "Transitions are functional, never theatrical. 150ms ease for micro-interactions. 250ms for layout shifts. Nothing longer." },
+    { title: "Honest density", desc: "Show what matters, hide what doesn't. Density should feel intentional — like a well-set page, not a crowded dashboard." },
+  ];
+  return (
+    <div>
+      <h2 style={styles.h2}>Design Philosophy</h2>
+      <p style={styles.body}>Claude Code's interface should feel like a beautifully typeset document — quiet, structured, and completely focused on the work. Draw from Notion's restraint, Linear's precision, and the timeless clarity of great editorial design.</p>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginTop: 24 }}>
+        {principles.map((p, i) => (
+          <div key={i} style={{ padding: 20, borderRadius: 8, border: "1px solid var(--border)", background: "var(--bg-secondary)" }}>
+            <div style={{ fontSize: 14, fontWeight: 600, color: "var(--text)", marginBottom: 6 }}>{p.title}</div>
+            <div style={{ fontSize: 13, color: "var(--text-secondary)", lineHeight: 1.55 }}>{p.desc}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function Colors({ isDark }) {
+  const t = isDark ? tokens.dark : tokens.light;
+  return (
+    <div>
+      <h2 style={styles.h2}>Color Palette</h2>
+      <p style={styles.body}>A near-monochrome palette grounded in warm grays. Color is reserved exclusively for semantic meaning — status, focus, and links. Never decorative.</p>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 32, marginTop: 24 }}>
+        <div>
+          <div style={styles.label}>Surfaces</div>
+          <Swatch name="Background" value={t.bg} />
+          <Swatch name="Secondary" value={t.bgSecondary} />
+          <Swatch name="Tertiary" value={t.bgTertiary} />
+          <Swatch name="Hover" value={t.bgHover} />
+        </div>
+        <div>
+          <div style={styles.label}>Text</div>
+          <Swatch name="Primary" value={t.text} />
+          <Swatch name="Secondary" value={t.textSecondary} />
+          <Swatch name="Tertiary" value={t.textTertiary} />
+          <Swatch name="Code bg" value={t.codeBg} />
+        </div>
+        <div>
+          <div style={styles.label}>Semantic</div>
+          <Swatch name="Accent" value={t.accent} />
+          <Swatch name="Error" value={t.red} />
+          <Swatch name="Success" value={t.green} />
+          <Swatch name="Warning" value={t.yellow} />
+        </div>
+      </div>
+      <div style={{ marginTop: 24, padding: 16, borderRadius: 8, background: "var(--bg-secondary)", border: "1px solid var(--border)" }}>
+        <div style={{ fontSize: 12, fontWeight: 600, color: "var(--accent)", marginBottom: 6 }}>Rule</div>
+        <div style={{ fontSize: 13, color: "var(--text-secondary)", lineHeight: 1.55 }}>If you can communicate it with spacing, weight, or opacity — don't use color. Accent blue appears only on interactive elements, links, and active states.</div>
+      </div>
+    </div>
+  );
+}
+
+function Typography() {
+  return (
+    <div>
+      <h2 style={styles.h2}>Typography</h2>
+      <p style={styles.body}>Two typefaces, clearly separated by role. A serif for display and identity. A monospace for code and data. Body text uses the system's native sans-serif for maximum readability.</p>
+      <ComponentPreview label="Type scale">
+        <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+          <div>
+            <span style={styles.label}>Display — Source Serif 4, 28px / 700</span>
+            <div style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: 28, fontWeight: 700, color: "var(--text)", marginTop: 4 }}>The interface should disappear.</div>
+          </div>
+          <div>
+            <span style={styles.label}>Heading — System sans, 16px / 600</span>
+            <div style={{ fontSize: 16, fontWeight: 600, color: "var(--text)", marginTop: 4 }}>Section headings use medium weight</div>
+          </div>
+          <div>
+            <span style={styles.label}>Body — System sans, 14px / 400</span>
+            <div style={{ fontSize: 14, color: "var(--text-secondary)", lineHeight: 1.6, marginTop: 4 }}>Body text is 14px with generous line-height of 1.6. It should feel spacious and easy to scan. Never cramped.</div>
+          </div>
+          <div>
+            <span style={styles.label}>Caption — System sans, 12px / 400</span>
+            <div style={{ fontSize: 12, color: "var(--text-tertiary)", marginTop: 4 }}>Labels, timestamps, and metadata</div>
+          </div>
+          <div>
+            <span style={styles.label}>Code — IBM Plex Mono, 13px / 400</span>
+            <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 13, color: "var(--text)", padding: "12px 16px", background: "var(--code-bg)", borderRadius: 6, marginTop: 4 }}>{"const greeting = (name) => `Hello, ${name}`;"}</div>
+          </div>
+        </div>
+      </ComponentPreview>
+    </div>
+  );
+}
+
+function Spacing() {
+  const steps = [4, 8, 12, 16, 24, 32, 48, 64];
+  return (
+    <div>
+      <h2 style={styles.h2}>Spacing & Rhythm</h2>
+      <p style={styles.body}>All spacing derives from a 4px base unit. Consistent rhythm creates the sense of calm precision that separates a polished tool from a cluttered one.</p>
+      <ComponentPreview label="Spacing scale (4px base)">
+        <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+          {steps.map(s => (
+            <div key={s} style={{ display: "flex", alignItems: "center", gap: 16 }}>
+              <code style={{ width: 40, textAlign: "right", fontSize: 12, color: "var(--text-secondary)" }}>{s}px</code>
+              <div style={{ height: 12, width: s * 3, borderRadius: 3, background: "var(--accent-subtle)", border: "1px solid var(--accent)", transition: "width 0.3s ease" }} />
+            </div>
+          ))}
+        </div>
+      </ComponentPreview>
+      <div style={{ marginTop: 16 }}>
+        <div style={styles.label}>Usage guidelines</div>
+        <div style={{ fontSize: 13, color: "var(--text-secondary)", lineHeight: 1.7 }}>
+          <strong>4px</strong> — Inline element gaps (icon ↔ label)<br/>
+          <strong>8px</strong> — Related items within a group<br/>
+          <strong>12px</strong> — Padding inside compact components<br/>
+          <strong>16px</strong> — Standard component padding<br/>
+          <strong>24px</strong> — Between distinct sections<br/>
+          <strong>32px</strong> — Major content blocks<br/>
+          <strong>48–64px</strong> — Page-level margins and hero spacing
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Components() {
+  const [btnHover, setBtnHover] = useState(null);
+  return (
+    <div>
+      <h2 style={styles.h2}>Core Components</h2>
+      <p style={styles.body}>Every component should feel like it belongs in a well-edited document. Minimal chrome, clear affordances.</p>
+      <ComponentPreview label="Buttons">
+        <div style={{ display: "flex", gap: 12, flexWrap: "wrap", alignItems: "center" }}>
+          {[
+            { label: "Primary", bg: "var(--text)", color: "var(--bg)", border: "none" },
+            { label: "Secondary", bg: "transparent", color: "var(--text)", border: "1px solid var(--border-strong)" },
+            { label: "Ghost", bg: "transparent", color: "var(--text-secondary)", border: "1px solid transparent" },
+            { label: "Danger", bg: "var(--red-subtle)", color: "var(--red)", border: "1px solid transparent" },
+          ].map((b, i) => (
+            <button key={i} onMouseEnter={() => setBtnHover(i)} onMouseLeave={() => setBtnHover(null)} style={{ padding: "7px 16px", borderRadius: 6, fontSize: 13, fontWeight: 500, cursor: "pointer", fontFamily: "inherit", background: b.bg, color: b.color, border: b.border, opacity: btnHover === i ? 0.85 : 1, transition: "opacity 0.15s ease" }}>{b.label}</button>
+          ))}
+        </div>
+      </ComponentPreview>
+      <ComponentPreview label="Cards & Containers">
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+          <div style={{ padding: 16, borderRadius: 8, border: "1px solid var(--border)", background: "var(--bg)" }}>
+            <div style={{ fontSize: 13, fontWeight: 600, color: "var(--text)", marginBottom: 4 }}>Default card</div>
+            <div style={{ fontSize: 12, color: "var(--text-secondary)" }}>1px border, 8px radius, 16px padding</div>
+          </div>
+          <div style={{ padding: 16, borderRadius: 8, background: "var(--bg-secondary)" }}>
+            <div style={{ fontSize: 13, fontWeight: 600, color: "var(--text)", marginBottom: 4 }}>Filled card</div>
+            <div style={{ fontSize: 12, color: "var(--text-secondary)" }}>No border, background fill only</div>
+          </div>
+        </div>
+      </ComponentPreview>
+      <ComponentPreview label="Badges & Tags">
+        <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+          {[
+            { label: "Default", bg: "var(--bg-tertiary)", color: "var(--text-secondary)" },
+            { label: "Active", bg: "var(--accent-subtle)", color: "var(--accent)" },
+            { label: "Success", bg: "var(--green-subtle)", color: "var(--green)" },
+            { label: "Warning", bg: "var(--yellow-subtle)", color: "var(--yellow)" },
+            { label: "Error", bg: "var(--red-subtle)", color: "var(--red)" },
+          ].map((b, i) => (
+            <span key={i} style={{ padding: "3px 10px", borderRadius: 4, fontSize: 12, fontWeight: 500, background: b.bg, color: b.color }}>{b.label}</span>
+          ))}
+        </div>
+      </ComponentPreview>
+    </div>
+  );
+}
+
+function Inputs() {
+  const [val, setVal] = useState("");
+  const [checked, setChecked] = useState(false);
+  const [sel, setSel] = useState("option1");
+  return (
+    <div>
+      <h2 style={styles.h2}>Inputs & Forms</h2>
+      <p style={styles.body}>Inputs are understated until focused. The border darkens, never glows. No box-shadows, no outlines.</p>
+      <ComponentPreview label="Text input">
+        <div style={{ maxWidth: 360 }}>
+          <label style={{ fontSize: 12, fontWeight: 500, color: "var(--text-secondary)", display: "block", marginBottom: 6 }}>Project name</label>
+          <input value={val} onChange={e => setVal(e.target.value)} placeholder="my-project" style={{ width: "100%", padding: "8px 12px", fontSize: 14, fontFamily: "inherit", border: "1px solid var(--border)", borderRadius: 6, background: "var(--bg)", color: "var(--text)", outline: "none", boxSizing: "border-box", transition: "border-color 0.15s ease" }} onFocus={e => e.target.style.borderColor = "var(--border-strong)"} onBlur={e => e.target.style.borderColor = "var(--border)"} />
+          <div style={{ fontSize: 11, color: "var(--text-tertiary)", marginTop: 6 }}>Border shifts from <code>--border</code> to <code>--border-strong</code> on focus. No glow.</div>
+        </div>
+      </ComponentPreview>
+      <ComponentPreview label="Checkbox & Select">
+        <div style={{ display: "flex", gap: 32, alignItems: "flex-start" }}>
+          <label style={{ display: "flex", alignItems: "center", gap: 8, cursor: "pointer", fontSize: 13, color: "var(--text)" }} onClick={() => setChecked(!checked)}>
+            <div style={{ width: 16, height: 16, borderRadius: 4, border: checked ? "none" : "1.5px solid var(--border-strong)", background: checked ? "var(--text)" : "transparent", display: "flex", alignItems: "center", justifyContent: "center", transition: "all 0.15s ease", flexShrink: 0 }}>
+              {checked && <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5L4 7L8 3" stroke="var(--bg)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>}
+            </div>
+            Enable feature
+          </label>
+          <select value={sel} onChange={e => setSel(e.target.value)} style={{ padding: "7px 12px", fontSize: 13, fontFamily: "inherit", border: "1px solid var(--border)", borderRadius: 6, background: "var(--bg)", color: "var(--text)", outline: "none", cursor: "pointer" }}>
+            <option value="option1">Model: Sonnet</option>
+            <option value="option2">Model: Opus</option>
+            <option value="option3">Model: Haiku</option>
+          </select>
+        </div>
+      </ComponentPreview>
+    </div>
+  );
+}
+
+function Feedback() {
+  return (
+    <div>
+      <h2 style={styles.h2}>Feedback & Status</h2>
+      <p style={styles.body}>Status is communicated through subtle color fills — never borders, never icons-only.</p>
+      <ComponentPreview label="Toast / Inline alerts">
+        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+          {[
+            { msg: "Changes saved successfully.", bg: "var(--green-subtle)", color: "var(--green)" },
+            { msg: "API key expires in 3 days.", bg: "var(--yellow-subtle)", color: "var(--yellow)" },
+            { msg: "Failed to connect to remote.", bg: "var(--red-subtle)", color: "var(--red)" },
+            { msg: "New version available — update now.", bg: "var(--accent-subtle)", color: "var(--accent)" },
+          ].map((a, i) => (
+            <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 14px", borderRadius: 6, background: a.bg, fontSize: 13, color: a.color, fontWeight: 500 }}>
+              <div style={{ width: 6, height: 6, borderRadius: "50%", background: a.color, flexShrink: 0 }} />
+              {a.msg}
+            </div>
+          ))}
+        </div>
+      </ComponentPreview>
+      <ComponentPreview label="Progress / Loading">
+        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+          <div>
+            <div style={{ fontSize: 12, color: "var(--text-secondary)", marginBottom: 6 }}>Indexing codebase…</div>
+            <div style={{ height: 4, borderRadius: 2, background: "var(--bg-tertiary)", overflow: "hidden" }}>
+              <div style={{ height: "100%", width: "62%", background: "var(--accent)", borderRadius: 2, transition: "width 0.4s ease" }} />
+            </div>
+          </div>
+          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+            <div style={{ width: 14, height: 14, border: "2px solid var(--border)", borderTopColor: "var(--text-secondary)", borderRadius: "50%", animation: "spin 0.8s linear infinite" }} />
+            <span style={{ fontSize: 13, color: "var(--text-secondary)" }}>Generating response…</span>
+          </div>
+        </div>
+      </ComponentPreview>
+    </div>
+  );
+}
+
+function Motion() {
+  const [anim, setAnim] = useState(false);
+  return (
+    <div>
+      <h2 style={styles.h2}>Motion & Transitions</h2>
+      <p style={styles.body}>Motion is invisible when done right. Use transitions to smooth state changes, not to entertain.</p>
+      <ComponentPreview label="Timing guidelines">
+        <div style={{ fontSize: 13, color: "var(--text-secondary)", lineHeight: 1.7 }}>
+          <strong>100ms</strong> — Opacity, color changes (hover/focus)<br/>
+          <strong>150ms</strong> — Button presses, checkbox toggles<br/>
+          <strong>200ms</strong> — Panel slides, dropdown opens<br/>
+          <strong>250ms</strong> — Layout reflows, tab transitions<br/>
+          <strong>ease</strong> — Default easing. Never use linear for UI elements.<br/>
+        </div>
+      </ComponentPreview>
+      <ComponentPreview label="Live demo">
+        <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+          <button onClick={() => setAnim(!anim)} style={{ padding: "7px 16px", borderRadius: 6, fontSize: 13, fontWeight: 500, cursor: "pointer", fontFamily: "inherit", background: "var(--text)", color: "var(--bg)", border: "none" }}>Toggle</button>
+          <div style={{ width: 48, height: 48, borderRadius: anim ? 24 : 8, background: anim ? "var(--accent)" : "var(--bg-tertiary)", transform: anim ? "translateX(80px) scale(1.1)" : "translateX(0) scale(1)", transition: "all 0.25s ease" }} />
+        </div>
+      </ComponentPreview>
+    </div>
+  );
+}
+
+function Layout() {
+  return (
+    <div>
+      <h2 style={styles.h2}>Layout Patterns</h2>
+      <p style={styles.body}>Notion's brilliance is its page metaphor — a single, scrollable column of content with a narrow sidebar for navigation. Claude Code should follow the same restraint.</p>
+      <ComponentPreview label="Canonical layout structure">
+        <div style={{ display: "flex", border: "1px solid var(--border)", borderRadius: 8, overflow: "hidden", height: 180, fontSize: 11, color: "var(--text-tertiary)" }}>
+          <div style={{ width: 56, background: "var(--bg-secondary)", borderRight: "1px solid var(--border)", display: "flex", flexDirection: "column", alignItems: "center", padding: "12px 0", gap: 12 }}>
+            {[1, 2, 3].map(i => <div key={i} style={{ width: 28, height: 28, borderRadius: 6, background: i === 1 ? "var(--bg-active)" : "transparent", border: "1px solid var(--border)" }} />)}
+          </div>
+          <div style={{ width: 160, background: "var(--bg-secondary)", borderRight: "1px solid var(--border)", padding: 12 }}>
+            <div style={{ fontWeight: 600, marginBottom: 8, color: "var(--text-secondary)" }}>Sidebar</div>
+            {["Files", "Search", "Settings"].map(l => <div key={l} style={{ padding: "4px 8px", borderRadius: 4, marginBottom: 2 }}>{l}</div>)}
+          </div>
+          <div style={{ flex: 1, padding: 16, display: "flex", flexDirection: "column", gap: 8 }}>
+            <div style={{ fontWeight: 600, color: "var(--text-secondary)" }}>Main content</div>
+            <div style={{ flex: 1, borderRadius: 6, background: "var(--bg-secondary)", border: "1px dashed var(--border)" }} />
+          </div>
+        </div>
+      </ComponentPreview>
+      <div style={{ marginTop: 8, fontSize: 13, color: "var(--text-secondary)", lineHeight: 1.6 }}>
+        <strong>Max content width:</strong> 720px for text, 960px for mixed layouts. Center horizontally with generous margins. Sidebar collapses on narrow viewports — never overlaps content.
+      </div>
+    </div>
+  );
+}
+
+function DosDonts() {
+  const items = [
+    { do: "Use opacity and weight for hierarchy", dont: "Use multiple saturated colors for structure" },
+    { do: "Single-pixel borders in --border color", dont: "Thick borders, box-shadows, or glows" },
+    { do: "8px border-radius (6px for small elements)", dont: "Fully rounded pills (except avatars)" },
+    { do: "Monospace for code, sans for UI text", dont: "Decorative fonts anywhere in the interface" },
+    { do: "150ms transitions on interaction states", dont: "Bouncy, spring, or >300ms animations" },
+    { do: "Semantic color only (status, links, focus)", dont: "Color as decoration or visual interest" },
+  ];
+  return (
+    <div>
+      <h2 style={styles.h2}>Dos & Don'ts</h2>
+      <div style={{ display: "flex", flexDirection: "column", gap: 2, marginTop: 16 }}>
+        {items.map((item, i) => (
+          <div key={i} style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 1 }}>
+            <div style={{ padding: "10px 14px", background: "var(--green-subtle)", fontSize: 13, color: "var(--text)", borderRadius: i === 0 ? "8px 0 0 0" : i === items.length - 1 ? "0 0 0 8px" : 0 }}>
+              <span style={{ color: "var(--green)", fontWeight: 600, marginRight: 6 }}>✓</span>{item.do}
+            </div>
+            <div style={{ padding: "10px 14px", background: "var(--red-subtle)", fontSize: 13, color: "var(--text)", borderRadius: i === 0 ? "0 8px 0 0" : i === items.length - 1 ? "0 0 8px 0" : 0 }}>
+              <span style={{ color: "var(--red)", fontWeight: 600, marginRight: 6 }}>✗</span>{item.dont}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+const SECTION_MAP = {
+  philosophy: Philosophy, colors: Colors, typography: Typography, spacing: Spacing,
+  components: Components, inputs: Inputs, feedback: Feedback, motion: Motion,
+  layout: Layout, "dos-donts": DosDonts,
+};
+
+function DesignGuide() {
+  const [active, setActive] = useState("philosophy");
+  const [isDark, setIsDark] = useState(false);
+  const t = isDark ? tokens.dark : tokens.light;
+
+  const rootStyle = {
+    "--bg": t.bg, "--bg-secondary": t.bgSecondary, "--bg-tertiary": t.bgTertiary,
+    "--bg-hover": t.bgHover, "--bg-active": t.bgActive,
+    "--text": t.text, "--text-secondary": t.textSecondary, "--text-tertiary": t.textTertiary,
+    "--border": t.border, "--border-strong": t.borderStrong,
+    "--accent": t.accent, "--accent-subtle": t.accentSubtle,
+    "--red": t.red, "--red-subtle": t.redSubtle,
+    "--green": t.green, "--green-subtle": t.greenSubtle,
+    "--yellow": t.yellow, "--yellow-subtle": t.yellowSubtle,
+    "--shadow": t.shadow, "--code-bg": t.codeBg,
+    fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif",
+    background: "var(--bg)", color: "var(--text)", display: "flex", minHeight: "100vh",
+    transition: "background 0.25s ease, color 0.25s ease",
+  };
+
+  const Section = SECTION_MAP[active];
+
+  return (
+    <div style={rootStyle}>
+      <Sidebar active={active} onNav={setActive} isDark={isDark} onToggle={() => setIsDark(!isDark)} />
+      <main style={{ flex: 1, padding: "48px 64px", maxWidth: 800, marginLeft: 220, overflowY: "auto" }}>
+        <Section isDark={isDark} />
+      </main>
+    </div>
+  );
+}
+
+ReactDOM.render(React.createElement(DesignGuide), document.getElementById("root"));
+</script>
+</body>
+</html>

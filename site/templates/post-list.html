@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+{{> head }}
+</head>
+<body>
+{{> header }}
+<main class="content">
+<h1>Posts</h1>
+<ul class="post-list">
+{{#posts}}<li class="post-list-item"><a href="{{ url }}"><span class="post-list-title">{{ title }}</span> <time class="post-list-date" datetime="{{ dateISO }}">{{ dateHuman }}</time></a></li>
+{{/posts}}</ul>
+</main>
+{{> footer }}
+<script src="/assets/js/theme.js" defer></script>
+</body>
+</html>

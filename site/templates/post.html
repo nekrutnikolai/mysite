@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+{{> head }}
+</head>
+<body>
+{{> header }}
+<main class="content">
+<article class="post">
+  <header class="post-header">
+    <h1>{{ title }}</h1>
+    <p class="post-meta"><time datetime="{{ dateISO }}">{{ dateHuman }}</time>{{#readingTime}} · <span class="post-reading-time">{{ readingTime }} min read</span>{{/readingTime}}{{#tags}} · <a class="tag-link" href="/tags/{{ slug }}/">{{ name }}</a>{{/tags}}</p>
+  </header>
+  {{{ body }}}
+</article>
+
+<nav class="post-adjacent" aria-label="Adjacent posts">
+  {{#newer}}<a class="post-adjacent-newer" href="{{ url }}"><span class="post-adjacent-label">← Newer</span><span class="post-adjacent-title">{{ title }}</span></a>{{/newer}}
+  {{^newer}}<span class="post-adjacent-spacer"></span>{{/newer}}
+  {{#older}}<a class="post-adjacent-older" href="{{ url }}"><span class="post-adjacent-label">Older →</span><span class="post-adjacent-title">{{ title }}</span></a>{{/older}}
+  {{^older}}<span class="post-adjacent-spacer"></span>{{/older}}
+</nav>
+
+<p class="post-nav"><a href="/posts/">← All posts</a></p>
+</main>
+{{> footer }}
+<script src="/assets/js/theme.js" defer></script>
+</body>
+</html>

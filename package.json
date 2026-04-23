@@ -1,0 +1,37 @@
+{
+  "name": "mysite",
+  "version": "1.0.0",
+  "description": "Nikolai Nekrutenko's personal site — pure HTML/CSS with a tiny Node build.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "node site/build.mjs",
+    "dev": "node site/serve.mjs",
+    "serve:old": "hugo server --port 3101 -s .",
+    "test": "playwright test",
+    "test:visual": "playwright test visual.spec.ts",
+    "test:a11y": "playwright test a11y.spec.ts",
+    "test:perf": "playwright test perf.spec.ts",
+    "test:integrity": "playwright test integrity.spec.ts",
+    "test:update": "playwright test visual.spec.ts --update-snapshots",
+    "test:iter": "playwright test",
+    "report": "playwright show-report test-results/html-report"
+  },
+  "dependencies": {
+    "chokidar": "3.6.0",
+    "exifr": "7.1.3",
+    "gray-matter": "4.0.3",
+    "marked": "12.0.2",
+    "sharp": "0.33.5"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.10.1",
+    "@playwright/test": "1.49.1",
+    "axe-core": "4.10.2",
+    "chrome-launcher": "1.1.2",
+    "lighthouse": "12.3.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
