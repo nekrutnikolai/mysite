@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+{{> head }}
+</head>
+<body>
+{{> header }}
+<main class="content{{#wide}} wide{{/wide}}">
+<article class="gallery-index">
+  <header><h1>Gallery</h1><p class="lede">Photographs from adventures and everyday scenes.</p></header>
+  <ul class="gallery-grid" role="list">
+    {{#galleries}}
+      <li class="gallery-tile">
+        <a href="{{ url }}">
+          <img class="gallery-tile-img"
+               src="{{ coverThumbUrl }}"
+               srcset="{{ coverThumbUrl }} {{ coverThumbW }}w, {{ coverPreviewUrl }} 1200w"
+               sizes="(max-width: 640px) 100vw, 33vw"
+               width="{{ coverThumbW }}"
+               height="{{ coverThumbH }}"
+               alt="{{ title }}"
+               loading="lazy"
+               style="background-image: url('{{ coverBlur }}')">
+          <div class="gallery-tile-body">
+            <span class="gallery-tile-title">{{ title }}</span>
+            <span class="gallery-tile-meta">{{ imageCount }} photo{{#imagesPlural}}s{{/imagesPlural}} &middot; <time datetime="{{ dateISO }}">{{ dateHuman }}</time></span>
+          </div>
+        </a>
+      </li>
+    {{/galleries}}
+  </ul>
+</article>
+</main>
+{{> footer }}
+<script src="/assets/js/theme.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,357 @@
+/* Structural layout: reset, page shell, header, footer, typography rhythm.
+   Values consume tokens only — no hardcoded hex/px here. */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  transition:
+    background var(--dur-slow) var(--ease),
+    color var(--dur-slow) var(--ease);
+}
+
+body {
+  background: var(--surface-0);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+/* --- Header ---------------------------------------------------------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: var(--topbar-h);
+  padding: 0 var(--s-5);
+  background: var(--surface-0);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-4);
+}
+
+.site-header .site-logo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: var(--ls-heading);
+  color: var(--text);
+  text-decoration: none;
+  line-height: 1;
+  padding: var(--s-1);
+}
+
+.site-header .site-logo:hover {
+  color: var(--text);
+}
+
+.site-header .site-logo sup {
+  font-size: 0.7em;
+}
+
+.site-header .site-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--s-1);
+  margin-left: auto;
+  margin-right: var(--s-3);
+}
+
+/* Hamburger — hidden above the mobile breakpoint. See the mobile media query
+   below for the open/closed behavior. */
+.site-header .site-nav-toggle {
+  display: none;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  color: var(--text);
+  cursor: pointer;
+  padding: 0;
+  margin-left: auto;
+  transition: background var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+.site-header .site-nav-toggle:hover {
+  background: var(--surface-hover);
+}
+.site-header .site-nav-toggle-bars,
+.site-header .site-nav-toggle-bars::before,
+.site-header .site-nav-toggle-bars::after {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 1px;
+  transition: transform var(--dur-med) var(--ease),
+              opacity var(--dur-fast) var(--ease);
+}
+.site-header .site-nav-toggle-bars {
+  position: relative;
+}
+.site-header .site-nav-toggle-bars::before,
+.site-header .site-nav-toggle-bars::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+.site-header .site-nav-toggle-bars::before { top: -6px; }
+.site-header .site-nav-toggle-bars::after  { top:  6px; }
+.site-header .site-nav-toggle[aria-expanded="true"] .site-nav-toggle-bars {
+  transform: rotate(45deg);
+}
+.site-header .site-nav-toggle[aria-expanded="true"] .site-nav-toggle-bars::before {
+  transform: translate(0, 6px) rotate(90deg);
+}
+.site-header .site-nav-toggle[aria-expanded="true"] .site-nav-toggle-bars::after {
+  opacity: 0;
+}
+
+.site-header .site-nav a {
+  padding: var(--s-1) var(--s-3);
+  color: var(--text-muted);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: color var(--dur) var(--ease), background var(--dur) var(--ease);
+  font-size: var(--fs-body);
+}
+
+.site-header .site-nav a:hover {
+  color: var(--text);
+  background: var(--surface-hover);
+}
+
+.site-header .site-nav a[aria-current="page"] {
+  color: var(--text);
+  font-weight: 500;
+  position: relative;
+}
+
+.site-header .site-nav a[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: var(--s-3);
+  right: var(--s-3);
+  bottom: 0;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 1px;
+}
+
+/* Theme toggle button: 32x32 square, neutral disc glyph via ::before that
+   adapts per data-theme. Visible in all three themes. */
+.theme-toggle {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  color: var(--text-muted);
+  cursor: pointer;
+  font: inherit;
+  transition:
+    color var(--dur) var(--ease),
+    border-color var(--dur) var(--ease),
+    background var(--dur) var(--ease);
+}
+
+.theme-toggle:hover {
+  color: var(--text);
+  background: var(--surface-hover);
+}
+
+.theme-toggle::before {
+  content: "\25D1"; /* half-filled circle — theme-agnostic glyph */
+  font-size: 16px;
+  line-height: 1;
+}
+
+[data-theme="dark"] .theme-toggle::before {
+  content: "\263D"; /* moon */
+}
+
+[data-theme="parchment"] .theme-toggle::before {
+  content: "\2750"; /* page glyph */
+}
+
+/* --- Main content ---------------------------------------------------- */
+
+main.content {
+  flex: 1 1 auto;
+  width: 100%;
+  max-width: var(--content-text);
+  margin: 0 auto;
+  padding: var(--s-7) var(--s-5);
+}
+
+main.content.wide {
+  max-width: var(--content-mixed);
+}
+
+/* Headings use the display serif. */
+main h1,
+main h2,
+main h3 {
+  font-family: var(--font-display);
+  letter-spacing: var(--ls-heading);
+  line-height: var(--lh-heading);
+  color: var(--text);
+}
+
+main h1 {
+  font-size: var(--fs-h1);
+  font-weight: 700;
+  margin: var(--s-7) 0 var(--s-4);
+}
+
+main h2 {
+  font-size: var(--fs-h2);
+  font-weight: 600;
+  margin: var(--s-6) 0 var(--s-3);
+}
+
+main h3 {
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  margin: var(--s-5) 0 var(--s-2);
+}
+
+main p {
+  margin-block: var(--s-4);
+  max-width: 68ch;
+}
+
+main a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+/* Images are fluid by default. */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Align attribute support for raw-HTML resume content. */
+[align="center"] { text-align: center; }
+[align="right"]  { text-align: right;  }
+[align="left"]   { text-align: left;   }
+
+/* --- Footer ---------------------------------------------------------- */
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: var(--s-5);
+  color: var(--text-muted);
+  font-size: var(--fs-caption);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--s-4);
+}
+
+.site-footer ul {
+  list-style: none;
+  display: flex;
+  gap: var(--s-3);
+}
+
+.site-footer a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color var(--dur) var(--ease);
+}
+
+.site-footer a:hover {
+  color: var(--text);
+}
+
+/* --- Mobile ---------------------------------------------------------- */
+
+@media (max-width: 640px) {
+  main.content {
+    padding: var(--s-5) var(--s-4);
+  }
+
+  .site-header {
+    padding: 0 var(--s-4);
+    gap: var(--s-2);
+    position: relative; /* anchor the absolute-positioned open menu */
+  }
+
+  /* Show the hamburger; it takes over margin-left:auto from .site-nav */
+  .site-header .site-nav-toggle {
+    display: inline-flex;
+  }
+
+  /* Nav collapses into a drop-down panel that appears when the toggle
+     is aria-expanded="true". Closed by default. */
+  .site-header .site-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: var(--s-3);
+    left: var(--s-3);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    margin: var(--s-2) 0 0;
+    padding: var(--s-2);
+    background: var(--surface-0);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 8px 24px var(--shadow);
+    z-index: 20;
+  }
+  .site-header .site-nav[data-open="true"] {
+    display: flex;
+  }
+  .site-header .site-nav a {
+    padding: var(--s-2) var(--s-3);
+    font-size: var(--fs-body);
+    border-radius: var(--radius);
+  }
+  .site-header .site-nav a[aria-current="page"]::after {
+    display: none; /* underline makes no sense inside a stacked panel */
+  }
+
+  .site-footer {
+    flex-direction: column;
+    gap: var(--s-3);
+    align-items: flex-start;
+  }
+}
+
+/* --- Reduced motion kill-switch (mandatory) -------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

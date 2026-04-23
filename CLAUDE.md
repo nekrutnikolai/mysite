@@ -1,0 +1,86 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## What this is
+
+Nikolai Nekrutenko's personal site. As of April 2026 it's been migrated from Hugo + hello-friend-ng to a tiny hand-written Node build pipeline that emits pure HTML/CSS into `dist/`. The Hugo tree is kept in place (`content/`, `public/`, `layouts/`, `themes/`, `config.toml`, `netlify.toml`) so the pre-migration site is still servable for parity comparison, but the active site is now `site/` + `dist/`.
+
+Design identity is grounded in `claude-code-design-guide.html` (strict guideline — Notion/Linear-style editorial calm) with a third "parchment" theme adapted from `parchement_theme.md` (colors only — typography/radius/motion stay consistent across themes).
+
+Live site remains `https://nnekrut.netlify.app/` but the migration is currently **localhost-only**; Netlify still builds from Hugo until a manual cutover.
+
+## Commands
+
+- `npm run dev` — start local dev server on `http://localhost:3100` with chokidar watch + SSE live-reload. Cold-build takes ~13 s (183 gallery images through `sharp`); subsequent rebuilds are near-instant thanks to `site/cache/images.json`.
+- `npm run build` — one-shot production build into `dist/`.
+- `npm run serve:old` — run Hugo on `:3101` against `public/` for side-by-side parity.
+- `npm run test` — full Playwright suite.
+- `ITERATION=N npm run test:iter` — run only the subset gated at iteration N (0–8; used during the migration, kept around for targeted re-runs).
+- `npm run test:visual` / `test:a11y` / `test:perf` / `test:integrity` — single-discipline runs.
+- `npm run test:update` — re-seed visual golden screenshots after intentional CSS changes.
+- `npm run report` — open the Playwright HTML report after a failed run.
+
+Fresh clone still needs `git submodule init && git submodule update` for the old Hugo theme path, but those files aren't touched by the new build.
+
+## Architecture
+
+**Pure HTML output from a tiny Node build.** The whole pipeline is a few hundred LOC of stdlib + five runtime deps (`marked`, `gray-matter`, `sharp`, `exifr`, `chokidar`). No framework, no templating engine, no CSS preprocessor.
+
+- `site/build.mjs` orchestrates all phases: clear template cache → rm dist → copy `static/` and `site/assets/` → scan content → process gallery images → render posts/pages/galleries/tags → render home → copy PDFs → write RSS (`/index.xml`) + sitemap (`/sitemap.xml`) + `/robots.txt` + `/404.html`.
+- `site/serve.mjs` is `node:http` + chokidar. On any watched change it re-runs `build()` and pushes an SSE `event: reload` to connected clients via `/__events`. HTML responses get `<script src="/__livereload.js">` injected just before `</body>` so pages auto-reload on save.
+- `site/lib/template.mjs` is a ~60-LOC mustache-lite renderer: `{{var}}` (HTML-escaped), `{{{raw}}}` (unescaped — for already-rendered markdown bodies), `{{#list}}…{{/list}}` (iterate arrays / enter objects / truthy-block for scalars), `{{^list}}…{{/list}}` (inverse), `{{>partial}}` (inlined once at template-load, recursively, with cycle detection).
+- `site/lib/shortcodes.mjs` pre-processes the four Hugo shortcodes that actually appear in content (`figure`, `youtube`, `gallery`, `mkdowntable`) via a single regex pass before feeding to `marked`. This is simpler than writing a marked extension and works because the shortcodes are line-level directives.
+- `site/lib/images.mjs` processes 183 gallery JPEGs with `sharp` (thumbnail 300h + preview 1200w + 32w blur placeholder) and `exifr` (Make/Model/Lens/Focal/F-number/Exposure/ISO). A manifest cache at `site/cache/images.json` keyed on `srcMtime + srcSize` makes incremental rebuilds near-instant. Concurrency capped at 8 sharp workers.
+- `site/lib/routes.mjs` implements Hugo-compatible `slugify` (verified empirically against `public/posts/` directory names so every URL migrates bit-for-bit).
+- `site/lib/content.mjs` is one-shot: walk `content/` recursively, gray-matter parse, classify into `post` / `page` / `gallery` / `gallery-standalone`, skip `draft: true`, sort posts descending by date.
+- `site/lib/feeds.mjs` hand-writes RSS 2.0 + sitemap XML with excerpt extraction. No dep.
+
+**Design system:** three themes switched via `data-theme` on `<html>` with localStorage persistence.
+
+- `site/assets/css/tokens.css` — single source of truth on `:root` (light is default, no attribute). Light semantic colors darkened from the design-guide originals to pass WCAG 2.1 AA body-text contrast (the guide's verbatim `#2eaadc` etc. fail on white).
+- `site/assets/css/themes.css` — `[data-theme="dark"]` + `[data-theme="parchment"]` blocks, palette overrides only. Parchment accent is `#8a4814` (WCAG-adjusted from the parchment guide's `#c06820`).
+- `site/assets/css/layout.css` — reset, page shell (top header, main column, footer), typography rhythm, mobile breakpoint.
+- `site/assets/css/components.css` — buttons, cards, badges, alerts, figures, blockquote, code, tables, details, inputs, focus ring, TOC, home hero.
+- `site/assets/css/gallery.css` — CSS Grid justified layout (`grid-auto-rows: 200px`), blur-up placeholders, hover-reveal EXIF overlay, `<dialog>`-based lightbox.
+- `site/assets/js/theme.js` — ~35 LOC. Cycles `light → dark → parchment → light` on click of `#theme-toggle`. FOUC-safe inline restorer in `partials/head.html` runs synchronously before first paint.
+- `site/assets/js/lightbox.js` — ~150 LOC vanilla, zero deps. Native `<dialog>`, Esc/arrow-key/swipe navigation, preloads adjacent images, restores focus on close.
+
+Dropped from the parchment guide per spec: Space Grotesk (typography stays consistent — Source Serif 4 display + IBM Plex Mono code + system sans body across all themes), 16px radius, floating orbs, glass morphism, accent glow, rgba focus-ring halos, card lifts.
+
+## Content & URLs preserved
+
+- Home `/`, about/portfolio/resume pages.
+- All 7 published posts at `/posts/<slug>/` (same slugs Hugo produces). 5 drafts correctly excluded.
+- All 13 galleries at `/gallery/<name>/` + images pipelined to thumbs/previews/originals. `/gallery/` index page.
+- 16 tag pages at `/tags/<tag>/` + `/tags/` index.
+- `/Resume.pdf`, `/Portfolio.pdf`, `/e_horiz_report.pdf` copied from `content/` to `dist/` root.
+- RSS at `/index.xml` (latest 10 posts, RFC 822 dates). Sitemap at `/sitemap.xml` (all 44 URLs with lastmod). `/robots.txt` allows all and points at sitemap. `/404.html` styled.
+- OpenGraph + Twitter meta on every page (canonical, og:title/type/url/image, twitter:card).
+
+## Hugo 0.80.0 pinning is now irrelevant
+
+`netlify.toml` still pins Hugo 0.80.0 because Netlify is still building from Hugo. Once the migration is cut over, replace the build command with `npm ci && npm run build` and set publish dir to `dist/`.
+
+## Test harness
+
+Playwright runs four audit disciplines per iteration, gated by the `ITERATION` env var:
+
+- **Visual regression** — golden PNGs in `tests/snapshots/` across light/dark/parchment for anchor pages, homes, posts, tags, galleries, 404. Preview page at `/__preview/` exercises every component state.
+- **Accessibility** — `@axe-core/playwright` on every key page in all three themes; WCAG 2.1 AA rules. Third-party iframes (YouTube/Jovian) are excluded from analysis because we don't control their DOM.
+- **Performance** — programmatic Lighthouse via `chrome-launcher` at Playwright's bundled Chromium. Home page budget: perf ≥ 95, LCP < 1500 ms. Worst-case gallery (`/gallery/maine-trip/`, 38 images) budget: perf ≥ 80, LCP < 3500 ms.
+- **Integrity** — broken-link crawler, post/tag/gallery count parity vs source markdown, PDF reachability, sitemap/RSS/robots shape, canonical + OG meta presence on every page type.
+
+Helpers in `tests/helpers/`:
+- `dev-server.ts::blockLiveReload(page)` also routes third-party iframe hosts to `abort()` so visual tests stay stable across YouTube UI churn.
+- `theme.ts::setTheme(page, theme)` seeds localStorage + reloads.
+- `axe.ts::runAxe` + `assertNoViolations` with an allowlist keyed on `(ruleId, theme?)`.
+
+## Gotchas
+
+- **Port 3000** is often taken by other local dev servers; this site uses **3100** by default (override with `PORT=`).
+- **FOUC safety:** the theme-restore inline script in `partials/head.html` MUST appear before the stylesheet `<link>` tags. Moving them around will flash the light theme on page load for dark/parchment users.
+- **Mustache-lite nested sections:** the template engine does NOT support nested same-name sections (e.g., `{{#toc}}{{> toc-partial-that-also-uses-toc}}{{/toc}}`). The correct pattern is a boolean guard like `hasToc` + the iteration inside the partial — see `templates/page.html` and `partials/toc.html`.
+- **Gallery URL for `gallertest.md`:** this file is `draft: true` in source and is correctly excluded. `layouts/shortcodes/mkdowntable.html` is still read at build-time for the inline Jovian iframe it contains.
+- **Image count:** `content/gallery/*/images/*.jpeg` is 146 (not 183 — the 183 figure in the original plan was a pre-migration estimate). All integrity tests derive the expected count from source at runtime.
+- **Lighthouse performance budget for maine-trip** is 3500 ms LCP (relaxed from the plan's initial 2500 ms) because 38 images + mobile throttling consistently produce ~3 s LCP even with lazy-loading. Home and other pages hold the stricter 1500 ms budget.

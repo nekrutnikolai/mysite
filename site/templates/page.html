@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+{{> head }}
+</head>
+<body>
+{{> header }}
+<main class="content">
+<article class="page">
+  {{#showTitle}}<header class="page-header"><h1>{{ title }}</h1></header>{{/showTitle}}
+  {{#hasToc}}{{> toc }}{{/hasToc}}
+  {{{ body }}}
+</article>
+</main>
+{{> footer }}
+<script src="/assets/js/theme.js" defer></script>
+</body>
+</html>
