@@ -26,3 +26,25 @@
   window.addEventListener('resize', update);
   update();
 })();
+
+// ── 2. Back-to-top pill ─────────────────────────────────────────────────────
+(function backToTop() {
+  const btn = document.getElementById('nav-back-to-top');
+  if (!btn) return;
+  const threshold = window.innerHeight * 1.5;
+
+  function update() {
+    const visible = window.scrollY > threshold;
+    btn.toggleAttribute('hidden', !visible);
+    if (visible) btn.setAttribute('data-visible', 'true');
+    else btn.removeAttribute('data-visible');
+  }
+
+  btn.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
