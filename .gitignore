@@ -2,6 +2,11 @@
 .hugo_build.lock
 .env
 .env.local
+# Gallery source masters live in R2 (clean/gallery/ prefix), not in git.
+# Fresh clones / Netlify CI populate content/gallery/<album>/images/ via
+# `npm run download-originals`.
+content/gallery/*/images/*.jpeg
+content/gallery/*/images/*.jpg
 dist/
 node_modules/
 site/cache/

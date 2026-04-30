@@ -3,7 +3,12 @@
 
 [build]
   publish = "dist"
-  command = "npm ci && npm run build"
+  # Pull clean masters from R2 (the clean/gallery/ prefix) before building.
+  # Source masters are no longer in git; download-originals materializes them
+  # into content/gallery/<album>/images/ so sharp can regenerate thumbs and
+  # mediums. R2_ACCOUNT_ID + R2_ACCESS_KEY_ID + R2_SECRET_ACCESS_KEY must be
+  # set as secrets in the Netlify UI (Site settings → Environment variables).
+  command = "npm ci && npm run download-originals && npm run build"
 
 [build.environment]
   NODE_VERSION = "20"
