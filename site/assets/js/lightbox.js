@@ -98,19 +98,22 @@
       }
       fullState[idx] = "loading";
       var img = new Image();
-      img.onload = function () {
+      img.src = entry.fullUrl;
+      // decode() resolves once bytes are decoded into a bitmap — moving that
+      // work off the main thread so the eventual src swap is paint-only and
+      // avoids a frame stutter when the user is mid-zoom on a 1-2 MB JPEG.
+      var decoded = img.decode ? img.decode() : new Promise(function (res, rej) {
+        img.onload = res; img.onerror = rej;
+      });
+      decoded.then(function () {
         fullState[idx] = "loaded";
-        // Guard against late arrivals after the user navigated away — without
-        // this check, a slow image #5 could slam its src onto image #6.
         if (currentIndex === idx) {
           suppressLayoutOnce = true;
           imgEl.src = entry.fullUrl;
         }
-      };
-      img.onerror = function () {
+      }).catch(function () {
         delete fullState[idx];
-      };
-      img.src = entry.fullUrl;
+      });
     }
 
     function buildDialog() {
