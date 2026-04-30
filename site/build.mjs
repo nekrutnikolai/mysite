@@ -654,7 +654,7 @@ export async function build() {
     actions: [
       { label: "About", href: "/about/", class: "btn-secondary", external: false },
       { label: "Portfolio", href: "/portfolio/", class: "btn-primary", external: false },
-      { label: "Resume (PDF)", href: "/Resume.pdf", class: "btn-ghost", external: true },
+      { label: "Resume", href: "/resume/", class: "btn-ghost", external: false },
     ],
     recent,
   }));
