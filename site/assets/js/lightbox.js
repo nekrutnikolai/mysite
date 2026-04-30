@@ -66,6 +66,21 @@
     var swipeStartX = 0, swipeStartY = 0;
     var swipeCandidate = false;
 
+    // Hot-path event handlers (mousemove, touchmove, wheel) update tx/ty/scale
+    // and need to push the change to the DOM. Calling applyTransform directly
+    // on every event runs the transform pipeline + minimap-rect update at
+    // mouse-event rate (often 1000 Hz on modern mice), which the compositor
+    // can't keep up with on big images. scheduleApply collapses any number of
+    // updates within a single frame into one applyTransform call at most 60Hz.
+    var rafId = 0;
+    function scheduleApply() {
+      if (rafId) return;
+      rafId = requestAnimationFrame(function () {
+        rafId = 0;
+        applyTransform();
+      });
+    }
+
     // Tracks per-index full-resolution load state. Persists across re-opens
     // within a single page session: `"loading"` while a fetch is in flight,
     // `"loaded"` once the original is in the browser cache (so subsequent
@@ -210,7 +225,7 @@
         tx = dragOriginTx + dx;
         ty = dragOriginTy + dy;
         clamp();
-        applyTransform();
+        scheduleApply();
       });
       window.addEventListener("mouseup", function () {
         if (!dragging) return;
@@ -262,7 +277,7 @@
           tx = pinchCenter.x - sx * scale;
           ty = pinchCenter.y - sy * scale;
           clamp();
-          applyTransform();
+          scheduleApply();
         } else if (dragging && e.touches.length === 1) {
           e.preventDefault();
           var tt = e.touches[0];
@@ -272,7 +287,7 @@
           tx = dragOriginTx + dx;
           ty = dragOriginTy + dy;
           clamp();
-          applyTransform();
+          scheduleApply();
         }
       }, { passive: false });
 
@@ -440,7 +455,7 @@
       tx = px - sx * scale;
       ty = py - sy * scale;
       clamp();
-      applyTransform();
+      scheduleApply();
     }
 
     function zoomBy(factor) {

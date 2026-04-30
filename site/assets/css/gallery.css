@@ -161,11 +161,14 @@
   cursor: zoom-in;
   touch-action: none; /* JS handles pinch + pan */
   /* width/height set per-image by JS to fit-to-stage at scale=1 */
-  /* Hint the browser to keep the image on its own GPU layer so wheel/pinch
-     transform updates don't re-rasterize. */
+}
+/* will-change is only applied while actively zoomed/panning so the browser
+   doesn't permanently allocate a 6-megapixel GPU layer for an image the
+   user is just viewing at scale=1. */
+.lightbox-img.zoomed {
+  cursor: grab;
   will-change: transform;
 }
-.lightbox-img.zoomed { cursor: grab; }
 .lightbox-img.dragging { cursor: grabbing; }
 
 /* Minimap appears bottom-right of the stage when zoomed. Background is set
