@@ -130,22 +130,15 @@
   }
 
   function navigate(href, direction) {
-    // Clear inline drag styles so the View Transition snapshot starts clean.
-    main.style.transition = '';
-    main.style.transform = '';
-    if (document.startViewTransition) {
-      // Stamp direction so CSS can pick the correct keyframes.
-      ROOT.dataset.swipeDirection = direction;
-      const transition = document.startViewTransition(() => location.assign(href));
-      // Clean up the data attribute after the animation. The page replaces itself
-      // so this mostly matters for any edge-case same-document fallback.
-      transition.finished.finally(() => {
-        delete ROOT.dataset.swipeDirection;
-      });
-    } else {
-      // Browsers without View Transitions API: navigate normally, no animation.
-      location.assign(href);
-    }
+    // Continue the finger's motion off-screen in JS, then navigate. Works on
+    // every browser (no View Transitions dependency) and avoids the
+    // snap-back-then-slide glitch we got when handing off to the
+    // cross-document VT mid-gesture. Prefetch keeps the new HTML in cache so
+    // paint after location.assign is near-instant.
+    const target = direction === 'left' ? -window.innerWidth : window.innerWidth;
+    main.style.transition = 'transform .22s cubic-bezier(.22,.72,.18,1)';
+    main.style.transform  = 'translateX(' + target + 'px)';
+    setTimeout(function () { location.assign(href); }, 220);
   }
 
   // Attach listeners. touchmove must be non-passive so we can call preventDefault
