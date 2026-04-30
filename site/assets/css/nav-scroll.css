@@ -1,0 +1,24 @@
+/* nav-scroll.css — owned by Agent A (Tier 1).
+   Reading-progress hairline, back-to-top pill.
+   Section indicator styles live in layout.css (Tier 0) and are not duplicated here. */
+
+/* ── Reading progress hairline ─────────────────────────────────────────────── */
+
+.nav-reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  z-index: 100;
+  pointer-events: none;
+  will-change: transform;
+  transition: transform 80ms linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-reading-progress { transition: none; }
+}
