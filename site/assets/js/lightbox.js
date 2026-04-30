@@ -366,17 +366,30 @@
 
     function layoutImage() {
       if (!imgEl.naturalWidth) return;
-      var sr = stage.getBoundingClientRect();
-      stageW = sr.width;
-      stageH = sr.height;
-      var ratio = Math.min(stageW / imgEl.naturalWidth, stageH / imgEl.naturalHeight);
+      // Compute the image's fit-to-viewport size from CSS-equivalent
+      // viewport-percent caps. Using window dims directly (rather than the
+      // stage's rect) lets us size the stage to the image, so the stage's
+      // rounded corners hug the image edges and there are no black bands
+      // around tall portraits or wide landscapes. Mirrors the .lightbox-stage
+      // max-width/max-height in CSS plus the mobile breakpoint.
+      var isMobile = window.innerWidth <= 640;
+      var maxW = window.innerWidth * (isMobile ? 0.96 : 0.92);
+      var maxH = window.innerHeight * (isMobile ? 0.70 : 0.80);
+      var ratio = Math.min(maxW / imgEl.naturalWidth, maxH / imgEl.naturalHeight);
       natW = imgEl.naturalWidth * ratio;
       natH = imgEl.naturalHeight * ratio;
+      // Stage shrinks to the image (no letterbox); image fills the stage at
+      // scale=1 so tx/ty are zero. Zoom expands the image past the stage and
+      // overflow:hidden clips it.
+      stage.style.width = natW + "px";
+      stage.style.height = natH + "px";
+      stageW = natW;
+      stageH = natH;
       imgEl.style.width = natW + "px";
       imgEl.style.height = natH + "px";
       scale = 1;
-      tx = (stageW - natW) / 2;
-      ty = (stageH - natH) / 2;
+      tx = 0;
+      ty = 0;
       // Minimap reuses the same image as background; CSS `contain` letterboxes.
       minimap.style.backgroundImage = 'url("' + imgEl.src + '")';
       applyTransform();

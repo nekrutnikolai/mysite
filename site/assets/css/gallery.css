@@ -139,13 +139,15 @@
   gap: var(--s-3);
   box-sizing: border-box;
 }
-/* Stage frames the image and clips zoomed overflow. The image is absolutely
-   positioned inside the stage so the JS can transform it freely without
-   reflowing the rest of the dialog. */
+/* Stage frames the image and clips zoomed overflow. Width/height are set per
+   image by JS to the image's fit-to-viewport dimensions at scale=1, so the
+   stage's rounded corners sit on the image edges with no letterbox bands.
+   max-width/max-height bound it to the visible viewport when JS hasn't run
+   yet (graceful degradation; lightbox is JS-driven anyway). */
 .lightbox-stage {
   position: relative;
-  width: 92vw;
-  height: 80vh;
+  max-width: 92vw;
+  max-height: 80vh;
   overflow: hidden;
   border-radius: var(--radius-lg);
   background: #0e0e0e;
@@ -251,7 +253,7 @@
   .gallery-item--wide { grid-column: span 2; }
   .gallery-item--tall { grid-row: span 2; }
   .lightbox-inner { padding: var(--s-3); }
-  .lightbox-stage { width: 96vw; height: 70vh; }
+  .lightbox-stage { max-width: 96vw; max-height: 70vh; }
   .lightbox-minimap { width: 120px; height: 80px; }
   .lightbox-prev { left: var(--s-2); }
   .lightbox-next { right: var(--s-2); }
