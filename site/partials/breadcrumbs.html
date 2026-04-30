@@ -1,2 +1,8 @@
-<!-- breadcrumb partial — owned by Agent B (Tier 1) -->
-{{#crumbs}}{{/crumbs}}
+<nav class="nav-crumbs" aria-label="Breadcrumb">
+  <ol>
+    {{#crumbs}}
+      {{#href}}<li><a href="{{ href }}">{{ label }}</a></li>{{/href}}
+      {{^href}}<li><span aria-current="page">{{ label }}</span></li>{{/href}}
+    {{/crumbs}}
+  </ol>
+</nav>
