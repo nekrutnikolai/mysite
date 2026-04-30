@@ -1,0 +1,64 @@
+/* nav-scroll.css — owned by Agent A (Tier 1).
+   Reading-progress hairline, back-to-top pill.
+   Section indicator styles live in layout.css (Tier 0) and are not duplicated here. */
+
+/* ── Reading progress hairline ─────────────────────────────────────────────── */
+
+.nav-reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  z-index: 100;
+  pointer-events: none;
+  will-change: transform;
+  transition: transform 80ms linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-reading-progress { transition: none; }
+}
+
+/* ── Back-to-top pill ──────────────────────────────────────────────────────── */
+
+.nav-back-to-top {
+  position: fixed;
+  right: max(var(--s-4), env(safe-area-inset-right, 0));
+  bottom: max(var(--s-5), env(safe-area-inset-bottom, 0));
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--surface-0);
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 16px var(--shadow);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity var(--dur-med) var(--ease), transform var(--dur-med) var(--ease), background var(--dur) var(--ease);
+  z-index: 50;
+}
+
+.nav-back-to-top[data-visible="true"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nav-back-to-top:hover {
+  background: var(--surface-1);
+}
+
+.nav-back-to-top:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-back-to-top { transition: none; }
+}
