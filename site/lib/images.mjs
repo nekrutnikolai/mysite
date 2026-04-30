@@ -46,12 +46,6 @@ function saveManifest(manifest) {
   fs.renameSync(tmp, CACHE_PATH);
 }
 
-export function clearImageCache() {
-  try {
-    fs.unlinkSync(CACHE_PATH);
-  } catch {}
-}
-
 // Format EXIF values the way the template wants them.
 function formatFNumber(v) {
   if (typeof v !== "number" || !isFinite(v)) return null;
