@@ -652,9 +652,8 @@ export async function build() {
     kicker: "Hi, I'm",
     lede: `I'm an Electrical &amp; Computer Engineering M.Eng. student at Cornell, working on embedded systems, sensors, and physics-based modeling. I also enjoy <a href="/gallery/">photography</a> and <a href="/posts/">writing about projects</a>.`,
     actions: [
-      { label: "About", href: "/about/", class: "btn-secondary", external: false },
+      { label: "Resume", href: "/resume/", class: "btn-secondary", external: false },
       { label: "Portfolio", href: "/portfolio/", class: "btn-primary", external: false },
-      { label: "Resume (PDF)", href: "/Resume.pdf", class: "btn-ghost", external: true },
     ],
     recent,
   }));

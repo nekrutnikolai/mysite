@@ -5,6 +5,7 @@
   'use strict';
 
   const ORDER = [
+    { url: '/',           label: 'Home' },
     { url: '/about/',     label: 'About' },
     { url: '/gallery/',   label: 'Gallery' },
     { url: '/posts/',     label: 'Posts' },
