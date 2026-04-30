@@ -4,15 +4,20 @@
 {{> head }}
 </head>
 <body>
+<div id="nav-reading-progress" class="nav-reading-progress" aria-hidden="true"></div>
 {{> header }}
 <main class="content">
+{{> breadcrumbs }}
 <article class="page">
   {{#showTitle}}<header class="page-header"><h1>{{ title }}</h1></header>{{/showTitle}}
   {{#hasToc}}{{> toc }}{{/hasToc}}
   {{{ body }}}
 </article>
+{{> adjacent-sections }}
+<button id="nav-back-to-top" class="nav-back-to-top" type="button" aria-label="Back to top" hidden>↑</button>
 </main>
 {{> footer }}
+{{> cmdk }}
 <script src="/assets/js/theme.js" defer></script>
 <script src="/assets/js/nav-scroll.js" defer></script>
 <script src="/assets/js/nav-toc.js" defer></script>

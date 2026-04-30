@@ -4,13 +4,19 @@
 {{> head }}
 </head>
 <body>
+<div id="nav-reading-progress" class="nav-reading-progress" aria-hidden="true"></div>
 {{> header }}
 <main class="content{{#wide}} wide{{/wide}}">
+{{> breadcrumbs }}
 <article class="gallery-index">
   <header><h1>Gallery</h1><p class="lede">Photographs from adventures and everyday scenes.</p></header>
+  <nav class="gallery-filter" data-gallery-filter aria-label="Filter galleries by year">
+    <button type="button" class="gallery-filter-chip" data-year="" aria-pressed="true">All</button>
+    {{#years}}<button type="button" class="gallery-filter-chip" data-year="{{ year }}" aria-pressed="false">{{ year }}</button>{{/years}}
+  </nav>
   <ul class="gallery-grid" role="list">
     {{#galleries}}
-      <li class="gallery-tile">
+      <li class="gallery-tile" data-gallery-year="{{ year }}">
         <a href="{{ url }}">
           <img class="gallery-tile-img"
                src="{{ coverThumbUrl }}"
@@ -29,6 +35,8 @@
     {{/galleries}}
   </ul>
 </article>
+{{> adjacent-sections }}
+<button id="nav-back-to-top" class="nav-back-to-top" type="button" aria-label="Back to top" hidden>↑</button>
 </main>
 {{> footer }}
 <script src="/assets/js/theme.js" defer></script>
