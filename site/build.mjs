@@ -7,13 +7,13 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { render } from "./lib/template.mjs";
-import { previewBodyHtml } from "./lib/preview.mjs";
 import { scanContent } from "./lib/content.mjs";
 import { renderMarkdown } from "./lib/markdown.mjs";
 import { slugify } from "./lib/routes.mjs";
 import { processAlbum } from "./lib/images.mjs";
 import { renderRSS, renderSitemap } from "./lib/feeds.mjs";
 import { buildContentIndex } from "./lib/contentIndex.mjs";
+import { walkSync } from "./lib/walk.mjs";
 
 // Agent B owns shortcodes.mjs. If it hasn't landed yet, fall through to a
 // no-op expander so the rest of the pipeline is still verifiable.
@@ -185,23 +185,18 @@ function writePage(relUrl, html) {
 // Recursively copy `src` into `dst`, skipping dotfiles and Hugo's lockfile.
 function copyTree(src, dst) {
   if (!fs.existsSync(src)) return 0;
-  let count = 0;
-  const walk = (s, d) => {
-    for (const entry of fs.readdirSync(s, { withFileTypes: true })) {
-      if (entry.name === ".DS_Store" || entry.name === ".hugo_build.lock") continue;
-      const sp = path.join(s, entry.name);
-      const dp = path.join(d, entry.name);
-      if (entry.isDirectory()) {
-        fs.mkdirSync(dp, { recursive: true });
-        walk(sp, dp);
-      } else if (entry.isFile()) {
-        fs.copyFileSync(sp, dp);
-        count++;
-      }
-    }
-  };
   fs.mkdirSync(dst, { recursive: true });
-  walk(src, dst);
+  let count = 0;
+  walkSync(
+    src,
+    (sp, rel) => {
+      fs.copyFileSync(sp, path.join(dst, rel));
+      count++;
+    },
+    (_, rel) => {
+      fs.mkdirSync(path.join(dst, rel), { recursive: true });
+    }
+  );
   return count;
 }
 
@@ -225,27 +220,22 @@ async function buildImgSizeMap() {
   const imgRoot = path.join(STATIC, "img");
   if (!fs.existsSync(imgRoot)) return map;
   const sharp = (await import("sharp")).default;
-  const walk = async (dir) => {
-    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-      if (entry.name === ".DS_Store") continue;
-      const p = path.join(dir, entry.name);
-      if (entry.isDirectory()) {
-        await walk(p);
-      } else if (/\.(png|jpe?g|webp|gif|avif)$/i.test(entry.name)) {
-        try {
-          const meta = await sharp(p).metadata();
-          if (meta.width && meta.height) {
-            // URL path the content authors use: /img/<rest>
-            const rel = "/" + path.relative(STATIC, p).split(path.sep).join("/");
-            map.set(rel, { w: meta.width, h: meta.height });
-          }
-        } catch {
-          /* unreadable image — skip, dimensions simply won't be emitted */
-        }
+  const rasters = [];
+  walkSync(imgRoot, (abs) => {
+    if (/\.(png|jpe?g|webp|gif|avif)$/i.test(abs)) rasters.push(abs);
+  });
+  for (const p of rasters) {
+    try {
+      const meta = await sharp(p).metadata();
+      if (meta.width && meta.height) {
+        // URL path the content authors use: /img/<rest>
+        const rel = "/" + path.relative(STATIC, p).split(path.sep).join("/");
+        map.set(rel, { w: meta.width, h: meta.height });
       }
+    } catch {
+      /* unreadable image — skip, dimensions simply won't be emitted */
     }
-  };
-  await walk(imgRoot);
+  }
   return map;
 }
 
@@ -662,14 +652,13 @@ export async function build() {
   // Dev-only; never shipped to production so search engines don't index the
   // design-system dump and sitemap stays clean.
   if (!IS_PROD) {
-    const previewHtml = render("base", buildOgCtx({
+    const previewHtml = render("__preview", buildOgCtx({
       url: "/__preview/",
       title: "Design System Preview",
       siteTitle: SITE_TITLE,
       description: "Visual QA page for typography, components, status colors, and figures.",
       wide: false,
       year: new Date().getFullYear(),
-      content: previewBodyHtml(),
     }));
     writePage("/__preview/", previewHtml);
   }
