@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { escapeShortcodeAttr as esc } from "./escape.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "../..");
@@ -10,8 +11,6 @@ const COUNTYGRAPHERV1_HTML = fs.readFileSync(path.join(ROOT, "layouts/shortcodes
 
 const SHORTCODE_RE = /\{\{<\s*(\w+)([^>]*?)\s*>\}\}/g;
 const ARG_RE = /(\w+)=("([^"]*)"|'([^']*)'|(\S+))|"([^"]*)"|'([^']*)'/g;
-
-const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
 function parseArgs(str) {
   const out = { _positional: [] };

@@ -1,6 +1,8 @@
 // RSS 2.0 + sitemap generation. Hand-written XML with minimal helpers; no deps.
 // Consumed at the end of build.mjs after all pages have been rendered.
 
+import { escapeXml } from "./escape.mjs";
+
 const CHANGEFREQ = {
   home: "weekly",
   post: "weekly",
@@ -9,16 +11,6 @@ const CHANGEFREQ = {
   tag: "yearly",
   gallery: "monthly",
 };
-
-// XML text/attribute escaper — covers the five predefined entities.
-function xmlEscape(s) {
-  return String(s ?? "")
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&apos;");
-}
 
 // Join a site URL (no trailing slash) with a path (with leading slash).
 function absolute(siteUrl, urlPath) {
@@ -56,11 +48,11 @@ export function renderRSS({ siteTitle, siteUrl, description, posts }) {
     const desc = excerpt(p.body);
     return [
       "    <item>",
-      `      <title>${xmlEscape(p.title)}</title>`,
-      `      <link>${xmlEscape(link)}</link>`,
-      `      <guid isPermaLink="true">${xmlEscape(link)}</guid>`,
-      `      <pubDate>${xmlEscape(rfc822(p.date))}</pubDate>`,
-      `      <description>${xmlEscape(desc)}</description>`,
+      `      <title>${escapeXml(p.title)}</title>`,
+      `      <link>${escapeXml(link)}</link>`,
+      `      <guid isPermaLink="true">${escapeXml(link)}</guid>`,
+      `      <pubDate>${escapeXml(rfc822(p.date))}</pubDate>`,
+      `      <description>${escapeXml(desc)}</description>`,
       "    </item>",
     ].join("\n");
   });
@@ -71,12 +63,12 @@ export function renderRSS({ siteTitle, siteUrl, description, posts }) {
     `<?xml version="1.0" encoding="UTF-8"?>`,
     `<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">`,
     `  <channel>`,
-    `    <title>${xmlEscape(siteTitle)}</title>`,
-    `    <link>${xmlEscape(home)}</link>`,
-    `    <description>${xmlEscape(description)}</description>`,
+    `    <title>${escapeXml(siteTitle)}</title>`,
+    `    <link>${escapeXml(home)}</link>`,
+    `    <description>${escapeXml(description)}</description>`,
     `    <language>en</language>`,
-    `    <lastBuildDate>${xmlEscape(lastBuild)}</lastBuildDate>`,
-    `    <atom:link href="${xmlEscape(self)}" rel="self" type="application/rss+xml" />`,
+    `    <lastBuildDate>${escapeXml(lastBuild)}</lastBuildDate>`,
+    `    <atom:link href="${escapeXml(self)}" rel="self" type="application/rss+xml" />`,
     ...items,
     `  </channel>`,
     `</rss>`,
@@ -89,7 +81,7 @@ export function renderSitemap({ siteUrl, urls }) {
     const loc = absolute(siteUrl, u.url);
     const lastmod = ymd(u.date);
     const freq = CHANGEFREQ[u.type] || "monthly";
-    const parts = [`    <loc>${xmlEscape(loc)}</loc>`];
+    const parts = [`    <loc>${escapeXml(loc)}</loc>`];
     if (lastmod) parts.push(`    <lastmod>${lastmod}</lastmod>`);
     parts.push(`    <changefreq>${freq}</changefreq>`);
     return `  <url>\n${parts.join("\n")}\n  </url>`;

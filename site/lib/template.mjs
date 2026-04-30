@@ -5,6 +5,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { escapeHtml } from "./escape.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const SITE = path.resolve(__dirname, "..");
@@ -12,11 +13,6 @@ const TPL_DIR = path.join(SITE, "templates");
 const PARTIAL_DIR = path.join(SITE, "partials");
 
 const cache = new Map();
-
-const ESC = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" };
-function escape(s) {
-  return String(s).replace(/[&<>"']/g, (c) => ESC[c]);
-}
 
 // Inline all {{> name }} references from partials/ recursively.
 function inlinePartials(src, seen = new Set()) {
@@ -65,7 +61,7 @@ function renderWith(tpl, ctx) {
   // Escaped substitution.
   tpl = tpl.replace(/\{\{\s*([\w.-]+)\s*\}\}/g, (_, key) => {
     const v = lookup(ctx, key);
-    return v == null ? "" : escape(v);
+    return v == null ? "" : escapeHtml(v);
   });
   return tpl;
 }

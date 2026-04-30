@@ -1,8 +1,13 @@
-// Body HTML for /__preview/ — the iteration-1 visual-QA showcase page.
-// Raw HTML (no markdown) for precise control over the component samples.
+<!doctype html>
+<html lang="en">
+<head>
+{{> head }}
+</head>
+<body>
+<div id="nav-reading-progress" class="nav-reading-progress" aria-hidden="true"></div>
+{{> header }}
+<main class="content{{#wide}} wide{{/wide}}">
 
-export function previewBodyHtml() {
-  return `
 <h1>Design System Preview</h1>
 <p class="lede">Reference page exercising every typography level, component state, and status color. This is the visual-regression target for iteration 1.</p>
 
@@ -54,7 +59,7 @@ export function previewBodyHtml() {
   const now = new Date();
   const hour = now.getHours();
   const part = hour &lt; 12 ? "morning" : "evening";
-  return \`Good \${part}, \${name}.\`;
+  return `Good ${part}, ${name}.`;
 };
 console.log(greeting("world"));</code></pre>
 </section>
@@ -149,5 +154,15 @@ console.log(greeting("world"));</code></pre>
   </p>
   <p><label><input type="checkbox"> I agree to ship simple code.</label></p>
 </section>
-`;
-}
+
+</main>
+{{> footer }}
+{{> cmdk }}
+<script src="/assets/js/theme.js" defer></script>
+<script src="/assets/js/nav-scroll.js" defer></script>
+<script src="/assets/js/nav-toc.js" defer></script>
+<script src="/assets/js/nav-gallery-filter.js" defer></script>
+<script src="/assets/js/nav-swipe.js" defer></script>
+<script src="/assets/js/nav-cmdk.js" defer></script>
+</body>
+</html>
