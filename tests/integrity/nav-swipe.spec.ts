@@ -100,7 +100,7 @@ test.describe('mobile swipe navigation', () => {
     await ctx.close();
   });
 
-  test('swipe-left on /portfolio/ wraps to /about/', async ({ browser }) => {
+  test('swipe-left on /portfolio/ wraps to /', async ({ browser }) => {
     const ctx = await mobileCtx(browser);
     const page = await ctx.newPage();
     await blockLiveReload(page);
@@ -108,22 +108,22 @@ test.describe('mobile swipe navigation', () => {
     await page.goto('/portfolio/');
     await page.waitForLoadState('domcontentloaded');
 
-    // swipe left on the last section → wraps back to the first
+    // swipe left on the last section → wraps back to the first (Home)
     await swipeAndWait(page, 320, 50);
 
-    expect(new URL(page.url()).pathname).toBe('/about/');
+    expect(new URL(page.url()).pathname).toBe('/');
     await ctx.close();
   });
 
-  test('swipe-right on /about/ wraps to /portfolio/', async ({ browser }) => {
+  test('swipe-right on / wraps to /portfolio/', async ({ browser }) => {
     const ctx = await mobileCtx(browser);
     const page = await ctx.newPage();
     await blockLiveReload(page);
 
-    await page.goto('/about/');
+    await page.goto('/');
     await page.waitForLoadState('domcontentloaded');
 
-    // swipe right on the first section → wraps around to the last
+    // swipe right on the first section (Home) → wraps to the last
     await swipeAndWait(page, 70, 340);
 
     expect(new URL(page.url()).pathname).toBe('/portfolio/');
@@ -148,7 +148,7 @@ test.describe('mobile swipe navigation', () => {
     await ctx.close();
   });
 
-  test('swipe does not activate on home page', async ({ browser }) => {
+  test('swipe-left on / navigates to /about/', async ({ browser }) => {
     const ctx = await mobileCtx(browser);
     const page = await ctx.newPage();
     await blockLiveReload(page);
@@ -156,10 +156,10 @@ test.describe('mobile swipe navigation', () => {
     await page.goto('/');
     await page.waitForLoadState('domcontentloaded');
 
-    await dispatchSwipe(page, 320, 50);
-    await page.waitForTimeout(400);
-    expect(new URL(page.url()).pathname).toBe('/');
+    // Home is now in the swipe ring (commit 3d6f19c); swipe-left advances to /about/
+    await swipeAndWait(page, 320, 50);
 
+    expect(new URL(page.url()).pathname).toBe('/about/');
     await ctx.close();
   });
 
