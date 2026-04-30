@@ -137,6 +137,11 @@
     // paint after location.assign is near-instant.
     const target = direction === 'left' ? -window.innerWidth : window.innerWidth;
     main.style.transition = 'transform .22s cubic-bezier(.22,.72,.18,1)';
+    // Force a reflow so the new transition value is committed before the
+    // transform changes; without this the browser can batch the two style
+    // writes into a single paint and skip the animation (which manifested as
+    // an asymmetric snap-back, depending on sub-frame timing).
+    void main.offsetWidth;
     main.style.transform  = 'translateX(' + target + 'px)';
     setTimeout(function () { location.assign(href); }, 220);
   }
