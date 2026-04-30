@@ -1,0 +1,102 @@
+/* ============================================================
+   Mobile swipe navigation — View Transitions + edge indicator
+   ============================================================ */
+
+/* Enable cross-document view transitions for same-origin navigations.
+   This pairs with the JS calling document.startViewTransition() on swipe. */
+@view-transition {
+  navigation: auto;
+}
+
+/* --- Slide keyframes ---
+   Swipe-left (forward): old page exits left, new page enters from right.
+   Swipe-right (backward): old page exits right, new page enters from left. */
+@keyframes swipe-out-left {
+  from { transform: translateX(0);    opacity: 1; }
+  to   { transform: translateX(-30%); opacity: 0; }
+}
+@keyframes swipe-in-right {
+  from { transform: translateX(100%); opacity: 1; }
+  to   { transform: translateX(0);   opacity: 1; }
+}
+@keyframes swipe-out-right {
+  from { transform: translateX(0);   opacity: 1; }
+  to   { transform: translateX(30%); opacity: 0; }
+}
+@keyframes swipe-in-left {
+  from { transform: translateX(-100%); opacity: 1; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+
+/* Default direction: swipe-left (forward). Applied to the outgoing document. */
+::view-transition-old(root) {
+  animation: 220ms cubic-bezier(0.22, 0.72, 0.18, 1) both swipe-out-left;
+}
+/* Applied to the incoming document. */
+::view-transition-new(root) {
+  animation: 220ms cubic-bezier(0.22, 0.72, 0.18, 1) both swipe-in-right;
+}
+
+/* Swipe-right direction: old exits right, new enters from left. */
+[data-swipe-direction="right"] ::view-transition-old(root) {
+  animation-name: swipe-out-right;
+}
+[data-swipe-direction="right"] ::view-transition-new(root) {
+  animation-name: swipe-in-left;
+}
+
+/* Honour prefers-reduced-motion: skip animation, still allow swipe-to-navigate. */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}
+
+/* --- Edge indicator ---
+   While the user is actively dragging horizontally, a thin accent bar peeks
+   at the appropriate edge of the viewport to hint "you can swipe here."
+   The CSS custom property --swipe-progress is set by the JS in [-1, 1]:
+     negative = swiping left  → hint on the right edge
+     positive = swiping right → hint on the left edge
+   We render two pseudo-elements and show only the relevant one. */
+
+/* Right-edge bar: shown when swiping left (--swipe-progress < 0) */
+html.swipe-tracking::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--accent);
+  z-index: 9999;
+  pointer-events: none;
+  /* opacity ramps from 0 to 1 as the user drags leftward */
+  opacity: clamp(0, calc(var(--swipe-progress, 0) * -10), 1);
+  transition: opacity 80ms linear;
+}
+
+/* Left-edge bar: shown when swiping right (--swipe-progress > 0) */
+html.swipe-tracking::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--accent);
+  z-index: 9999;
+  pointer-events: none;
+  /* opacity ramps from 0 to 1 as the user drags rightward */
+  opacity: clamp(0, calc(var(--swipe-progress, 0) * 10), 1);
+  transition: opacity 80ms linear;
+}
+
+/* Don't animate the indicator if the user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html.swipe-tracking::before,
+  html.swipe-tracking::after {
+    transition: none;
+  }
+}
