@@ -457,15 +457,21 @@ export async function build() {
   // Render each post.
   // Pre-compute every post's rendered body so we can derive reading time AND
   // attach it to the home page's recent-posts list at the same time.
+  // TOC is opt-in per post via `toc: true` in frontmatter.
   const postRenders = posts.map((entry) => {
+    const fm = entry.frontmatter;
+    const wantsToc = fm.TOC === true || fm.toc === true;
+    const tocAccumulator = wantsToc ? [] : null;
     const expandedMd = expand(entry.body, { kind: "post", entry, imgSizes });
-    const bodyHtml = renderMarkdown(expandedMd);
-    return { entry, bodyHtml, minutes: readingTime(bodyHtml) };
+    const bodyHtml = renderMarkdown(expandedMd, { tocAccumulator });
+    // Only h2/h3 belong in the sidebar TOC; deeper headings clutter it.
+    const toc = tocAccumulator ? tocAccumulator.filter((h) => h.depth <= 3) : [];
+    return { entry, bodyHtml, minutes: readingTime(bodyHtml), toc };
   });
 
   let postCount = 0;
   for (let i = 0; i < postRenders.length; i++) {
-    const { entry, bodyHtml, minutes } = postRenders[i];
+    const { entry, bodyHtml, minutes, toc } = postRenders[i];
     const date = entry.frontmatter.date;
     const tagList = (Array.isArray(entry.frontmatter.tags) ? entry.frontmatter.tags : [])
       .filter((t) => String(t).trim())
@@ -493,6 +499,8 @@ export async function build() {
       dateHuman: formatDateHuman(date),
       readingTime: minutes,
       tags: tagList,
+      hasToc: toc.length > 0,
+      toc,
       body: bodyHtml,
       newer: adjacent(newerPost),
       older: adjacent(olderPost),
