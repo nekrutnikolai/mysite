@@ -354,6 +354,7 @@ export async function build() {
       intro,
       images,
       ogImage: galleryOgImage,
+      lightbox: true,
     }));
     writePage(entry.outputPath, galleryContent);
     galleryPageCount++;
