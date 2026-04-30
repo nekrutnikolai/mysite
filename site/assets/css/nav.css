@@ -215,14 +215,23 @@
       align-items: start;
     }
 
-    /* TOC: second column, spans the full row stack so it stays alongside
-       all article content. Strip the card appearance from components.css
-       so it reads as a lightweight sidebar element. */
+    /* Row layout (when a .toc is present):
+         row 1: nav-crumbs spans both columns
+         row 2: article (col 1) + toc (col 2, sticky)
+         row 3+: nav-adjacent / back-to-top span both columns */
+    body:has(main.content > .toc) main.content > .nav-crumbs {
+      grid-column: 1 / -1;
+      grid-row: 1;
+    }
+
+    /* TOC: second column, second row. position: sticky pins it as
+       the article scrolls past. Strip the card appearance from
+       components.css so it reads as a lightweight sidebar element. */
     body:has(main.content > .toc) main.content > .toc {
       position: sticky;
       top: calc(var(--topbar-h) + var(--s-4));
       grid-column: 2;
-      grid-row: 1 / span 99;
+      grid-row: 2;
       margin: 0;
       background: transparent;
       border: none;
@@ -231,15 +240,14 @@
       overflow-y: auto;
     }
 
-    /* Article: first column, first row. */
+    /* Article: first column, second row. */
     body:has(main.content > .toc) main.content > article {
       grid-column: 1;
-      grid-row: 1;
+      grid-row: 2;
     }
 
-    /* Breadcrumbs + post-adjacent nav span the full width below
-       when a TOC sidebar is active. */
-    body:has(main.content > .toc) main.content > .breadcrumbs,
+    /* Adjacent / back-to-top span the full width below the article. */
+    body:has(main.content > .toc) main.content > .nav-adjacent,
     body:has(main.content > .toc) main.content > .post-adjacent,
     body:has(main.content > .toc) main.content > .post-nav,
     body:has(main.content > .toc) main.content > #nav-back-to-top {

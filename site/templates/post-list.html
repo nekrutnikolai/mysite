@@ -8,7 +8,7 @@
 {{> header }}
 <main class="content">
 {{> breadcrumbs }}
-<h1>Posts</h1>
+<header class="page-header"><h1>Posts</h1></header>
 <ul class="post-list">
 {{#posts}}<li class="post-list-item"><a href="{{ url }}"><span class="post-list-title">{{ title }}</span> <time class="post-list-date" datetime="{{ dateISO }}">{{ dateHuman }}</time></a></li>
 {{/posts}}</ul>

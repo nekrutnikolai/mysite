@@ -8,8 +8,7 @@
 {{> header }}
 <main class="content">
 {{> breadcrumbs }}
-<h1>Tagged: {{ name }}</h1>
-<p class="tag-meta">{{ count }} post{{#plural}}s{{/plural}}</p>
+<header class="page-header"><h1>Tagged: {{ name }}</h1><p class="tag-meta">{{ count }} post{{#plural}}s{{/plural}}</p></header>
 <ul class="post-list">
 {{#posts}}<li class="post-list-item"><a href="{{ url }}"><span class="post-list-title">{{ title }}</span> <time class="post-list-date" datetime="{{ dateISO }}">{{ dateHuman }}</time></a></li>
 {{/posts}}</ul>
