@@ -37,9 +37,13 @@
 
   // Axis-lock threshold in pixels. At 8px we know intent clearly.
   const AXIS_LOCK_PX = 8;
-  // Swipe threshold: must travel >22% of viewport width OR velocity >0.45 px/ms.
+  // Swipe threshold: must travel >22% of viewport width to trigger distance-based nav,
+  // OR travel >10% of viewport while moving faster than 0.45 px/ms (flick).
+  // Requiring a minimum distance on the velocity path avoids triggering on zero-time
+  // synthetic events (and on accidental micro-flicks).
   const DIST_RATIO = 0.22;
   const VEL_THRESHOLD = 0.45; // px/ms
+  const FLICK_MIN_RATIO = 0.15; // minimum distance when relying on velocity alone (≥15% viewport)
 
   function onStart(e) {
     // Ignore multi-touch (pinch-zoom etc.)
@@ -89,8 +93,13 @@
 
     const dt = Math.max(1, performance.now() - startT);
     const velocity = deltaX / dt; // px/ms — positive = right-swipe, negative = left-swipe
-    const pastThreshold = Math.abs(deltaX) > window.innerWidth * DIST_RATIO;
-    const fastEnough   = Math.abs(velocity) > VEL_THRESHOLD;
+    const absDx = Math.abs(deltaX);
+    const pastThreshold = absDx > window.innerWidth * DIST_RATIO;
+    // A "flick" requires BOTH enough velocity AND a minimum travel distance.
+    // Requiring distance prevents zero-time synthetic events (velocity → ∞) from
+    // triggering nav on a tap-drag shorter than 10% of the viewport.
+    const fastEnough   = Math.abs(velocity) > VEL_THRESHOLD &&
+                         absDx > window.innerWidth * FLICK_MIN_RATIO;
 
     if (!pastThreshold && !fastEnough) { reset(); return; }
 
