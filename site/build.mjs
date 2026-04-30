@@ -114,6 +114,46 @@ function navForUrl(url) {
   ].map((item) => ({ ...item, active: item.section === active }));
 }
 
+// Breadcrumbs from a URL. Returns [{label, href, current?}, ...]. The final
+// entry has href:null + current:true when `currentLabel` is supplied. Examples:
+//   /                    -> []
+//   /posts/              -> [{Home, /}]
+//   /posts/foo/          -> [{Home, /}, {Posts, /posts/}, {<title>, null, current}]
+function buildCrumbs(url, currentLabel) {
+  if (url === "/") return [];
+  const out = [{ label: "Home", href: "/" }];
+  if (url.startsWith("/posts/") && url !== "/posts/") {
+    out.push({ label: "Posts", href: "/posts/" });
+  } else if (url.startsWith("/tags/") && url !== "/tags/") {
+    out.push({ label: "Tags", href: "/tags/" });
+  } else if (url.startsWith("/gallery/") && url !== "/gallery/") {
+    out.push({ label: "Gallery", href: "/gallery/" });
+  }
+  if (currentLabel) out.push({ label: currentLabel, href: null, current: true });
+  // Boolean for templates lacking dot-property traversal in their #section.
+  out.hasCrumbs = true;
+  return out;
+}
+
+// Adjacency between top-level "section" pages, circular order matching the
+// visual nav. Used by partials/adjacent-sections.html (Agent B).
+const TOP_LEVEL_ORDER = [
+  { url: "/about/",     label: "About" },
+  { url: "/gallery/",   label: "Gallery" },
+  { url: "/posts/",     label: "Posts" },
+  { url: "/resume/",    label: "Resume" },
+  { url: "/portfolio/", label: "Portfolio" },
+];
+function adjacentSections(url) {
+  const i = TOP_LEVEL_ORDER.findIndex((s) => url === s.url);
+  if (i < 0) return null;
+  const N = TOP_LEVEL_ORDER.length;
+  return {
+    prev: TOP_LEVEL_ORDER[(i - 1 + N) % N],
+    next: TOP_LEVEL_ORDER[(i + 1) % N],
+  };
+}
+
 // Reading time heuristic: 220 words per minute from rendered HTML body.
 function readingTime(html) {
   if (!html) return 0;
@@ -313,6 +353,8 @@ export async function build() {
       title,
       siteTitle: SITE_TITLE,
       description: `${imageRecords.length} photos from ${title}`,
+      crumbs: buildCrumbs(entry.outputPath, title),
+      adjacent: adjacentSections(entry.outputPath),
       wide: true,
       year: new Date().getFullYear(),
       dateISO: formatDateISO(entry.frontmatter.date),
@@ -352,6 +394,8 @@ export async function build() {
     title: "Gallery",
     siteTitle: SITE_TITLE,
     description: "Photo galleries.",
+    crumbs: buildCrumbs("/gallery/", "Gallery"),
+    adjacent: adjacentSections("/gallery/"),
     wide: true,
     year: new Date().getFullYear(),
     galleries: galleryListItems,
@@ -371,6 +415,8 @@ export async function build() {
       title: fm.title || entry.slug,
       siteTitle: SITE_TITLE,
       description: fm.description || SITE_TITLE,
+      crumbs: buildCrumbs(entry.outputPath, fm.title || entry.slug),
+      adjacent: adjacentSections(entry.outputPath),
       wide: false,
       year: new Date().getFullYear(),
       showTitle: !!String(fm.title || "").trim(),
@@ -428,6 +474,7 @@ export async function build() {
       title: entry.frontmatter.title || entry.slug,
       siteTitle: SITE_TITLE,
       description: entry.frontmatter.description || "",
+      crumbs: buildCrumbs(entry.outputPath, entry.frontmatter.title || entry.slug),
       wide: false,
       year: new Date().getFullYear(),
       dateISO: formatDateISO(date),
@@ -456,6 +503,8 @@ export async function build() {
     title: "Posts",
     siteTitle: SITE_TITLE,
     description: "All posts by Nikolai Nekrutenko.",
+    crumbs: buildCrumbs("/posts/", "Posts"),
+    adjacent: adjacentSections("/posts/"),
     wide: false,
     year: new Date().getFullYear(),
     posts: archiveList,
@@ -485,6 +534,7 @@ export async function build() {
     title: "Tags",
     siteTitle: SITE_TITLE,
     description: "All tags.",
+    crumbs: buildCrumbs("/tags/", "Tags"),
     wide: false,
     year: new Date().getFullYear(),
     tags: allTags,
@@ -497,6 +547,7 @@ export async function build() {
       title: `Tagged: ${tag.name}`,
       siteTitle: SITE_TITLE,
       description: `Posts tagged "${tag.name}"`,
+      crumbs: buildCrumbs(tag.url, `Tagged: ${tag.name}`),
       wide: false,
       year: new Date().getFullYear(),
       name: tag.name,
@@ -532,6 +583,8 @@ export async function build() {
       title: title || SITE_TITLE,
       siteTitle: SITE_TITLE,
       description: fm.description || SITE_TITLE,
+      crumbs: buildCrumbs(outputPath, title || ""),
+      adjacent: adjacentSections(outputPath),
       wide: false,
       year: new Date().getFullYear(),
       showTitle,
