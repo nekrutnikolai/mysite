@@ -1,5 +1,7 @@
 # [mysite](https://nnekrut.netlify.app/)
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/bab2edd7-a307-4052-ba2e-1b46493f4335/deploy-status)](https://app.netlify.com/projects/nnekrut/deploys)
+
 My personal website.
 
 **Current stack (April 2026):** pure HTML/CSS emitted by a small Node build at `site/build.mjs`. Three themes — light, dark, and parchment — switchable via the toggle in the header. 121 Playwright tests across visual regression, accessibility, performance (Lighthouse), and link/content integrity.
