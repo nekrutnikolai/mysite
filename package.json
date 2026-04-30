@@ -7,7 +7,6 @@
   "scripts": {
     "build": "node site/build.mjs",
     "dev": "node site/serve.mjs",
-    "serve:old": "hugo server --port 3101 -s .",
     "upload-originals": "BUILD_ORIGINALS=1 node site/build.mjs && node site/scripts/upload-originals.mjs",
     "download-originals": "node site/scripts/download-originals.mjs",
     "test": "playwright test",

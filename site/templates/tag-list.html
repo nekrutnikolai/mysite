@@ -8,7 +8,7 @@
 {{> header }}
 <main class="content">
 {{> breadcrumbs }}
-<h1>Tags</h1>
+<header class="page-header"><h1>Tags</h1></header>
 <ul class="tag-cloud">
 {{#tags}}<li><a href="{{ url }}" class="tag-chip">{{ name }} <span class="tag-count">{{ count }}</span></a></li>
 {{/tags}}</ul>
@@ -16,11 +16,6 @@
 </main>
 {{> footer }}
 {{> cmdk }}
-<script src="/assets/js/theme.js" defer></script>
-<script src="/assets/js/nav-scroll.js" defer></script>
-<script src="/assets/js/nav-toc.js" defer></script>
-<script src="/assets/js/nav-gallery-filter.js" defer></script>
-<script src="/assets/js/nav-swipe.js" defer></script>
-<script src="/assets/js/nav-cmdk.js" defer></script>
+{{> scripts }}
 </body>
 </html>

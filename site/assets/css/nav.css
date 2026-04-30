@@ -1,0 +1,644 @@
+/* === Reading progress bar + back-to-top + section indicator === */
+
+/* nav-scroll.css — owned by Agent A (Tier 1).
+   Reading-progress hairline, back-to-top pill.
+   Section indicator styles live in layout.css (Tier 0) and are not duplicated here. */
+
+/* ── Reading progress hairline ─────────────────────────────────────────────── */
+
+.nav-reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  z-index: 100;
+  pointer-events: none;
+  will-change: transform;
+  transition: transform 80ms linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-reading-progress { transition: none; }
+}
+
+/* ── Back-to-top pill ──────────────────────────────────────────────────────── */
+
+.nav-back-to-top {
+  position: fixed;
+  right: max(var(--s-4), env(safe-area-inset-right, 0));
+  bottom: max(var(--s-5), env(safe-area-inset-bottom, 0));
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--surface-0);
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 16px var(--shadow);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity var(--dur-med) var(--ease), transform var(--dur-med) var(--ease), background var(--dur) var(--ease);
+  z-index: 50;
+}
+
+.nav-back-to-top[data-visible="true"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nav-back-to-top:hover {
+  background: var(--surface-1);
+}
+
+.nav-back-to-top:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-back-to-top { transition: none; }
+}
+
+/* === Breadcrumbs + adjacent-section nav === */
+
+/* =============================================================================
+   Breadcrumbs  (Agent B — nav/crumbs)
+   Uses CSS tokens only — no hardcoded colors. Works across light/dark/parchment.
+   ============================================================================= */
+
+/* Hide the nav entirely when the crumb list is empty (home page). */
+.nav-crumbs:not(:has(li)) {
+  display: none;
+}
+
+.nav-crumbs {
+  margin: 0 0 var(--s-4);
+  font-size: 13px;
+  color: var(--text-faint);
+}
+.nav-crumbs ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0;
+}
+.nav-crumbs li {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+}
+.nav-crumbs li:not(:last-child)::after {
+  content: "\203a"; /* › */
+  margin: 0 8px;
+  color: var(--text-faint);
+}
+.nav-crumbs a {
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 2px 0;
+  transition: color var(--dur) var(--ease);
+}
+.nav-crumbs a:hover {
+  color: var(--text);
+  text-decoration: underline;
+}
+.nav-crumbs [aria-current="page"] {
+  color: var(--text-muted);
+  max-width: 40ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@media (max-width: 640px) {
+  .nav-crumbs [aria-current="page"] {
+    max-width: 25ch;
+  }
+}
+
+/* =============================================================================
+   Adjacent-section nav  (Agent B — nav/crumbs)
+   Only appears on top-level section pages (about, gallery, posts, resume, portfolio).
+   ============================================================================= */
+
+.nav-adjacent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s-4);
+  margin: var(--s-7) 0 var(--s-5);
+  padding: var(--s-4) 0;
+  border-top: 1px solid var(--border);
+}
+.nav-adjacent-prev,
+.nav-adjacent-next {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-1);
+  padding: var(--s-3) var(--s-4);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color var(--dur) var(--ease), background var(--dur) var(--ease);
+}
+.nav-adjacent-prev:hover,
+.nav-adjacent-next:hover {
+  border-color: var(--border-strong);
+  background: var(--surface-1);
+}
+.nav-adjacent-next {
+  text-align: right;
+}
+.nav-adjacent-label {
+  font-size: var(--fs-caption);
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-label);
+}
+.nav-adjacent-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text);
+}
+@media (max-width: 640px) {
+  .nav-adjacent {
+    grid-template-columns: 1fr;
+    gap: var(--s-2);
+  }
+  .nav-adjacent-next {
+    text-align: left;
+  }
+}
+
+/* Respect prefers-reduced-motion — disable transitions. */
+@media (prefers-reduced-motion: reduce) {
+  .nav-crumbs a,
+  .nav-adjacent-prev,
+  .nav-adjacent-next {
+    transition: none;
+  }
+}
+
+/* === Sticky in-page TOC sidebar === */
+
+/* Sticky in-page TOC — Agent C.
+   Applies only at ≥1080px viewports. Below that the TOC remains inline
+   (components.css .toc rules handle appearance; nothing here changes it).
+
+   Uses :has() so we only activate the grid when a .toc is actually in the
+   DOM. Safari ≤15.3 doesn't support :has(); the @supports guard means those
+   browsers silently fall back to the existing inline TOC. Safari 15.4+
+   (March 2022) and all current Chromium / Firefox get the sidebar. */
+
+@supports (selector(:has(*))) {
+  @media (min-width: 1080px) {
+    /* Two-column layout: article on the left, TOC pinned on the right.
+       Only activates when the page actually has a .toc direct child of main. */
+    body:has(main.content > .toc) main.content {
+      max-width: 1080px;
+      display: grid;
+      grid-template-columns: minmax(0, 720px) var(--sidebar-w);
+      column-gap: var(--s-7);
+      align-items: start;
+    }
+
+    /* Row layout (when a .toc is present):
+         row 1: nav-crumbs spans both columns
+         row 2: article (col 1) + toc (col 2, sticky)
+         row 3+: nav-adjacent / back-to-top span both columns */
+    body:has(main.content > .toc) main.content > .nav-crumbs {
+      grid-column: 1 / -1;
+      grid-row: 1;
+    }
+
+    /* TOC: second column, second row. position: sticky pins it as
+       the article scrolls past. Strip the card appearance from
+       components.css so it reads as a lightweight sidebar element. */
+    body:has(main.content > .toc) main.content > .toc {
+      position: sticky;
+      top: calc(var(--topbar-h) + var(--s-4));
+      grid-column: 2;
+      grid-row: 2;
+      margin: 0;
+      background: transparent;
+      border: none;
+      padding: 0;
+      max-height: calc(100vh - var(--topbar-h) - var(--s-5));
+      overflow-y: auto;
+    }
+
+    /* Article: first column, second row. */
+    body:has(main.content > .toc) main.content > article {
+      grid-column: 1;
+      grid-row: 2;
+    }
+
+    /* Adjacent / back-to-top span the full width below the article. */
+    body:has(main.content > .toc) main.content > .nav-adjacent,
+    body:has(main.content > .toc) main.content > .post-adjacent,
+    body:has(main.content > .toc) main.content > .post-nav,
+    body:has(main.content > .toc) main.content > #nav-back-to-top {
+      grid-column: 1 / -1;
+    }
+  }
+}
+
+/* Active-section highlight — works at all viewport widths (the JS sets it
+   regardless; only the sticky layout is viewport-gated). */
+.toc-list .toc-item.active > a {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* === Mobile swipe navigation (View Transitions + edge indicator) === */
+
+/* ============================================================
+   Mobile swipe navigation — View Transitions + edge indicator
+   ============================================================ */
+
+/* Enable cross-document view transitions for same-origin navigations.
+   This pairs with the JS calling document.startViewTransition() on swipe. */
+@view-transition {
+  navigation: auto;
+}
+
+/* --- Slide keyframes ---
+   Swipe-left (forward): old page exits left, new page enters from right.
+   Swipe-right (backward): old page exits right, new page enters from left. */
+@keyframes swipe-out-left {
+  from { transform: translateX(0);    opacity: 1; }
+  to   { transform: translateX(-30%); opacity: 0; }
+}
+@keyframes swipe-in-right {
+  from { transform: translateX(100%); opacity: 1; }
+  to   { transform: translateX(0);   opacity: 1; }
+}
+@keyframes swipe-out-right {
+  from { transform: translateX(0);   opacity: 1; }
+  to   { transform: translateX(30%); opacity: 0; }
+}
+@keyframes swipe-in-left {
+  from { transform: translateX(-100%); opacity: 1; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+
+/* Default direction: swipe-left (forward). Applied to the outgoing document. */
+::view-transition-old(root) {
+  animation: 220ms cubic-bezier(0.22, 0.72, 0.18, 1) both swipe-out-left;
+}
+/* Applied to the incoming document. */
+::view-transition-new(root) {
+  animation: 220ms cubic-bezier(0.22, 0.72, 0.18, 1) both swipe-in-right;
+}
+
+/* Swipe-right direction: old exits right, new enters from left. */
+[data-swipe-direction="right"] ::view-transition-old(root) {
+  animation-name: swipe-out-right;
+}
+[data-swipe-direction="right"] ::view-transition-new(root) {
+  animation-name: swipe-in-left;
+}
+
+/* Honour prefers-reduced-motion: skip animation, still allow swipe-to-navigate. */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}
+
+/* --- Edge indicator ---
+   While the user is actively dragging horizontally, a thin accent bar peeks
+   at the appropriate edge of the viewport to hint "you can swipe here."
+   The CSS custom property --swipe-progress is set by the JS in [-1, 1]:
+     negative = swiping left  → hint on the right edge
+     positive = swiping right → hint on the left edge
+   We render two pseudo-elements and show only the relevant one. */
+
+/* Right-edge bar: shown when swiping left (--swipe-progress < 0) */
+html.swipe-tracking::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--accent);
+  z-index: 9999;
+  pointer-events: none;
+  /* opacity ramps from 0 to 1 as the user drags leftward */
+  opacity: clamp(0, calc(var(--swipe-progress, 0) * -10), 1);
+  transition: opacity 80ms linear;
+}
+
+/* Left-edge bar: shown when swiping right (--swipe-progress > 0) */
+html.swipe-tracking::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--accent);
+  z-index: 9999;
+  pointer-events: none;
+  /* opacity ramps from 0 to 1 as the user drags rightward */
+  opacity: clamp(0, calc(var(--swipe-progress, 0) * 10), 1);
+  transition: opacity 80ms linear;
+}
+
+/* Don't animate the indicator if the user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html.swipe-tracking::before,
+  html.swipe-tracking::after {
+    transition: none;
+  }
+}
+
+/* === Command palette (Cmd+K) === */
+
+/* Command palette — nav-cmdk.css
+   All colors via design tokens (tokens.css + themes.css). No hardcoded values. */
+
+/* ------------------------------------------------------------------ */
+/* Backdrop                                                             */
+/* ------------------------------------------------------------------ */
+
+.cmdk-backdrop {
+  position: fixed;
+  inset: 0;
+  background: color-mix(in oklab, var(--text) 45%, transparent);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 12vh var(--s-4) var(--s-4);
+  animation: cmdk-fade-in 160ms ease forwards;
+}
+
+/* The [hidden] attribute hides the palette; animation runs on reveal. */
+.cmdk-backdrop[hidden] {
+  display: none;
+}
+
+@keyframes cmdk-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes cmdk-slide-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ------------------------------------------------------------------ */
+/* Panel                                                                */
+/* ------------------------------------------------------------------ */
+
+.cmdk-panel {
+  width: 100%;
+  max-width: 560px;
+  background: var(--surface-0);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 24px 60px color-mix(in oklab, var(--text) 30%, transparent);
+  overflow: hidden;
+  animation: cmdk-slide-in 200ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* ------------------------------------------------------------------ */
+/* Input row                                                            */
+/* ------------------------------------------------------------------ */
+
+.cmdk-input-row {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  padding: var(--s-3) var(--s-4);
+  border-bottom: 1px solid var(--border);
+}
+
+.cmdk-glyph {
+  color: var(--text-muted);
+  font-size: 18px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.cmdk-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 16px;
+  padding: 4px 0;
+  min-width: 0;
+}
+
+.cmdk-input::placeholder {
+  color: var(--text-faint);
+}
+
+.cmdk-esc-hint {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  background: var(--surface-2);
+  padding: 3px 7px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+/* ------------------------------------------------------------------ */
+/* Results list                                                         */
+/* ------------------------------------------------------------------ */
+
+.cmdk-list {
+  list-style: none;
+  margin: 0;
+  padding: var(--s-2) 0;
+  max-height: 50vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+/* Group label (used in empty/default state when items are grouped by kind) */
+.cmdk-group-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-faint);
+  padding: var(--s-3) var(--s-4) var(--s-1);
+  list-style: none;
+}
+
+/* ------------------------------------------------------------------ */
+/* Individual items                                                     */
+/* ------------------------------------------------------------------ */
+
+.cmdk-item {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  padding: 9px var(--s-4);
+  cursor: pointer;
+  transition: background var(--dur-fast) var(--ease);
+  list-style: none;
+}
+
+.cmdk-item:hover {
+  background: var(--surface-hover);
+}
+
+.cmdk-item.active {
+  background: var(--accent-subtle);
+}
+
+.cmdk-item-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.cmdk-item.active .cmdk-item-icon {
+  background: var(--accent-subtle);
+  color: var(--accent);
+}
+
+.cmdk-item-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.cmdk-item-title {
+  display: block;
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cmdk-item-meta {
+  display: block;
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 2px;
+  line-height: 1.2;
+}
+
+.cmdk-item-kind {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+/* ------------------------------------------------------------------ */
+/* Empty state                                                          */
+/* ------------------------------------------------------------------ */
+
+.cmdk-empty {
+  padding: var(--s-5) var(--s-4);
+  color: var(--text-muted);
+  text-align: center;
+  font-size: 14px;
+  list-style: none;
+}
+
+/* ------------------------------------------------------------------ */
+/* Footer hint bar                                                      */
+/* ------------------------------------------------------------------ */
+
+.cmdk-footer {
+  border-top: 1px solid var(--border);
+  padding: 8px var(--s-4);
+  display: flex;
+  gap: var(--s-4);
+  color: var(--text-faint);
+  font-size: 11px;
+  background: var(--surface-1);
+}
+
+.cmdk-footer kbd {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  background: var(--surface-0);
+  color: var(--text-muted);
+  padding: 1px 5px;
+  border-radius: 3px;
+  border: 1px solid var(--border);
+  margin-right: 4px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Highlighted match substrings                                         */
+/* ------------------------------------------------------------------ */
+
+.cmdk-item-title mark {
+  background: var(--accent-subtle);
+  color: var(--accent);
+  padding: 0 1px;
+  border-radius: 2px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Reduced-motion                                                       */
+/* ------------------------------------------------------------------ */
+
+@media (prefers-reduced-motion: reduce) {
+  .cmdk-backdrop,
+  .cmdk-panel {
+    animation: none;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Mobile                                                               */
+/* ------------------------------------------------------------------ */
+
+@media (max-width: 640px) {
+  .cmdk-backdrop {
+    padding: 8vh var(--s-2) var(--s-2);
+    align-items: flex-start;
+  }
+
+  .cmdk-panel {
+    border-radius: var(--radius-lg);
+  }
+
+  .cmdk-list {
+    max-height: 60vh;
+  }
+
+  .cmdk-footer {
+    gap: var(--s-2);
+  }
+}

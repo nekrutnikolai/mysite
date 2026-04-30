@@ -3,6 +3,7 @@
 // full-canvas SVG that sharp/librsvg rasterizes during composite.
 
 import crypto from "node:crypto";
+import { escapeSvgText as escapeXml } from "./escape.mjs";
 
 export const WATERMARK_CONFIG = {
   text: "© 2026 Nikolai Nekrutenko",
@@ -25,13 +26,6 @@ export function watermarkConfigHash() {
     .update(JSON.stringify(WATERMARK_CONFIG))
     .digest("hex")
     .slice(0, 16);
-}
-
-function escapeXml(s) {
-  return s
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;");
 }
 
 export function buildWatermarkSvg(width, height) {
