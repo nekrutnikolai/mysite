@@ -1,8 +1,7 @@
 // Iteration 5A: sharp + exifr pipeline with on-disk manifest cache.
-// Processes each gallery album's *.jpeg files into a 300h thumb + 2000w
-// preview + copied original, inlines a 32w blur placeholder, extracts EXIF
-// for the template, and caches by srcMtime + srcSize so incremental rebuilds
-// are near-instant.
+// Processes each gallery album's *.jpeg files into a 300h thumb + 1500w
+// medium + copied original, extracts EXIF for the template, and caches by
+// srcMtime + srcSize so incremental rebuilds are near-instant.
 
 import fs from "node:fs";
 import path from "node:path";
@@ -92,7 +91,7 @@ async function processImage(srcPath, distAlbumDir, albumUrl, cache) {
   const srcSize = st.size;
 
   const thumbFile = path.join(distAlbumDir, "img", `${stem}-300.jpg`);
-  const previewFile = path.join(distAlbumDir, "img", `${stem}-2000.jpg`);
+  const mediumFile = path.join(distAlbumDir, "img", `${stem}-1500.jpg`);
   const originalFile = path.join(distAlbumDir, "originals", `${stem}${ext}`);
 
   fs.mkdirSync(path.dirname(thumbFile), { recursive: true });
@@ -102,7 +101,7 @@ async function processImage(srcPath, distAlbumDir, albumUrl, cache) {
   const outputsExist =
     cached &&
     fs.existsSync(thumbFile) &&
-    fs.existsSync(previewFile) &&
+    fs.existsSync(mediumFile) &&
     fs.existsSync(originalFile);
 
   let entry;
@@ -114,24 +113,10 @@ async function processImage(srcPath, distAlbumDir, albumUrl, cache) {
     const srcW = meta.width || 0;
     const srcH = meta.height || 0;
 
-    const thumbInfo = await sharp(srcPath, { failOn: "none" })
-      .rotate()
-      .resize({ height: 300 })
-      .jpeg({ quality: 85, mozjpeg: true })
-      .toFile(thumbFile);
-
-    await sharp(srcPath, { failOn: "none" })
-      .rotate()
-      .resize({ width: 2000 })
-      .jpeg({ quality: 85, mozjpeg: true })
-      .toFile(previewFile);
-
-    const blurBuf = await sharp(srcPath, { failOn: "none" })
-      .rotate()
-      .resize({ width: 32 })
-      .jpeg({ quality: 50 })
-      .toBuffer();
-    const blurDataUri = `data:image/jpeg;base64,${blurBuf.toString("base64")}`;
+    const [thumbInfo] = await Promise.all([
+      sharp(srcPath, { failOn: "none" }).rotate().resize({ height: 300 }).jpeg({ quality: 85, mozjpeg: true }).toFile(thumbFile),
+      sharp(srcPath, { failOn: "none" }).rotate().resize({ width: 1500 }).jpeg({ quality: 85, mozjpeg: true }).toFile(mediumFile),
+    ]);
 
     fs.copyFileSync(srcPath, originalFile);
 
@@ -142,7 +127,7 @@ async function processImage(srcPath, distAlbumDir, albumUrl, cache) {
       srcSize,
       outputs: {
         thumb: thumbFile,
-        preview: previewFile,
+        preview: mediumFile,
         original: originalFile,
       },
       dimensions: {
@@ -151,7 +136,6 @@ async function processImage(srcPath, distAlbumDir, albumUrl, cache) {
         thumbW: thumbInfo.width,
         thumbH: thumbInfo.height,
       },
-      blurDataUri,
       exif,
     };
     cache[srcPath] = entry;
@@ -165,14 +149,13 @@ async function processImage(srcPath, distAlbumDir, albumUrl, cache) {
     srcPath,
     originalUrl: `${albumUrl}/originals/${stem}${ext}`,
     thumbUrl: `${albumUrl}/img/${stem}-300.jpg`,
-    previewUrl: `${albumUrl}/img/${stem}-2000.jpg`,
+    previewUrl: `${albumUrl}/img/${stem}-1500.jpg`,
     srcW,
     srcH,
     thumbW,
     thumbH,
     aspect,
     widthHint: widthHintFor(aspect),
-    blurDataUri: entry.blurDataUri,
     exif: entry.exif,
   };
 }

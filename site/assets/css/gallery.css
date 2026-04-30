@@ -24,6 +24,7 @@
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+  background: linear-gradient(135deg, var(--surface-1), var(--surface-2));
   background-size: cover;
   background-position: center;
 }
@@ -84,6 +85,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  background: linear-gradient(135deg, var(--surface-1), var(--surface-2));
   background-size: cover;
   background-position: center;
   transition: transform var(--dur-slow) var(--ease);
@@ -137,12 +139,61 @@
   gap: var(--s-3);
   box-sizing: border-box;
 }
-.lightbox-img {
-  max-width: 92vw;
-  max-height: 80vh;
+/* Stage frames the image and clips zoomed overflow. The image is absolutely
+   positioned inside the stage so the JS can transform it freely without
+   reflowing the rest of the dialog. */
+.lightbox-stage {
+  position: relative;
+  width: 92vw;
+  height: 80vh;
+  overflow: hidden;
   border-radius: var(--radius-lg);
   background: #0e0e0e;
+}
+.lightbox-img {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: block;
+  transform-origin: 0 0;
+  user-select: none;
+  -webkit-user-drag: none;
+  cursor: zoom-in;
+  touch-action: none; /* JS handles pinch + pan */
+  /* width/height set per-image by JS to fit-to-stage at scale=1 */
+}
+.lightbox-img.zoomed { cursor: grab; }
+.lightbox-img.dragging { cursor: grabbing; }
+
+/* Minimap appears bottom-right of the stage when zoomed. Background is set
+   by JS to the same image; an overlay rectangle reflects the visible region. */
+.lightbox-minimap {
+  position: absolute;
+  bottom: var(--s-3);
+  right: var(--s-3);
+  width: 180px;
+  height: 120px;
+  background-color: rgba(0, 0, 0, 0.55);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: var(--radius-sm);
+  cursor: crosshair;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dur) var(--ease);
+}
+.lightbox-minimap.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.lightbox-minimap-rect {
+  position: absolute;
+  border: 2px solid #fff;
+  background: rgba(255, 255, 255, 0.18);
+  pointer-events: none;
+  box-sizing: border-box;
 }
 .lightbox-caption {
   color: #e3e2e0;
@@ -194,7 +245,8 @@
   .gallery-item--wide { grid-column: span 2; }
   .gallery-item--tall { grid-row: span 2; }
   .lightbox-inner { padding: var(--s-3); }
-  .lightbox-img { max-width: 96vw; max-height: 70vh; }
+  .lightbox-stage { width: 96vw; height: 70vh; }
+  .lightbox-minimap { width: 120px; height: 80px; }
   .lightbox-prev { left: var(--s-2); }
   .lightbox-next { right: var(--s-2); }
 }

@@ -338,7 +338,6 @@ export async function build() {
         coverPreviewUrl: cover.previewUrl,
         coverThumbW: cover.thumbW,
         coverThumbH: cover.thumbH,
-        coverBlur: cover.blurDataUri,
         _sortTime: entry.frontmatter.date ? +entry.frontmatter.date : 0,
       });
     }
