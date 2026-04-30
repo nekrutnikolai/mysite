@@ -8,12 +8,28 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import sharp from "sharp";
 import exifr from "exifr";
+import {
+  buildWatermarkSvg,
+  watermarkConfigHash,
+  watermarkExifMeta,
+} from "./watermark.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..", "..");
 const CACHE_PATH = path.resolve(__dirname, "..", "cache", "images.json");
 
 const CONCURRENCY = 8;
+// When set, originalUrl returned from processImage points at R2 instead of
+// dist/. Falls back to the local /gallery/<album>/originals/ path used during
+// local dev. Strip a trailing slash so the URL join is clean.
+const R2_PUBLIC_BASE = (process.env.R2_PUBLIC_BASE || "").replace(/\/$/, "");
+const WM_HASH = watermarkConfigHash();
+// When originals are served from R2, the build doesn't need to produce the
+// q95 4:4:4 watermarked original on every run — that's the slowest step (~5×
+// build time on cold rebuilds). Set BUILD_ORIGINALS=1 right before
+// `npm run upload-originals` to bake fresh originals into dist/ for upload;
+// every other run skips it.
+const SKIP_ORIGINALS = !!R2_PUBLIC_BASE && process.env.BUILD_ORIGINALS !== "1";
 
 function loadManifest() {
   try {
@@ -95,40 +111,88 @@ async function processImage(srcPath, distAlbumDir, albumUrl, cache) {
   const originalFile = path.join(distAlbumDir, "originals", `${stem}${ext}`);
 
   fs.mkdirSync(path.dirname(thumbFile), { recursive: true });
-  fs.mkdirSync(path.dirname(originalFile), { recursive: true });
+  if (!SKIP_ORIGINALS) {
+    fs.mkdirSync(path.dirname(originalFile), { recursive: true });
+  }
 
   const cached = cache[srcPath];
   const outputsExist =
     cached &&
     fs.existsSync(thumbFile) &&
     fs.existsSync(mediumFile) &&
-    fs.existsSync(originalFile);
+    (SKIP_ORIGINALS || fs.existsSync(originalFile));
 
   let entry;
-  if (cached && cached.srcMtime === srcMtime && cached.srcSize === srcSize && outputsExist) {
+  if (
+    cached &&
+    cached.srcMtime === srcMtime &&
+    cached.srcSize === srcSize &&
+    cached.wmHash === WM_HASH &&
+    outputsExist
+  ) {
     entry = cached;
   } else {
     const input = sharp(srcPath, { failOn: "none" });
     const meta = await input.metadata();
     const srcW = meta.width || 0;
     const srcH = meta.height || 0;
+    // EXIF orientation 5–8 swap dimensions after .rotate() bakes orientation.
+    const rotated = (meta.orientation || 1) >= 5;
+    const outW = rotated ? srcH : srcW;
+    const outH = rotated ? srcW : srcH;
 
-    const [thumbInfo] = await Promise.all([
-      sharp(srcPath, { failOn: "none" }).rotate().resize({ height: 300 }).jpeg({ quality: 85, mozjpeg: true }).toFile(thumbFile),
-      sharp(srcPath, { failOn: "none" }).rotate().resize({ width: 1500 }).jpeg({ quality: 85, mozjpeg: true }).toFile(mediumFile),
-    ]);
+    const previewW = Math.min(1500, outW);
+    const previewH = outW ? Math.round(previewW * (outH / outW)) : 0;
+    const previewSvg = buildWatermarkSvg(previewW, previewH);
+    const exifMeta = watermarkExifMeta();
 
-    fs.copyFileSync(srcPath, originalFile);
+    const tasks = [
+      // Thumbnail: clean pixels, EXIF copyright only.
+      sharp(srcPath, { failOn: "none" })
+        .rotate()
+        .resize({ height: 300 })
+        .withMetadata(exifMeta)
+        .jpeg({ quality: 85, mozjpeg: true })
+        .toFile(thumbFile),
+      // Preview: watermark + EXIF. withoutEnlargement keeps the raster
+      // dimensions in lockstep with the SVG canvas for sub-1500w sources.
+      sharp(srcPath, { failOn: "none" })
+        .rotate()
+        .resize({ width: 1500, withoutEnlargement: true })
+        .composite([{ input: previewSvg, top: 0, left: 0 }])
+        .withMetadata(exifMeta)
+        .jpeg({ quality: 85, mozjpeg: true })
+        .toFile(mediumFile),
+    ];
+    if (!SKIP_ORIGINALS) {
+      // Original: was fs.copyFile — now sharp encode at q95 4:4:4 with
+      // watermark + EXIF baked in. Loses byte-for-byte fidelity vs source
+      // (pristine masters remain in content/), but is the only way to bake
+      // the visible mark + copyright into the served original. Run only
+      // when BUILD_ORIGINALS=1 (or no R2 configured) since this dominates
+      // build time and the deployed site loads originals from R2.
+      const originalSvg = buildWatermarkSvg(outW, outH);
+      tasks.push(
+        sharp(srcPath, { failOn: "none" })
+          .rotate()
+          .composite([{ input: originalSvg, top: 0, left: 0 }])
+          .withMetadata(exifMeta)
+          .jpeg({ quality: 95, mozjpeg: true, chromaSubsampling: "4:4:4" })
+          .toFile(originalFile),
+      );
+    }
+    const [thumbInfo] = await Promise.all(tasks);
 
     const exif = await readExif(srcPath);
 
     entry = {
       srcMtime,
       srcSize,
+      wmHash: WM_HASH,
       outputs: {
         thumb: thumbFile,
         preview: mediumFile,
-        original: originalFile,
+        original: SKIP_ORIGINALS ? null : originalFile,
       },
       dimensions: {
         srcW,
@@ -147,7 +211,9 @@ async function processImage(srcPath, distAlbumDir, albumUrl, cache) {
   return {
     stem,
     srcPath,
-    originalUrl: `${albumUrl}/originals/${stem}${ext}`,
+    originalUrl: R2_PUBLIC_BASE
+      ? `${R2_PUBLIC_BASE}${albumUrl}/${stem}${ext}`
+      : `${albumUrl}/originals/${stem}${ext}`,
     thumbUrl: `${albumUrl}/img/${stem}-300.jpg`,
     previewUrl: `${albumUrl}/img/${stem}-1500.jpg`,
     srcW,

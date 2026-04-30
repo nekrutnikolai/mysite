@@ -463,6 +463,11 @@
       imgEl.style.transform = "";
       imgEl.classList.remove("zoomed", "dragging");
       minimap.classList.remove("visible");
+      // Clear any pending layout-suppress from an in-flight original swap
+      // that the user navigated away from before its load event fired.
+      // Without this, the new preview's load gets the suppress consumed and
+      // layoutImage (which updates the minimap background) is skipped.
+      suppressLayoutOnce = false;
       imgEl.src = e.previewUrl;
       imgEl.alt = e.caption;
       var html = e.caption ? escapeHtml(e.caption) : "";
@@ -474,6 +479,14 @@
       dialog.dataset.index = String(currentIndex);
       preload(entries[(currentIndex + 1) % n].previewUrl);
       preload(entries[(currentIndex - 1 + n) % n].previewUrl);
+      // Eager-load the current image's original at low priority so the first
+      // zoom doesn't have to wait on the network. Self-throttled via fullState
+      // (no double-fetch) and bounded to currentIndex (no neighbor cost up
+      // front). Delayed slightly so it doesn't contend with the preview load.
+      var idxAtCall = currentIndex;
+      setTimeout(function () {
+        if (currentIndex === idxAtCall) maybeLoadFull(idxAtCall);
+      }, 250);
     }
 
     function navigate(delta) { show(currentIndex + delta); }
