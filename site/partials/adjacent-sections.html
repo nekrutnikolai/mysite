@@ -1,2 +1,12 @@
-<!-- adjacent-section nav partial — owned by Agent B (Tier 1) -->
-{{#adjacent}}{{/adjacent}}
+{{#adjacent}}
+<nav class="nav-adjacent" aria-label="Adjacent sections">
+  {{#prev}}<a class="nav-adjacent-prev" href="{{ url }}">
+    <span class="nav-adjacent-label">&#8592; Previous</span>
+    <span class="nav-adjacent-title">{{ label }}</span>
+  </a>{{/prev}}
+  {{#next}}<a class="nav-adjacent-next" href="{{ url }}">
+    <span class="nav-adjacent-label">Next &#8594;</span>
+    <span class="nav-adjacent-title">{{ label }}</span>
+  </a>{{/next}}
+</nav>
+{{/adjacent}}

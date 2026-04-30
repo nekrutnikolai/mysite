@@ -1,0 +1,36 @@
+.gallery-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: var(--s-4) 0 var(--s-5);
+}
+.gallery-filter-chip {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 4px 12px;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease), border-color var(--dur) var(--ease);
+  font-variant-numeric: tabular-nums;
+}
+.gallery-filter-chip:hover {
+  border-color: var(--border-strong);
+  color: var(--text);
+}
+.gallery-filter-chip[aria-pressed="true"] {
+  background: var(--accent-subtle);
+  border-color: transparent;
+  color: var(--accent);
+}
+.gallery-filter-chip:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+/* JS uses toggleAttribute(), which sets the attr with no value when on.
+   Match by presence, not "=true". */
+.gallery-tile[data-gallery-hidden] {
+  display: none;
+}

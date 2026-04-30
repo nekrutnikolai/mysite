@@ -1,0 +1,60 @@
+/* Sticky in-page TOC — Agent C.
+   Applies only at ≥1080px viewports. Below that the TOC remains inline
+   (components.css .toc rules handle appearance; nothing here changes it).
+
+   Uses :has() so we only activate the grid when a .toc is actually in the
+   DOM. Safari ≤15.3 doesn't support :has(); the @supports guard means those
+   browsers silently fall back to the existing inline TOC. Safari 15.4+
+   (March 2022) and all current Chromium / Firefox get the sidebar. */
+
+@supports (selector(:has(*))) {
+  @media (min-width: 1080px) {
+    /* Two-column layout: article on the left, TOC pinned on the right.
+       Only activates when the page actually has a .toc direct child of main. */
+    body:has(main.content > .toc) main.content {
+      max-width: 1080px;
+      display: grid;
+      grid-template-columns: minmax(0, 720px) var(--sidebar-w);
+      column-gap: var(--s-7);
+      align-items: start;
+    }
+
+    /* TOC: second column, spans the full row stack so it stays alongside
+       all article content. Strip the card appearance from components.css
+       so it reads as a lightweight sidebar element. */
+    body:has(main.content > .toc) main.content > .toc {
+      position: sticky;
+      top: calc(var(--topbar-h) + var(--s-4));
+      grid-column: 2;
+      grid-row: 1 / span 99;
+      margin: 0;
+      background: transparent;
+      border: none;
+      padding: 0;
+      max-height: calc(100vh - var(--topbar-h) - var(--s-5));
+      overflow-y: auto;
+    }
+
+    /* Article: first column, first row. */
+    body:has(main.content > .toc) main.content > article {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    /* Breadcrumbs + post-adjacent nav span the full width below
+       when a TOC sidebar is active. */
+    body:has(main.content > .toc) main.content > .breadcrumbs,
+    body:has(main.content > .toc) main.content > .post-adjacent,
+    body:has(main.content > .toc) main.content > .post-nav,
+    body:has(main.content > .toc) main.content > #nav-back-to-top {
+      grid-column: 1 / -1;
+    }
+  }
+}
+
+/* Active-section highlight — works at all viewport widths (the JS sets it
+   regardless; only the sticky layout is viewport-gated). */
+.toc-list .toc-item.active > a {
+  color: var(--accent);
+  font-weight: 500;
+}

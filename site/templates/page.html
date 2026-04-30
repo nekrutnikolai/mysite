@@ -8,9 +8,9 @@
 {{> header }}
 <main class="content">
 {{> breadcrumbs }}
+{{#hasToc}}{{> toc }}{{/hasToc}}
 <article class="page">
   {{#showTitle}}<header class="page-header"><h1>{{ title }}</h1></header>{{/showTitle}}
-  {{#hasToc}}{{> toc }}{{/hasToc}}
   {{{ body }}}
 </article>
 {{> adjacent-sections }}
