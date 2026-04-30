@@ -20,13 +20,12 @@
         <a class="gallery-trigger" href="{{ originalUrl }}" aria-label="Open {{ captionPlain }} in lightbox">
           <img class="gallery-thumb"
                src="{{ thumbUrl }}"
-               srcset="{{ thumbUrl }} {{ thumbW }}w, {{ previewUrl }} 1200w"
+               srcset="{{ thumbUrl }} {{ thumbW }}w, {{ previewUrl }} 1500w"
                sizes="(max-width: 640px) 50vw, 300px"
                width="{{ thumbW }}"
                height="{{ thumbH }}"
                alt="{{ captionPlain }}"
-               loading="lazy"
-               style="background-image: url('{{ blurDataUri }}')">
+               loading="lazy">
           <span class="gallery-exif" aria-hidden="true">{{ captionShort }}</span>
         </a>
       </li>

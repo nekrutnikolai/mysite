@@ -255,6 +255,64 @@ test("robots.txt allows all + links sitemap", async ({ request }) => {
   expect(body).toMatch(/Sitemap:\s*http/);
 });
 
+test("gallery thumbnails + previews carry EXIF Copyright/Artist", async () => {
+  test.skip(CURRENT_ITER < 5, "enabled from iteration 5");
+  const exifr = (await import("exifr")).default;
+  const distGalleryRoot = path.join(REPO_ROOT, "dist", "gallery");
+  const samples: string[] = [];
+  for (const album of fs.readdirSync(distGalleryRoot)) {
+    const imgDir = path.join(distGalleryRoot, album, "img");
+    if (!fs.existsSync(imgDir)) continue;
+    const preview = fs.readdirSync(imgDir).find((f) => f.endsWith("-1500.jpg"));
+    const thumb = fs.readdirSync(imgDir).find((f) => f.endsWith("-300.jpg"));
+    if (preview) samples.push(path.join(imgDir, preview));
+    if (thumb) samples.push(path.join(imgDir, thumb));
+    if (samples.length >= 4) break; // 2 previews + 2 thumbs is plenty
+  }
+  expect(samples.length).toBeGreaterThan(0);
+  for (const file of samples) {
+    const meta = await exifr.parse(file, { tiff: true, ifd0: true });
+    expect(meta?.Copyright, `${file} missing Copyright`).toMatch(/Nikolai Nekrutenko/);
+    expect(meta?.Artist, `${file} Artist`).toBe("Nikolai Nekrutenko");
+  }
+});
+
+test("gallery preview pixels show watermark luminance signature", async () => {
+  test.skip(CURRENT_ITER < 5, "enabled from iteration 5");
+  // The watermark is white text at ~35% opacity in the bottom-right corner.
+  // Across most images, the bottom-right 240×50 patch will diverge in mean
+  // luminance from a same-sized top-left patch. Tolerant assertion: catches
+  // "watermark didn't render at all" without flaking on extreme content.
+  const sharp = (await import("sharp")).default;
+  const distGalleryRoot = path.join(REPO_ROOT, "dist", "gallery");
+  const previews: string[] = [];
+  for (const album of fs.readdirSync(distGalleryRoot)) {
+    const imgDir = path.join(distGalleryRoot, album, "img");
+    if (!fs.existsSync(imgDir)) continue;
+    const file = fs.readdirSync(imgDir).find((f) => f.endsWith("-1500.jpg"));
+    if (file) previews.push(path.join(imgDir, file));
+    if (previews.length >= 3) break;
+  }
+  expect(previews.length).toBeGreaterThan(0);
+  const deltas: number[] = [];
+  for (const file of previews) {
+    const meta = await sharp(file).metadata();
+    const w = meta.width || 0, h = meta.height || 0;
+    if (w < 280 || h < 80) continue;
+    const bw = 240, bh = 50;
+    const mean = (b: Buffer) => b.reduce((a, v) => a + v, 0) / b.length;
+    const br = await sharp(file)
+      .extract({ left: w - bw - 5, top: h - bh - 5, width: bw, height: bh })
+      .greyscale().raw().toBuffer();
+    const tl = await sharp(file)
+      .extract({ left: 5, top: 5, width: bw, height: bh })
+      .greyscale().raw().toBuffer();
+    deltas.push(Math.abs(mean(br) - mean(tl)));
+  }
+  // At least one sampled preview must show a measurable luminance shift.
+  expect(Math.max(...deltas), `deltas: ${deltas.join(", ")}`).toBeGreaterThan(2);
+});
+
 test("every page has canonical + OG meta tags", async ({ request }) => {
   test.skip(CURRENT_ITER < 7, "enabled from iteration 7");
   const pages = ["/", "/about/", "/portfolio/", "/posts/my-first-post/", "/gallery/solstice-fun/", "/404.html"];

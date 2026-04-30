@@ -100,6 +100,7 @@ function navForUrl(url) {
     if (u.startsWith("/about")) return "about";
     if (u.startsWith("/gallery")) return "gallery";
     if (u.startsWith("/posts") || u.startsWith("/tags")) return "posts";
+    if (u.startsWith("/resume")) return "resume";
     if (u.startsWith("/portfolio")) return "portfolio";
     return null;
   };
@@ -108,7 +109,7 @@ function navForUrl(url) {
     { section: "about", label: "About", href: "/about/", external: false },
     { section: "gallery", label: "Gallery", href: "/gallery/", external: false },
     { section: "posts", label: "Posts", href: "/posts/", external: false },
-    { section: "resume", label: "Resume", href: "/Resume.pdf", external: true },
+    { section: "resume", label: "Resume", href: "/resume/", external: false },
     { section: "portfolio", label: "Portfolio", href: "/portfolio/", external: false },
   ].map((item) => ({ ...item, active: item.section === active }));
 }
@@ -338,7 +339,6 @@ export async function build() {
         coverPreviewUrl: cover.previewUrl,
         coverThumbW: cover.thumbW,
         coverThumbH: cover.thumbH,
-        coverBlur: cover.blurDataUri,
         _sortTime: entry.frontmatter.date ? +entry.frontmatter.date : 0,
       });
     }

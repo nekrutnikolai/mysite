@@ -1,0 +1,314 @@
+/* Resume page — themed HTML port of Resume.tex.
+   Design intent: match the LaTeX's typographic rhythm (small-caps name +
+   section headings with a hair rule below, right-flushed dates, italic
+   descriptions, dotted bullets) using site tokens so all three themes work.
+   Print stylesheet at bottom forces black-on-white and strips chrome so
+   `Save as PDF` produces a clean document. */
+
+.resume-page {
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: 15px;
+}
+
+/* --- Header (name + contact + actions) ------------------------------- */
+
+.resume-header {
+  text-align: center;
+  margin: var(--s-3) 0 var(--s-7);
+  padding-bottom: var(--s-5);
+  border-bottom: 1px solid var(--border);
+}
+
+.resume-name {
+  font-family: var(--font-display);
+  font-size: 38px;
+  font-weight: 600;
+  font-variant: all-small-caps;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+  color: var(--text);
+  margin: 0 0 var(--s-3);
+}
+
+.resume-contact {
+  margin: 0 auto;
+  max-width: none;
+  font-size: 15px;
+  color: var(--text-muted);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--s-2);
+  font-variant-numeric: tabular-nums;
+}
+
+.resume-contact a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color var(--dur) var(--ease);
+}
+
+.resume-contact a:hover {
+  color: var(--text);
+  text-decoration: underline;
+}
+
+.resume-sep {
+  color: var(--text-faint);
+  user-select: none;
+  font-size: 11px;
+  position: relative;
+  top: -1px;
+}
+
+.resume-actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--s-2);
+  margin-top: var(--s-4);
+}
+
+/* --- Section heading ------------------------------------------------- */
+
+.resume-section {
+  margin: var(--s-7) 0;
+}
+
+.resume-section h2 {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  font-variant: all-small-caps;
+  letter-spacing: 0.14em;
+  color: var(--text);
+  margin: 0 0 var(--s-4);
+  padding-bottom: var(--s-2);
+  border-bottom: 1px solid var(--border-strong);
+}
+
+/* --- Entry blocks (jobs, projects, etc.) ----------------------------- */
+
+.resume-entry {
+  margin: 0 0 var(--s-5);
+}
+
+.resume-entry:last-child {
+  margin-bottom: 0;
+}
+
+.resume-school {
+  margin: 0 0 var(--s-3);
+}
+
+.resume-school-name {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 var(--s-3);
+}
+
+.resume-subentry {
+  margin: 0 0 var(--s-4);
+}
+
+.resume-subentry:last-child {
+  margin-bottom: 0;
+}
+
+/* Title row — name on the left, date right-flushed. Falls to a column
+   on narrow viewports so the date doesn't wrap awkwardly under the title. */
+.resume-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s-4);
+  margin-bottom: var(--s-1);
+}
+
+.resume-row-title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.resume-subentry .resume-row-title {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.resume-row-date {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-style: italic;
+  color: var(--text-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Italic description block beneath a row (project descriptions, coursework). */
+.resume-detail {
+  margin: 2px 0 0;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.resume-detail em {
+  font-style: italic;
+  color: var(--text);
+}
+
+/* --- Bulleted lists -------------------------------------------------- */
+
+.resume-bullets,
+.resume-skills {
+  list-style: none;
+  padding: 0;
+  margin: var(--s-2) 0 0;
+}
+
+.resume-bullets li {
+  position: relative;
+  padding-left: var(--s-4);
+  margin: var(--s-2) 0;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.resume-bullets li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0.7em;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--text-muted);
+}
+
+.resume-skills li {
+  margin: var(--s-2) 0;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.resume-skills li strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* --- Mobile ---------------------------------------------------------- */
+
+@media (max-width: 640px) {
+  .resume-name {
+    font-size: 28px;
+    letter-spacing: 0.04em;
+  }
+  .resume-row {
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: var(--s-2);
+  }
+  .resume-row-date {
+    font-size: 12px;
+  }
+  .resume-section h2 {
+    font-size: 13px;
+  }
+}
+
+/* --- Print ----------------------------------------------------------- */
+/* Force black-on-white print regardless of the active theme. Strip chrome
+   so `Save as PDF` produces a clean single-purpose document. */
+
+@media print {
+  .site-header,
+  .site-footer,
+  .site-nav-toggle,
+  .theme-toggle,
+  .resume-actions,
+  .no-print {
+    display: none !important;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  main.content {
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .resume-page {
+    max-width: none;
+    font-size: 10.5pt;
+  }
+
+  .resume-header {
+    margin-top: 0;
+    border-color: #000 !important;
+  }
+
+  .resume-name,
+  .resume-row-title,
+  .resume-school-name,
+  .resume-bullets li,
+  .resume-skills li,
+  .resume-skills li strong,
+  .resume-detail em {
+    color: #000 !important;
+  }
+
+  .resume-contact,
+  .resume-row-date,
+  .resume-detail,
+  .resume-bullets li::before {
+    color: #000 !important;
+  }
+
+  .resume-bullets li::before {
+    background: #000 !important;
+  }
+
+  .resume-contact a {
+    color: #000 !important;
+    text-decoration: none !important;
+  }
+
+  .resume-sep {
+    color: #555 !important;
+  }
+
+  .resume-section {
+    margin: 12pt 0;
+    page-break-inside: avoid;
+  }
+
+  .resume-section h2 {
+    color: #000 !important;
+    border-color: #000 !important;
+    margin-bottom: 6pt;
+    padding-bottom: 3pt;
+  }
+
+  .resume-entry,
+  .resume-subentry {
+    page-break-inside: avoid;
+  }
+
+  @page {
+    margin: 0.6in 0.7in;
+  }
+}
