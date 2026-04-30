@@ -1,5 +1,5 @@
 // Iteration 5A: sharp + exifr pipeline with on-disk manifest cache.
-// Processes each gallery album's *.jpeg files into a 300h thumb + 1200w
+// Processes each gallery album's *.jpeg files into a 300h thumb + 2000w
 // preview + copied original, inlines a 32w blur placeholder, extracts EXIF
 // for the template, and caches by srcMtime + srcSize so incremental rebuilds
 // are near-instant.
@@ -92,7 +92,7 @@ async function processImage(srcPath, distAlbumDir, albumUrl, cache) {
   const srcSize = st.size;
 
   const thumbFile = path.join(distAlbumDir, "img", `${stem}-300.jpg`);
-  const previewFile = path.join(distAlbumDir, "img", `${stem}-1200.jpg`);
+  const previewFile = path.join(distAlbumDir, "img", `${stem}-2000.jpg`);
   const originalFile = path.join(distAlbumDir, "originals", `${stem}${ext}`);
 
   fs.mkdirSync(path.dirname(thumbFile), { recursive: true });
@@ -122,7 +122,7 @@ async function processImage(srcPath, distAlbumDir, albumUrl, cache) {
 
     await sharp(srcPath, { failOn: "none" })
       .rotate()
-      .resize({ width: 1200 })
+      .resize({ width: 2000 })
       .jpeg({ quality: 85, mozjpeg: true })
       .toFile(previewFile);
 
@@ -165,7 +165,7 @@ async function processImage(srcPath, distAlbumDir, albumUrl, cache) {
     srcPath,
     originalUrl: `${albumUrl}/originals/${stem}${ext}`,
     thumbUrl: `${albumUrl}/img/${stem}-300.jpg`,
-    previewUrl: `${albumUrl}/img/${stem}-1200.jpg`,
+    previewUrl: `${albumUrl}/img/${stem}-2000.jpg`,
     srcW,
     srcH,
     thumbW,
