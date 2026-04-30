@@ -6,7 +6,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { render, clearTemplateCache } from "./lib/template.mjs";
+import { render } from "./lib/template.mjs";
 import { previewBodyHtml } from "./lib/preview.mjs";
 import { scanContent } from "./lib/content.mjs";
 import { renderMarkdown } from "./lib/markdown.mjs";
@@ -289,7 +289,6 @@ function buildCaptionShort(exif) {
 }
 
 export async function build() {
-  clearTemplateCache();
   fs.rmSync(DIST, { recursive: true, force: true });
   fs.mkdirSync(DIST, { recursive: true });
 

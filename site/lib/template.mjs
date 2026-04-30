@@ -13,10 +13,6 @@ const PARTIAL_DIR = path.join(SITE, "partials");
 
 const cache = new Map();
 
-export function clearTemplateCache() {
-  cache.clear();
-}
-
 const ESC = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" };
 function escape(s) {
   return String(s).replace(/[&<>"']/g, (c) => ESC[c]);
@@ -72,10 +68,6 @@ function renderWith(tpl, ctx) {
     return v == null ? "" : escape(v);
   });
   return tpl;
-}
-
-export function renderString(tpl, ctx = {}) {
-  return renderWith(inlinePartials(tpl), ctx);
 }
 
 export function render(templateName, ctx = {}) {
