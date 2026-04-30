@@ -18,6 +18,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:wght@400;600;700&display=swap">
+
+<!-- Prefetch the other top-level sections so swipe-nav transitions are
+     near-instant. Browsers fetch on idle, throttle on slow connections,
+     and skip the current page automatically. -->
+<link rel="prefetch" href="/" as="document">
+<link rel="prefetch" href="/about/" as="document">
+<link rel="prefetch" href="/gallery/" as="document">
+<link rel="prefetch" href="/posts/" as="document">
+<link rel="prefetch" href="/resume/" as="document">
+<link rel="prefetch" href="/portfolio/" as="document">
 <script>
   try {
     var t = localStorage.getItem("nn-site-theme");

@@ -82,6 +82,9 @@
       // Expose a normalized [-1, 1] progress value for the CSS edge indicator.
       const live = Math.max(-1, Math.min(1, deltaX / window.innerWidth));
       ROOT.style.setProperty('--swipe-progress', String(live));
+      // Track the finger 1:1 for book-page feel; no transition during drag.
+      main.style.transition = 'none';
+      main.style.transform = 'translateX(' + deltaX + 'px)';
     }
     // If axis is 'y' (or still null), do nothing — let scroll propagate normally.
   }
@@ -119,22 +122,28 @@
     dragging = false;
     ROOT.classList.remove('swipe-tracking');
     ROOT.style.removeProperty('--swipe-progress');
+    // Snap back to origin if we were dragging the page.
+    if (main.style.transform) {
+      main.style.transition = 'transform .22s cubic-bezier(.22,.72,.18,1)';
+      main.style.transform = '';
+    }
   }
 
   function navigate(href, direction) {
-    if (document.startViewTransition) {
-      // Stamp direction so CSS can pick the correct keyframes.
-      ROOT.dataset.swipeDirection = direction;
-      const transition = document.startViewTransition(() => location.assign(href));
-      // Clean up the data attribute after the animation. The page replaces itself
-      // so this mostly matters for any edge-case same-document fallback.
-      transition.finished.finally(() => {
-        delete ROOT.dataset.swipeDirection;
-      });
-    } else {
-      // Browsers without View Transitions API: navigate normally, no animation.
-      location.assign(href);
-    }
+    // Continue the finger's motion off-screen in JS, then navigate. Works on
+    // every browser (no View Transitions dependency) and avoids the
+    // snap-back-then-slide glitch we got when handing off to the
+    // cross-document VT mid-gesture. Prefetch keeps the new HTML in cache so
+    // paint after location.assign is near-instant.
+    const target = direction === 'left' ? -window.innerWidth : window.innerWidth;
+    main.style.transition = 'transform .22s cubic-bezier(.22,.72,.18,1)';
+    // Force a reflow so the new transition value is committed before the
+    // transform changes; without this the browser can batch the two style
+    // writes into a single paint and skip the animation (which manifested as
+    // an asymmetric snap-back, depending on sub-frame timing).
+    void main.offsetWidth;
+    main.style.transform  = 'translateX(' + target + 'px)';
+    setTimeout(function () { location.assign(href); }, 220);
   }
 
   // Attach listeners. touchmove must be non-passive so we can call preventDefault

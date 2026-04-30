@@ -12,8 +12,6 @@ description: "Resume of Nikolai Nekrutenko — Electrical & Computer Engineering
   <p class="resume-contact">
     <a href="mailto:nan34@cornell.edu">nan34@cornell.edu</a>
     <span class="resume-sep" aria-hidden="true">•</span>
-    <span>814-852-9256</span>
-    <span class="resume-sep" aria-hidden="true">•</span>
     <a href="https://nekrutnikolai.com">nekrutnikolai.com</a>
   </p>
   <div class="resume-actions no-print">
