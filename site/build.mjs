@@ -389,6 +389,16 @@ export async function build() {
   // /gallery/ index — most recent first.
   galleryListItems.sort((a, b) => b._sortTime - a._sortTime);
   for (const t of galleryListItems) delete t._sortTime;
+
+  // Stamp each gallery tile with its year (string) and aggregate the descending
+  // year list for Agent D's filter chips. Empty year (no frontmatter date)
+  // becomes "" so the JS can show those tiles only when "All" is active.
+  for (const item of galleryListItems) {
+    item.year = item.dateISO ? String(new Date(item.dateISO).getFullYear()) : "";
+  }
+  const galleryYears = [...new Set(galleryListItems.map((g) => g.year).filter(Boolean))]
+    .sort((a, b) => Number(b) - Number(a))
+    .map((y) => ({ year: y }));
   const galleryIndexHtml = render("gallery-list", buildOgCtx({
     url: "/gallery/",
     title: "Gallery",
@@ -399,6 +409,7 @@ export async function build() {
     wide: true,
     year: new Date().getFullYear(),
     galleries: galleryListItems,
+    years: galleryYears,
   }));
   writePage("/gallery/", galleryIndexHtml);
 
