@@ -4,8 +4,10 @@
 {{> head }}
 </head>
 <body>
+<div id="nav-reading-progress" class="nav-reading-progress" aria-hidden="true"></div>
 {{> header }}
 <main class="content{{#wide}} wide{{/wide}}">
+{{> breadcrumbs }}
 <article class="gallery-page">
   <header class="gallery-header">
     <h1>{{ title }}</h1>
@@ -34,9 +36,17 @@
 
   <p class="gallery-back"><a href="/gallery/">&larr; All galleries</a></p>
 </article>
+{{> adjacent-sections }}
+<button id="nav-back-to-top" class="nav-back-to-top" type="button" aria-label="Back to top" hidden>↑</button>
 </main>
 {{> footer }}
+{{> cmdk }}
 <script src="/assets/js/theme.js" defer></script>
+<script src="/assets/js/nav-scroll.js" defer></script>
+<script src="/assets/js/nav-toc.js" defer></script>
+<script src="/assets/js/nav-gallery-filter.js" defer></script>
+<script src="/assets/js/nav-swipe.js" defer></script>
+<script src="/assets/js/nav-cmdk.js" defer></script>
 <script src="/assets/js/lightbox.js" defer></script>
 </body>
 </html>

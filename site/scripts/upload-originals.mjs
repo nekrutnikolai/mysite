@@ -1,8 +1,17 @@
 #!/usr/bin/env node
-// Sync local gallery originals to a Cloudflare R2 bucket. Walks
-// content/gallery/<album>/images/*.jpeg, hashes each file, compares against
-// the existing bucket object's sha256 metadata, and uploads anything missing
-// or changed. Idempotent.
+// Sync local gallery originals to a Cloudflare R2 bucket using two prefixes:
+//
+//   clean/gallery/<album>/<file>   — pristine masters from content/
+//   gallery/<album>/<file>         — watermarked + EXIF-baked from dist/
+//
+// The bucket's public URL serves the watermarked tree as the lightbox's
+// data-full target; the clean tree is private-ish (still publicly readable
+// since the bucket is) and acts as the source-of-truth for thumb/medium
+// regeneration on Netlify and for fresh local clones.
+//
+// SHA-256 metadata is set on each object; re-runs skip files whose remote
+// hash matches the local one. --force re-uploads everything. --dry-run
+// reports what would change without uploading.
 //
 // Required env (load from .env or the shell):
 //   R2_ACCOUNT_ID         — Cloudflare account id (32-char hex)
@@ -10,11 +19,8 @@
 //   R2_SECRET_ACCESS_KEY  — R2 API token secret
 //   R2_BUCKET             — bucket name (defaults to "nnekrut-gallery")
 //
-// Flags:
-//   --dry-run             — list what would change; don't upload
-//   --force               — re-upload everything regardless of hash match
-//
-// Usage: npm run upload-originals [-- --dry-run]
+// Usage: npm run upload-originals [-- --dry-run] [-- --force]
+//        (npm script runs `BUILD_ORIGINALS=1 npm run build` first.)
 
 import fs from "node:fs";
 import path from "node:path";
@@ -59,24 +65,23 @@ function sha256(filePath) {
   });
 }
 
-// Source-of-truth for upload is the build output's originals/ tree, since
-// originals there are post-watermark + post-EXIF-baked. The build must have
-// run before upload (npm run build).
-function listLocalImages() {
+// Walk a directory shape `<root>/<album>/<leafSubdir>/*.jpeg` and produce
+// upload items keyed under `<keyPrefix>/<album>/<file>`.
+function listImages(rootDir, leafSubdir, keyPrefix) {
   const out = [];
-  const galleriesDir = path.join(ROOT, "dist", "gallery");
-  if (!fs.existsSync(galleriesDir)) return out;
-  for (const album of fs.readdirSync(galleriesDir)) {
-    const albumDir = path.join(galleriesDir, album);
+  if (!fs.existsSync(rootDir)) return out;
+  for (const album of fs.readdirSync(rootDir)) {
+    const albumDir = path.join(rootDir, album);
     if (!fs.statSync(albumDir, { throwIfNoEntry: false })?.isDirectory()) continue;
-    const originalsDir = path.join(albumDir, "originals");
-    if (!fs.statSync(originalsDir, { throwIfNoEntry: false })?.isDirectory()) continue;
-    for (const file of fs.readdirSync(originalsDir)) {
-      if (!file.toLowerCase().endsWith(".jpeg") && !file.toLowerCase().endsWith(".jpg")) continue;
+    const leafDir = path.join(albumDir, leafSubdir);
+    if (!fs.statSync(leafDir, { throwIfNoEntry: false })?.isDirectory()) continue;
+    for (const file of fs.readdirSync(leafDir)) {
+      const lower = file.toLowerCase();
+      if (!lower.endsWith(".jpeg") && !lower.endsWith(".jpg")) continue;
       out.push({
-        srcPath: path.join(originalsDir, file),
-        key: `gallery/${album}/${file}`,
-        size: fs.statSync(path.join(originalsDir, file)).size,
+        srcPath: path.join(leafDir, file),
+        key: `${keyPrefix}/${album}/${file}`,
+        size: fs.statSync(path.join(leafDir, file)).size,
       });
     }
   }
@@ -117,10 +122,12 @@ async function workQueue(items, limit, fn) {
   await Promise.all(Array.from({ length: Math.min(limit, items.length) }, worker));
 }
 
-async function main() {
-  const items = listLocalImages();
-  console.log(`found ${items.length} local images, target bucket = ${BUCKET}, endpoint = ${ENDPOINT}`);
-  if (DRY_RUN) console.log("(dry run — no uploads will happen)");
+async function syncTree(label, items) {
+  if (items.length === 0) {
+    console.log(`${label}: no local files found, skipping`);
+    return { uploaded: 0, skipped: 0, bytes: 0 };
+  }
+  console.log(`\n${label}: ${items.length} files`);
 
   let uploaded = 0;
   let skipped = 0;
@@ -134,19 +141,46 @@ async function main() {
       return;
     }
     if (DRY_RUN) {
-      console.log(`would upload ${item.key} (${(item.size / 1024).toFixed(0)} KB)`);
+      console.log(`  would upload ${item.key} (${(item.size / 1024).toFixed(0)} KB)`);
       uploaded++;
       bytes += item.size;
       return;
     }
     await upload(item, localHash);
-    console.log(`uploaded ${item.key} (${(item.size / 1024).toFixed(0)} KB)`);
+    console.log(`  uploaded ${item.key} (${(item.size / 1024).toFixed(0)} KB)`);
     uploaded++;
     bytes += item.size;
   });
 
-  const mb = (bytes / 1024 / 1024).toFixed(1);
-  console.log(`\n${DRY_RUN ? "would " : ""}upload ${uploaded}, skip ${skipped}, total ${mb} MB`);
+  return { uploaded, skipped, bytes };
+}
+
+async function main() {
+  console.log(`bucket = ${BUCKET}, endpoint = ${ENDPOINT}`);
+  if (DRY_RUN) console.log("(dry run — no uploads will happen)");
+
+  // Clean masters from content/ → clean/ prefix. These are the bytes the
+  // build needs to (re)generate thumbs/mediums/originals from.
+  const cleanItems = listImages(
+    path.join(ROOT, "content", "gallery"),
+    "images",
+    "clean/gallery",
+  );
+  // Watermarked from dist/ → gallery/ prefix. These are the bytes the
+  // public lightbox links to via data-full.
+  const watermarkedItems = listImages(
+    path.join(ROOT, "dist", "gallery"),
+    "originals",
+    "gallery",
+  );
+
+  const cleanResult = await syncTree("clean masters → clean/gallery/", cleanItems);
+  const wmResult = await syncTree("watermarked → gallery/", watermarkedItems);
+
+  const totalUp = cleanResult.uploaded + wmResult.uploaded;
+  const totalSkip = cleanResult.skipped + wmResult.skipped;
+  const totalMb = ((cleanResult.bytes + wmResult.bytes) / 1024 / 1024).toFixed(1);
+  console.log(`\n${DRY_RUN ? "would " : ""}upload ${totalUp}, skip ${totalSkip}, total ${totalMb} MB`);
 }
 
 main().catch((e) => { console.error(e); process.exit(1); });

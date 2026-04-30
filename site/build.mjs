@@ -13,6 +13,7 @@ import { renderMarkdown } from "./lib/markdown.mjs";
 import { slugify } from "./lib/routes.mjs";
 import { processAlbum } from "./lib/images.mjs";
 import { renderRSS, renderSitemap } from "./lib/feeds.mjs";
+import { buildContentIndex } from "./lib/contentIndex.mjs";
 
 // Agent B owns shortcodes.mjs. If it hasn't landed yet, fall through to a
 // no-op expander so the rest of the pipeline is still verifiable.
@@ -112,6 +113,46 @@ function navForUrl(url) {
     { section: "resume", label: "Resume", href: "/resume/", external: false },
     { section: "portfolio", label: "Portfolio", href: "/portfolio/", external: false },
   ].map((item) => ({ ...item, active: item.section === active }));
+}
+
+// Breadcrumbs from a URL. Returns [{label, href, current?}, ...]. The final
+// entry has href:null + current:true when `currentLabel` is supplied. Examples:
+//   /                    -> []
+//   /posts/              -> [{Home, /}]
+//   /posts/foo/          -> [{Home, /}, {Posts, /posts/}, {<title>, null, current}]
+function buildCrumbs(url, currentLabel) {
+  if (url === "/") return [];
+  const out = [{ label: "Home", href: "/" }];
+  if (url.startsWith("/posts/") && url !== "/posts/") {
+    out.push({ label: "Posts", href: "/posts/" });
+  } else if (url.startsWith("/tags/") && url !== "/tags/") {
+    out.push({ label: "Tags", href: "/tags/" });
+  } else if (url.startsWith("/gallery/") && url !== "/gallery/") {
+    out.push({ label: "Gallery", href: "/gallery/" });
+  }
+  if (currentLabel) out.push({ label: currentLabel, href: null, current: true });
+  // Boolean for templates lacking dot-property traversal in their #section.
+  out.hasCrumbs = true;
+  return out;
+}
+
+// Adjacency between top-level "section" pages, circular order matching the
+// visual nav. Used by partials/adjacent-sections.html (Agent B).
+const TOP_LEVEL_ORDER = [
+  { url: "/about/",     label: "About" },
+  { url: "/gallery/",   label: "Gallery" },
+  { url: "/posts/",     label: "Posts" },
+  { url: "/resume/",    label: "Resume" },
+  { url: "/portfolio/", label: "Portfolio" },
+];
+function adjacentSections(url) {
+  const i = TOP_LEVEL_ORDER.findIndex((s) => url === s.url);
+  if (i < 0) return null;
+  const N = TOP_LEVEL_ORDER.length;
+  return {
+    prev: TOP_LEVEL_ORDER[(i - 1 + N) % N],
+    next: TOP_LEVEL_ORDER[(i + 1) % N],
+  };
 }
 
 // Reading time heuristic: 220 words per minute from rendered HTML body.
@@ -313,6 +354,8 @@ export async function build() {
       title,
       siteTitle: SITE_TITLE,
       description: `${imageRecords.length} photos from ${title}`,
+      crumbs: buildCrumbs(entry.outputPath, title),
+      adjacent: adjacentSections(entry.outputPath),
       wide: true,
       year: new Date().getFullYear(),
       dateISO: formatDateISO(entry.frontmatter.date),
@@ -347,14 +390,27 @@ export async function build() {
   // /gallery/ index — most recent first.
   galleryListItems.sort((a, b) => b._sortTime - a._sortTime);
   for (const t of galleryListItems) delete t._sortTime;
+
+  // Stamp each gallery tile with its year (string) and aggregate the descending
+  // year list for Agent D's filter chips. Empty year (no frontmatter date)
+  // becomes "" so the JS can show those tiles only when "All" is active.
+  for (const item of galleryListItems) {
+    item.year = item.dateISO ? String(new Date(item.dateISO).getFullYear()) : "";
+  }
+  const galleryYears = [...new Set(galleryListItems.map((g) => g.year).filter(Boolean))]
+    .sort((a, b) => Number(b) - Number(a))
+    .map((y) => ({ year: y }));
   const galleryIndexHtml = render("gallery-list", buildOgCtx({
     url: "/gallery/",
     title: "Gallery",
     siteTitle: SITE_TITLE,
     description: "Photo galleries.",
+    crumbs: buildCrumbs("/gallery/", "Gallery"),
+    adjacent: adjacentSections("/gallery/"),
     wide: true,
     year: new Date().getFullYear(),
     galleries: galleryListItems,
+    years: galleryYears,
   }));
   writePage("/gallery/", galleryIndexHtml);
 
@@ -371,6 +427,8 @@ export async function build() {
       title: fm.title || entry.slug,
       siteTitle: SITE_TITLE,
       description: fm.description || SITE_TITLE,
+      crumbs: buildCrumbs(entry.outputPath, fm.title || entry.slug),
+      adjacent: adjacentSections(entry.outputPath),
       wide: false,
       year: new Date().getFullYear(),
       showTitle: !!String(fm.title || "").trim(),
@@ -428,6 +486,7 @@ export async function build() {
       title: entry.frontmatter.title || entry.slug,
       siteTitle: SITE_TITLE,
       description: entry.frontmatter.description || "",
+      crumbs: buildCrumbs(entry.outputPath, entry.frontmatter.title || entry.slug),
       wide: false,
       year: new Date().getFullYear(),
       dateISO: formatDateISO(date),
@@ -456,6 +515,8 @@ export async function build() {
     title: "Posts",
     siteTitle: SITE_TITLE,
     description: "All posts by Nikolai Nekrutenko.",
+    crumbs: buildCrumbs("/posts/", "Posts"),
+    adjacent: adjacentSections("/posts/"),
     wide: false,
     year: new Date().getFullYear(),
     posts: archiveList,
@@ -485,6 +546,7 @@ export async function build() {
     title: "Tags",
     siteTitle: SITE_TITLE,
     description: "All tags.",
+    crumbs: buildCrumbs("/tags/", "Tags"),
     wide: false,
     year: new Date().getFullYear(),
     tags: allTags,
@@ -497,6 +559,7 @@ export async function build() {
       title: `Tagged: ${tag.name}`,
       siteTitle: SITE_TITLE,
       description: `Posts tagged "${tag.name}"`,
+      crumbs: buildCrumbs(tag.url, `Tagged: ${tag.name}`),
       wide: false,
       year: new Date().getFullYear(),
       name: tag.name,
@@ -532,6 +595,8 @@ export async function build() {
       title: title || SITE_TITLE,
       siteTitle: SITE_TITLE,
       description: fm.description || SITE_TITLE,
+      crumbs: buildCrumbs(outputPath, title || ""),
+      adjacent: adjacentSections(outputPath),
       wide: false,
       year: new Date().getFullYear(),
       showTitle,
@@ -620,6 +685,13 @@ export async function build() {
   // /robots.txt — allow everything, point crawlers at the sitemap.
   const robotsContent = `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`;
   fs.writeFileSync(path.join(DIST, "robots.txt"), robotsContent);
+
+  // Cmd+K content index — emitted before feeds so the palette can fetch a
+  // single JSON file at /__index.json.
+  fs.writeFileSync(
+    path.join(DIST, "__index.json"),
+    buildContentIndex({ pages, posts, galleries, tags: allTags })
+  );
 
   // Feeds — RSS at /index.xml, sitemap at /sitemap.xml. Written last so every
   // other page already exists on disk; the URL list mirrors what was rendered.

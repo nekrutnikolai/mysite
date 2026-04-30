@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<title>Mobile swipe nav — demo</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="/assets/css/tokens.css">
+<link rel="stylesheet" href="/assets/css/themes.css">
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    height: 100%;
+    overscroll-behavior: none;
+  }
+
+  body {
+    background: var(--surface-1);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+    -webkit-font-smoothing: antialiased;
+    overflow: hidden;
+    height: 100dvh;
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* Frame: sticky header at top, paged track in middle, dots at bottom */
+  /* ------------------------------------------------------------------ */
+
+  .frame {
+    position: relative;
+    width: 100vw;
+    height: 100dvh;
+    overflow: hidden;
+  }
+
+  .header {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 56px;
+    padding: 0 var(--s-4);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: color-mix(in oklab, var(--surface-0) 82%, transparent);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border-bottom: 1px solid var(--border);
+    z-index: 10;
+    transition: background var(--dur) var(--ease);
+  }
+
+  .header-title {
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: var(--ls-heading);
+    color: var(--text);
+    transition: opacity var(--dur) var(--ease);
+  }
+
+  .header-counter {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-muted);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.04em;
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* Track + pages                                                       */
+  /* ------------------------------------------------------------------ */
+
+  .track {
+    display: flex;
+    width: 500vw;            /* 5 panels × 100vw */
+    height: 100dvh;
+    will-change: transform;
+    touch-action: pan-y;     /* allow vertical scroll, capture horizontal */
+    cursor: grab;
+  }
+  .track.dragging { cursor: grabbing; }
+
+  .page {
+    width: 100vw;
+    height: 100dvh;
+    flex-shrink: 0;
+    padding: 80px var(--s-5) 80px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background: var(--surface-0);
+  }
+
+  /* Stripe each panel a different surface variant so the page change is
+     felt visually even when content is similar. Subtle. */
+  .page:nth-child(2) { background: var(--surface-1); }
+  .page:nth-child(4) { background: var(--surface-1); }
+
+  /* ------------------------------------------------------------------ */
+  /* Page content                                                        */
+  /* ------------------------------------------------------------------ */
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: var(--ls-heading);
+    color: var(--text);
+    margin: 0 0 var(--s-3);
+  }
+
+  .kicker {
+    font-size: var(--fs-caption);
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: var(--ls-label);
+    margin: 0 0 var(--s-3);
+  }
+
+  .lede {
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--text-muted);
+    margin: 0 0 var(--s-5);
+    max-width: 50ch;
+  }
+
+  h2 {
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--text);
+    margin: var(--s-5) 0 var(--s-3);
+  }
+
+  ul.list { list-style: none; padding: 0; margin: var(--s-3) 0; }
+  ul.list li {
+    padding: var(--s-3) 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--s-3);
+  }
+  ul.list li:last-child { border-bottom: none; }
+  .list-title { font-weight: 500; color: var(--text); }
+  .list-meta { font-size: var(--fs-caption); color: var(--text-muted); flex-shrink: 0; }
+
+  /* Gallery grid — placeholder swatches that pull from the actual gallery
+     thumbs to give a real-feeling preview. */
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: var(--s-3);
+  }
+  .grid-tile {
+    aspect-ratio: 4 / 3;
+    border-radius: var(--radius-lg);
+    background-color: var(--surface-2);
+    background-size: cover;
+    background-position: center;
+    border: 1px solid var(--border);
+  }
+
+  .badge-pill {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: var(--accent-subtle);
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: var(--s-3);
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* Pagination dots + tutorial hint                                     */
+  /* ------------------------------------------------------------------ */
+
+  .dots {
+    position: absolute;
+    bottom: max(var(--s-4), env(safe-area-inset-bottom, 16px));
+    left: 0; right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--s-2);
+    z-index: 10;
+    padding: var(--s-3);
+    pointer-events: none;
+  }
+
+  .dots-bg {
+    background: color-mix(in oklab, var(--surface-0) 70%, transparent);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 8px 14px;
+    display: flex;
+    gap: 8px;
+    pointer-events: auto;
+  }
+
+  .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--border-strong);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background var(--dur) var(--ease), transform var(--dur) var(--ease), width var(--dur-med) var(--ease);
+  }
+  .dot:hover { background: var(--text-muted); }
+  .dot.active {
+    background: var(--accent);
+    width: 22px;
+    border-radius: 4px;
+  }
+
+  .hint {
+    position: absolute;
+    bottom: calc(60px + env(safe-area-inset-bottom, 0px));
+    left: 50%;
+    transform: translateX(-50%);
+    background: color-mix(in oklab, var(--text) 85%, transparent);
+    color: var(--surface-0);
+    font-size: 12px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    z-index: 9;
+    pointer-events: none;
+    opacity: 0;
+    animation: hint-in 600ms ease 700ms forwards, hint-out 600ms ease 4000ms forwards;
+    font-family: var(--font-mono);
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+
+  @keyframes hint-in { to { opacity: 1; } }
+  @keyframes hint-out { to { opacity: 0; visibility: hidden; } }
+
+  /* ------------------------------------------------------------------ */
+  /* Demo banner — clearly mark this as a prototype                      */
+  /* ------------------------------------------------------------------ */
+
+  .demo-banner {
+    position: absolute;
+    top: 64px;
+    right: var(--s-4);
+    background: var(--warning-subtle);
+    color: var(--warning);
+    font-size: 10px;
+    font-family: var(--font-mono);
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: var(--radius-sm);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    z-index: 11;
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* Reduced motion                                                       */
+  /* ------------------------------------------------------------------ */
+
+  @media (prefers-reduced-motion: reduce) {
+    .hint { display: none; }
+    .track { transition-duration: 1ms !important; }
+  }
+</style>
+</head>
+
+<body>
+<div class="frame">
+
+  <header class="header">
+    <span class="header-title" id="headerTitle">Home</span>
+    <span class="header-counter"><span id="counterCurrent">1</span> / <span id="counterTotal">5</span></span>
+  </header>
+
+  <span class="demo-banner">demo</span>
+
+  <main class="track" id="track">
+
+    <!-- HOME ---------------------------------------------------------- -->
+    <section class="page" data-name="Home">
+      <p class="kicker">Hi, I'm</p>
+      <h1>Nikolai Nekrutenko</h1>
+      <p class="lede">Electrical &amp; Computer Engineering M.Eng. at Cornell. Embedded systems, sensors, photography.</p>
+      <h2>Recent posts</h2>
+      <ul class="list">
+        <li><span class="list-title">How to Build a Website</span><span class="list-meta">12 min</span></li>
+        <li><span class="list-title">The Mostly Maine Trip</span><span class="list-meta">1 min</span></li>
+        <li><span class="list-title">Book of Bitcoin</span><span class="list-meta">5 min</span></li>
+        <li><span class="list-title">EOLRC Build Guide</span><span class="list-meta">4 min</span></li>
+      </ul>
+    </section>
+
+    <!-- ABOUT ---------------------------------------------------------- -->
+    <section class="page" data-name="About">
+      <span class="badge-pill">Available May 2025</span>
+      <h1>About</h1>
+      <p class="lede">ECE M.Eng. at Cornell, Physics B.A. Dec 2024. Hands-on across embedded systems, sensors, physics modeling, and data viz.</p>
+      <h2>Lately</h2>
+      <p style="color: var(--text-muted); line-height: 1.6;">M.Eng. thesis on a low-cost depth-sensing module for deep-water research with WHOI. Camera by my side on weekends.</p>
+      <h2>Reach me</h2>
+      <p style="color: var(--text-muted);">nan34@cornell.edu</p>
+    </section>
+
+    <!-- GALLERY -------------------------------------------------------- -->
+    <section class="page" data-name="Gallery">
+      <p class="kicker">13 albums · 146 photos</p>
+      <h1>Gallery</h1>
+      <p class="lede">Macro, landscape, and ice — a few favorites.</p>
+      <div class="grid">
+        <div class="grid-tile" style="background-color: #4a6e8a;"></div>
+        <div class="grid-tile" style="background-color: #c9b896;"></div>
+        <div class="grid-tile" style="background-color: #6b8e3d;"></div>
+        <div class="grid-tile" style="background-color: #2c4a5e;"></div>
+        <div class="grid-tile" style="background-color: #a8896f;"></div>
+        <div class="grid-tile" style="background-color: #7a5c8b;"></div>
+      </div>
+    </section>
+
+    <!-- POSTS ---------------------------------------------------------- -->
+    <section class="page" data-name="Posts">
+      <p class="kicker">7 posts</p>
+      <h1>Writing</h1>
+      <ul class="list">
+        <li><span class="list-title">How to Build a Website</span><span class="list-meta">2021 · 12 min</span></li>
+        <li><span class="list-title">The Mostly Maine Trip</span><span class="list-meta">2020 · 1 min</span></li>
+        <li><span class="list-title">Book of Bitcoin</span><span class="list-meta">2020 · 5 min</span></li>
+        <li><span class="list-title">EOLRC Build Guide</span><span class="list-meta">2020 · 4 min</span></li>
+        <li><span class="list-title">Extremely Overkill LEGO RC</span><span class="list-meta">2020 · 2 min</span></li>
+        <li><span class="list-title">Let's Kill This MacBook</span><span class="list-meta">2020 · 3 min</span></li>
+      </ul>
+    </section>
+
+    <!-- RESUME --------------------------------------------------------- -->
+    <section class="page" data-name="Resume">
+      <p class="kicker">Last updated · Apr 2025</p>
+      <h1>Resume</h1>
+      <p class="lede">M.Eng. ECE @ Cornell · Physics B.A. · Formlabs &amp; Freefly internships</p>
+      <h2>Recent roles</h2>
+      <ul class="list">
+        <li><span class="list-title">Systems Integration · Formlabs</span><span class="list-meta">2024</span></li>
+        <li><span class="list-title">Gimbals R&amp;D · Freefly</span><span class="list-meta">2023–24</span></li>
+        <li><span class="list-title">Researcher · Fatemi Lab</span><span class="list-meta">2022–24</span></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <div class="hint">← swipe →</div>
+
+  <nav class="dots" aria-label="Page indicator">
+    <div class="dots-bg" id="dotsBg">
+      <button class="dot active" data-i="0" aria-label="Home"></button>
+      <button class="dot" data-i="1" aria-label="About"></button>
+      <button class="dot" data-i="2" aria-label="Gallery"></button>
+      <button class="dot" data-i="3" aria-label="Posts"></button>
+      <button class="dot" data-i="4" aria-label="Resume"></button>
+    </div>
+  </nav>
+
+</div>
+
+<script>
+(() => {
+  const track       = document.getElementById('track');
+  const dotsBg      = document.getElementById('dotsBg');
+  const headerTitle = document.getElementById('headerTitle');
+  const counterCur  = document.getElementById('counterCurrent');
+  const counterTot  = document.getElementById('counterTotal');
+
+  const pages       = [...track.querySelectorAll('.page')];
+  const dots        = [...dotsBg.querySelectorAll('.dot')];
+  const NAMES       = pages.map(p => p.dataset.name);
+  const N           = pages.length;
+  counterTot.textContent = N;
+
+  let current = 0;
+  let dragging = false;
+  let pointerId = null;
+  let startX = 0, startY = 0, startT = 0;
+  let dx = 0, dy = 0;
+  let lockedAxis = null; // 'x' | 'y' | null
+
+  const SNAP_RATIO  = 0.22;   // px / vw → page change if past this fraction
+  const FAST_VEL    = 0.45;   // px / ms → fast-flick override
+
+  function setPage(i, animate = true) {
+    current = Math.max(0, Math.min(N - 1, i));
+    track.style.transition = animate
+      ? 'transform 320ms cubic-bezier(0.22, 0.72, 0.18, 1)'
+      : 'none';
+    track.style.transform = `translate3d(${-current * 100}vw, 0, 0)`;
+    dots.forEach((d, j) => d.classList.toggle('active', j === current));
+    headerTitle.textContent = NAMES[current];
+    counterCur.textContent = current + 1;
+    if (history.replaceState) {
+      history.replaceState(null, '', '#' + NAMES[current].toLowerCase());
+    }
+  }
+
+  function setLiveTransform(deltaPx) {
+    track.style.transform = `translate3d(calc(${-current * 100}vw + ${deltaPx}px), 0, 0)`;
+  }
+
+  /* ---------------- pointer events (touch + mouse + pen) ---------------- */
+
+  track.addEventListener('pointerdown', e => {
+    if (e.pointerType === 'mouse' && e.button !== 0) return;
+    dragging = true;
+    pointerId = e.pointerId;
+    startX = e.clientX; startY = e.clientY; startT = performance.now();
+    dx = 0; dy = 0; lockedAxis = null;
+    track.classList.add('dragging');
+    track.style.transition = 'none';
+    track.setPointerCapture(pointerId);
+  });
+
+  track.addEventListener('pointermove', e => {
+    if (!dragging || e.pointerId !== pointerId) return;
+    dx = e.clientX - startX;
+    dy = e.clientY - startY;
+
+    // Once movement exceeds 8px on either axis, lock to the dominant one.
+    if (!lockedAxis) {
+      if (Math.abs(dx) > 8 && Math.abs(dx) > Math.abs(dy)) {
+        lockedAxis = 'x';
+      } else if (Math.abs(dy) > 8 && Math.abs(dy) > Math.abs(dx)) {
+        lockedAxis = 'y';
+        dragging = false;
+        try { track.releasePointerCapture(pointerId); } catch (_) {}
+        setPage(current);
+        return;
+      }
+    }
+
+    if (lockedAxis !== 'x') return;
+    e.preventDefault();
+
+    // Rubber-band at the first/last edge (linear inside range, 30% past).
+    let effective = dx;
+    if ((current === 0 && dx > 0) || (current === N - 1 && dx < 0)) {
+      effective = dx * 0.3;
+    }
+    setLiveTransform(effective);
+  });
+
+  function endDrag(e) {
+    if (!dragging) return;
+    dragging = false;
+    track.classList.remove('dragging');
+    try { track.releasePointerCapture(pointerId); } catch (_) {}
+
+    if (lockedAxis !== 'x') { setPage(current); return; }
+
+    const dt = Math.max(1, performance.now() - startT);
+    const v = dx / dt; // px/ms
+    const past = Math.abs(dx) > window.innerWidth * SNAP_RATIO;
+    const fast = Math.abs(v) > FAST_VEL;
+
+    if (dx < 0 && (past || fast))      setPage(current + 1);
+    else if (dx > 0 && (past || fast)) setPage(current - 1);
+    else                               setPage(current);
+  }
+
+  track.addEventListener('pointerup',     endDrag);
+  track.addEventListener('pointercancel', endDrag);
+  track.addEventListener('lostpointercapture', endDrag);
+
+  /* ---------------- dots ---------------- */
+
+  dotsBg.addEventListener('click', e => {
+    const dot = e.target.closest('.dot');
+    if (!dot) return;
+    setPage(+dot.dataset.i);
+  });
+
+  /* ---------------- keyboard (desktop testing) ---------------- */
+
+  window.addEventListener('keydown', e => {
+    if (e.target.closest('input, textarea')) return;
+    if (e.key === 'ArrowLeft')  setPage(current - 1);
+    if (e.key === 'ArrowRight') setPage(current + 1);
+    if (e.key === 'Home')       setPage(0);
+    if (e.key === 'End')        setPage(N - 1);
+  });
+
+  /* ---------------- hash routing on load + back/forward ---------------- */
+
+  function syncFromHash(animate) {
+    const h = (location.hash || '').replace('#', '').toLowerCase();
+    const i = NAMES.findIndex(n => n.toLowerCase() === h);
+    if (i >= 0 && i !== current) setPage(i, animate);
+  }
+
+  window.addEventListener('hashchange', () => syncFromHash(true));
+  syncFromHash(false);
+  setPage(current, false);
+})();
+</script>
+</body>
+</html>

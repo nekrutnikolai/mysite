@@ -4,14 +4,23 @@
 {{> head }}
 </head>
 <body>
+<div id="nav-reading-progress" class="nav-reading-progress" aria-hidden="true"></div>
 {{> header }}
 <main class="content">
+{{> breadcrumbs }}
 <h1>Tags</h1>
 <ul class="tag-cloud">
 {{#tags}}<li><a href="{{ url }}" class="tag-chip">{{ name }} <span class="tag-count">{{ count }}</span></a></li>
 {{/tags}}</ul>
+<button id="nav-back-to-top" class="nav-back-to-top" type="button" aria-label="Back to top" hidden>↑</button>
 </main>
 {{> footer }}
+{{> cmdk }}
 <script src="/assets/js/theme.js" defer></script>
+<script src="/assets/js/nav-scroll.js" defer></script>
+<script src="/assets/js/nav-toc.js" defer></script>
+<script src="/assets/js/nav-gallery-filter.js" defer></script>
+<script src="/assets/js/nav-swipe.js" defer></script>
+<script src="/assets/js/nav-cmdk.js" defer></script>
 </body>
 </html>

@@ -4,11 +4,18 @@
 {{> head }}
 </head>
 <body>
+<div id="nav-reading-progress" class="nav-reading-progress" aria-hidden="true"></div>
 {{> header }}
 <main class="content{{#wide}} wide{{/wide}}">
 {{{ content }}}
 </main>
 {{> footer }}
+{{> cmdk }}
 <script src="/assets/js/theme.js" defer></script>
+<script src="/assets/js/nav-scroll.js" defer></script>
+<script src="/assets/js/nav-toc.js" defer></script>
+<script src="/assets/js/nav-gallery-filter.js" defer></script>
+<script src="/assets/js/nav-swipe.js" defer></script>
+<script src="/assets/js/nav-cmdk.js" defer></script>
 </body>
 </html>

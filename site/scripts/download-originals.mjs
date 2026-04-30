@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-// Pull every object from the gallery R2 bucket into
-// content/gallery/<album>/images/. Used by Netlify CI (since originals are
-// no longer in git) and by fresh local clones. Skips files that already
-// match by sha256 metadata to keep re-runs cheap.
+// Pull clean master images from R2 (the `clean/gallery/` prefix) into
+// `content/gallery/<album>/images/`. Used by Netlify CI on every build (since
+// originals are no longer in git) and by fresh local clones. Skips files
+// whose local sha matches the bucket's metadata.
 //
 // Required env (load from .env or the shell):
 //   R2_ACCOUNT_ID
@@ -21,6 +21,7 @@ import {
   S3Client,
   ListObjectsV2Command,
   GetObjectCommand,
+  HeadObjectCommand,
 } from "@aws-sdk/client-s3";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -30,6 +31,7 @@ const ACCOUNT_ID = process.env.R2_ACCOUNT_ID;
 const ACCESS_KEY = process.env.R2_ACCESS_KEY_ID;
 const SECRET_KEY = process.env.R2_SECRET_ACCESS_KEY;
 const BUCKET = process.env.R2_BUCKET || "nnekrut-gallery";
+const PREFIX = "clean/gallery/";
 
 if (!ACCOUNT_ID || !ACCESS_KEY || !SECRET_KEY) {
   console.error("error: R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY must all be set");
@@ -58,6 +60,7 @@ async function listAll() {
   do {
     const res = await s3.send(new ListObjectsV2Command({
       Bucket: BUCKET,
+      Prefix: PREFIX,
       ContinuationToken: token,
     }));
     for (const o of res.Contents || []) items.push(o);
@@ -67,11 +70,14 @@ async function listAll() {
 }
 
 function localPathFor(key) {
-  // key shape: "gallery/<album>/<file>.jpeg" → content/gallery/<album>/images/<file>.jpeg
-  const parts = key.split("/");
-  if (parts.length < 3 || parts[0] !== "gallery") return null;
-  const album = parts[1];
-  const file = parts.slice(2).join("/");
+  // key shape: "clean/gallery/<album>/<file>.jpeg"
+  // → content/gallery/<album>/images/<file>.jpeg
+  if (!key.startsWith(PREFIX)) return null;
+  const rest = key.slice(PREFIX.length);
+  const slash = rest.indexOf("/");
+  if (slash < 0) return null;
+  const album = rest.slice(0, slash);
+  const file = rest.slice(slash + 1);
   return path.join(ROOT, "content", "gallery", album, "images", file);
 }
 
@@ -88,7 +94,7 @@ async function workQueue(items, limit, fn) {
 }
 
 async function main() {
-  console.log(`listing ${BUCKET}…`);
+  console.log(`listing ${BUCKET}/${PREFIX}…`);
   const remote = await listAll();
   console.log(`${remote.length} remote objects, syncing to content/gallery/`);
 
@@ -101,9 +107,8 @@ async function main() {
     if (!dest) { skippedKeys++; return; }
 
     if (fs.existsSync(dest) && fs.statSync(dest).size === obj.Size) {
-      // Cheap pre-check by size; fall through to sha verify only if size matches.
       const localHash = await sha256(dest);
-      const head = await s3.send(new (await import("@aws-sdk/client-s3")).HeadObjectCommand({ Bucket: BUCKET, Key: obj.Key }));
+      const head = await s3.send(new HeadObjectCommand({ Bucket: BUCKET, Key: obj.Key }));
       const remoteHash = head?.Metadata?.sha256;
       if (remoteHash && remoteHash === localHash) {
         skipped++;
