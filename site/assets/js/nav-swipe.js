@@ -82,6 +82,9 @@
       // Expose a normalized [-1, 1] progress value for the CSS edge indicator.
       const live = Math.max(-1, Math.min(1, deltaX / window.innerWidth));
       ROOT.style.setProperty('--swipe-progress', String(live));
+      // Track the finger 1:1 for book-page feel; no transition during drag.
+      main.style.transition = 'none';
+      main.style.transform = 'translateX(' + deltaX + 'px)';
     }
     // If axis is 'y' (or still null), do nothing — let scroll propagate normally.
   }
@@ -119,9 +122,17 @@
     dragging = false;
     ROOT.classList.remove('swipe-tracking');
     ROOT.style.removeProperty('--swipe-progress');
+    // Snap back to origin if we were dragging the page.
+    if (main.style.transform) {
+      main.style.transition = 'transform .22s cubic-bezier(.22,.72,.18,1)';
+      main.style.transform = '';
+    }
   }
 
   function navigate(href, direction) {
+    // Clear inline drag styles so the View Transition snapshot starts clean.
+    main.style.transition = '';
+    main.style.transform = '';
     if (document.startViewTransition) {
       // Stamp direction so CSS can pick the correct keyframes.
       ROOT.dataset.swipeDirection = direction;
