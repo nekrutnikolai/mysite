@@ -10,14 +10,21 @@ Design identity is grounded in `claude-code-design-guide.html` (strict guideline
 
 Live site is `https://nnekrut.netlify.app/`, built and deployed from `master` by Netlify running `npm ci && npm run download-originals && npm run build`.
 
+## Prerequisites
+
+- Node ≥ 20.
+- `npx playwright install chromium` — first time only, needed for tests.
+- `.env` with R2 credentials — copy `.env.example` and fill in `R2_ACCESS_KEY_ID` + `R2_SECRET_ACCESS_KEY`. Without it the build still runs but gallery images will be broken (sharp has nothing to process).
+
 ## Commands
 
 - `npm run dev` — start local dev server on `http://localhost:3100` with chokidar watch + SSE live-reload. Cold-build takes ~75 s (146 gallery images through `sharp`); subsequent rebuilds are near-instant thanks to `site/cache/images.json`.
 - `npm run build` — one-shot production build into `dist/`.
 - `npm run download-originals` — pull gallery masters from R2 (needs `.env`).
 - `npm run upload-originals` — push clean + watermarked galleries to R2 after a `BUILD_ORIGINALS=1` build.
-- `npm run test` — full Playwright suite.
-- `ITERATION=N npm run test:iter` — run only the subset gated at iteration N (0–8; used during the migration, kept around for targeted re-runs).
+- `npm run test` — full Playwright suite (starts dev server automatically via `playwright.config.ts` `webServer`).
+- `npx playwright test tests/integrity.spec.ts` — run a single spec file.
+- `npx playwright test -g "broken links"` — run tests matching a name pattern.
 - `npm run test:visual` / `test:a11y` / `test:perf` / `test:integrity` — single-discipline runs.
 - `npm run test:update` — re-seed visual golden screenshots after intentional CSS changes.
 - `npm run report` — open the Playwright HTML report after a failed run.
@@ -53,22 +60,25 @@ Dropped from the parchment guide per spec: Space Grotesk (typography stays consi
 
 ## Content & URLs preserved
 
-- Home `/`, about/portfolio/resume pages.
-- All 7 published posts at `/posts/<slug>/` (same slugs Hugo produces). 5 drafts correctly excluded.
-- All 13 galleries at `/gallery/<name>/` + images pipelined to thumbs/previews/originals. `/gallery/` index page.
-- 16 tag pages at `/tags/<tag>/` + `/tags/` index.
-- `/Resume.pdf`, `/Portfolio.pdf`, `/e_horiz_report.pdf` copied from `content/` to `dist/` root.
-- RSS at `/index.xml` (latest 10 posts, RFC 822 dates). Sitemap at `/sitemap.xml` (all 44 URLs with lastmod). `/robots.txt` allows all and points at sitemap. `/404.html` styled.
-- OpenGraph + Twitter meta on every page (canonical, og:title/type/url/image, twitter:card).
+All URLs were migrated bit-for-bit from Hugo. Posts at `/posts/<slug>/`, galleries at `/gallery/<name>/`, tags at `/tags/<tag>/`. PDFs copied to `dist/` root. RSS at `/index.xml`, sitemap at `/sitemap.xml`. OpenGraph + Twitter meta on every page. The integrity test suite verifies all of this against source markdown at runtime.
+
+## Deployment
+
+Netlify builds from `master` via `netlify.toml`. In production, `R2_PUBLIC_BASE` is set so gallery lightbox loads full-res images directly from R2 (skipping the heavy original-encode pass — ~22 s vs ~76 s cold build). Deploy previews unset `SITE_URL` so OG/canonical URLs fall through to Netlify's `DEPLOY_PRIME_URL`.
 
 ## Test harness
 
-Playwright runs four audit disciplines per iteration, gated by the `ITERATION` env var:
+Playwright config is `playwright.config.ts`. It auto-starts the dev server (`npm run dev`) before tests, reuses an existing one locally, and targets Chromium only. Visual snapshot tolerance is 1% pixel diff ratio.
 
-- **Visual regression** — golden PNGs in `tests/snapshots/` across light/dark/parchment for anchor pages, homes, posts, tags, galleries, 404. Preview page at `/__preview/` exercises every component state.
-- **Accessibility** — `@axe-core/playwright` on every key page in all three themes; WCAG 2.1 AA rules. Third-party iframes (YouTube/Jovian) are excluded from analysis because we don't control their DOM.
-- **Performance** — programmatic Lighthouse via `chrome-launcher` at Playwright's bundled Chromium. Home page budget: perf ≥ 95, LCP < 1500 ms. Worst-case gallery (`/gallery/maine-trip/`, 38 images) budget: perf ≥ 80, LCP < 3500 ms.
-- **Integrity** — broken-link crawler, post/tag/gallery count parity vs source markdown, PDF reachability, sitemap/RSS/robots shape, canonical + OG meta presence on every page type.
+Seven spec files, four main disciplines plus three feature-focused:
+
+- `visual.spec.ts` — golden PNGs in `tests/snapshots/` across light/dark/parchment for anchor pages, homes, posts, tags, galleries, 404. Preview page at `/__preview/` exercises every component state.
+- `a11y.spec.ts` — `@axe-core/playwright` on every key page in all three themes; WCAG 2.1 AA rules. Third-party iframes (YouTube/Jovian) excluded because we don't control their DOM.
+- `perf.spec.ts` — programmatic Lighthouse via `chrome-launcher` at Playwright's bundled Chromium. Home page budget: perf ≥ 95, LCP < 1500 ms. Worst-case gallery (`/gallery/maine-trip/`, 38 images) budget: perf ≥ 80, LCP < 3500 ms.
+- `integrity.spec.ts` — broken-link crawler, post/tag/gallery count parity vs source markdown, PDF reachability, sitemap/RSS/robots shape, canonical + OG meta presence on every page type. Sub-modules in `tests/integrity/`.
+- `lightbox.spec.ts` — gallery lightbox interaction (open/close, keyboard nav, swipe).
+- `nav-scroll.spec.ts` — scroll-driven nav behavior (progress bar, back-to-top, sticky TOC).
+- `theme-toggle.spec.ts` — theme cycling + localStorage persistence.
 
 Helpers in `tests/helpers/`:
 - `dev-server.ts::blockLiveReload(page)` also routes third-party iframe hosts to `abort()` so visual tests stay stable across YouTube UI churn.
