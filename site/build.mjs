@@ -25,6 +25,14 @@ try {
   expand = (s) => s;
 }
 
+// Stable color class for a tag name — cycles through the four semantic colors.
+const TAG_COLORS = ["accent", "success", "warning", "danger"];
+function tagColor(name) {
+  let h = 0;
+  for (let i = 0; i < name.length; i++) h = ((h << 5) - h + name.charCodeAt(i)) | 0;
+  return TAG_COLORS[((h % TAG_COLORS.length) + TAG_COLORS.length) % TAG_COLORS.length];
+}
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 const DIST = path.join(ROOT, "dist");
@@ -465,7 +473,7 @@ export async function build() {
     const date = entry.frontmatter.date;
     const tagList = (Array.isArray(entry.frontmatter.tags) ? entry.frontmatter.tags : [])
       .filter((t) => String(t).trim())
-      .map((t) => ({ name: String(t), slug: slugify(t) }));
+      .map((t) => ({ name: String(t), slug: slugify(t), color: tagColor(String(t)) }));
 
     // Posts are sorted descending by date. "Newer" is the post at i-1.
     const newerPost = i > 0 ? postRenders[i - 1].entry : null;
@@ -526,6 +534,7 @@ export async function build() {
     .map(([name, tagPosts]) => ({
       name,
       slug: slugify(name),
+      color: tagColor(name),
       count: tagPosts.length,
       url: `/tags/${slugify(name)}/`,
       posts: tagPosts
@@ -630,17 +639,21 @@ export async function build() {
       Array.isArray(p.frontmatter.tags) && p.frontmatter.tags[0]
         ? String(p.frontmatter.tags[0])
         : null,
+    firstTagColor:
+      Array.isArray(p.frontmatter.tags) && p.frontmatter.tags[0]
+        ? tagColor(String(p.frontmatter.tags[0]))
+        : null,
   }));
   const homeHtml = render("home", buildOgCtx({
     url: "/",
     title: SITE_TITLE,
     siteTitle: "",
     description:
-      "Nikolai Nekrutenko — personal site. ECE M.Eng. at Cornell. Embedded systems, sensors, photography.",
+      "Nikolai Nekrutenko — Avionics Hardware Development Engineer at Varda Space Industries. Embedded systems, sensors, photography.",
     wide: false,
     year: new Date().getFullYear(),
     kicker: "Hi, I'm",
-    lede: `I'm an Electrical &amp; Computer Engineering M.Eng. student at Cornell, working on embedded systems, sensors, and physics-based modeling. I also enjoy <a href="/gallery/">photography</a> and <a href="/posts/">writing about projects</a>.`,
+    lede: `I'm an Avionics Hardware Development Engineer at <a href="https://varda.com" target="_blank" rel="noopener">Varda Space Industries</a>, working on GNC sensors and pharmaceutical instrumentation. I also enjoy <a href="/gallery/">photography</a> and <a href="/posts/">writing about projects</a>.`,
     actions: [
       { label: "Resume", href: "/resume/", class: "btn-secondary", external: false },
       { label: "Portfolio", href: "/portfolio/", class: "btn-primary", external: false },

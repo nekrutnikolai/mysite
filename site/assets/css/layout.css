@@ -340,20 +340,21 @@ img {
 }
 
 .site-footer a {
-  color: var(--text-muted);
   text-decoration: none;
   padding: 3px 10px;
-  border: 1px solid var(--border);
+  border: 1px solid transparent;
   border-radius: var(--radius);
-  transition:
-    color var(--dur) var(--ease),
-    border-color var(--dur) var(--ease);
+  transition: opacity var(--dur) var(--ease);
 }
 
 .site-footer a:hover {
-  color: var(--text);
-  border-color: var(--border-strong);
+  opacity: 0.85;
 }
+
+.site-footer .social-accent  { background: var(--accent-subtle);  color: var(--accent);  }
+.site-footer .social-success { background: var(--success-subtle); color: var(--success); }
+.site-footer .social-danger  { background: var(--danger-subtle);  color: var(--danger);  }
+.site-footer .social-warning { background: var(--warning-subtle); color: var(--warning); }
 
 /* --- Mobile ---------------------------------------------------------- */
 

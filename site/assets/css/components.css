@@ -64,6 +64,42 @@
   margin-block: var(--s-4);
 }
 
+.social-buttons .btn-social-accent {
+  background: var(--accent-subtle);
+  border-color: transparent;
+  color: var(--accent);
+}
+.social-buttons .btn-social-accent:hover {
+  opacity: 0.85;
+}
+
+.social-buttons .btn-social-success {
+  background: var(--success-subtle);
+  border-color: transparent;
+  color: var(--success);
+}
+.social-buttons .btn-social-success:hover {
+  opacity: 0.85;
+}
+
+.social-buttons .btn-social-warning {
+  background: var(--warning-subtle);
+  border-color: transparent;
+  color: var(--warning);
+}
+.social-buttons .btn-social-warning:hover {
+  opacity: 0.85;
+}
+
+.social-buttons .btn-social-danger {
+  background: var(--danger-subtle);
+  border-color: transparent;
+  color: var(--danger);
+}
+.social-buttons .btn-social-danger:hover {
+  opacity: 0.85;
+}
+
 /* --- Badges ---------------------------------------------------------- */
 
 .badge {
@@ -517,15 +553,27 @@ main li {
   background: var(--accent-subtle);
   color: var(--accent);
 }
+.tag-chip--accent  { background: var(--accent-subtle);  color: var(--accent);  }
+.tag-chip--success { background: var(--success-subtle); color: var(--success); }
+.tag-chip--warning { background: var(--warning-subtle); color: var(--warning); }
+.tag-chip--danger  { background: var(--danger-subtle);  color: var(--danger);  }
+.tag-chip--accent:hover  { opacity: 0.85; }
+.tag-chip--success:hover { opacity: 0.85; }
+.tag-chip--warning:hover { opacity: 0.85; }
+.tag-chip--danger:hover  { opacity: 0.85; }
 .tag-count {
   font-size: var(--fs-caption);
-  color: var(--text-muted);
+  color: inherit;
   font-variant-numeric: tabular-nums;
+  opacity: 0.7;
 }
 .tag-chip:hover .tag-count {
-  color: var(--accent);
   opacity: 0.8;
 }
+.tag-link--accent  { color: var(--accent);  }
+.tag-link--success { color: var(--success); }
+.tag-link--warning { color: var(--warning); }
+.tag-link--danger  { color: var(--danger);  }
 .tag-meta {
   color: var(--text-muted);
   font-size: var(--fs-caption);

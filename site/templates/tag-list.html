@@ -10,7 +10,7 @@
 {{> breadcrumbs }}
 <header class="page-header"><h1>Tags</h1></header>
 <ul class="tag-cloud">
-{{#tags}}<li><a href="{{ url }}" class="tag-chip">{{ name }} <span class="tag-count">{{ count }}</span></a></li>
+{{#tags}}<li><a href="{{ url }}" class="tag-chip tag-chip--{{ color }}">{{ name }} <span class="tag-count">{{ count }}</span></a></li>
 {{/tags}}</ul>
 <button id="nav-back-to-top" class="nav-back-to-top" type="button" aria-label="Back to top" hidden>↑</button>
 </main>

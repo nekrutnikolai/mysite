@@ -26,7 +26,7 @@
       <li class="home-recent-item">
         <a href="{{ url }}">
           <span class="home-recent-post-title">{{ title }}</span>
-          <span class="home-recent-post-meta"><time datetime="{{ dateISO }}">{{ dateHuman }}</time>{{#readingTime}} · {{ readingTime }} min{{/readingTime}}{{#firstTag}} · <span class="badge badge--accent">{{ firstTag }}</span>{{/firstTag}}</span>
+          <span class="home-recent-post-meta"><time datetime="{{ dateISO }}">{{ dateHuman }}</time>{{#readingTime}} · {{ readingTime }} min{{/readingTime}}{{#firstTag}} · <span class="badge badge--{{ firstTagColor }}">{{ firstTag }}</span>{{/firstTag}}</span>
         </a>
       </li>
     {{/recent}}
