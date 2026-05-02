@@ -10,7 +10,7 @@ description: "Resume of Nikolai Nekrutenko — Electrical & Computer Engineering
 <header class="resume-header">
   <h1 class="resume-name">Nikolai Nekrutenko</h1>
   <p class="resume-contact">
-    <a href="mailto:nan34@cornell.edu">nan34@cornell.edu</a>
+    <a href="mailto:nekrutnikolai@gmail.com">nekrutnikolai@gmail.com</a>
     <span class="resume-sep" aria-hidden="true">•</span>
     <a href="https://nekrutnikolai.com">nekrutnikolai.com</a>
   </p>
@@ -53,6 +53,17 @@ description: "Resume of Nikolai Nekrutenko — Electrical & Computer Engineering
 
 <section class="resume-section">
   <h2>Work Experience</h2>
+
+  <article class="resume-entry">
+    <div class="resume-row">
+      <span class="resume-row-title">Avionics Hardware Development Engineer · Varda Space Industries · El Segundo, CA</span>
+      <span class="resume-row-date">Aug 2025 – Present</span>
+    </div>
+    <ul class="resume-bullets">
+      <li>Maintain and develop in-house GNC sensors for the Varda Bus.</li>
+      <li>Design custom electronics and instrumentation for pharmaceutical manufacturing.</li>
+    </ul>
+  </article>
 
   <article class="resume-entry">
     <div class="resume-row">
@@ -112,17 +123,17 @@ description: "Resume of Nikolai Nekrutenko — Electrical & Computer Engineering
   <article class="resume-entry">
     <div class="resume-row">
       <span class="resume-row-title">Low-Cost Depth Sensing Module for Deep-Water Research · M.Eng. Thesis</span>
-      <span class="resume-row-date">Sep 2024 – Present</span>
+      <span class="resume-row-date">Sep 2024 – May 2025</span>
     </div>
-    <p class="resume-detail">Researching and developing a custom sensor mechanism and embedded systems package in collaboration with Dr. Hunter Adams and the Woods Hole Oceanographic Institution for depths up to 2000 meters.</p>
+    <p class="resume-detail">Developed a custom sensor mechanism and embedded systems package in collaboration with Dr. Hunter Adams and the Woods Hole Oceanographic Institution for depths up to 2000 meters.</p>
   </article>
 
   <article class="resume-entry">
     <div class="resume-row">
       <span class="resume-row-title">Drone Development Member · Cornell University</span>
-      <span class="resume-row-date">Sep 2023 – Present</span>
+      <span class="resume-row-date">Sep 2023 – May 2025</span>
     </div>
-    <p class="resume-detail">Developing a robust, low-cost quadcopter platform to be used in mechanical, aerospace, and electrical engineering course labs as a supplementary hands-on lab component with a team of engineers.</p>
+    <p class="resume-detail">Developed a robust, low-cost quadcopter platform to be used in mechanical, aerospace, and electrical engineering course labs as a supplementary hands-on lab component with a team of engineers.</p>
   </article>
 
   <article class="resume-entry">

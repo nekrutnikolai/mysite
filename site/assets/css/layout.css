@@ -335,17 +335,24 @@ img {
 .site-footer ul {
   list-style: none;
   display: flex;
-  gap: var(--s-3);
+  flex-wrap: wrap;
+  gap: var(--s-2);
 }
 
 .site-footer a {
   color: var(--text-muted);
   text-decoration: none;
-  transition: color var(--dur) var(--ease);
+  padding: 3px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition:
+    color var(--dur) var(--ease),
+    border-color var(--dur) var(--ease);
 }
 
 .site-footer a:hover {
   color: var(--text);
+  border-color: var(--border-strong);
 }
 
 /* --- Mobile ---------------------------------------------------------- */

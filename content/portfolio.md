@@ -7,23 +7,21 @@ TOC: true
 
 <!-- # Portfolio Test, consider using the table of contents, actually seems to be working now! -->
 
-Hi, nice to meet you! My name is Nikolai Nekrutenko and here is my portfolio:
+Selected projects in embedded systems, sensor design, and hardware engineering.
 
 ---
 
 ## Low-Cost Depth Sensor for Deep-Water Research 
 
-**Sep 2024 - Present | Master's Thesis**
+**Sep 2024 - May 2025 | Master's Thesis**
 
-{{< figure src="/img/portfolio/sensor_sketch.png" alt="A pic of me" position="center" style="border-radius: 8px;" title="IR selfie" titlePosition="center" >}}
+{{< figure src="/img/portfolio/sensor_sketch.png" alt="Sketch of the depth sensor pressure-sensing module" position="center" style="border-radius: 8px;" title="Depth sensor concept sketch" titlePosition="center" >}}
 
-Developing a cost-effective pressure-sensing module to measure depths up to 2000 meters underwater, focusing on affordability, robustness, and ease of integration with Woods Hole Oceanographic Institution (WHOI) instruments. 
+Developed a cost-effective pressure-sensing module to measure depths up to 2000 meters underwater, focusing on affordability, robustness, and ease of integration with Woods Hole Oceanographic Institution (WHOI) instruments. 
 
-The sensor leverages slightly compressible fluids such as H₂O and their linear relationship between change in volume and pressure as the physical mechanism for this sensor. This change in volume will drive a piston made from a magnet that is then non-invaisively sensed with Hall Effect (magnetic field) sensors to determine the position of the piston and from that determine the depth that the submersible is at.
+The sensor leverages slightly compressible fluids such as H₂O and their linear relationship between change in volume and pressure as the physical mechanism for this sensor. This change in volume drives a piston made from a magnet that is then non-invasively sensed with Hall Effect (magnetic field) sensors to determine the position of the piston and from that determine the depth that the submersible is at.
 
 Advised by Dr. Hunter Adams from the Cornell Electrical and Computer Engineering Department and Jonathan Pfeifer from Woods Hole Oceanographic Institution.
-
-Documentation and updates to come as the project progresses.
 
 **Links:**
 - [GitHub Repository](https://github.com/nekrutnikolai/depth_sensor)
@@ -34,7 +32,7 @@ Documentation and updates to come as the project progresses.
 
 **Oct 2024 - Dec 2024 | Group Final Project for Analog IC Circuits (ECE 5530)**
 
-{{< figure src="/img/portfolio/horizon_sensor.png" alt="A pic of me" position="center" style="border-radius: 8px;" title="Horizon Sensor" titlePosition="center" >}}
+{{< figure src="/img/portfolio/horizon_sensor.png" alt="Earth horizon sensor IC layout in Cadence Virtuoso" position="center" style="border-radius: 8px;" title="Horizon Sensor" titlePosition="center" >}}
 
 Developed, simulated, and layed out a micrometer scale integrated circuit sensor for detecting the earth's horizon in a single plane of motion in Cadence Virtuoso.
 
@@ -51,7 +49,7 @@ Two photodiodes are utilized, each outputting a current that is fed into a curre
 
 **Jun 2024 - Aug 2024 | Formlabs**
 
-{{< figure src="/img/portfolio/thermal_selfie.png" alt="A pic of me" position="center" style="border-radius: 8px;" title="IR selfie" titlePosition="center" >}}
+{{< figure src="/img/portfolio/thermal_selfie.png" alt="Infrared thermal image from thermopile array sensor" position="center" style="border-radius: 8px;" title="IR selfie" titlePosition="center" >}}
 
 Devised an experimental setup and methods to evaluate thermopile array infra-red (IR) sensors for next-gen
 SLS printing technology at Formlabs to maximize performance and dimensional accuracy. 
@@ -73,7 +71,7 @@ across varying environmental conditions and sensor configurations using NumPy an
 
 **Jan 2024 - Apr 2024 | Freefly Systems**
 
-{{< figure src="/img/portfolio/gimbal.png" alt="A pic of me" position="center" style="border-radius: 8px;" title="IR selfie" titlePosition="center" >}}
+{{< figure src="/img/portfolio/gimbal.png" alt="Non-orthogonal gimbal kinematic model" position="center" style="border-radius: 8px;" title="Non-orthogonal gimbal" titlePosition="center" >}}
 
 Derived a physics-based model of the forward and inverse kinematics for an experimental non-orthogonal gimbal to be used in a future product. 
 
@@ -90,14 +88,14 @@ communicate with the team.
 
 ## Cornell MAE Drone Development
 
-**Jan 2024 - Apr 2024 | Cornell University Mechanical and Aerospace Engineering Department**
+**Jan 2024 - May 2025 | Cornell University Mechanical and Aerospace Engineering Department**
 
-{{< figure src="/img/portfolio/drone_dylan.jpg" alt="A pic of me" position="center" style="border-radius: 8px;" title="IR selfie" titlePosition="center" >}}
+{{< figure src="/img/portfolio/drone_dylan.jpg" alt="Custom quadcopter prototype on test bench" position="center" style="border-radius: 8px;" title="Drone prototype" titlePosition="center" >}}
 
-Developing a robust, low-cost quadcopter platform to be used in mechanical, aerospace, and electrical
+Developed a robust, low-cost quadcopter platform to be used in mechanical, aerospace, and electrical
 engineering course labs as a supplementary hands-on lab component.
 
-Guiding a team of underclassmen engineering students to develop this project, focusing on two main prototypes: 
+Guided a team of underclassmen engineering students to develop this project, focusing on two main prototypes: 
 1. A drone with a Pi Pico serving as the flight computer targeting electrical engineering and computer science coursework in microcontrollers programming for instance
 2. A drone utilizing commercial off the shelf components targeting more mechanical engineering coursework in controls for instance
 
@@ -136,7 +134,7 @@ in upcoming productions such as new seasons of Marvelous Mrs. Maisel.
 
 **Jun 2022 - May 2023 | Fatemi Lab @ Cornell University**
 
-{{< figure src="/img/portfolio/qcodes_interfacing.png" alt="A pic of me" position="center" style="border-radius: 8px;" title="Columbia Icefield, Jasper National Park" titlePosition="center">}}
+{{< figure src="/img/portfolio/qcodes_interfacing.png" alt="QCoDeS lab equipment interfacing setup diagram" position="center" style="border-radius: 8px;" title="QCoDeS interfacing setup" titlePosition="center">}}
 
 A bundle of installation shell scripts, drivers,
 well-documented documentation and Jupyter notebooks to setup a computer for programmatic
@@ -166,7 +164,7 @@ Co-designed and wrote a program that visualizes the waveform and intensity of mu
 
 **Sep 2020 - Jun 2021 | Penn State University**
 
-| {{< figure src="https://github.com/nekrutnikolai/RISE/blob/main/resources/payload1.jpg?raw=true" alt="A pic of me" position="center" style="border-radius: 8px;" title="IR selfie" titlePosition="center" >}} | {{< figure src="https://github.com/nekrutnikolai/RISE/blob/main/resources/payload2.jpg?raw=true" alt="A pic of me" position="center" style="border-radius: 8px; width: 99%" title="IR selfie" titlePosition="center" >}} |
+| {{< figure src="https://github.com/nekrutnikolai/RISE/blob/main/resources/payload1.jpg?raw=true" alt="Rocket payload with camera, sensor, and voltage regulator" position="center" style="border-radius: 8px;" title="Payload assembly" titlePosition="center" >}} | {{< figure src="https://github.com/nekrutnikolai/RISE/blob/main/resources/payload2.jpg?raw=true" alt="Raspberry Pi Zero W mounted in rocket payload" position="center" style="border-radius: 8px; width: 99%" title="Raspberry Pi Zero W" titlePosition="center" >}} |
 | :---: | :---: |
 |  *Camera, sensor & voltage regulator*  |  *Raspberry Pi Zero W*  |
 
@@ -181,7 +179,7 @@ Developed a 3D printed lightweight Raspberry Pi sensor and imaging payload as pa
 
 **Nov 2020 - Apr 2021 | Personal Project**
 
-{{< figure src="/img/portfolio/miner_wrangler.png" alt="A pic of me" position="center" style="border-radius: 8px;" title="Columbia Icefield, Jasper National Park" titlePosition="center">}}
+{{< figure src="/img/portfolio/miner_wrangler.png" alt="MinerWrangler terminal output and setup script" position="center" style="border-radius: 8px;" title="MinerWrangler" titlePosition="center">}}
 
 Wrote a custom installation shell script for headless
 Ubuntu-powered machines to allow for Ethereum mining. 

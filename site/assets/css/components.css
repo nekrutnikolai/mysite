@@ -55,6 +55,15 @@
   color: var(--danger);
 }
 
+/* --- Social buttons (about page) ------------------------------------- */
+
+.social-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  margin-block: var(--s-4);
+}
+
 /* --- Badges ---------------------------------------------------------- */
 
 .badge {

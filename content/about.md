@@ -5,17 +5,16 @@ draft: false
 ---
 {{< figure src="/img/glacier.jpg" alt="A pic of me" position="center" style="border-radius: 8px;" title="Columbia Icefield, Jasper National Park" titlePosition="center">}}
 
-Columbia Icefield, Jasper National Park
-
 ## Hi, nice to meet you! I'm Nikolai
 
-I'm seeking a full-time job after graduation!
+<div class="social-buttons">
+  <a class="btn btn-secondary" href="https://www.linkedin.com/in/nikolai-nekrutenko/" target="_blank" rel="noopener">LinkedIn</a>
+  <a class="btn btn-secondary" href="https://github.com/nekrutnikolai?tab=repositories" target="_blank" rel="noopener">GitHub</a>
+  <a class="btn btn-secondary" href="https://www.youtube.com/channel/UC-WSQ21Q2Q36urFPc4e5T6Q" target="_blank" rel="noopener">YouTube</a>
+  <a class="btn btn-secondary" href="mailto:nekrutnikolai@gmail.com">Email</a>
+</div>
 
-If you'd like to get in touch, email me at [nan34@cornell.edu](mailto:nan34@cornell.edu).
-
-My [resume](Resume.pdf) and [portfolio](/portfolio) can be found in the menu above. 
-
-I am an Electrical and Computer Engineering M.Eng. student at Cornell University, having completed a bachelor’s degree in Physics also at Cornell in Dec. 2024. I will graduate with my M.Eng. in May 2025. I am eager to bring my background in physics and electrical engineering, my hands-on experience in software and hardware engineering particularly in the are of embedded systems and sensors, physics-based modeling and simulation, data analysis and visualization towards solving complex, open-ended problems.
+I’m an Avionics Hardware Development Engineer at Varda Space Industries, where I maintain and develop in-house GNC sensors for the Varda Bus and design custom electronics and instrumentation for pharmaceutical manufacturing. I hold a Master of Engineering in Electrical and Computer Engineering and a Bachelor of Arts in Physics, both from Cornell University. My background spans embedded systems, sensor design, physics-based modeling, and data analysis.
 
 I enjoy spending time going on adventures in the wilderness with a [camera by my side](/gallery).
 
