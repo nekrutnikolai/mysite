@@ -95,3 +95,29 @@ Helpers in `tests/helpers/`:
 - **Script loading:** every template includes `{{> scripts }}` (loads `theme.js` + `nav.js` + optional `lightbox.js`). To gate `lightbox.js` to gallery pages, the `gallery.html` render context sets `lightbox: true`; everywhere else the `{{#lightbox}}` section is falsy.
 - **Escape semantics:** four escape functions in `lib/escape.mjs` look near-identical but each preserves a different historical policy. Don't unify them blindly — `shortcodes.esc` only does 4 entities, `watermark.escapeSvgText` only does 3. dist/ output diff is the only safety check that catches breakage here.
 - **Lighthouse performance budget for maine-trip** is 3500 ms LCP (relaxed from the plan's initial 2500 ms) because 38 images + mobile throttling consistently produce ~3 s LCP even with lazy-loading. Home and other pages hold the stricter 1500 ms budget.
+
+## Future work / suggestions
+
+### Content & discovery
+
+1. **Syntax highlighting** — code blocks are plain `<pre><code>` with no language coloring. Shiki or highlight.js would be a straightforward marked extension.
+2. **Full-text static search** — Cmd+K palette does fuzzy title matching via `__index.json` but has no body-text search. A pagefind or lunr.js index generated at build time would enable it without a server.
+3. **Related posts** — no cross-linking between posts today. Tag-overlap scoring could surface 2–3 related posts at the bottom of each post page.
+4. **Post excerpts in archives** — `/posts/` shows title + date only. Extracting the first paragraph (or a `<!--more-->` marker) and displaying it would improve scanability.
+
+### Performance
+
+5. **HTML/CSS/JS minification** — all assets ship uncompressed. A minification pass (e.g. `html-minifier-terser`, `clean-css`, `terser`) at the end of `build.mjs` is a quick win.
+6. **WebP/AVIF generation** — `sharp` already processes every gallery image; adding next-gen formats with `<picture>` fallback is low-effort and would cut bandwidth significantly.
+7. **Responsive images with srcset** — gallery previews are single-size (2000 w). Generating multiple widths and emitting `srcset` would reduce mobile transfer.
+8. **Incremental content builds** — every rebuild re-renders all posts even if unchanged. Mtime-gating (like the image cache in `site/cache/images.json` already does) would speed dev iteration further.
+
+### Accessibility
+
+9. **`prefers-reduced-motion` support** — no `@media (prefers-reduced-motion)` rules exist. Transitions in lightbox, swipe nav, scroll progress, and theme toggle should respect this preference.
+10. **Skip-to-main link** — no keyboard shortcut to bypass the header. A visually-hidden skip link targeting `#main` is a standard WCAG pattern.
+
+### Gallery
+
+11. **EXIF-based chronological sort** — images currently sort by filename. Sorting by `DateTimeOriginal` from EXIF (already extracted by `exifr`) would give true chronological order within albums.
+12. **Slideshow / auto-advance mode** — lightbox is manual-navigation only. A timed auto-advance with pause-on-interaction would be a nice viewing mode for larger albums.
