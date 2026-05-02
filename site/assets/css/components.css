@@ -353,9 +353,10 @@ main li {
   margin: 0;
 }
 .toc-item { margin: var(--s-1) 0; }
-.toc-level-2 a { font-size: var(--fs-body); color: var(--text); text-decoration: none; }
+.toc a { color: var(--text); text-decoration: none; }
+.toc-level-2 a { font-size: var(--fs-body); color: var(--text); }
 .toc-level-3 { padding-left: var(--s-4); }
-.toc-level-3 a { font-size: var(--fs-caption); color: var(--text-muted); text-decoration: none; }
+.toc-level-3 a { font-size: var(--fs-caption); color: var(--text-muted); }
 .toc a:hover { text-decoration: underline; }
 
 /* Page header — simple block above body */
