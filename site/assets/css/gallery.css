@@ -296,3 +296,36 @@
 .gallery-tile[data-gallery-hidden] {
   display: none;
 }
+
+/* --- Album metadata blurb (frontmatter location/dateRange/desc) ----- */
+
+.gallery-meta-location {
+  font-family: var(--font-mono);
+  font-size: var(--fs-caption);
+  color: var(--text-muted);
+  margin: var(--s-2) 0;
+  letter-spacing: 0.02em;
+}
+.gallery-meta-desc {
+  color: var(--text-muted);
+  max-width: 60ch;
+  margin: var(--s-3) 0 var(--s-5);
+  line-height: var(--lh-body);
+}
+
+/* --- Dark-mode image softening ------------------------------------- */
+
+[data-theme="dark"] .gallery-tile-img,
+[data-theme="dark"] .gallery-img,
+[data-theme="dark"] figure img {
+  filter: brightness(0.85) contrast(1.05);
+  transition: filter var(--dur) var(--ease);
+}
+
+/* Lightbox shows full-fidelity images regardless of theme. */
+[data-theme="dark"] .lightbox img,
+[data-theme="dark"] dialog.lightbox img,
+[data-theme="dark"] .lightbox-img,
+[data-theme="dark"] [class*="lightbox"] img {
+  filter: none;
+}

@@ -54,6 +54,12 @@ function galleryPlaceholder(a) {
   return `<div class="gallery-placeholder" data-match="${esc(a.match || "")}">\n  <p><em>Gallery renders from iteration 5 onward.</em></p>\n</div>`;
 }
 
+function pullquote(args) {
+  const text = esc(args.text || (args._positional && args._positional[0]) || "");
+  const author = args.author ? `<footer>— ${esc(args.author)}</footer>` : "";
+  return `<aside class="pullquote"><blockquote>${text}</blockquote>${author}</aside>`;
+}
+
 export function expand(md, ctx = {}) {
   return md.replace(SHORTCODE_RE, (_full, name, argStr) => {
     const args = parseArgs(argStr);
@@ -61,6 +67,7 @@ export function expand(md, ctx = {}) {
       case "figure":          return figure(args, ctx);
       case "youtube":         return youtube(args);
       case "gallery":         return galleryPlaceholder(args);
+      case "pullquote":       return pullquote(args);
       case "mkdowntable":     return `<div class="embed embed--jovian">${MKDOWNTABLE_HTML}</div>`;
       case "countygrapherv1": return `<div class="embed embed--jovian">${COUNTYGRAPHERV1_HTML}</div>`;
       default:

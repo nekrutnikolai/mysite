@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+{{> head }}
+</head>
+<body>
+<div id="nav-reading-progress" class="nav-reading-progress" aria-hidden="true"></div>
+{{> header }}
+<main class="content">
+{{> breadcrumbs }}
+<header class="page-header"><h1>Archive</h1></header>
+
+<section class="archive-section">
+  <h2>Posts</h2>
+  <ul class="post-list">
+  {{#posts}}<li class="post-list-item"><a href="{{ url }}"><span class="post-list-title">{{ title }}</span> <time class="post-list-date" datetime="{{ dateISO }}">{{ dateHuman }}</time></a></li>
+  {{/posts}}</ul>
+</section>
+
+<section class="archive-section">
+  <h2>Galleries</h2>
+  <ul class="post-list">
+  {{#galleries}}<li class="post-list-item"><a href="{{ url }}"><span class="post-list-title">{{ title }}</span></a></li>
+  {{/galleries}}</ul>
+</section>
+
+<section class="archive-section">
+  <h2>Tags</h2>
+  <ul class="tag-cloud">
+  {{#tags}}<li><a href="{{ url }}" class="tag-chip tag-chip--{{ color }}">{{ name }} <span class="tag-count">{{ count }}</span></a></li>
+  {{/tags}}</ul>
+</section>
+
+<button id="nav-back-to-top" class="nav-back-to-top" type="button" aria-label="Back to top" hidden>↑</button>
+</main>
+{{> footer }}
+{{> scripts }}
+</body>
+</html>

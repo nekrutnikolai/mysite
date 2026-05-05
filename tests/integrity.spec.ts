@@ -145,12 +145,13 @@ test("portfolio page has TOC with anchors", async ({ request }) => {
   expect(anchorCount).toBeGreaterThanOrEqual(3);
 });
 
-test("resume preserves raw HTML centering", async ({ request }) => {
+test("resume renders with structured layout", async ({ request }) => {
   test.skip(CURRENT_ITER < 4, "enabled from iteration 4");
   const res = await request.get("/resume/");
   expect(res.status()).toBe(200);
   const html = await res.text();
-  expect(html).toMatch(/align="center"/);
+  expect(html).toMatch(/class="resume-name"/);
+  expect(html).toMatch(/class="resume-section"/);
 });
 
 test("home shows recent posts", async ({ request }) => {

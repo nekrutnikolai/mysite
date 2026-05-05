@@ -12,6 +12,8 @@
   <header class="gallery-header">
     <h1>{{ title }}</h1>
     <p class="gallery-meta"><time datetime="{{ dateISO }}">{{ dateHuman }}</time> · {{ imageCount }} photo{{#imagesPlural}}s{{/imagesPlural}}</p>
+    {{#location}}<p class="gallery-meta-location">{{ location }}{{#dateRange}} · {{ dateRange }}{{/dateRange}}</p>{{/location}}
+    {{#description}}<p class="gallery-meta-desc">{{ description }}</p>{{/description}}
   </header>
 
   {{#intro}}<div class="gallery-intro">{{{ intro }}}</div>{{/intro}}

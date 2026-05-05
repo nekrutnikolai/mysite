@@ -13,6 +13,10 @@ import { slugify } from "./lib/routes.mjs";
 import { processAlbum } from "./lib/images.mjs";
 import { renderRSS, renderSitemap } from "./lib/feeds.mjs";
 import { walkSync } from "./lib/walk.mjs";
+import { startStaticServer } from "./lib/static-server.mjs";
+import { closeBrowser } from "./lib/browser.mjs";
+import { generateResumePdf } from "./lib/resume-pdf.mjs";
+import { generateOgCard } from "./lib/og-card.mjs";
 
 // Agent B owns shortcodes.mjs. If it hasn't landed yet, fall through to a
 // no-op expander so the rest of the pipeline is still verifiable.
@@ -65,7 +69,9 @@ const SITE_DESCRIPTION =
 const DEFAULT_OG_IMAGE = "/img/glacier.jpg";
 
 // Top-level PDFs the site links to. Copied from content/ → dist/ root.
-const PDF_FILES = ["Resume.pdf", "Portfolio.pdf", "e_horiz_report.pdf"];
+// Resume.pdf is omitted because it's now generated from the rendered
+// /resume/ page via headless chromium at the end of the build.
+const PDF_FILES = ["Portfolio.pdf", "e_horiz_report.pdf"];
 
 // Iteration 7 (Agent B): extend every base-layout render context with the
 // fields that partials/head.html now consumes for OpenGraph / Twitter /
@@ -466,6 +472,12 @@ export async function build() {
     return { entry, bodyHtml, minutes: readingTime(bodyHtml), toc };
   });
 
+  // Per-post OpenGraph cards (1200x630 PNG) live under dist/og/<slug>.png.
+  // Always-regenerate is acceptable here — the build is fast enough and the
+  // alternative cache would need to track template+font changes too.
+  const ogDir = path.join(DIST, "og");
+  fs.mkdirSync(ogDir, { recursive: true });
+
   let postCount = 0;
   for (let i = 0; i < postRenders.length; i++) {
     const { entry, bodyHtml, minutes, toc } = postRenders[i];
@@ -480,10 +492,17 @@ export async function build() {
     const adjacent = (p) =>
       p ? { url: p.outputPath, title: p.frontmatter.title || p.slug } : null;
 
-    // Heuristic: grab the first <img src> in the first ~500 chars of the
-    // rendered body as the post's OpenGraph image. Falls through to the
-    // site-wide default when the post has no figure up top.
-    const firstImgMatch = bodyHtml.slice(0, 500).match(/<img[^>]+src=["']([^"']+)["']/i);
+    // Generate the per-post OG card and use it as the post's ogImage. Replaces
+    // the previous first-body-image heuristic.
+    const ogTitle = entry.frontmatter.title || entry.slug;
+    const ogCardPath = path.join(ogDir, `${entry.slug}.png`);
+    await generateOgCard({
+      title: ogTitle,
+      dateHuman: formatDateHuman(date),
+      siteName: SITE_TITLE,
+      outPath: ogCardPath,
+    });
+
     const html = render("post", buildOgCtx({
       url: entry.outputPath,
       title: entry.frontmatter.title || entry.slug,
@@ -502,7 +521,7 @@ export async function build() {
       newer: adjacent(newerPost),
       older: adjacent(olderPost),
       ogType: "article",
-      ogImage: firstImgMatch ? firstImgMatch[1] : undefined,
+      ogImage: `/og/${entry.slug}.png`,
     }));
     writePage(entry.outputPath, html);
     postCount++;
@@ -575,6 +594,21 @@ export async function build() {
     }));
     writePage(tag.url, html);
   }
+
+  // /archive/ — every post + gallery + tag in one human-readable page.
+  const archivePageHtml = render("archive", buildOgCtx({
+    url: "/archive/",
+    title: "Archive",
+    siteTitle: SITE_TITLE,
+    description: "Every post, gallery, and tag on the site.",
+    crumbs: buildCrumbs("/archive/", "Archive"),
+    wide: false,
+    year: new Date().getFullYear(),
+    posts: archiveList,
+    galleries: galleries.map((g) => ({ url: g.outputPath, title: g.frontmatter.title })),
+    tags: allTags,
+  }));
+  writePage("/archive/", archivePageHtml);
 
   // Render top-level pages (about / portfolio / resume / resume_old, plus any
   // future content/*.md). TOC is opt-in via `TOC: true` or `toc: true` in
@@ -753,6 +787,22 @@ export async function build() {
       })),
     })
   );
+
+  // Generate Resume.pdf from the rendered /resume/ page. dist/ is now fully
+  // written, so we can spin up a tiny static server and point chromium at it.
+  const tempServer = await startStaticServer(DIST);
+  try {
+    await generateResumePdf({
+      outPath: path.join(DIST, "Resume.pdf"),
+      devServerUrl: tempServer.url,
+    });
+  } finally {
+    await tempServer.close();
+  }
+
+  // Shut the headless browser down — leaving it open would prevent node from
+  // exiting cleanly when build.mjs is run as a standalone CLI.
+  await closeBrowser();
 
   return {
     pages: 2 + postCount + pageCount + 1 + 1 + allTags.length + galleryPageCount + 1 + gallerySoloCount,
