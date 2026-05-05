@@ -233,7 +233,7 @@
   .site-header,
   .site-footer,
   .site-nav-toggle,
-  .theme-toggle,
+  .theme-switch,
   .resume-actions,
   .no-print {
     display: none !important;

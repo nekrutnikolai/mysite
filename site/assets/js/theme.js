@@ -1,6 +1,6 @@
-// Theme toggle — cycles light → dark → parchment → light.
+// Theme switch — single circular button cycles light → dark → parchment.
+// The active icon fades + scale-rotates in while the others fade out.
 // Storage key is shared with the FOUC-safe inline restorer in partials/head.html.
-// That restorer runs synchronously in <head>, so there is no flash on reload.
 
 (() => {
   const KEY = "nn-site-theme";
@@ -25,8 +25,8 @@
     } catch {
       /* storage blocked — theme still applies in-page */
     }
-    btn.setAttribute("aria-label", LABEL[t] || "Toggle theme");
     btn.dataset.theme = t;
+    btn.setAttribute("aria-label", LABEL[t] || "Toggle theme");
   };
 
   apply(get());

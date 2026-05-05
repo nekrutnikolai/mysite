@@ -12,7 +12,6 @@ import { renderMarkdown } from "./lib/markdown.mjs";
 import { slugify } from "./lib/routes.mjs";
 import { processAlbum } from "./lib/images.mjs";
 import { renderRSS, renderSitemap } from "./lib/feeds.mjs";
-import { buildContentIndex } from "./lib/contentIndex.mjs";
 import { walkSync } from "./lib/walk.mjs";
 
 // Agent B owns shortcodes.mjs. If it hasn't landed yet, fall through to a
@@ -694,13 +693,6 @@ export async function build() {
   // /robots.txt — allow everything, point crawlers at the sitemap.
   const robotsContent = `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`;
   fs.writeFileSync(path.join(DIST, "robots.txt"), robotsContent);
-
-  // Cmd+K content index — emitted before feeds so the palette can fetch a
-  // single JSON file at /__index.json.
-  fs.writeFileSync(
-    path.join(DIST, "__index.json"),
-    buildContentIndex({ pages, posts, galleries, tags: allTags })
-  );
 
   // Feeds — RSS at /index.xml, sitemap at /sitemap.xml. Written last so every
   // other page already exists on disk; the URL list mirrors what was rendered.

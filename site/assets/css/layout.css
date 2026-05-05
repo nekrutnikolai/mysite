@@ -158,9 +158,11 @@ body {
   border-radius: 1px;
 }
 
-/* Theme toggle button: 32x32 square, neutral disc glyph via ::before that
-   adapts per data-theme. Visible in all three themes. */
-.theme-toggle {
+/* Theme switch — single circular button. Click cycles through themes;
+   the icon for the active theme fades + scale-rotates in while the others
+   fade out. The button itself stays a single 32x32 affordance. */
+.theme-switch {
+  position: relative;
   width: 32px;
   height: 32px;
   display: inline-flex;
@@ -168,33 +170,40 @@ body {
   justify-content: center;
   background: transparent;
   border: 1px solid transparent;
-  border-radius: var(--radius);
-  color: var(--text-muted);
+  border-radius: 50%;
   cursor: pointer;
   font: inherit;
-  transition:
-    color var(--dur) var(--ease),
-    border-color var(--dur) var(--ease),
-    background var(--dur) var(--ease);
+  color: var(--text);
+  overflow: hidden;
+  transition: background var(--dur) var(--ease), border-color var(--dur) var(--ease);
 }
 
-.theme-toggle:hover {
-  color: var(--text);
+.theme-switch:hover {
   background: var(--surface-hover);
 }
 
-.theme-toggle::before {
-  content: "\25D1"; /* half-filled circle — theme-agnostic glyph */
-  font-size: 16px;
-  line-height: 1;
+.theme-switch:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
-[data-theme="dark"] .theme-toggle::before {
-  content: "\263D"; /* moon */
+.theme-switch-icon {
+  position: absolute;
+  inset: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.6) rotate(-90deg);
+  transition: opacity var(--dur-med) var(--ease), transform var(--dur-med) var(--ease);
+  pointer-events: none;
 }
 
-[data-theme="parchment"] .theme-toggle::before {
-  content: "\2750"; /* page glyph */
+.theme-switch[data-theme="light"] [data-theme-icon="light"],
+.theme-switch[data-theme="dark"] [data-theme-icon="dark"],
+.theme-switch[data-theme="parchment"] [data-theme-icon="parchment"] {
+  opacity: 1;
+  transform: scale(1) rotate(0);
 }
 
 /* Section indicator — fades in below the logo as the reader scrolls past h2.
@@ -219,40 +228,6 @@ body {
 }
 @media (max-width: 640px) {
   .site-header .site-section-indicator { display: none; }
-}
-
-/* Cmd+K trigger button — the visible affordance for the palette. */
-.site-header .site-cmdk-trigger {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  height: 32px;
-  padding: 0 10px 0 12px;
-  background: transparent;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  color: var(--text-muted);
-  font: inherit;
-  font-size: 13px;
-  cursor: pointer;
-  transition: border-color var(--dur) var(--ease), color var(--dur) var(--ease);
-}
-.site-header .site-cmdk-trigger:hover {
-  border-color: var(--border-strong);
-  color: var(--text);
-}
-.site-header .site-cmdk-trigger-key {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--text-muted);
-  padding: 1px 5px;
-  background: var(--surface-1);
-  border-radius: 3px;
-  border: 1px solid var(--border);
-}
-@media (max-width: 640px) {
-  .site-header .site-cmdk-trigger-key { display: none; }
-  .site-header .site-cmdk-trigger { padding: 0 10px; }
 }
 
 /* --- Main content ---------------------------------------------------- */
