@@ -90,6 +90,18 @@ function handle(req, res) {
 
   const file = resolveFile(req.url);
   if (!file) {
+    // Mirror Netlify behavior: serve dist/404.html with a 404 status for any
+    // unmatched path. Falls back to a plain stub if the styled 404 isn't built.
+    const fallback = path.join(DIST, "404.html");
+    if (fs.existsSync(fallback)) {
+      let html = fs.readFileSync(fallback, "utf8");
+      html = html.includes("</body>")
+        ? html.replace("</body>", `${LIVERELOAD_SNIPPET}\n</body>`)
+        : html + LIVERELOAD_SNIPPET;
+      res.writeHead(404, { "content-type": MIME[".html"] });
+      res.end(html);
+      return;
+    }
     res.writeHead(404, { "content-type": MIME[".html"] });
     res.end("<h1>404</h1>");
     return;
