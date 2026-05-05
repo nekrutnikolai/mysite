@@ -2,21 +2,18 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/bab2edd7-a307-4052-ba2e-1b46493f4335/deploy-status)](https://app.netlify.com/projects/nnekrut/deploys)
 
-My personal site. Pure HTML/CSS emitted by a ~700-LOC Node build (`site/build.mjs`), zero framework, deployed to Netlify. Three themes (light, dark, parchment) with localStorage persistence.
+My personal site. Pure HTML/CSS emitted by a small Node build, zero framework, deployed to Netlify. Three themes (light, dark, parchment).
 
 ## Quick start
 
 ```bash
 git clone https://github.com/nekrutnikolai/mysite && cd mysite
 npm install
-npx playwright install chromium    # first time only
-npm run download-originals          # pull gallery masters from R2 (needs .env)
+npm run download-originals          # gallery masters from R2 (needs .env)
 npm run dev                         # http://localhost:3100
 ```
 
-`npm run build` writes `dist/`. `npm run test` runs the Playwright suite.
-
-No `.env`? You can still develop — the build skips the gallery image pipeline and pages render with broken `<img>` tags. R2 credentials go in `.env`; see `.env.example`.
+`npm run build` writes `dist/`. `npm run test` runs the Playwright suite (first time only: `npx playwright install chromium`). Cold local build: ~10 s. Incremental: ~350 ms.
 
 ## How it works
 
@@ -25,7 +22,7 @@ flowchart LR
     MD[content/<br/>posts &middot; pages &middot; galleries<br/>markdown + frontmatter]
     R2[(R2 bucket<br/>nnekrut-gallery)]
     BUILD[site/build.mjs<br/><br/>marked &middot; gray-matter<br/>sharp &middot; exifr]
-    DIST[dist/<br/>static HTML + CSS + JS<br/>+ thumbs/previews/originals]
+    DIST[dist/<br/>static HTML + CSS + JS<br/>+ thumbs/previews/originals<br/>+ per-post OG cards]
     NETLIFY((Netlify CDN<br/>nnekrut.netlify.app))
 
     MD --> BUILD
@@ -34,34 +31,25 @@ flowchart LR
     DIST --> NETLIFY
 ```
 
-Push to `master` → Netlify runs `npm ci && npm run download-originals && npm run build` → publishes `dist/`. No SSR, no hydration, no API. Every page is a real `index.html` on disk.
+Push to `master` → Netlify runs `npm ci && npm run download-originals && npm run build` → publishes `dist/`. Every page is a real `index.html` on disk.
 
 ## Project layout
 
 ```
 site/
-  build.mjs           orchestrator: scan → render → write
-  serve.mjs           dev server with chokidar + SSE live-reload
-  lib/
-    content.mjs       walk content/ → typed records (post|page|gallery|tag)
-    template.mjs      mustache-lite renderer ({{var}} / {{#sec}} / {{>partial}})
-    shortcodes.mjs    Hugo-shortcode pre-pass (figure, youtube, gallery, mkdowntable)
-    images.mjs        sharp pipeline + EXIF + mtime cache
-    routes.mjs        Hugo-compatible slugify
-    feeds.mjs         RSS 2.0 + sitemap XML
-    contentIndex.mjs  flat JSON index for the Cmd+K palette
-    escape.mjs        4 named escape functions (template/feed/shortcode/svg)
-    walk.mjs          one shared recursive directory walker
-  templates/          one .html per page kind (mustache)
-  partials/           head, header, footer, scripts, cmdk, breadcrumbs, toc, …
+  build.mjs           orchestrator
+  serve.mjs           dev server (chokidar + SSE live-reload)
+  lib/                content, templates, shortcodes, sharp pipeline, OG cards, feeds
+  templates/          one .html per page kind (mustache-lite)
+  partials/           head, header, footer, breadcrumbs, toc, scripts
   assets/css/         tokens · themes · layout · components · gallery · resume · nav
-  assets/js/          theme.js (35 LOC) · nav.js (663 LOC) · lightbox.js (554 LOC)
-  cache/images.json   mtime+size keyed manifest (gitignored)
+  assets/js/          theme.js · nav.js · lightbox.js
+  scripts/            R2 sync + local Resume.pdf generator
+  cache/images.json   sharp mtime+size manifest (gitignored)
 
-content/              source markdown — posts, pages, galleries
-static/               files copied verbatim into dist/ (favicons, OG images, PDFs)
+content/              source markdown + Resume.pdf, Portfolio.pdf
+static/               files copied verbatim into dist/ (favicons, OG images)
 tests/                Playwright: integrity · visual · a11y · perf
-docs/                 design specs and execution plans
 dist/                 build output (gitignored)
 ```
 
@@ -69,20 +57,28 @@ dist/                 build output (gitignored)
 
 ```mermaid
 flowchart TB
-    A[clear template cache<br/>rm -rf dist/] --> B[copy static/ → dist/]
-    B --> C[copy site/assets/ → dist/assets/]
-    C --> D[scan content/<br/>posts · pages · galleries · tags]
-    D --> E[process gallery images<br/>sharp: thumb 300h + preview 1200w + 32w blur<br/>exifr: Make · Model · Lens · ISO · Exposure]
-    E --> F[render every page via templates/<br/>posts → post.html<br/>galleries → gallery.html<br/>tags → tag.html<br/>pages → page.html<br/>home → home.html]
-    F --> G[copy PDFs + write feeds<br/>/index.xml RSS<br/>/sitemap.xml<br/>/robots.txt<br/>/__index.json for Cmd+K]
-    G --> H[/dist/ ready to ship/]
+    A[clear dist/] --> B[copy static/ + assets/]
+    B --> D[scan content]
+    D --> E[sharp gallery pipeline<br/>thumb 300h + preview 1500w + watermark<br/>EXIF · mtime cache]
+    E --> F[render pages<br/>+ per-post OG cards<br/>sharp + inline SVG → dist/og/&lt;slug&gt;.png]
+    F --> G[copy PDFs<br/>+ feeds<br/>RSS · sitemap · robots]
+    G --> H[/dist/]
 ```
 
-Cold build is ~75 s for 146 gallery images at 3 sizes each. Subsequent rebuilds with the mtime cache are sub-second. Dev mode (`npm run dev`) re-runs the same build on every save and pushes an SSE `event: reload` to connected browsers.
+## Resume PDF
+
+`Resume.pdf` is regenerated from the live `/resume/` HTML — but **runs locally**, not on the build server, so Netlify doesn't need a chromium binary:
+
+```bash
+npm run build:pdf          # build + regen content/Resume.pdf
+git add content/Resume.pdf && git commit -m "update resume PDF"
+```
+
+Netlify just copies the committed `content/Resume.pdf` into `dist/` like any other PDF.
 
 ## Gallery storage
 
-Source images don't live in git — they're in a Cloudflare R2 bucket (`nnekrut-gallery`) with two prefixes:
+Source images live in a Cloudflare R2 bucket (`nnekrut-gallery`), not git. Two prefixes:
 
 ```mermaid
 flowchart LR
@@ -90,23 +86,15 @@ flowchart LR
     CLEAN[/clean/gallery/&lt;album&gt;/<br/>R2 clean prefix/]
     WM[/gallery/&lt;album&gt;/<br/>R2 watermarked prefix/]
     SHARP[sharp → thumb + preview]
-    LIGHTBOX[lightbox.js<br/>full-res zoom on demand]
+    LIGHTBOX[lightbox.js<br/>full-res zoom]
 
-    LOCAL <-.npm run download-originals.-> CLEAN
+    LOCAL <-.download-originals.-> CLEAN
     LOCAL --> SHARP
     SHARP --> WM
     WM --> LIGHTBOX
 ```
 
-- `clean/` — pristine masters; what `sharp` reads to regenerate thumbnails and previews.
-- `gallery/` — watermarked + EXIF-tagged versions; what the public lightbox loads as `data-full` for full-resolution zoom.
-- `npm run upload-originals` does the reverse: clean from `content/`, watermarked from `dist/`, after a `BUILD_ORIGINALS=1` build.
-
-## Themes
-
-Three themes via `data-theme` attribute on `<html>` with localStorage persistence. Light is `:root`; dark and parchment are overrides in `themes.css`. The toggle in the header cycles `light → dark → parchment → light`. A small inline script in `partials/head.html` restores the theme synchronously before first paint to prevent FOUC.
-
-All semantic colors meet WCAG 2.1 AA contrast for body text.
+`clean/` = pristine masters for sharp regeneration. `gallery/` = watermarked + EXIF-tagged versions the public lightbox loads. `npm run upload-originals` pushes both directions after a `BUILD_ORIGINALS=1` build.
 
 ## Tests
 
@@ -119,46 +107,44 @@ flowchart LR
     RUN --> INT[integrity<br/>links · counts · feeds · OG meta]
 ```
 
-Run `npm run test` for the full suite, or `npm run test:visual` / `:a11y` / `:perf` / `:integrity` for one discipline. After intentional CSS changes, `npm run test:update` re-seeds visual snapshots.
+`npm run test` for the full suite. `npm run test:update` re-seeds visual snapshots after intentional CSS changes.
 
 ## Commands
 
 | Command | What it does |
 |---|---|
-| `npm run dev` | Dev server on `:3100` with chokidar watch + SSE reload |
+| `npm run dev` | Dev server on `:3100` with watch + reload |
 | `npm run build` | One-shot build into `dist/` |
+| `npm run build:pdf` | Regenerate `content/Resume.pdf` (local-only) |
 | `npm run download-originals` | Pull gallery masters from R2 |
 | `npm run upload-originals` | Push clean + watermarked galleries to R2 |
 | `npm run test` | Full Playwright suite |
-| `npm run test:update` | Re-seed visual snapshots after intentional CSS changes |
-| `npm run report` | Open the Playwright HTML report after a failed run |
+| `npm run test:update` | Re-seed visual snapshots |
+| `npm run report` | Open Playwright HTML report |
 
-See [CLAUDE.md](./CLAUDE.md) for the full architecture writeup, gotchas, and design decisions.
+See [CLAUDE.md](./CLAUDE.md) for architecture, gotchas, and design decisions.
 
 ## Future work
 
-Ideas worth picking up, in rough priority order:
-
 ### Content & discovery
-
-1. **Syntax highlighting** — code blocks are plain `<pre><code>` with no language coloring. Shiki or highlight.js would be a straightforward marked extension.
-2. **Full-text static search** — Cmd+K palette does fuzzy title matching via `__index.json` but has no body-text search. A pagefind or lunr.js index generated at build time would enable it without a server.
-3. **Related posts** — no cross-linking between posts today. Tag-overlap scoring could surface 2–3 related posts at the bottom of each post page.
-4. **Post excerpts in archives** — `/posts/` shows title + date only. Extracting the first paragraph (or a `<!--more-->` marker) and displaying it would improve scanability.
+1. **Syntax highlighting** — code blocks are plain `<pre><code>` with no language coloring. Shiki or highlight.js as a marked extension.
+2. **Full-text static search** — no in-page search today. Pagefind or lunr.js index at build time.
+3. **Related posts** — no cross-linking. Tag-overlap scoring could surface 2–3 related posts per page.
+4. **Post excerpts in archives** — `/posts/` shows title + date only. First paragraph or `<!--more-->` marker would improve scanability.
 
 ### Performance
-
-5. **HTML/CSS/JS minification** — all assets ship uncompressed. A minification pass (e.g. `html-minifier-terser`, `clean-css`, `terser`) at the end of `build.mjs` is a quick win.
-6. **WebP/AVIF generation** — `sharp` already processes every gallery image; adding next-gen formats with `<picture>` fallback is low-effort and would cut bandwidth significantly.
-7. **Responsive images with srcset** — gallery previews are single-size (2000 w). Generating multiple widths and emitting `srcset` would reduce mobile transfer.
-8. **Incremental content builds** — every rebuild re-renders all posts even if unchanged. Mtime-gating (like the image cache in `site/cache/images.json` already does) would speed dev iteration further.
+5. **HTML/CSS/JS minification** — all assets ship uncompressed.
+6. **WebP/AVIF generation** — sharp already processes every gallery image; `<picture>` fallback is low-effort.
+7. **Responsive images with srcset** — gallery previews are single-size (1500 w).
+8. **Incremental content builds** — re-renders all posts on every change. Mtime-gating like the image cache would speed up dev iteration.
 
 ### Accessibility
-
-9. **`prefers-reduced-motion` support** — no `@media (prefers-reduced-motion)` rules exist. Transitions in lightbox, swipe nav, scroll progress, and theme toggle should respect this preference.
-10. **Skip-to-main link** — no keyboard shortcut to bypass the header. A visually-hidden skip link targeting `#main` is a standard WCAG pattern.
+9. **`prefers-reduced-motion` support** — no media queries respect it today.
+10. **Skip-to-main link** — no keyboard shortcut to bypass the header.
 
 ### Gallery
+11. **EXIF-based chronological sort** — images currently sort by filename. `DateTimeOriginal` is already extracted.
+12. **Slideshow / auto-advance mode** — lightbox is manual-navigation only.
 
-11. **EXIF-based chronological sort** — images currently sort by filename. Sorting by `DateTimeOriginal` from EXIF (already extracted by `exifr`) would give true chronological order within albums.
-12. **Slideshow / auto-advance mode** — lightbox is manual-navigation only. A timed auto-advance with pause-on-interaction would be a nice viewing mode for larger albums.
+### OG cards
+13. **Bundle Source Serif 4 + IBM Plex Mono** — current cards fall back to system fonts (DejaVu Serif on Linux, Georgia on macOS) for portability. Bundling TTFs would give pixel-identical typography.

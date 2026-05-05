@@ -13,13 +13,14 @@ Live site is `https://nnekrut.netlify.app/`, built and deployed from `master` by
 ## Prerequisites
 
 - Node ≥ 20.
-- `npx playwright install chromium` — first time only, needed for tests.
+- `npx playwright install chromium` — only needed for tests + the local `npm run build:pdf` script. Not required for plain `npm run build`.
 - `.env` with R2 credentials — copy `.env.example` and fill in `R2_ACCESS_KEY_ID` + `R2_SECRET_ACCESS_KEY`. Without it the build still runs but gallery images will be broken (sharp has nothing to process).
 
 ## Commands
 
-- `npm run dev` — start local dev server on `http://localhost:3100` with chokidar watch + SSE live-reload. Cold-build takes ~75 s (146 gallery images through `sharp`); subsequent rebuilds are near-instant thanks to `site/cache/images.json`.
-- `npm run build` — one-shot production build into `dist/`.
+- `npm run dev` — start local dev server on `http://localhost:3100` with chokidar watch + SSE live-reload. Cold-build ~10 s; subsequent rebuilds ~350 ms thanks to `site/cache/images.json`.
+- `npm run build` — one-shot production build into `dist/`. No browser dependency.
+- `npm run build:pdf` — local-only: build + regenerate `content/Resume.pdf` from the live `/resume/` HTML via headless chromium. Run after editing `content/resume.md`; commit the resulting PDF.
 - `npm run download-originals` — pull gallery masters from R2 (needs `.env`).
 - `npm run upload-originals` — push clean + watermarked galleries to R2 after a `BUILD_ORIGINALS=1` build.
 - `npm run test` — full Playwright suite (starts dev server automatically via `playwright.config.ts` `webServer`).
@@ -31,46 +32,50 @@ Live site is `https://nnekrut.netlify.app/`, built and deployed from `master` by
 
 ## Architecture
 
-**Pure HTML output from a tiny Node build.** The whole pipeline is a few hundred LOC of stdlib + five runtime deps (`marked`, `gray-matter`, `sharp`, `exifr`, `chokidar`). No framework, no templating engine, no CSS preprocessor.
+**Pure HTML output from a tiny Node build.** The pipeline is a few hundred LOC of stdlib + six runtime deps (`marked`, `gray-matter`, `sharp`, `exifr`, `chokidar`, `@aws-sdk/client-s3`). No framework, no templating engine, no CSS preprocessor. **No browser at build time** — Playwright is dev-only, used by tests and the local-only `build:pdf` script.
 
-- `site/build.mjs` orchestrates all phases: rm dist → copy `static/` and `site/assets/` → scan content → process gallery images → render posts/pages/galleries/tags → render home → copy PDFs → write RSS (`/index.xml`) + sitemap (`/sitemap.xml`) + `/robots.txt` + `/404.html` + `/__index.json` (Cmd+K palette).
-- `site/serve.mjs` is `node:http` + chokidar. On any watched change it re-runs `build()` and pushes an SSE `event: reload` to connected clients via `/__events`. HTML responses get `<script src="/__livereload.js">` injected just before `</body>` so pages auto-reload on save.
+- `site/build.mjs` orchestrates all phases: rm dist → copy `static/` and `site/assets/` → scan content → process gallery images → render posts/pages/galleries/tags → render `/archive/` → render home → copy PDFs → write RSS (`/index.xml`) + sitemap (`/sitemap.xml`) + `/robots.txt` + `/404.html`. Per-post OG cards are generated inline during the post render loop.
+- `site/serve.mjs` is `node:http` + chokidar. On any watched change it re-runs `build()` and pushes an SSE `event: reload` to connected clients via `/__events`. HTML responses get `<script src="/__livereload.js">` injected just before `</body>` so pages auto-reload on save. Unmatched paths serve `dist/404.html` with HTTP 404 (mirrors the Netlify redirect).
 - `site/lib/template.mjs` is a ~80-LOC mustache-lite renderer: `{{var}}` (HTML-escaped), `{{{raw}}}` (unescaped — for already-rendered markdown bodies), `{{#list}}…{{/list}}` (iterate arrays / enter objects / truthy-block for scalars), `{{^list}}…{{/list}}` (inverse), `{{>partial}}` (inlined once at template-load, recursively, with cycle detection).
-- `site/lib/shortcodes.mjs` pre-processes the four Hugo shortcodes that actually appear in content (`figure`, `youtube`, `gallery`, `mkdowntable`) via a single regex pass before feeding to `marked`. This is simpler than writing a marked extension and works because the shortcodes are line-level directives.
-- `site/lib/images.mjs` processes 146 gallery JPEGs with `sharp` (thumbnail 300h + preview 2000w + 32w blur placeholder) and `exifr` (Make/Model/Lens/Focal/F-number/Exposure/ISO). A manifest cache at `site/cache/images.json` keyed on `srcMtime + srcSize + watermarkConfigHash` makes incremental rebuilds near-instant. Concurrency capped at 8 sharp workers.
+- `site/lib/shortcodes.mjs` pre-processes Hugo-style shortcodes via a single regex pass before feeding to `marked`: `figure`, `youtube`, `gallery`, `mkdowntable`, plus `pullquote` (renders an `<aside class="pullquote">` block with optional author).
+- `site/lib/images.mjs` processes 146 gallery JPEGs with `sharp` (thumbnail 300h + preview 1500w + 32w blur placeholder) and `exifr` (Make/Model/Lens/Focal/F-number/Exposure/ISO). A manifest cache at `site/cache/images.json` keyed on `srcMtime + srcSize + watermarkConfigHash` makes incremental rebuilds near-instant. Concurrency capped at 8 sharp workers.
+- `site/lib/og-card.mjs` renders 1200×630 PNG OG cards per post by composing an inline SVG (title + date + site name) and rasterizing through sharp's libvips pipeline. **No browser launch** — generic font fallbacks (Source Serif 4 → DejaVu Serif → Georgia → serif) keep output identical on macOS dev and Linux CI.
 - `site/lib/routes.mjs` implements Hugo-compatible `slugify` (verified empirically against the original Hugo `public/` so every URL migrates bit-for-bit).
 - `site/lib/content.mjs` is one-shot: walk `content/` recursively, gray-matter parse, classify into `post` / `page` / `gallery` / `gallery-standalone`, skip `draft: true`, sort posts descending by date.
 - `site/lib/feeds.mjs` hand-writes RSS 2.0 + sitemap XML with excerpt extraction. No dep.
 - `site/lib/escape.mjs` exports four named escape functions (`escapeHtml`, `escapeXml`, `escapeShortcodeAttr`, `escapeSvgText`) — same 5 entities but with subtly different policies (e.g. shortcodes don't escape `'`, watermark SVG only does `& < >`).
 - `site/lib/walk.mjs` is the shared recursive directory walker (used by `copyTree` and `buildImgSizeMap` in `build.mjs`).
+- `site/scripts/build-resume-pdf.mjs` is the **local-only** Resume.pdf generator: spins up a tiny http server over `dist/`, renders `/resume/` in headless chromium via Playwright, prints to PDF, writes to `content/Resume.pdf`. Triggered by `npm run build:pdf`. Not part of the Netlify build.
 
 **Design system:** three themes switched via `data-theme` on `<html>` with localStorage persistence.
 
 - `site/assets/css/tokens.css` — single source of truth on `:root` (light is default, no attribute). Light semantic colors darkened from the design-guide originals to pass WCAG 2.1 AA body-text contrast (the guide's verbatim `#2eaadc` etc. fail on white).
 - `site/assets/css/themes.css` — `[data-theme="dark"]` + `[data-theme="parchment"]` blocks, palette overrides only. Parchment accent is `#8a4814` (WCAG-adjusted from the parchment guide's `#c06820`).
-- `site/assets/css/layout.css` — reset, page shell (top header, main column, footer), typography rhythm, mobile breakpoint.
-- `site/assets/css/components.css` — buttons, cards, badges, alerts, figures, blockquote, code, tables, details, inputs, focus ring, TOC, home hero.
-- `site/assets/css/gallery.css` — CSS Grid justified layout (`grid-auto-rows: 200px`), blur-up placeholders, hover-reveal EXIF overlay, `<dialog>`-based lightbox, year-filter chips at the bottom.
-- `site/assets/css/nav.css` — single bundle for breadcrumbs, sticky TOC, reading-progress bar + back-to-top, mobile swipe affordance, Cmd+K palette. Concatenated from 5 feature files at build time of the nav overhaul; merged into one file post-cleanup.
-- `site/assets/js/theme.js` — ~35 LOC. Cycles `light → dark → parchment → light` on click of `#theme-toggle`. FOUC-safe inline restorer in `partials/head.html` runs synchronously before first paint.
-- `site/assets/js/nav.js` — ~660 LOC. Five IIFE-scoped modules concatenated together: scroll progress, sticky-TOC IntersectionObserver, gallery year-filter, mobile swipe-nav, Cmd+K palette controller. Each self-gates on DOM hooks so the same file is safe to load on every page.
+- `site/assets/css/layout.css` — reset, page shell (top header, main column, footer), typography rhythm, mobile breakpoint, theme switch button.
+- `site/assets/css/components.css` — buttons, cards, badges, alerts, figures, blockquote, code, tables, details, inputs, focus ring, TOC, home hero, social pill buttons, drop caps, pullquote, 404 page.
+- `site/assets/css/gallery.css` — CSS Grid justified layout (`grid-auto-rows: 200px`), blur-up placeholders, hover-reveal EXIF overlay, `<dialog>`-based lightbox, year-filter chips, gallery album metadata blurb, dark-mode image softening filter.
+- `site/assets/css/nav.css` — single bundle for breadcrumbs, sticky TOC, reading-progress bar + back-to-top, mobile swipe affordance.
+- `site/assets/js/theme.js` — single circular button cycling `light → dark → parchment → light` with SVG icon crossfade (scale + rotate + opacity). FOUC-safe inline restorer in `partials/head.html` runs synchronously before first paint.
+- `site/assets/js/nav.js` — ~360 LOC. Five IIFE-scoped modules concatenated together: scroll progress, sticky-TOC IntersectionObserver, gallery year-filter, mobile swipe-nav. Each self-gates on DOM hooks so the same file is safe to load on every page.
 - `site/assets/js/lightbox.js` — ~554 LOC vanilla, zero deps. Native `<dialog>`, Esc/arrow-key/swipe navigation, pinch-zoom, pan-while-zoomed at 60 Hz, preloads adjacent images, restores focus on close. Loaded only on gallery pages via the `{{#lightbox}}` flag in `partials/scripts.html`.
 
 Dropped from the parchment guide per spec: Space Grotesk (typography stays consistent — Source Serif 4 display + IBM Plex Mono code + system sans body across all themes), 16px radius, floating orbs, glass morphism, accent glow, rgba focus-ring halos, card lifts.
 
 ## Content & URLs preserved
 
-All URLs were migrated bit-for-bit from Hugo. Posts at `/posts/<slug>/`, galleries at `/gallery/<name>/`, tags at `/tags/<tag>/`. PDFs copied to `dist/` root. RSS at `/index.xml`, sitemap at `/sitemap.xml`. OpenGraph + Twitter meta on every page. The integrity test suite verifies all of this against source markdown at runtime.
+All URLs were migrated bit-for-bit from Hugo. Posts at `/posts/<slug>/`, galleries at `/gallery/<name>/`, tags at `/tags/<tag>/`. PDFs copied to `dist/` root. RSS at `/index.xml`, sitemap at `/sitemap.xml`. OpenGraph + Twitter meta on every page (post pages get a per-post auto-generated card at `/og/<slug>.png`). The integrity test suite verifies all of this against source markdown at runtime.
+
+New routes added post-migration: `/archive/` (every post + gallery + tag in one view; not in main nav).
 
 ## Deployment
 
-Netlify builds from `master` via `netlify.toml`. In production, `R2_PUBLIC_BASE` is set so gallery lightbox loads full-res images directly from R2 (skipping the heavy original-encode pass — ~22 s vs ~76 s cold build). Deploy previews unset `SITE_URL` so OG/canonical URLs fall through to Netlify's `DEPLOY_PRIME_URL`.
+Netlify builds from `master` via `netlify.toml`. In production, `R2_PUBLIC_BASE` is set so gallery lightbox loads full-res images directly from R2 (skipping the heavy original-encode pass — ~5 s vs ~22 s cold build). Deploy previews unset `SITE_URL` so OG/canonical URLs fall through to Netlify's `DEPLOY_PRIME_URL`.
 
 ## Test harness
 
 Playwright config is `playwright.config.ts`. It auto-starts the dev server (`npm run dev`) before tests, reuses an existing one locally, and targets Chromium only. Visual snapshot tolerance is 1% pixel diff ratio.
 
-Seven spec files, four main disciplines plus three feature-focused:
+Spec files (four main disciplines + three feature-focused):
 
 - `visual.spec.ts` — golden PNGs in `tests/snapshots/` across light/dark/parchment for anchor pages, homes, posts, tags, galleries, 404. Preview page at `/__preview/` exercises every component state.
 - `a11y.spec.ts` — `@axe-core/playwright` on every key page in all three themes; WCAG 2.1 AA rules. Third-party iframes (YouTube/Jovian) excluded because we don't control their DOM.
@@ -90,34 +95,25 @@ Helpers in `tests/helpers/`:
 - **Port 3000** is often taken by other local dev servers; this site uses **3100** by default (override with `PORT=`).
 - **FOUC safety:** the theme-restore inline script in `partials/head.html` MUST appear before the stylesheet `<link>` tags. Moving them around will flash the light theme on page load for dark/parchment users.
 - **Mustache-lite nested sections:** the template engine does NOT support nested same-name sections (e.g., `{{#toc}}{{> toc-partial-that-also-uses-toc}}{{/toc}}`). The correct pattern is a boolean guard like `hasToc` + the iteration inside the partial — see `templates/page.html` and `partials/toc.html`.
-- **Gallery URL for `gallertest.md`:** this file is `draft: true` in source and is correctly excluded. `layouts/shortcodes/mkdowntable.html` is still read at build-time for the inline Jovian iframe it contains.
+- **Playwright is dev-only.** It must NOT move back to `dependencies`. The Netlify build is intentionally browser-free; Resume.pdf comes from the locally-committed `content/Resume.pdf`. If you change the resume HTML, run `npm run build:pdf` and commit the regenerated PDF before pushing.
+- **OG cards use generic font fallbacks** because sharp's libvips SVG renderer doesn't auto-fetch web fonts. On macOS dev you'll see Georgia; on Netlify Linux you'll see DejaVu Serif. Both look clean. To get pixel-identical typography, bundle the TTFs and embed via SVG `@font-face` — listed in README "Future work".
 - **Image count:** `content/gallery/*/images/*.jpeg` is 146. All integrity tests derive the expected count from source at runtime.
 - **Script loading:** every template includes `{{> scripts }}` (loads `theme.js` + `nav.js` + optional `lightbox.js`). To gate `lightbox.js` to gallery pages, the `gallery.html` render context sets `lightbox: true`; everywhere else the `{{#lightbox}}` section is falsy.
 - **Escape semantics:** four escape functions in `lib/escape.mjs` look near-identical but each preserves a different historical policy. Don't unify them blindly — `shortcodes.esc` only does 4 entities, `watermark.escapeSvgText` only does 3. dist/ output diff is the only safety check that catches breakage here.
-- **Lighthouse performance budget for maine-trip** is 3500 ms LCP (relaxed from the plan's initial 2500 ms) because 38 images + mobile throttling consistently produce ~3 s LCP even with lazy-loading. Home and other pages hold the stricter 1500 ms budget.
+- **Lighthouse performance budget for maine-trip** is 3500 ms LCP because 38 images + mobile throttling consistently produce ~3 s LCP even with lazy-loading. Home and other pages hold the stricter 1500 ms budget.
+
+## Optional content features
+
+- **Drop caps on a post**: add `dropCap: true` to its frontmatter. Renders a 4.5em first-letter via CSS.
+- **Pull quote in a post**: use `{{< pullquote text="..." author="..." >}}` — author optional.
+- **Gallery album metadata**: add optional frontmatter to `content/gallery/<album>/index.md`:
+  ```yaml
+  location: "Acadia & Bar Harbor, Maine"
+  dateRange: "Aug 10–18, 2024"
+  description: "Coastal hike + lighthouse photography weekend."
+  ```
+  Renders as a muted blurb under the gallery title.
 
 ## Future work / suggestions
 
-### Content & discovery
-
-1. **Syntax highlighting** — code blocks are plain `<pre><code>` with no language coloring. Shiki or highlight.js would be a straightforward marked extension.
-2. **Full-text static search** — Cmd+K palette does fuzzy title matching via `__index.json` but has no body-text search. A pagefind or lunr.js index generated at build time would enable it without a server.
-3. **Related posts** — no cross-linking between posts today. Tag-overlap scoring could surface 2–3 related posts at the bottom of each post page.
-4. **Post excerpts in archives** — `/posts/` shows title + date only. Extracting the first paragraph (or a `<!--more-->` marker) and displaying it would improve scanability.
-
-### Performance
-
-5. **HTML/CSS/JS minification** — all assets ship uncompressed. A minification pass (e.g. `html-minifier-terser`, `clean-css`, `terser`) at the end of `build.mjs` is a quick win.
-6. **WebP/AVIF generation** — `sharp` already processes every gallery image; adding next-gen formats with `<picture>` fallback is low-effort and would cut bandwidth significantly.
-7. **Responsive images with srcset** — gallery previews are single-size (2000 w). Generating multiple widths and emitting `srcset` would reduce mobile transfer.
-8. **Incremental content builds** — every rebuild re-renders all posts even if unchanged. Mtime-gating (like the image cache in `site/cache/images.json` already does) would speed dev iteration further.
-
-### Accessibility
-
-9. **`prefers-reduced-motion` support** — no `@media (prefers-reduced-motion)` rules exist. Transitions in lightbox, swipe nav, scroll progress, and theme toggle should respect this preference.
-10. **Skip-to-main link** — no keyboard shortcut to bypass the header. A visually-hidden skip link targeting `#main` is a standard WCAG pattern.
-
-### Gallery
-
-11. **EXIF-based chronological sort** — images currently sort by filename. Sorting by `DateTimeOriginal` from EXIF (already extracted by `exifr`) would give true chronological order within albums.
-12. **Slideshow / auto-advance mode** — lightbox is manual-navigation only. A timed auto-advance with pause-on-interaction would be a nice viewing mode for larger albums.
+See [README.md "Future work"](./README.md#future-work) for the canonical list (kept in one place to avoid drift).
