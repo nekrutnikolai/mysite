@@ -65,6 +65,24 @@ flowchart TB
     G --> H[/dist/]
 ```
 
+## Adding a gallery
+
+When you have a fresh batch of JPEGs (e.g. from Photos.app):
+
+```bash
+npm run new-gallery -- ~/Pictures/maine-trip
+# scaffolds content/gallery/maine-trip/{index.md, images/}
+# pre-fills frontmatter: title, date, draft: true, location (lat,lng from GPS), dateRange
+
+# edit index.md (friendlier location, description, flip draft: false)
+npm run dev                       # preview at /gallery/maine-trip/
+npm run upload-originals          # push to R2
+git add content/gallery/maine-trip/index.md && git commit -m "add maine-trip gallery"
+git push
+```
+
+Flags: `--name <slug>`, `--title "..."`, `--date <iso>`, `--replace`. HEIC is refused — re-export as JPEG. Filenames are preserved verbatim. 24MP source files work fine; expect proportional sharp/R2-upload time.
+
 ## Resume PDF
 
 `Resume.pdf` is regenerated from the live `/resume/` HTML — but **runs locally**, not on the build server, so Netlify doesn't need a chromium binary:
@@ -116,6 +134,7 @@ flowchart LR
 | `npm run dev` | Dev server on `:3100` with watch + reload |
 | `npm run build` | One-shot build into `dist/` |
 | `npm run build:pdf` | Regenerate `content/Resume.pdf` (local-only) |
+| `npm run new-gallery -- <folder>` | Scaffold a gallery from a folder of JPEGs |
 | `npm run download-originals` | Pull gallery masters from R2 |
 | `npm run upload-originals` | Push clean + watermarked galleries to R2 |
 | `npm run test` | Full Playwright suite |

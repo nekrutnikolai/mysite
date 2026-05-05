@@ -21,6 +21,7 @@ Live site is `https://nnekrut.netlify.app/`, built and deployed from `master` by
 - `npm run dev` — start local dev server on `http://localhost:3100` with chokidar watch + SSE live-reload. Cold-build ~10 s; subsequent rebuilds ~350 ms thanks to `site/cache/images.json`.
 - `npm run build` — one-shot production build into `dist/`. No browser dependency.
 - `npm run build:pdf` — local-only: build + regenerate `content/Resume.pdf` from the live `/resume/` HTML via headless chromium. Run after editing `content/resume.md`; commit the resulting PDF.
+- `npm run new-gallery -- <folder>` — scaffold a new gallery from a folder of exported JPEGs (see "New gallery workflow" below).
 - `npm run download-originals` — pull gallery masters from R2 (needs `.env`).
 - `npm run upload-originals` — push clean + watermarked galleries to R2 after a `BUILD_ORIGINALS=1` build.
 - `npm run test` — full Playwright suite (starts dev server automatically via `playwright.config.ts` `webServer`).
@@ -104,7 +105,7 @@ Helpers in `tests/helpers/`:
 
 ## Optional content features
 
-- **Drop caps on a post**: add `dropCap: true` to its frontmatter. Renders a 4.5em first-letter via CSS.
+- **Drop caps on a post**: enabled on every post by default via the `post--dropcap` class on `<article>` (subtle 1.8em first-letter styling, no float). Toggle off site-wide by removing the class from `site/templates/post.html`.
 - **Pull quote in a post**: use `{{< pullquote text="..." author="..." >}}` — author optional.
 - **Gallery album metadata**: add optional frontmatter to `content/gallery/<album>/index.md`:
   ```yaml
@@ -113,6 +114,39 @@ Helpers in `tests/helpers/`:
   description: "Coastal hike + lighthouse photography weekend."
   ```
   Renders as a muted blurb under the gallery title.
+
+## New gallery workflow
+
+When you have a fresh batch of exported JPEGs (e.g. from Photos.app), use `npm run new-gallery` to scaffold the album in one shot:
+
+```bash
+# Photos.app → File → Export → Export <N> Photos → Photo Kind: JPEG, Size: Full Size
+# pick a destination folder, e.g. ~/Pictures/maine-trip/
+
+npm run new-gallery -- ~/Pictures/maine-trip
+# → creates content/gallery/maine-trip/{index.md, images/}
+# → frontmatter pre-populated: title, date (newest EXIF), draft: true,
+#   location (lat,lng if GPS present), dateRange (if span > 1 day)
+
+# review/edit the generated index.md (friendlier location, description, flip draft: false)
+npm run dev                       # preview at /gallery/maine-trip/
+npm run upload-originals          # push masters + watermarked previews to R2
+git add content/gallery/maine-trip/index.md
+git commit -m "add maine-trip gallery"
+git push                          # Netlify builds + deploys
+```
+
+Flags:
+- `--name <slug>` override the URL slug (default: slugified folder name)
+- `--title "..."` override the display title (default: titlecased folder/slug)
+- `--date <iso>` override frontmatter date (default: newest EXIF DateTimeOriginal)
+- `--replace` wipe an existing `content/gallery/<slug>/` before scaffolding (otherwise the script refuses)
+
+Notes:
+- **24-megapixel JPEGs are fine** — the script just copies files, doesn't re-encode. Sharp's downstream pipeline resizes to thumb (300h) + preview (1500w) for the site, and to watermarked full-size originals when `BUILD_ORIGINALS=1` is set. Expect ~10–15 MB per master JPEG and proportional R2 upload time on `npm run upload-originals`.
+- **HEIC is refused** — Photos.app can export either HEIC or JPEG. The script errors out with a clear message if HEIC files are present. Re-export as JPEG.
+- **Filenames are preserved** — `IMG_1234.jpeg` stays `IMG_1234.jpeg`. Sharp doesn't care; URLs reference these names directly under `/gallery/<slug>/img/`.
+- **GPS auto-fill** — if any image has GPS EXIF, the script averages all coordinates and writes `location: "lat, lng"` into frontmatter. Edit it to a friendly name afterwards (e.g. `"Acadia, Maine"`). The summary printout flags multi-cluster cases (photos from very different places) so you can spot a folder containing photos from different trips.
 
 ## Future work / suggestions
 
