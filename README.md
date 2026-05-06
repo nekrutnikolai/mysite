@@ -132,6 +132,7 @@ flowchart LR
 | Command | What it does |
 |---|---|
 | `npm run dev` | Dev server on `:3100` with watch + reload |
+| `npm run dev:drafts` | Same as `dev` but surfaces `draft: true` content for preview |
 | `npm run build` | One-shot build into `dist/` |
 | `npm run build:pdf` | Regenerate `content/Resume.pdf` (local-only) |
 | `npm run new-gallery -- <folder>` | Scaffold a gallery from a folder of JPEGs |
@@ -162,8 +163,7 @@ See [CLAUDE.md](./CLAUDE.md) for architecture, gotchas, and design decisions.
 10. **Skip-to-main link** — no keyboard shortcut to bypass the header.
 
 ### Gallery
-11. **EXIF-based chronological sort** — images currently sort by filename. `DateTimeOriginal` is already extracted.
-12. **Slideshow / auto-advance mode** — lightbox is manual-navigation only.
+11. **Slideshow / auto-advance mode** — lightbox is manual-navigation only.
 
 ### OG cards
-13. **Bundle Source Serif 4 + IBM Plex Mono** — current cards fall back to system fonts (DejaVu Serif on Linux, Georgia on macOS) for portability. Bundling TTFs would give pixel-identical typography.
+12. **Bundle Source Serif 4 + IBM Plex Mono** — current cards fall back to system fonts (DejaVu Serif on Linux, Georgia on macOS) for portability. Bundling TTFs would give pixel-identical typography.
