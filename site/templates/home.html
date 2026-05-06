@@ -18,21 +18,6 @@
 <figure class="home-portrait">
   <img src="/img/nikolai_pipe_hires.png" alt="Nikolai standing inside a large concrete pipe" width="1000" height="1000" loading="lazy">
 </figure>
-
-<section class="home-recent">
-  <h2 class="home-recent-title">Recent posts</h2>
-  <ul class="home-recent-list">
-    {{#recent}}
-      <li class="home-recent-item">
-        <a href="{{ url }}">
-          <span class="home-recent-post-title">{{ title }}</span>
-          <span class="home-recent-post-meta"><time datetime="{{ dateISO }}">{{ dateHuman }}</time>{{#readingTime}} · {{ readingTime }} min{{/readingTime}}{{#firstTag}} · <span class="badge badge--{{ firstTagColor }}">{{ firstTag }}</span>{{/firstTag}}</span>
-        </a>
-      </li>
-    {{/recent}}
-  </ul>
-  <p class="home-recent-more"><a href="/posts/">All posts &rarr;</a></p>
-</section>
 </main>
 {{> footer }}
 {{> scripts }}

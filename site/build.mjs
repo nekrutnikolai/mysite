@@ -656,25 +656,9 @@ export async function build() {
     }
   }
 
-  // Home — editorial, calm. Hero + recent-posts list.
-  const readingByOutputPath = new Map(
-    postRenders.map((r) => [r.entry.outputPath, r.minutes])
-  );
-  const recent = posts.slice(0, 5).map((p) => ({
-    url: p.outputPath,
-    title: p.frontmatter.title || p.slug,
-    dateISO: formatDateISO(p.frontmatter.date),
-    dateHuman: formatDateHuman(p.frontmatter.date),
-    readingTime: readingByOutputPath.get(p.outputPath) || 0,
-    firstTag:
-      Array.isArray(p.frontmatter.tags) && p.frontmatter.tags[0]
-        ? String(p.frontmatter.tags[0])
-        : null,
-    firstTagColor:
-      Array.isArray(p.frontmatter.tags) && p.frontmatter.tags[0]
-        ? tagColor(String(p.frontmatter.tags[0]))
-        : null,
-  }));
+  // Home — editorial, calm. Hero + portrait, no recents (intentional —
+  // posts ship roughly quarterly so a "Recent" list would read stale most
+  // of the time; readers find content via the nav instead).
   const homeHtml = render("home", buildOgCtx({
     url: "/",
     title: SITE_TITLE,
@@ -689,7 +673,6 @@ export async function build() {
       { label: "Resume", href: "/resume/", class: "btn-secondary", external: false },
       { label: "Portfolio", href: "/portfolio/", class: "btn-primary", external: false },
     ],
-    recent,
   }));
   fs.writeFileSync(path.join(DIST, "index.html"), homeHtml);
 

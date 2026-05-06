@@ -102,6 +102,7 @@ Helpers in `tests/helpers/`:
 - **Script loading:** every template includes `{{> scripts }}` (loads `theme.js` + `nav.js` + optional `lightbox.js`). To gate `lightbox.js` to gallery pages, the `gallery.html` render context sets `lightbox: true`; everywhere else the `{{#lightbox}}` section is falsy.
 - **Escape semantics:** four escape functions in `lib/escape.mjs` look near-identical but each preserves a different historical policy. Don't unify them blindly — `shortcodes.esc` only does 4 entities, `watermark.escapeSvgText` only does 3. dist/ output diff is the only safety check that catches breakage here.
 - **Lighthouse performance budget for maine-trip** is 3500 ms LCP because 38 images + mobile throttling consistently produce ~3 s LCP even with lazy-loading. Home and other pages hold the stricter 1500 ms budget.
+- **Home is intentionally minimal** — hero (kicker + title + lede + Resume/Portfolio buttons) + portrait, no recents list. Posts ship roughly quarterly so a "Recent posts" section reads stale most of the time. To reintroduce: `git log --grep="remove recent-posts"` finds the removal commit; reverting it brings the wiring + CSS back in one shot.
 
 ## Optional content features
 
