@@ -14,6 +14,12 @@ import { processAlbum } from "./lib/images.mjs";
 import { renderRSS, renderSitemap } from "./lib/feeds.mjs";
 import { walkSync } from "./lib/walk.mjs";
 import { generateOgCard } from "./lib/og-card.mjs";
+import {
+  homeSchema,
+  personSchema,
+  articleSchema,
+  imageGallerySchema,
+} from "./lib/structured-data.mjs";
 
 // Agent B owns shortcodes.mjs. If it hasn't landed yet, fall through to a
 // no-op expander so the rest of the pipeline is still verifiable.
@@ -71,6 +77,23 @@ const DEFAULT_OG_IMAGE = "/img/glacier.jpg";
 // need a chromium binary on the build server.
 const PDF_FILES = ["Resume.pdf", "Portfolio.pdf", "e_horiz_report.pdf"];
 
+// Sitewide identity. Used by:
+//   - <meta name="author"> on every page
+//   - <link rel="me"> blocks for IndieWeb / search-engine identity verification
+//   - schema.org Person/Article author hard-coding (site/lib/structured-data.mjs)
+const SITE_AUTHOR = "Nikolai Nekrutenko";
+const SOCIAL_ME_LINKS = [
+  { href: "https://www.linkedin.com/in/nikolai-nekrutenko/" },
+  { href: "https://github.com/nekrutnikolai" },
+  { href: "https://www.youtube.com/channel/UC-WSQ21Q2Q36urFPc4e5T6Q" },
+  { href: "mailto:nekrutnikolai@gmail.com" },
+];
+
+// `max-image-preview:large` opts into Google's full-size image previews in
+// search results, which matters for a photo-heavy site. `index,follow` is the
+// implicit default; spelling it out makes intent explicit.
+const META_ROBOTS = "index,follow,max-image-preview:large";
+
 // Iteration 7 (Agent B): extend every base-layout render context with the
 // fields that partials/head.html now consumes for OpenGraph / Twitter /
 // canonical meta. Caller passes the output URL as `url`; we compute the
@@ -101,6 +124,10 @@ function buildOgCtx(pageCtx) {
     ogImage: absoluteOgImage,
     twitterCard: absoluteOgImage ? "summary_large_image" : "summary",
     nav: navForUrl(url),
+    // Sitewide SEO identity signals (consumed by partials/head.html).
+    metaRobots: META_ROBOTS,
+    siteAuthor: SITE_AUTHOR,
+    socialMeLinks: SOCIAL_ME_LINKS,
     // Cloudflare Web Analytics token. Set CF_ANALYTICS_TOKEN in Netlify's
     // production-context env vars only, so deploy previews and local dev
     // don't pollute the stats. When unset (the local-dev default), the
@@ -411,6 +438,21 @@ export async function build() {
       images,
       ogImage: galleryOgImage,
       lightbox: true,
+      jsonLd: imageGallerySchema({
+        siteUrl: SITE_URL,
+        url: SITE_URL + entry.outputPath,
+        title,
+        dateISO: formatDateISO(entry.frontmatter.date),
+        description: entry.frontmatter.description || undefined,
+        images: images.map((img) => ({
+          contentUrl: img.previewUrl.startsWith("http")
+            ? img.previewUrl
+            : SITE_URL + img.previewUrl,
+          thumbnailUrl: img.thumbUrl.startsWith("http")
+            ? img.thumbUrl
+            : SITE_URL + img.thumbUrl,
+        })),
+      }),
     }));
     writePage(entry.outputPath, galleryContent);
     galleryPageCount++;
@@ -565,6 +607,20 @@ export async function build() {
       older: adjacent(olderPost),
       ogType: "article",
       ogImage: `/og/${entry.slug}.png`,
+      // article:* OG meta — only emitted on posts (gated by truthy
+      // articlePublishedTime in head.html).
+      articlePublishedTime: formatDateISO(date),
+      articleAuthor: `${SITE_URL}/about/`,
+      jsonLd: articleSchema({
+        siteUrl: SITE_URL,
+        url: SITE_URL + entry.outputPath,
+        title: entry.frontmatter.title || entry.slug,
+        dateISO: formatDateISO(date),
+        description: entry.frontmatter.description || undefined,
+        ogImageUrl: `${SITE_URL}/og/${entry.slug}.png`,
+        tags: tagList.map((t) => t.name),
+        wordCount: minutes ? Math.round(minutes * 220) : undefined,
+      }),
     }));
     writePage(entry.outputPath, html);
     postCount++;
@@ -686,6 +742,16 @@ export async function build() {
       hasToc: toc.length > 0,
       toc,
       body: bodyHtml,
+      // /about/ gets the Person schema; other top-level pages don't need
+      // structured data (resume/portfolio aren't standalone "entities" in
+      // schema.org's sense; they're sub-pages of the Person).
+      jsonLd:
+        outputPath === "/about/"
+          ? personSchema({
+              siteUrl: SITE_URL,
+              profileImageUrl: `${SITE_URL}/img/nikolai_pipe_hires.png`,
+            })
+          : null,
     }));
     writePage(outputPath, html);
     pageCount++;
@@ -718,6 +784,11 @@ export async function build() {
       { label: "Resume", href: "/resume/", class: "btn-secondary", external: false },
       { label: "Portfolio", href: "/portfolio/", class: "btn-primary", external: false },
     ],
+    jsonLd: homeSchema({
+      siteUrl: SITE_URL,
+      siteName: SITE_TITLE,
+      profileImageUrl: `${SITE_URL}/img/nikolai_pipe_hires.png`,
+    }),
   }));
   fs.writeFileSync(path.join(DIST, "index.html"), homeHtml);
 

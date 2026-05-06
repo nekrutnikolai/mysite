@@ -2,6 +2,7 @@
 title: "The Book of Bitcoin - An Analogy to Explain Bitcoin"
 date: 2020-08-01T15:57:01-04:00
 draft: false
+description: "Explaining Bitcoin to a skeptical audience using a book-and-pages analogy. A speech from my high school debate class on cryptocurrency, money, and trust."
 toc: true
 images:
 tags:

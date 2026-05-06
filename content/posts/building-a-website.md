@@ -2,6 +2,7 @@
 title: "How to Build a Website: A Guide for Command-Line Novices"
 date: 2021-06-27T10:38:15-04:00
 draft: false
+description: "A step-by-step guide for command-line novices on Mac to build a website using Hugo, the Hello-Friend-NG theme, and Netlify. No programming experience needed."
 toc: true
 images:
 tags:

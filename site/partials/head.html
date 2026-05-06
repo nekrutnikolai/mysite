@@ -2,6 +2,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{{ title }}{{#siteTitle}} · {{ siteTitle }}{{/siteTitle}}</title>
 {{#description}}<meta name="description" content="{{ description }}">{{/description}}
+<meta name="robots" content="{{ metaRobots }}">
+<meta name="author" content="{{ siteAuthor }}">
 <link rel="canonical" href="{{ canonicalUrl }}">
 
 <meta property="og:site_name" content="{{ defaultSiteTitle }}">
@@ -10,11 +12,19 @@
 <meta property="og:type" content="{{ ogType }}">
 <meta property="og:url" content="{{ canonicalUrl }}">
 {{#ogImage}}<meta property="og:image" content="{{ ogImage }}">{{/ogImage}}
+{{#articlePublishedTime}}<meta property="article:published_time" content="{{ articlePublishedTime }}">
+<meta property="article:author" content="{{ articleAuthor }}">{{/articlePublishedTime}}
+{{#tags}}<meta property="article:tag" content="{{ name }}">
+{{/tags}}
 
 <meta name="twitter:card" content="{{ twitterCard }}">
 <meta name="twitter:title" content="{{ ogTitle }}">
 <meta name="twitter:description" content="{{ description }}">
 {{#ogImage}}<meta name="twitter:image" content="{{ ogImage }}">{{/ogImage}}
+
+{{#socialMeLinks}}<link rel="me" href="{{ href }}">
+{{/socialMeLinks}}
+{{#jsonLd}}<script type="application/ld+json">{{{ jsonLd }}}</script>{{/jsonLd}}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:wght@400;600;700&display=swap">

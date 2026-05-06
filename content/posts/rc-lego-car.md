@@ -2,6 +2,7 @@
 title: "EOLRC - An Extremely Overkill LEGO RC Car (from Plane Parts)"
 date: 2020-07-21T7:27:42-04:00
 draft: false
+description: "Building an RC car from LEGO Technic by designing custom 3D-printed adapters in Fusion 360 to mount RC plane electronics: motor, ESC, FPV cam."
 toc: false
 images:
 tags:

@@ -2,6 +2,7 @@
 title: "EOLRC - Build Guide"
 date: 2020-07-29T10:30:15-04:00
 draft: false
+description: "Build guide for an RC car assembled from RC plane electronics, 3D-printed adapters, and LEGO Technic. Bill of parts, print settings, and wiring."
 toc: true
 images:
 tags:

@@ -2,6 +2,7 @@
 title: "Let's Kill This MacBook! - How to Mine Monero on a Mac"
 date: 2020-06-11T10:04:55-04:00
 draft: false
+description: "Setting up an aging MacBook Pro to mine Monero (XMR). Installing xmrig, pool config, and what to expect from a couple of pennies a day."
 toc: false
 images:
 tags:

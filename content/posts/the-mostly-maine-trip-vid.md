@@ -2,6 +2,7 @@
 title: "The Mostly Maine Trip Video"
 date: 2020-08-26T15:12:36-04:00
 draft: false
+description: "A 4K drone video from a trip exploring New England. Borrowed a DJI Mavic Air and captured the coast, forests, and lighthouses I'd just photographed."
 toc: false
 images:
 tags:

@@ -2,6 +2,7 @@
 title: "My First Post"
 date: 2020-04-30T15:21:48-04:00
 draft: false
+description: "First post. What this blog is about, why I made it, and what you can expect: cryptocurrency mining, RC flight, ice cream recipes, and more."
 toc: false
 images:
 tags:
