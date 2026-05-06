@@ -19,6 +19,7 @@ Live site is `https://nekrutnikolai.com/` (custom domain alias on Netlify; the u
 ## Commands
 
 - `npm run dev` — start local dev server on `http://localhost:3100` with chokidar watch + SSE live-reload. Cold-build ~10 s; subsequent rebuilds ~350 ms thanks to `site/cache/images.json`.
+- `npm run dev:drafts` — same as `dev` but with `DRAFTS=1` so `draft: true` posts/pages/galleries are surfaced for local preview (production deploys leave the env var unset, so drafts stay invisible there).
 - `npm run build` — one-shot production build into `dist/`. No browser dependency.
 - `npm run build:pdf` — local-only: build + regenerate `content/Resume.pdf` from the live `/resume/` HTML via headless chromium. Run after editing `content/resume.md`; commit the resulting PDF.
 - `npm run new-gallery -- <folder>` — scaffold a new gallery from a folder of exported JPEGs (see "New gallery workflow" below).
