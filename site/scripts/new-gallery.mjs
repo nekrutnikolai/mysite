@@ -177,7 +177,11 @@ async function main() {
   for (const name of jpegs) {
     const filePath = path.join(sourceDir, name);
     try {
-      const e = await exifr.parse(filePath, { gps: true, pick: ["DateTimeOriginal", "latitude", "longitude"] });
+      // Don't `pick` here — exifr filters tags BEFORE running its GPS-to-
+      // latitude/longitude conversion, so a `pick` of `latitude`/`longitude`
+      // strips the raw GPSLatitude/GPSLongitude tags it needs to compute them.
+      // Parse everything and read just what we need from the result.
+      const e = await exifr.parse(filePath, { gps: true });
       exifResults.push({
         name,
         filePath,
@@ -207,17 +211,33 @@ async function main() {
     dateRange = fmtDateRange(oldest, newest);
   }
 
-  // Location summary — collect images that have GPS, average for a single
-  // representative coord. Print all unique locations rounded to 2 decimals.
+  // Location data — collect images with GPS. Average coords go in
+  // frontmatter as a structured `coords: { lat, lng }` object (parses
+  // natively as gray-matter, friendly for templates + future map viz).
+  // Per-image coords go in a sidecar `coords.json` so future per-photo
+  // visualizations can plot every shot without re-reading EXIF from R2.
+  // The human-readable `location` string stays empty for the user to fill.
   const withGps = exifResults.filter((r) => r.lat !== null && r.lng !== null);
-  let location = null;
+  let coords = null;
+  let coordsSidecar = null;
   if (withGps.length > 0) {
     const avgLat = withGps.reduce((sum, r) => sum + r.lat, 0) / withGps.length;
     const avgLng = withGps.reduce((sum, r) => sum + r.lng, 0) / withGps.length;
-    location = `${avgLat.toFixed(4)}, ${avgLng.toFixed(4)}`;
+    coords = { lat: Number(avgLat.toFixed(6)), lng: Number(avgLng.toFixed(6)) };
+    coordsSidecar = {
+      average: coords,
+      points: exifResults
+        .filter((r) => r.lat !== null && r.lng !== null)
+        .map((r) => ({
+          name: r.name,
+          lat: Number(r.lat.toFixed(6)),
+          lng: Number(r.lng.toFixed(6)),
+          ...(r.date ? { date: r.date.toISOString() } : {}),
+        })),
+    };
   }
 
-  // Write the gallery: copy images first, then index.md
+  // Write the gallery: copy images first, then index.md, then sidecar
   fs.mkdirSync(imagesDir, { recursive: true });
   for (const { name, filePath } of exifResults) {
     fs.copyFileSync(filePath, path.join(imagesDir, name));
@@ -228,7 +248,8 @@ async function main() {
     `title: ${JSON.stringify(title)}`,
     `date: ${frontmatterDate}`,
     "draft: true",
-    location ? `location: ${JSON.stringify(location)}` : null,
+    'location: ""',
+    coords ? `coords:\n  lat: ${coords.lat}\n  lng: ${coords.lng}` : null,
     dateRange ? `dateRange: ${JSON.stringify(dateRange)}` : null,
     'description: ""',
     "---",
@@ -238,6 +259,12 @@ async function main() {
     .join("\n");
 
   fs.writeFileSync(path.join(albumDir, "index.md"), fm);
+  if (coordsSidecar) {
+    fs.writeFileSync(
+      path.join(albumDir, "coords.json"),
+      JSON.stringify(coordsSidecar, null, 2) + "\n"
+    );
+  }
 
   // Print summary
   const rel = path.relative(ROOT, albumDir);
@@ -247,7 +274,8 @@ async function main() {
     console.log(`  date span: ${fmtIsoDate(oldest)} → ${fmtIsoDate(newest)}${dateRange ? `  (range: ${dateRange})` : ""}`);
   }
   if (withGps.length > 0) {
-    console.log(`  GPS: ${withGps.length}/${jpegs.length} have coords; auto-filled location = "${location}"`);
+    console.log(`  GPS: ${withGps.length}/${jpegs.length} have coords; avg ${coords.lat}, ${coords.lng}`);
+    console.log(`  → coords saved to frontmatter + content/gallery/${slug}/coords.json (per-image)`);
     // Show unique-ish coord clusters at 2-decimal precision so the user
     // can spot if photos came from very different places.
     const seen = new Set();
