@@ -390,7 +390,15 @@ export async function build() {
       url: entry.outputPath,
       title,
       siteTitle: SITE_TITLE,
-      description: `${imageRecords.length} photos from ${title}`,
+      // User-supplied frontmatter description wins (shown in the body
+      // header AND as the <meta description>); auto-generated count-of-
+      // photos string is just a fallback for albums without a blurb.
+      description:
+        entry.frontmatter.description || `${imageRecords.length} photos from ${title}`,
+      // Pass through optional album-metadata frontmatter fields so the
+      // gallery template's {{#location}}/{{#dateRange}} blocks render.
+      location: entry.frontmatter.location || null,
+      dateRange: entry.frontmatter.dateRange || null,
       crumbs: buildCrumbs(entry.outputPath, title),
       adjacent: adjacentSections(entry.outputPath),
       wide: true,
