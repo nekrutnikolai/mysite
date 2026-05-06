@@ -162,7 +162,14 @@
   -webkit-user-drag: none;
   cursor: zoom-in;
   touch-action: none; /* JS handles pinch + pan */
-  /* width/height set per-image by JS to fit-to-stage at scale=1 */
+  /* Defeat the site-wide `img { max-width: 100% }` rule from layout.css —
+     when the JS zooms in by setting CSS width past the stage's width, that
+     rule would otherwise cap the image back to the stage and we'd lose the
+     re-rasterize that produces sharp pixels. The stage's `overflow: hidden`
+     handles the visual containment. */
+  max-width: none;
+  /* width/height set per-image by JS — at scale=1 they match natW/natH;
+     at zoom>1 they grow to natW*scale / natH*scale. */
 }
 /* will-change is only applied while actively zoomed/panning so the browser
    doesn't permanently allocate a 6-megapixel GPU layer for an image the

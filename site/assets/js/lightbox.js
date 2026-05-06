@@ -385,13 +385,14 @@
       stage.style.height = natH + "px";
       stageW = natW;
       stageH = natH;
-      imgEl.style.width = natW + "px";
-      imgEl.style.height = natH + "px";
       scale = 1;
       tx = 0;
       ty = 0;
       // Minimap reuses the same image as background; CSS `contain` letterboxes.
       minimap.style.backgroundImage = 'url("' + imgEl.src + '")';
+      // applyTransform() drives imgEl.style.width/height now (zoom changes the
+      // intrinsic CSS box, not just a GPU layer transform — see notes on the
+      // function below).
       applyTransform();
     }
 
@@ -405,7 +406,22 @@
     }
 
     function applyTransform() {
-      imgEl.style.transform = "translate(" + tx + "px," + ty + "px) scale(" + scale + ")";
+      // Zoom by mutating the image's CSS box, not by GPU-scaling a fixed-size
+      // layer. With `transform: scale(s)` plus `will-change: transform`, the
+      // browser rasterizes <img> at its CSS size (the fit-to-viewport ~864 px
+      // box) into a compositor layer, then bilinearly upscales that layer for
+      // paint. So even after the 24 MP master is hot-swapped into src, you're
+      // looking at an ~864 px bitmap stretched 3x. Setting width/height to the
+      // post-zoom size makes the browser sample directly from the underlying
+      // image bytes at the requested resolution — no GPU upscale step in the
+      // pipeline. transform stays pure-translate, which the GPU still
+      // composites cheaply for pan. (The site-wide `img { max-width: 100% }`
+      // rule from layout.css is overridden by `max-width: none` on
+      // `.lightbox-img` — without that override the post-zoom CSS width gets
+      // capped to the stage and the resampling never happens.)
+      imgEl.style.width = (natW * scale) + "px";
+      imgEl.style.height = (natH * scale) + "px";
+      imgEl.style.transform = "translate(" + tx + "px," + ty + "px)";
       var zoomed = scale > 1.001;
       imgEl.classList.toggle("zoomed", zoomed);
       minimap.classList.toggle("visible", zoomed);
