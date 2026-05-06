@@ -15,13 +15,20 @@
   NODE_ENV = "production"
   # Canonical site URL used for OG meta + sitemap + RSS absolute URLs.
   # Override in the Netlify UI if you change domains.
-  SITE_URL = "https://nnekrut.netlify.app"
+  SITE_URL = "https://nekrutnikolai.com"
   # Cloudflare R2 public bucket URL for gallery originals. When set,
   # site/lib/images.mjs emits R2 URLs in data-full and skips the heavy
   # original-encode pass during build (cold build ~22s vs ~76s otherwise).
   # Originals must be re-uploaded locally after content/watermark changes:
   # `npm run upload-originals` (which sets BUILD_ORIGINALS=1).
   R2_PUBLIC_BASE = "https://pub-c55decec528646838e890d87bc0b4e3e.r2.dev"
+
+# Production-only env vars. Cloudflare Web Analytics token lives here (not
+# in the shared [build.environment]) so deploy previews + branch deploys
+# stay invisible to the analytics dashboard. The token is non-secret —
+# it's emitted in every page's <head> as part of the public beacon script.
+[context.production.environment]
+  CF_ANALYTICS_TOKEN = "202be32286a244bb811075dd2dd7fc7f"
 
 # Deploy previews (per-PR) and branch deploys inherit the build above, but
 # point SITE_URL at the per-deploy prime URL so OG/canonical match what a

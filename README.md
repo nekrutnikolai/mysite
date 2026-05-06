@@ -1,4 +1,4 @@
-# [mysite](https://nnekrut.netlify.app/)
+# [mysite](https://nekrutnikolai.com/)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/bab2edd7-a307-4052-ba2e-1b46493f4335/deploy-status)](https://app.netlify.com/projects/nnekrut/deploys)
 
@@ -23,7 +23,7 @@ flowchart LR
     R2[(R2 bucket<br/>nnekrut-gallery)]
     BUILD[site/build.mjs<br/><br/>marked &middot; gray-matter<br/>sharp &middot; exifr]
     DIST[dist/<br/>static HTML + CSS + JS<br/>+ thumbs/previews/originals<br/>+ per-post OG cards]
-    NETLIFY((Netlify CDN<br/>nnekrut.netlify.app))
+    NETLIFY((Netlify CDN<br/>nekrutnikolai.com))
 
     MD --> BUILD
     R2 -.download-originals.-> BUILD

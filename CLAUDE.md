@@ -8,7 +8,7 @@ Nikolai Nekrutenko's personal site. Migrated from Hugo + hello-friend-ng to a ha
 
 Design identity is grounded in `claude-code-design-guide.html` (strict guideline — Notion/Linear-style editorial calm) with a third "parchment" theme adapted from `parchement_theme.md` (colors only — typography/radius/motion stay consistent across themes).
 
-Live site is `https://nnekrut.netlify.app/`, built and deployed from `master` by Netlify running `npm ci && npm run download-originals && npm run build`.
+Live site is `https://nekrutnikolai.com/` (custom domain alias on Netlify; the underlying Netlify URL `nnekrut.netlify.app` still resolves but `nekrutnikolai.com` is the canonical for SEO/OG/feeds). Built and deployed from `master` by Netlify running `npm ci && npm run download-originals && npm run build`.
 
 ## Prerequisites
 
@@ -77,7 +77,7 @@ Netlify builds from `master` via `netlify.toml`. In production, `R2_PUBLIC_BASE`
 
 ### Analytics
 
-Cloudflare Web Analytics is wired in via `CF_ANALYTICS_TOKEN` env var. When set, `partials/head.html` emits the deferred beacon script. Configured in **Netlify dashboard → Site settings → Environment variables** with scope **"Production" only** so deploy previews and local dev don't pollute the stats. Empty/unset → no script in HTML, zero overhead.
+Cloudflare Web Analytics is wired in via `CF_ANALYTICS_TOKEN` env var. When set, `partials/head.html` emits the deferred beacon script. Configured in `netlify.toml` under `[context.production.environment]` so only production builds carry it; deploy previews and local dev stay silent. Empty/unset → no script in HTML, zero overhead. The token is non-secret (Cloudflare emits it in every page's HTML anyway), so committing to the toml is fine.
 
 ## Test harness
 

@@ -44,7 +44,7 @@ const SITE_TITLE = "Nikolai Nekrutenko";
 // Build-time constant so feeds can later be retargeted to a real domain
 // without changing anything else. Localhost-only for now.
 // Used for absolute URLs in RSS, sitemap, canonical, OG. Override via env when
-// deploying (e.g. `SITE_URL=https://nnekrut.netlify.app npm run build`). Netlify
+// deploying (e.g. `SITE_URL=https://nekrutnikolai.com npm run build`). Netlify
 // sets DEPLOY_PRIME_URL for preview branches — fall through to it automatically.
 const IS_PROD = process.env.NODE_ENV === "production";
 const SITE_URL =
