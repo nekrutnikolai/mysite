@@ -13,9 +13,6 @@ import { slugify } from "./lib/routes.mjs";
 import { processAlbum } from "./lib/images.mjs";
 import { renderRSS, renderSitemap } from "./lib/feeds.mjs";
 import { walkSync } from "./lib/walk.mjs";
-import { startStaticServer } from "./lib/static-server.mjs";
-import { closeBrowser } from "./lib/browser.mjs";
-import { generateResumePdf } from "./lib/resume-pdf.mjs";
 import { generateOgCard } from "./lib/og-card.mjs";
 
 // Agent B owns shortcodes.mjs. If it hasn't landed yet, fall through to a
@@ -69,9 +66,10 @@ const SITE_DESCRIPTION =
 const DEFAULT_OG_IMAGE = "/img/glacier.jpg";
 
 // Top-level PDFs the site links to. Copied from content/ → dist/ root.
-// Resume.pdf is omitted because it's now generated from the rendered
-// /resume/ page via headless chromium at the end of the build.
-const PDF_FILES = ["Portfolio.pdf", "e_horiz_report.pdf"];
+// Resume.pdf is regenerated from the live /resume/ page via the
+// `npm run build:pdf` script — kept out of the Netlify build so we don't
+// need a chromium binary on the build server.
+const PDF_FILES = ["Resume.pdf", "Portfolio.pdf", "e_horiz_report.pdf"];
 
 // Iteration 7 (Agent B): extend every base-layout render context with the
 // fields that partials/head.html now consumes for OpenGraph / Twitter /
@@ -787,22 +785,6 @@ export async function build() {
       })),
     })
   );
-
-  // Generate Resume.pdf from the rendered /resume/ page. dist/ is now fully
-  // written, so we can spin up a tiny static server and point chromium at it.
-  const tempServer = await startStaticServer(DIST);
-  try {
-    await generateResumePdf({
-      outPath: path.join(DIST, "Resume.pdf"),
-      devServerUrl: tempServer.url,
-    });
-  } finally {
-    await tempServer.close();
-  }
-
-  // Shut the headless browser down — leaving it open would prevent node from
-  // exiting cleanly when build.mjs is run as a standalone CLI.
-  await closeBrowser();
 
   return {
     pages: 2 + postCount + pageCount + 1 + 1 + allTags.length + galleryPageCount + 1 + gallerySoloCount,

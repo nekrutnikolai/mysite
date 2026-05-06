@@ -6,6 +6,7 @@
   "private": true,
   "scripts": {
     "build": "node site/build.mjs",
+    "build:pdf": "npm run build && node site/scripts/build-resume-pdf.mjs",
     "dev": "node site/serve.mjs",
     "upload-originals": "BUILD_ORIGINALS=1 node site/build.mjs && node site/scripts/upload-originals.mjs",
     "download-originals": "node site/scripts/download-originals.mjs",
@@ -24,7 +25,6 @@
     "exifr": "7.1.3",
     "gray-matter": "4.0.3",
     "marked": "12.0.2",
-    "playwright": "^1.59.1",
     "sharp": "0.33.5"
   },
   "devDependencies": {
@@ -32,7 +32,8 @@
     "@playwright/test": "^1.59.1",
     "axe-core": "4.10.2",
     "chrome-launcher": "1.1.2",
-    "lighthouse": "12.3.0"
+    "lighthouse": "12.3.0",
+    "playwright": "^1.59.1"
   },
   "engines": {
     "node": ">=20"
