@@ -56,13 +56,19 @@ function listDirs(dir) {
 
 export async function scanContent() {
   const entries = [];
+  // Set DRAFTS=1 to surface `draft: true` content in the build — useful in
+  // dev (`DRAFTS=1 npm run dev`) for previewing a gallery/post before
+  // publishing. Production builds (Netlify) leave DRAFTS unset so drafts
+  // stay invisible. The flag is read once per build invocation.
+  const includeDrafts = process.env.DRAFTS === "1";
+  const isDraft = (fm) => fm.draft === true && !includeDrafts;
 
   // content/posts/*.md → kind: post
   const postsDir = path.join(CONTENT, "posts");
   for (const name of listMarkdown(postsDir)) {
     const srcPath = path.join(postsDir, name);
     const { frontmatter, body } = parseFile(srcPath);
-    if (frontmatter.draft === true) continue;
+    if (isDraft(frontmatter)) continue;
     frontmatter.date = toDate(frontmatter.date);
     const outputPath = postOutputPath(frontmatter, name);
     const slug = outputPath.replace(/^\/posts\/|\/$/g, "");
@@ -73,7 +79,7 @@ export async function scanContent() {
   for (const name of listMarkdown(CONTENT)) {
     const srcPath = path.join(CONTENT, name);
     const { frontmatter, body } = parseFile(srcPath);
-    if (frontmatter.draft === true) continue;
+    if (isDraft(frontmatter)) continue;
     frontmatter.date = toDate(frontmatter.date);
     const outputPath = pageOutputPath(name);
     const slug = slugify(path.basename(name, path.extname(name)));
@@ -87,7 +93,7 @@ export async function scanContent() {
     const indexMd = path.join(galleryDir, album, "index.md");
     if (!fs.existsSync(indexMd)) continue;
     const { frontmatter, body } = parseFile(indexMd);
-    if (frontmatter.draft === true) continue;
+    if (isDraft(frontmatter)) continue;
     frontmatter.date = toDate(frontmatter.date);
     entries.push({
       kind: "gallery",
@@ -101,7 +107,7 @@ export async function scanContent() {
   for (const name of listMarkdown(galleryDir)) {
     const srcPath = path.join(galleryDir, name);
     const { frontmatter, body } = parseFile(srcPath);
-    if (frontmatter.draft === true) continue;
+    if (isDraft(frontmatter)) continue;
     frontmatter.date = toDate(frontmatter.date);
     const stem = path.basename(name, path.extname(name));
     entries.push({

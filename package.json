@@ -9,6 +9,7 @@
     "build:pdf": "npm run build && node site/scripts/build-resume-pdf.mjs",
     "new-gallery": "node site/scripts/new-gallery.mjs",
     "dev": "node site/serve.mjs",
+    "dev:drafts": "DRAFTS=1 node site/serve.mjs",
     "upload-originals": "BUILD_ORIGINALS=1 node site/build.mjs && node site/scripts/upload-originals.mjs",
     "download-originals": "node site/scripts/download-originals.mjs",
     "test": "playwright test",
@@ -34,6 +35,7 @@
     "axe-core": "4.10.2",
     "chrome-launcher": "1.1.2",
     "lighthouse": "12.3.0",
+    "netlify-plugin-cache": "^1.0.3",
     "playwright": "^1.59.1"
   },
   "engines": {

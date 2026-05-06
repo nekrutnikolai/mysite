@@ -252,5 +252,17 @@ export async function processAlbum(albumName, srcImagesDir, distAlbumDir) {
   );
   saveManifest(cache);
 
+  // Sort by EXIF DateTimeOriginal (ISO string sorts chronologically) so
+  // galleries read in shooting order. Falls back to filename for images
+  // that have no date (legacy, scanned, GPS-stripped re-exports).
+  records.sort((a, b) => {
+    const aDate = a.exif?.dateTimeOriginal || "";
+    const bDate = b.exif?.dateTimeOriginal || "";
+    if (aDate && bDate) return aDate.localeCompare(bDate);
+    if (aDate) return -1;
+    if (bDate) return 1;
+    return a.stem.localeCompare(b.stem);
+  });
+
   return records;
 }

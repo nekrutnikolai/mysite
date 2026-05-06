@@ -22,6 +22,7 @@
 // Usage: npm run upload-originals [-- --dry-run] [-- --force]
 //        (npm script runs `BUILD_ORIGINALS=1 npm run build` first.)
 
+import "./load-env.mjs";
 import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";

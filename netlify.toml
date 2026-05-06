@@ -33,6 +33,19 @@
 [context.branch-deploy.environment]
   SITE_URL = ""
 
+# Persist sharp's gallery image outputs and the manifest cache between
+# deploys. Cold builds re-encoding ~250 24 MP JPEGs into thumbs + previews
+# add ~30 s every push; with the cache, only changed/new images do the
+# expensive sharp work. build.mjs's clearDist() preserves the gallery
+# img/originals subdirs so the cache is honored.
+[[plugins]]
+  package = "netlify-plugin-cache"
+  [plugins.inputs]
+    paths = [
+      "site/cache",
+      "dist/gallery"
+    ]
+
 # Serve dist/404.html automatically on missing routes.
 [[redirects]]
   from = "/*"

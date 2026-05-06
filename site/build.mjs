@@ -289,9 +289,41 @@ function buildCaptionShort(exif) {
   return parts.join(" \u00b7 ");
 }
 
+// Wipe everything under dist/ except `dist/gallery/<album>/img` and
+// `.../originals` directories — the sharp-generated thumb/preview/original
+// JPEGs are expensive to regenerate (especially on cold Netlify builds at
+// 24 MP), so we keep them around. images.mjs's cache check (manifest match
+// + output files exist) handles re-use correctly. Orphaned albums (deleted
+// from content/) become unlinked artifacts in dist/ but don't appear in
+// sitemap/RSS so they're invisible to readers; clean them by hand or delete
+// dist/ entirely once in a while.
+function clearDist() {
+  if (!fs.existsSync(DIST)) {
+    fs.mkdirSync(DIST, { recursive: true });
+    return;
+  }
+  for (const entry of fs.readdirSync(DIST)) {
+    if (entry !== "gallery") {
+      fs.rmSync(path.join(DIST, entry), { recursive: true, force: true });
+      continue;
+    }
+    const galleryDir = path.join(DIST, "gallery");
+    for (const album of fs.readdirSync(galleryDir)) {
+      const albumDir = path.join(galleryDir, album);
+      if (!fs.statSync(albumDir).isDirectory()) {
+        fs.rmSync(albumDir);
+        continue;
+      }
+      for (const sub of fs.readdirSync(albumDir)) {
+        if (sub === "img" || sub === "originals") continue;
+        fs.rmSync(path.join(albumDir, sub), { recursive: true, force: true });
+      }
+    }
+  }
+}
+
 export async function build() {
-  fs.rmSync(DIST, { recursive: true, force: true });
-  fs.mkdirSync(DIST, { recursive: true });
+  clearDist();
 
   const staticCount = copyStatic();
   const assetCount = copyAssets();
