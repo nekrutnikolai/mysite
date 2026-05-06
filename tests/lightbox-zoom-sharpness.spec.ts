@@ -72,6 +72,23 @@ async function waitForRectGreater(page: Page, threshold: number) {
   );
 }
 
+// Smooth-zoom transitions are gated by the .smoothing class. Tests that read
+// the final geometry (rect width, CSS width) must wait for the class to clear
+// — otherwise getBoundingClientRect() reports an interpolated mid-transition
+// value while imgEl.style.width already holds the target string. The two
+// disagree only during the ~220 ms tween; this helper synchronises tests with
+// the JS-side timer that owns the class.
+async function waitForSmoothingDone(page: Page) {
+  await page.waitForFunction(
+    () => {
+      const el = document.querySelector(".lightbox-img") as HTMLImageElement | null;
+      return !!el && !el.classList.contains("smoothing");
+    },
+    null,
+    { timeout: 1500 },
+  );
+}
+
 async function waitForRectNear(page: Page, target: number, tolerance = 2) {
   await page.waitForFunction(
     ({ t, tol }) => {
@@ -85,14 +102,21 @@ async function waitForRectNear(page: Page, target: number, tolerance = 2) {
 
 async function zoomTo3x(page: Page) {
   // 1.5^3 ≈ 3.375x; zoomBy targets stage center so the same source point stays under the
-  // crosshair the whole time.
+  // crosshair the whole time. Each '+' is a discrete input, so the JS adds
+  // .smoothing for ~220 ms and tweens the geometry — `waitForSmoothingDone`
+  // syncs the test with the tween before the next press, otherwise an
+  // intermediate frame's interpolated rect width can let the threshold poll
+  // succeed while the actual zoom is still in motion.
   const w0 = await rectW(page);
   await page.keyboard.press("+");
   await waitForRectGreater(page, w0 * 1.4);
+  await waitForSmoothingDone(page);
   await page.keyboard.press("+");
   await waitForRectGreater(page, w0 * 2.0);
+  await waitForSmoothingDone(page);
   await page.keyboard.press("+");
   await waitForRectGreater(page, w0 * 3.0);
+  await waitForSmoothingDone(page);
 
   // Wait for the original-resolution swap (data-full URL) to land in src.
   await page.waitForFunction(
@@ -306,18 +330,21 @@ test.describe("lightbox zoom: behavior regression", () => {
 
     await page.mouse.click(clickAt.x, clickAt.y);
     await waitForRectGreater(page, w1 * 1.5);
+    await waitForSmoothingDone(page);
     const w2 = await rectW(page);
     expect(w2 / w1).toBeGreaterThan(1.8);
     expect(w2 / w1).toBeLessThan(2.2);
 
     await page.mouse.click(clickAt.x, clickAt.y);
     await waitForRectGreater(page, w2 + 5);
+    await waitForSmoothingDone(page);
     const w3 = await rectW(page);
     expect(w3 / w1).toBeGreaterThan(2.8);
     expect(w3 / w1).toBeLessThan(3.2);
 
     await page.mouse.click(clickAt.x, clickAt.y);
     await waitForRectNear(page, w1, 2);
+    await waitForSmoothingDone(page);
     const w4 = await rectW(page);
     expect(Math.abs(w4 - w1)).toBeLessThan(2);
   });
@@ -410,5 +437,117 @@ test.describe("lightbox zoom: behavior regression", () => {
       return { zoomed: el.classList.contains("zoomed") };
     });
     expect(result.zoomed).toBe(false);
+  });
+});
+
+test.describe("lightbox UX: eager-load originals", () => {
+  test.beforeEach(async ({ page }) => {
+    await blockLiveReload(page);
+  });
+
+  test("original is requested promptly on open, without zoom (no 250ms gap)", async ({
+    page,
+  }) => {
+    // Stamp every relevant request with the time it was kicked off. We want
+    // to assert that the original fetch starts within 100 ms of opening the
+    // lightbox — that's tight enough to catch the legacy `setTimeout(…, 250)`
+    // path (where the fetch can't go out for 250 ms) but loose enough to
+    // tolerate normal scheduler jitter on the eager-load path.
+    const seen: { url: string; t: number }[] = [];
+    page.on("request", (req) => {
+      const url = req.url();
+      if (/\/originals\/.+\.jpe?g$/.test(url)) seen.push({ url, t: Date.now() });
+    });
+
+    await page.goto(GALLERY);
+    await page.waitForLoadState("networkidle");
+    const openAt = Date.now();
+    await page.locator(".gallery-trigger").nth(TARGET_INDEX).click();
+    await expect(page.locator("dialog.lightbox")).toBeVisible();
+
+    await expect
+      .poll(() => seen.length, { timeout: 1500, intervals: [25] })
+      .toBeGreaterThan(0);
+
+    const elapsed = seen[0].t - openAt;
+    expect(seen[0].url).toMatch(/\/originals\/.+\.jpe?g$/);
+    expect(
+      elapsed,
+      `original request should fire promptly on open (was ${elapsed}ms after click)`,
+    ).toBeLessThan(150);
+  });
+});
+
+test.describe("lightbox UX: smooth zoom transitions", () => {
+  test.beforeEach(async ({ page }) => {
+    await blockLiveReload(page);
+  });
+
+  async function transitionDuration(page: Page) {
+    return await page.evaluate(() => {
+      const el = document.querySelector(".lightbox-img") as HTMLImageElement | null;
+      if (!el) return "(no img)";
+      // The shorthand `transition` returns the longest of
+      // transition-{property,duration,timing-function,delay} — we want the
+      // duration component specifically, and computed style normalises units
+      // to seconds.
+      return getComputedStyle(el).transitionDuration;
+    });
+  }
+
+  test("clicking the image enables a CSS transition for ~180ms", async ({
+    page,
+  }) => {
+    await openAndWaitForLayout(page);
+
+    // Stage-relative click so we don't depend on the img's translate state.
+    const sb = await page.locator(".lightbox-stage").boundingBox();
+    if (!sb) throw new Error("no stage box");
+    await page.mouse.click(sb.x + 100, sb.y + 100);
+
+    // Within the next animation frame the smoothing class should be active.
+    await page.evaluate(
+      () => new Promise((r) => requestAnimationFrame(() => r(null))),
+    );
+    const duringClick = await transitionDuration(page);
+    expect(duringClick, "expected non-zero transition during click-cycle zoom").not.toBe("0s");
+
+    // After ~250ms the smoothing class should have been removed (transition
+    // back to instant — wheel and pinch must remain lag-free).
+    await page.waitForTimeout(280);
+    const afterSettle = await transitionDuration(page);
+    expect(afterSettle, "expected transition cleared after settle").toBe("0s");
+  });
+
+  test("wheel zoom does not set a CSS transition (one-frame instant for continuous gestures)", async ({
+    page,
+  }) => {
+    await openAndWaitForLayout(page);
+
+    const sb = await page.locator(".lightbox-stage").boundingBox();
+    if (!sb) throw new Error("no stage box");
+
+    // Hover to the stage so wheel events go to the stage handler, then fire a
+    // single wheel tick.
+    await page.mouse.move(sb.x + sb.width / 2, sb.y + sb.height / 2);
+    await page.mouse.wheel(0, -100);
+    await page.evaluate(
+      () => new Promise((r) => requestAnimationFrame(() => r(null))),
+    );
+
+    const duringWheel = await transitionDuration(page);
+    expect(duringWheel, "wheel zoom must remain transition-free or pan/pinch will lag").toBe("0s");
+  });
+
+  test("keyboard '+' enables a CSS transition (treated as a discrete input)", async ({
+    page,
+  }) => {
+    await openAndWaitForLayout(page);
+    await page.keyboard.press("+");
+    await page.evaluate(
+      () => new Promise((r) => requestAnimationFrame(() => r(null))),
+    );
+    const dur = await transitionDuration(page);
+    expect(dur).not.toBe("0s");
   });
 });

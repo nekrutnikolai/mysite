@@ -179,6 +179,15 @@
   will-change: transform;
 }
 .lightbox-img.dragging { cursor: grabbing; }
+/* `smoothing` is added by the JS only around DISCRETE zoom inputs (click,
+   keyboard +/-/0) — never around wheel, pinch, or drag-pan, which fire too
+   often to tolerate a transition. The 180 ms ease-out matches the
+   smoothZoomStart/Cancel timer in lightbox.js. */
+.lightbox-img.smoothing {
+  transition: width 180ms ease-out,
+              height 180ms ease-out,
+              transform 180ms ease-out;
+}
 
 /* Minimap appears bottom-right of the stage when zoomed. Background is set
    by JS to the same image; an overlay rectangle reflects the visible region. */

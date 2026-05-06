@@ -81,6 +81,32 @@
       });
     }
 
+    // Smooth-zoom transitions are opt-in PER INTERACTION. Click-cycle, +/-,
+    // and 0 (reset) are discrete user actions where a 180 ms tween between
+    // zoom levels reads as polish; wheel/pinch/drag fire many events per
+    // second and a transition there would visibly lag the gesture. The
+    // class is set just before the next applyTransform runs (so the
+    // CSS interpolation kicks in on the new width/height/transform values),
+    // then cleared 220 ms later — slightly longer than the transition itself
+    // to absorb scheduler jitter without snapping the last few pixels.
+    var smoothingTimer = 0;
+    function smoothZoomStart() {
+      imgEl.classList.add("smoothing");
+      if (smoothingTimer) clearTimeout(smoothingTimer);
+      smoothingTimer = setTimeout(function () {
+        imgEl.classList.remove("smoothing");
+        smoothingTimer = 0;
+      }, 220);
+    }
+    function smoothZoomCancel() {
+      if (!smoothingTimer && !imgEl.classList.contains("smoothing")) return;
+      imgEl.classList.remove("smoothing");
+      if (smoothingTimer) {
+        clearTimeout(smoothingTimer);
+        smoothingTimer = 0;
+      }
+    }
+
     // Tracks per-index full-resolution load state. Persists across re-opens
     // within a single page session: `"loading"` while a fetch is in flight,
     // `"loaded"` once the original is in the browser cache (so subsequent
@@ -200,6 +226,10 @@
       // Wheel zoom — toward cursor.
       stage.addEventListener("wheel", function (e) {
         e.preventDefault();
+        // A wheel tick during a still-running click-cycle transition would
+        // visibly fight the tween; cancel any in-flight smoothing first so
+        // wheel zoom stays one-frame-instant the way the gesture demands.
+        smoothZoomCancel();
         var p = stagePoint(e);
         var factor = e.deltaY < 0 ? 1.15 : 1 / 1.15;
         zoomTo(scale * factor, p.x, p.y);
@@ -209,6 +239,10 @@
       imgEl.addEventListener("mousedown", function (e) {
         if (e.button !== 0 || scale <= 1) return;
         e.preventDefault();
+        // Drag-pan must move 1:1 with the cursor — kill any running zoom
+        // tween so the translate updates aren't tweened toward the prior
+        // target.
+        smoothZoomCancel();
         dragging = true;
         dragMoved = false;
         dragStartX = e.clientX;
@@ -237,6 +271,8 @@
       stage.addEventListener("touchstart", function (e) {
         if (e.touches.length === 2) {
           e.preventDefault();
+          // Pinch and drag-pan are continuous gestures — never tween them.
+          smoothZoomCancel();
           pinching = true;
           dragging = false;
           swipeCandidate = false;
@@ -249,6 +285,7 @@
         } else if (e.touches.length === 1) {
           var t = e.touches[0];
           if (scale > 1) {
+            smoothZoomCancel();
             dragging = true;
             dragMoved = false;
             dragStartX = t.clientX;
@@ -473,6 +510,7 @@
       if (idx === -1) {
         next = CLICK_ZOOM_LEVELS.find(function (s) { return s > scale + 0.05; }) || CLICK_ZOOM_LEVELS[0];
       }
+      smoothZoomStart();
       zoomTo(next, px, py);
     }
 
@@ -488,10 +526,12 @@
     }
 
     function zoomBy(factor) {
+      smoothZoomStart();
       zoomTo(scale * factor, stageW / 2, stageH / 2);
     }
 
     function resetZoom() {
+      smoothZoomStart();
       scale = 1;
       tx = (stageW - natW) / 2;
       ty = (stageH - natH) / 2;
@@ -509,6 +549,10 @@
       scale = 1; tx = 0; ty = 0;
       imgEl.style.transform = "";
       imgEl.classList.remove("zoomed", "dragging");
+      // A pending smoothing tween from a click on the prior image must not
+      // animate the new image's reset-to-fit — that'd visibly drift the
+      // first paint after navigation.
+      smoothZoomCancel();
       minimap.classList.remove("visible");
       // Clear any pending layout-suppress from an in-flight original swap
       // that the user navigated away from before its load event fired.
@@ -526,14 +570,13 @@
       dialog.dataset.index = String(currentIndex);
       preload(entries[(currentIndex + 1) % n].previewUrl);
       preload(entries[(currentIndex - 1 + n) % n].previewUrl);
-      // Eager-load the current image's original at low priority so the first
-      // zoom doesn't have to wait on the network. Self-throttled via fullState
-      // (no double-fetch) and bounded to currentIndex (no neighbor cost up
-      // front). Delayed slightly so it doesn't contend with the preview load.
-      var idxAtCall = currentIndex;
-      setTimeout(function () {
-        if (currentIndex === idxAtCall) maybeLoadFull(idxAtCall);
-      }, 250);
+      // Eager-load the current image's original immediately. HTTP/2 multiplexes
+      // it alongside the preview fetch, so the original lands ~250 ms sooner
+      // than under the previous setTimeout-deferred path — important because
+      // any zoom click before the original arrives has to fall back to the
+      // 1500 px preview as the source bitmap, which the renderer then has to
+      // upsample to fill the post-zoom CSS box (visibly soft).
+      maybeLoadFull(currentIndex);
     }
 
     function navigate(delta) { show(currentIndex + delta); }
