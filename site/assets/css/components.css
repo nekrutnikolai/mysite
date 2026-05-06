@@ -604,15 +604,13 @@ main li {
   aspect-ratio: 1 / 1;
 }
 
-/* --- Drop caps (opt-in via post frontmatter `dropCap: true`) --------- */
+/* --- Drop caps — subtle first-letter emphasis on every post -------- */
 
 .post--dropcap > p:first-of-type::first-letter {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 4.5em;
-  float: left;
-  line-height: 0.85;
-  margin: 0.05em 0.08em 0 0;
+  font-size: 1.8em;
+  line-height: 1;
   color: var(--text);
 }
 
