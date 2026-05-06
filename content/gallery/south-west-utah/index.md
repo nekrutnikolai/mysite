@@ -1,7 +1,7 @@
 ---
 title: "Southwest Utah"
 date: 2026-03-10
-draft: true
+draft: false
 location: "Bryce Canyon & Zion, Utah"
 coords:
   lat: 37.388085

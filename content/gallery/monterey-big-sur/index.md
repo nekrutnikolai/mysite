@@ -1,7 +1,7 @@
 ---
 title: "Monterey & Big Sur"
 date: 2026-04-21
-draft: true
+draft: false
 location: "Monterey & Big Sur, California"
 coords:
   lat: 36.515535
