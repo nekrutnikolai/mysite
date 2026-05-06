@@ -73,6 +73,12 @@ New routes added post-migration: `/archive/` (every post + gallery + tag in one 
 
 Netlify builds from `master` via `netlify.toml`. In production, `R2_PUBLIC_BASE` is set so gallery lightbox loads full-res images directly from R2 (skipping the heavy original-encode pass — ~5 s vs ~22 s cold build). Deploy previews unset `SITE_URL` so OG/canonical URLs fall through to Netlify's `DEPLOY_PRIME_URL`.
 
+`netlify-plugin-cache` persists `site/cache/` (sharp manifest) and `dist/gallery/` (sharp output thumbs/previews) across deploys, so steady-state Netlify builds skip image re-encoding. `clearDist()` in build.mjs preserves those subdirs across the per-build wipe.
+
+### Analytics
+
+Cloudflare Web Analytics is wired in via `CF_ANALYTICS_TOKEN` env var. When set, `partials/head.html` emits the deferred beacon script. Configured in **Netlify dashboard → Site settings → Environment variables** with scope **"Production" only** so deploy previews and local dev don't pollute the stats. Empty/unset → no script in HTML, zero overhead.
+
 ## Test harness
 
 Playwright config is `playwright.config.ts`. It auto-starts the dev server (`npm run dev`) before tests, reuses an existing one locally, and targets Chromium only. Visual snapshot tolerance is 1% pixel diff ratio.

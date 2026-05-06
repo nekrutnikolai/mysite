@@ -101,6 +101,11 @@ function buildOgCtx(pageCtx) {
     ogImage: absoluteOgImage,
     twitterCard: absoluteOgImage ? "summary_large_image" : "summary",
     nav: navForUrl(url),
+    // Cloudflare Web Analytics token. Set CF_ANALYTICS_TOKEN in Netlify's
+    // production-context env vars only, so deploy previews and local dev
+    // don't pollute the stats. When unset (the local-dev default), the
+    // beacon script is omitted entirely from the rendered HTML.
+    cfAnalyticsToken: process.env.CF_ANALYTICS_TOKEN || "",
   };
 }
 
