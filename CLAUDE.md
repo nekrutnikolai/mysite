@@ -45,6 +45,7 @@ Live site is `https://nekrutnikolai.com/` (custom domain alias on Netlify; the u
 - `site/lib/routes.mjs` implements Hugo-compatible `slugify` (verified empirically against the original Hugo `public/` so every URL migrates bit-for-bit).
 - `site/lib/content.mjs` is one-shot: walk `content/` recursively, gray-matter parse, classify into `post` / `page` / `gallery` / `gallery-standalone`, skip `draft: true` (unless `DRAFTS=1` is set — used by `npm run dev:drafts` to preview unpublished content locally), sort posts descending by date.
 - `site/lib/feeds.mjs` hand-writes RSS 2.0 + sitemap XML with excerpt extraction. No dep.
+- `site/lib/structured-data.mjs` builds schema.org JSON-LD blocks per page type: `personSchema` (about), `webSiteSchema` + `homeSchema` (home, combined as a `@graph`), `articleSchema` (each post), `imageGallerySchema` (each gallery). Hard-coded sitewide identity (jobTitle, employer, alma mater, social profiles); single-author site so no need to thread Person through frontmatter. Output passes through a `</script>` substring escaper to prevent script-tag breakout if a title or description ever contains it.
 - `site/lib/escape.mjs` exports four named escape functions (`escapeHtml`, `escapeXml`, `escapeShortcodeAttr`, `escapeSvgText`) — same 5 entities but with subtly different policies (e.g. shortcodes don't escape `'`, watermark SVG only does `& < >`).
 - `site/lib/walk.mjs` is the shared recursive directory walker (used by `copyTree` and `buildImgSizeMap` in `build.mjs`).
 - `site/scripts/build-resume-pdf.mjs` is the **local-only** Resume.pdf generator: spins up a tiny http server over `dist/`, renders `/resume/` in headless chromium via Playwright, prints to PDF, writes to `content/Resume.pdf`. Triggered by `npm run build:pdf`. Not part of the Netlify build.
@@ -79,6 +80,18 @@ Netlify builds from `master` via `netlify.toml`. In production, `R2_PUBLIC_BASE`
 ### Analytics
 
 Cloudflare Web Analytics is wired in via `CF_ANALYTICS_TOKEN` env var. When set, `partials/head.html` emits the deferred beacon script. Configured in `netlify.toml` under `[context.production.environment]` so only production builds carry it; deploy previews and local dev stay silent. Empty/unset → no script in HTML, zero overhead. The token is non-secret (Cloudflare emits it in every page's HTML anyway), so committing to the toml is fine.
+
+### SEO / structured data
+
+Every page emits the standard SEO basics (canonical URL, OG / Twitter Card meta, sitemap entry, RSS feed for posts), plus a second tier wired into `partials/head.html` and threaded through `buildOgCtx()` in build.mjs:
+
+- **Always-on:** `<meta name="robots" content="index,follow,max-image-preview:large">` (opts into Google's full-size image previews — important for the gallery-heavy site), `<meta name="author" content="Nikolai Nekrutenko">`, four `<link rel="me" href="…">` entries (LinkedIn, GitHub, YouTube, mailto) for IndieWeb identity verification.
+- **Posts only:** `<meta property="article:published_time">`, `<meta property="article:author">`, and one `<meta property="article:tag">` per tag.
+- **JSON-LD:** schema.org structured data via `site/lib/structured-data.mjs` (see lib entry above). 25 of the rendered pages emit JSON-LD; tag pages, /404, /__preview, the post/tag/gallery list pages, and /archive intentionally skip it (duplicative or non-entity).
+
+Per-post `<meta name="description">` is hand-written via the `description:` frontmatter field on each post (search-result CTR matters more than auto-derived snippets). Galleries use the same field — falls back to `"N photos from <title>"` when frontmatter description is empty.
+
+Validate at https://search.google.com/test/rich-results after deploys. Search Console verification token at `static/google399b09122b34817e.html` covers `nekrutnikolai.com` after the canonical URL switch.
 
 ## Test harness
 
