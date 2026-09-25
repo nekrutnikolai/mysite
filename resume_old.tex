@@ -1,0 +1,197 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[top=0.5in , bottom=0.5in,left=1in, right=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{ragged2e}
+\usepackage{comment}
+
+\raggedright
+
+\def\bull{\vrule height 0.8ex width .7ex depth -.1ex }
+% DEFINITIONS FOR RESUME
+\newcommand{\tab}{\hspacet *{2em}}
+
+\newcommand{\area}[2]{\vspace*{-9pt} \begin{verse}\textbf{#1}   #2 \end{verse}  }
+\newcommand{\lineunder}{\vspace*{-8pt} \\ \hspace*{-18pt} \hrulefill \\}
+\newcommand{\header}[1]{{\hspace*{-15pt}\vspace*{6pt} \textsc{#1}} \vspace*{-6pt} \lineunder}
+\newcommand{\employer}[3]{{ \textbf{#1} \hfill #2\\ \textbf{\emph{#3}}\\  }}
+\newcommand{\employerwithguide}[4]{{ \textbf{#1} \hfill(#2)\\ \textbf{\emph{#3}}\\ \emph{#4}  }}
+\newcommand{\project}[3]{{ \textbf{#1} (#2)\\ \emph{#3}\\  }}
+\newcommand{\projectnoguide}[2]{{ \textbf{#1} (#2)\\  }}
+\newcommand{\contact}[2]{
+%\vspace*{-8pt} 
+\begin{center}
+{\LARGE \scshape {#1}}\\
+%#2 \lineunder
+#2
+\end{center}
+\vspace*{-8pt}
+}
+\newcommand{\sbt}{\,\begin{picture}(-1,1)(-1,-3)\circle*{2}\end{picture}\ }
+\newcommand{\lbt}{\,\begin{picture}(-1,1)(-1,-3)\circle*{3}\end{picture}\ }
+\newenvironment{achievements}{
+    \begin{list}{$\lbt$}{
+        \topsep -1pt
+        \itemsep -1pt
+        \addtolength{\leftmargin}{-0.15in}
+    }
+}
+{
+    \vspace*{0pt}
+    \end{list}
+}
+
+\newcommand{\schoolwithcourses}[3]{
+ \textbf{#1} \hfill{#2}\\
+    \if\relax\detokenize{#3}\relax\else#3\\\fi
+\vspace*{3pt}
+}
+\newcommand{\school}[4]{
+ \textbf{#1} #2 $\bullet$ #3\\
+#4 \\
+}
+
+% END RESUME DEFINITIONS
+
+\begin{document}
+
+\pagenumbering{gobble}
+
+\small
+\smallskip
+\vspace*{-20pt}
+
+% figure out how to link my website
+
+\contact{Nikolai Nekrutenko}
+{nan34@cornell.edu $\sbt$ 814-852-9256 $\sbt$ nekrutnikolai.com}
+\vspace{-2mm}
+
+\begin{comment}
+\begin{center}
+Undergraduate majoring in Physics interested in applying physics and engineering toward complex and open-ended problems. Planning to pursue a Masters of Engineering in Electrical Engineering.
+\end{center}
+\end{comment}
+
+\header{Education}
+\schoolwithcourses{Cornell University $\vert$ Ithaca, NY}{}{}
+
+\vspace{-1mm}
+
+\begin{achievements}
+%\justifying
+
+\item \schoolwithcourses{Master of Engineering $\vert$ Electrical and Computer Engineering}{Aug 2024 - May 2025}{Relevant Coursework: Microcontrollers, Analog IC Design, Foundations of Robotics, Foundations of Machine Learning, Multi-Agent Systems, Power System and Market Operations}
+
+\item \schoolwithcourses{Bachelor of Arts $\vert$ Physics}{Aug 2021 - Dec 2024}{Relevant Coursework: Electronic Circuits, Embedded Systems, Signals \& Systems, Data Science, Radar Remote Sensing, Electro/Magnetostatics \& Electrodynamics, Analytical Mechanics}
+
+\end{achievements}
+
+\vspace{-1mm}
+\header{Skills \& Licenses}
+%\vspace{1mm}
+\begin{achievements}
+%\justifying
+\item Programming Lang. \& Tools: Python, C++, Linux, Bash Scripting, Git, NumPy, SciPy, Observable JS
+\item Embedded \& Electrical Systems: Microcontrollers, Sensor Interfacing, Circuit Design, Signal Processing
+\item Prototyping Skills: CAD, KiCad, Electronics Prototyping,  SLS/SLA/FDM 3D Printing
+\item Fluent in Russian, French, English | FAA Part 107 Remote Pilot License, General FCC Radio License
+\item Other Skills: Problem Solving, Team Collaboration, Technical Documentation, Project Management
+
+\end{achievements}
+
+%\vspace{-1mm}
+\header{Work Experience}
+%\vspace{1mm}
+
+%Formlabs is a company specializing in high performance SLA and SLS 3D printing technologies
+\schoolwithcourses{Systems Integration Intern $\vert$ Formlabs $\vert$ Somerville, MA}{Jun 2024 - Aug 2024}{}
+
+\vspace{-2mm}
+\begin{achievements}
+
+\item Devised an experimental setup and methods to evaluate thermopile array infrared (IR) sensors for next-gen SLS printing technology to maximize performance and dimensional accuracy
+\item Calculated the off-axis projection of sensor pixels and made an interactive tool in Observable JavaScript
+\item Developed test and alignment scripts in Python, automating the test setup to characterize IR sensors
+\item Built analysis Jupyter Notebooks in Python to compare the performance of sensors across varying environmental conditions and sensor configurations using NumPy and SciPy
+
+\end{achievements}
+
+\begin{comment}
+% Organized by the Motion Studio at Cornell University to create an open-source drone platform for courses
+\schoolwithcourses{Drone Development Member $\vert$ School of Mech. \& Aero. Eng. $\vert$ Ithaca, NY}{Sep 2023 - Present}{}
+
+\vspace{-2mm}
+\begin{achievements}
+
+\item Developing a robust, low-cost quadcopter platform to be used in mechanical, aerospace, and electrical engineering course labs as a supplementary hands-on lab component in a team of engineers
+\item Leading the integration of Mechanical Engineers and Electrical Engineers involved in the project
+\item Picked COTs components, leading to the development and integration of the quadcopter
+
+\end{achievements}
+\end{comment}
+
+% Freefly Systems is a company focusing on camera gimbals, industrial multi-rotors, and high-speed cameras
+\schoolwithcourses{Gimbals R\&D Intern $\vert$ Freefly Systems $\vert$ Woodinville, WA}{Jun 2023 - Apr 2024}
+{}
+
+\vspace{-2mm}
+\begin{achievements}
+
+% for configurable axis limits
+\item Developed a motion control beta embedded firmware release in C++ with Git version control for the Movi Pro gimbal based on IMU data, gimbal physics, and user input to be used in cinema productions
+\item Created an intuitive menu with user feedback on the Movi Controller to interact with the beta firmware
+\item Wrote user-friendly, interactive documentation outlining the beta firmware in Observable Javascript
+\item Derived a forward and inverse kinematics model of a non-orthogonal gimbal to evaluate the viability of a potential gimbal design and determine gimbal lock mitigation techniques
+
+\end{achievements}
+
+% The Fatemi Lab is a condensed matter physics and quantum devices lab at Cornell University
+\schoolwithcourses{Student Researcher $\vert$ Fatemi Lab @ Cornell AEP $\vert$ Ithaca, NY}{Mar 2022 - Feb 2024}{}
+
+\vspace{-2mm}
+\begin{achievements}
+\item Wrote automated installation scripts and Jupyter Notebooks to setup a Linux enviroment for interfacing with lab equipment over the GPIB interface with Python and QCoDeS
+\item Saved tens of thousands of dollars in lab equipment by enabling interfacing with existing equipment
+\item Simulated variations in resonance due to EM fields, informing the design of microwave resonators to measure impurities in substrates, in collaboration with grad students, increasing cleanroom efficiency
+\item Presented project updates at weekly lab meetings and to collaborators
+\end{achievements}
+
+% TA for AEP 1200, an introductory engineering course about Nanoscience and Nanotechnology
+\schoolwithcourses{Teaching Assistant $\vert$ Cornell University $\vert$ Ithaca, NY}{Aug 2022 - Dec 2022}{}
+
+\vspace{-2mm}
+\begin{achievements}
+
+\item Led a weekly lab section of 15 students and held weekly office hours
+\item Graded problem sets and labs, giving constructive feedback to help students understand key ideas
+\item Mentored students about future course/career advice
+    
+\end{achievements}
+
+\header{Project Experience}
+%\vspace{1mm}
+
+\schoolwithcourses{Low-Cost Depth Sensing Module for Deep-Water Research $\vert$ M.Eng. Thesis}{Sep 2024 - Present}{Researching and developing a custom sensor mechanism and embedded systems package in collaboration with Dr. Hunter Adams and the Woods Hole Oceanographic Institution for depths up to 2000 meters.}
+
+\schoolwithcourses{Drone Development Member $\vert$ Cornell University}{Sep 2023 - Present}{Developing a robust, low-cost quadcopter platform to be used in mechanical, aerospace, and electrical engineering course labs as a supplementary hands-on lab component with a team of engineers.}
+
+\schoolwithcourses{NeoPixel FFT Audio Visualizer $\vert$ Personal Project}{Jun 2022 - Jan 2023}{Co-designed and wrote a program that visualizes the waveform and intensity of music for a custom-built individually-addressable RGB led matrix using Fast Fourier Transforms in Python on a Raspberry Pi.}
+
+\vspace{-1mm}
+
+\header{Extracurricular Activities}
+
+%\schoolwithcourses{Member $\vert$ Cornell Amateur Radio Club $\vert$ Ithaca, NY}{Feb 2023 - Present}
+%{Help educate members about the physics behind how radio works, in addition to technical skills such as soldering. Involved with designing a sensor and camera payload to be launched on a weather balloon.}
+
+%\schoolwithcourses{Engineering Team Member $\vert$ Cornell Blockchain $\vert$ Ithaca, NY}{Sep 2021 - Present}
+%{Helped write a research paper about the TRON network focusing on block production and proof of stake. Helping with club recruitment by screening and interviewing applicants.}
+
+\schoolwithcourses{First Degree Black Belt $\vert$ A Mountain Wind Martial Arts $\vert$ State College, PA}{Feb 2013 - Present}
+{Instruct, help lead class and aid students with the practical and philosophical applications of the martial art at a local studio. First Degree Black Belt in Tang Soo Do, a Korean martial art.}
+
+\end{document}
+
+%\vspace{-1mm}

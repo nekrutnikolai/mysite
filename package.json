@@ -6,8 +6,10 @@
   "private": true,
   "scripts": {
     "build": "node site/build.mjs",
-    "build:pdf": "npm run build && node site/scripts/build-resume-pdf.mjs",
+    "build:pdf": "npm run build:resume",
     "new-gallery": "node site/scripts/new-gallery.mjs",
+    "build:resume": "node site/scripts/build-resume-pdf.mjs",
+    "test:resume": "node --test site/tests/resume.test.mjs && playwright test resume.spec.ts",
     "dev": "node site/serve.mjs",
     "dev:drafts": "DRAFTS=1 node site/serve.mjs",
     "upload-originals": "BUILD_ORIGINALS=1 node site/build.mjs && node site/scripts/upload-originals.mjs",

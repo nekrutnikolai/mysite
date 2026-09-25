@@ -140,6 +140,7 @@ await rebuild("initial");
 const watcher = chokidar.watch(
   [
     path.join(ROOT, "content"),
+    path.join(ROOT, "resume.json"),
     path.join(ROOT, "static"),
     path.join(ROOT, "site/templates"),
     path.join(ROOT, "site/partials"),

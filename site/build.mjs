@@ -20,6 +20,8 @@ import {
   articleSchema,
   imageGallerySchema,
 } from "./lib/structured-data.mjs";
+import { buildResumePdf } from "./lib/resume-pdf.mjs";
+import { loadResume, renderResumeHtml } from "./lib/resume.mjs";
 
 // Agent B owns shortcodes.mjs. If it hasn't landed yet, fall through to a
 // no-op expander so the rest of the pipeline is still verifiable.
@@ -72,10 +74,7 @@ const SITE_DESCRIPTION =
 const DEFAULT_OG_IMAGE = "/img/glacier.jpg";
 
 // Top-level PDFs the site links to. Copied from content/ → dist/ root.
-// Resume.pdf is regenerated from the live /resume/ page via the
-// `npm run build:pdf` script — kept out of the Netlify build so we don't
-// need a chromium binary on the build server.
-const PDF_FILES = ["Resume.pdf", "Portfolio.pdf", "e_horiz_report.pdf"];
+const PDF_FILES = ["Portfolio.pdf", "e_horiz_report.pdf"];
 
 // Sitewide identity. Used by:
 //   - <meta name="author"> on every page
@@ -355,10 +354,12 @@ function clearDist() {
 }
 
 export async function build() {
+  const resume = await loadResume();
   clearDist();
 
   const staticCount = copyStatic();
   const assetCount = copyAssets();
+  await buildResumePdf(path.join(DIST, "Resume.pdf"), resume);
 
   // Measure every raster under static/img/ once — shortcodes.mjs's figure
   // handler consumes the map to emit explicit width/height, eliminating CLS
@@ -719,7 +720,9 @@ export async function build() {
     const wantsToc = fm.TOC === true || fm.toc === true;
     const tocAccumulator = wantsToc ? [] : null;
     const expandedMd = expand(entry.body, { kind: "page", entry, imgSizes });
-    const bodyHtml = renderMarkdown(expandedMd, { tocAccumulator });
+    const bodyHtml = entry.outputPath === "/resume/"
+      ? renderResumeHtml(resume)
+      : renderMarkdown(expandedMd, { tocAccumulator });
 
     // Only h2/h3 belong in the sidebar TOC; deeper headings clutter it.
     const toc = tocAccumulator ? tocAccumulator.filter((h) => h.depth <= 3) : [];
@@ -758,7 +761,7 @@ export async function build() {
   }
 
   // Top-level PDFs linked from pages + menu.
-  let pdfCount = 0;
+  let pdfCount = 1; // Resume.pdf is compiled from LaTeX above.
   for (const name of PDF_FILES) {
     const src = path.join(CONTENT, name);
     if (fs.existsSync(src)) {

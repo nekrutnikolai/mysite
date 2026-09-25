@@ -1,0 +1,124 @@
+{
+  "name": "Nikolai Nekrutenko",
+  "contact": [
+    {
+      "text": "nekrutnikolai@gmail.com",
+      "href": "mailto:nekrutnikolai@gmail.com"
+    },
+    {
+      "text": "814-852-9256",
+      "href": "tel:8148529256",
+      "pdfOnly": true
+    },
+    {
+      "text": "nekrutnikolai.com",
+      "href": "https://nekrutnikolai.com"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Education",
+      "kind": "education",
+      "items": [
+        {
+          "title": "Cornell University · Ithaca, NY",
+          "entries": [
+            {
+              "title": "Master of Engineering · Electrical and Computer Engineering",
+              "date": "Aug 2024 – May 2025"
+            },
+            {
+              "title": "Bachelor of Arts · Physics",
+              "date": "Aug 2021 – Dec 2024"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Skills & Licenses",
+      "kind": "skills",
+      "items": [
+        {
+          "label": "Electrical/Test:",
+          "text": "Sensor Characterization, PCB Bring-up/Debug, Circuit Simulation, Environmental Qualification, Automated & Custom Test, Signal Processing"
+        },
+        {
+          "label": "Hardware:",
+          "text": "Altium, KiCad, PCB/PCBA Design, CAD, SLS/SLA/FDM 3D Printing"
+        },
+        {
+          "label": "Software:",
+          "text": "Python, C++, Linux, Git, NumPy, SciPy, Jupyter, Agentic Programming"
+        },
+        {
+          "label": "Languages/Licenses:",
+          "text": "Fluent in English, Russian, French; FAA Part 107 Remote Pilot; FCC General Class Amateur Radio"
+        }
+      ]
+    },
+    {
+      "title": "Work Experience",
+      "kind": "entries",
+      "items": [
+        {
+          "title": "Avionics Hardware Dev Engineer · Varda Space Industries · El Segundo, CA",
+          "date": "Aug 2025 – Present",
+          "bullets": [
+            "Developed, qualified, and integrated an in-house spacecraft sun sensor with 10× lower cost and 5× shorter lead time than commercial alternatives; baselined for future missions",
+            "Own qualification, integration, and anomaly resolution for GNC sensors and actuators across the spacecraft bus and capsule, including sun sensors, star trackers, IMUs, magnetometers, and torque rods",
+            "Own development of a high-efficiency TEC thermal-control system and non-invasive Hall-effect position-sensing board for micrometer-scale measurements under bio-compatibility constraints",
+            "Developing automated production test software that enables technicians to qualify multiple flight components in parallel, increasing qualification throughput",
+            "Co-developed a Xyce-based circuit analysis tool to automate electronics analysis workflows and accelerate hardware development across the avionics team",
+            "Mentored an intern through system architecture selection, schematic and layout reviews, hardware debugging and test development of an in-house camera"
+          ]
+        },
+        {
+          "title": "Systems Integration Intern · Formlabs · Somerville, MA",
+          "date": "Jun 2024 – Aug 2024",
+          "bullets": [
+            "Designed experimental methods and test hardware to characterize thermopile-array IR sensors used in the Fuse X1 across environmental and geometric conditions",
+            "Modeled off-axis sensor-pixel projection and developed interactive analysis tools to support sensor alignment and configuration decisions.",
+            "Developed Python-based automated test and analysis workflows using NumPy, SciPy, and Jupyter to compare sensor performance across configurations and operating conditions"
+          ]
+        },
+        {
+          "title": "Gimbals R&D Intern · Freefly Systems · Woodinville, WA",
+          "date": "Jun 2023 – Apr 2024",
+          "bullets": [
+            "Developed a C++ motion-control firmware release for the MōVI Pro gimbal using IMU feedback, gimbal dynamics, and user inputs for professional cinema applications",
+            "Derived forward and inverse kinematics for a non-orthogonal gimbal architecture to evaluate design feasibility and identify gimbal-lock mitigation strategies",
+            "Developed the user interface and interactive documentation for the beta release, translating complex motion-control parameters into an intuitive configuration workflow for end users"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Selected Projects",
+      "kind": "entries",
+      "items": [
+        {
+          "title": "Low-Cost Depth Sensor for Deep-Water Research · M.Eng. Thesis",
+          "date": "Sep 2024 – May 2025",
+          "description": "Designed and pressure-tested a custom magnetic-displacement depth sensor and embedded electronics package for Woods Hole Oceanographic Institute instruments operating to 2,000 m depth"
+        },
+        {
+          "title": "Drone Development Member · Cornell University",
+          "date": "Sep 2023 – May 2024",
+          "description": "Led systems integration of a low-cost COTS quadcopter through component selection, Betaflight configuration, and additive manufacturing to be used in engineering course labs"
+        }
+      ]
+    },
+    {
+      "title": "Extracurricular Activities",
+      "kind": "entries",
+      "items": [
+        {
+          "title": "First Degree Black Belt · A Mountain Wind Martial Arts · State College, PA",
+          "date": "Feb 2013 – Present",
+          "description": "Instruct, help lead class and aid students with the practical and philosophical applications of the martial art at a local studio. First Degree Black Belt in Tang Soo Do, a Korean martial art"
+        }
+      ]
+    }
+  ]
+}

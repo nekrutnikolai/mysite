@@ -13,7 +13,7 @@ Live site is `https://nekrutnikolai.com/` (custom domain alias on Netlify; the u
 ## Prerequisites
 
 - Node ≥ 20.
-- `npx playwright install chromium` — only needed for tests + the local `npm run build:pdf` script. Not required for plain `npm run build`.
+- `npx playwright install chromium` — only needed for tests. Not required for plain `npm run build`.
 - `.env` with R2 credentials — copy `.env.example` and fill in `R2_ACCESS_KEY_ID` + `R2_SECRET_ACCESS_KEY`. Without it the build still runs but gallery images will be broken (sharp has nothing to process).
 
 ## Commands
@@ -21,7 +21,7 @@ Live site is `https://nekrutnikolai.com/` (custom domain alias on Netlify; the u
 - `npm run dev` — start local dev server on `http://localhost:3100` with chokidar watch + SSE live-reload. Cold-build ~10 s; subsequent rebuilds ~350 ms thanks to `site/cache/images.json`.
 - `npm run dev:drafts` — same as `dev` but with `DRAFTS=1` so `draft: true` posts/pages/galleries are surfaced for local preview (production deploys leave the env var unset, so drafts stay invisible there).
 - `npm run build` — one-shot production build into `dist/`. No browser dependency.
-- `npm run build:pdf` — local-only: build + regenerate `content/Resume.pdf` from the live `/resume/` HTML via headless chromium. Run after editing `content/resume.md`; commit the resulting PDF.
+- `npm run build:pdf` / `npm run build:resume` — generate `dist/Resume.pdf` from shared `resume.json` using LaTeX. The full build also renders the matching webpage.
 - `npm run new-gallery -- <folder>` — scaffold a new gallery from a folder of exported JPEGs (see "New gallery workflow" below).
 - `npm run download-originals` — pull gallery masters from R2 (needs `.env`).
 - `npm run upload-originals` — push clean + watermarked galleries to R2 after a `BUILD_ORIGINALS=1` build.
@@ -34,7 +34,7 @@ Live site is `https://nekrutnikolai.com/` (custom domain alias on Netlify; the u
 
 ## Architecture
 
-**Pure HTML output from a tiny Node build.** The pipeline is a few hundred LOC of stdlib + six runtime deps (`marked`, `gray-matter`, `sharp`, `exifr`, `chokidar`, `@aws-sdk/client-s3`). No framework, no templating engine, no CSS preprocessor. **No browser at build time** — Playwright is dev-only, used by tests and the local-only `build:pdf` script.
+**Pure HTML output from a tiny Node build.** The pipeline is a few hundred LOC of stdlib + six runtime deps (`marked`, `gray-matter`, `sharp`, `exifr`, `chokidar`, `@aws-sdk/client-s3`). No framework, no templating engine, no CSS preprocessor. **No browser at build time** — Playwright is dev-only, used by tests. Tectonic compiles the resume PDF during the build.
 
 - `site/build.mjs` orchestrates all phases: `clearDist()` (wipe-but-preserve-gallery-image-outputs) → copy `static/` and `site/assets/` → scan content → process gallery images → render posts/pages/galleries/tags → render `/archive/` → render home → copy PDFs → write RSS (`/index.xml`) + sitemap (`/sitemap.xml`) + `/robots.txt` + `/404.html`. Per-post OG cards are generated inline during the post render loop.
 - `site/serve.mjs` is `node:http` + chokidar. On any watched change it re-runs `build()` and pushes an SSE `event: reload` to connected clients via `/__events`. HTML responses get `<script src="/__livereload.js">` injected just before `</body>` so pages auto-reload on save. Unmatched paths serve `dist/404.html` with HTTP 404 (mirrors the Netlify redirect).
@@ -48,7 +48,7 @@ Live site is `https://nekrutnikolai.com/` (custom domain alias on Netlify; the u
 - `site/lib/structured-data.mjs` builds schema.org JSON-LD blocks per page type: `personSchema` (about), `webSiteSchema` + `homeSchema` (home, combined as a `@graph`), `articleSchema` (each post), `imageGallerySchema` (each gallery). Hard-coded sitewide identity (jobTitle, employer, alma mater, social profiles); single-author site so no need to thread Person through frontmatter. Output passes through a `</script>` substring escaper to prevent script-tag breakout if a title or description ever contains it.
 - `site/lib/escape.mjs` exports four named escape functions (`escapeHtml`, `escapeXml`, `escapeShortcodeAttr`, `escapeSvgText`) — same 5 entities but with subtly different policies (e.g. shortcodes don't escape `'`, watermark SVG only does `& < >`).
 - `site/lib/walk.mjs` is the shared recursive directory walker (used by `copyTree` and `buildImgSizeMap` in `build.mjs`).
-- `site/scripts/build-resume-pdf.mjs` is the **local-only** Resume.pdf generator: spins up a tiny http server over `dist/`, renders `/resume/` in headless chromium via Playwright, prints to PDF, writes to `content/Resume.pdf`. Triggered by `npm run build:pdf`. Not part of the Netlify build.
+- `site/scripts/build-resume-pdf.mjs` calls the Tectonic compiler in `site/lib/resume-pdf.mjs`. Shared content lives in `resume.json`; layout lives in `site/templates/resume.tex`. Netlify generates the PDF on every build.
 - `site/scripts/load-env.mjs` is a tiny stdlib `.env` autoloader. Imported for side effects from `upload-originals.mjs` and `download-originals.mjs` so they Just Work locally without `set -a; source .env; set +a` shell incantations. No-op when `.env` is absent (Netlify pre-sets env vars via the dashboard); never overrides already-set keys.
 
 **Design system:** three themes switched via `data-theme` on `<html>` with localStorage persistence.
@@ -67,7 +67,7 @@ Dropped from the parchment guide per spec: Space Grotesk (typography stays consi
 
 ## Content & URLs preserved
 
-All URLs were migrated bit-for-bit from Hugo. Posts at `/posts/<slug>/`, galleries at `/gallery/<name>/`, tags at `/tags/<tag>/`. PDFs copied to `dist/` root. RSS at `/index.xml`, sitemap at `/sitemap.xml`. OpenGraph + Twitter meta on every page (post pages get a per-post auto-generated card at `/og/<slug>.png`). The integrity test suite verifies all of this against source markdown at runtime.
+All URLs were migrated bit-for-bit from Hugo. Posts at `/posts/<slug>/`, galleries at `/gallery/<name>/`, tags at `/tags/<tag>/`. The resume webpage and LaTeX PDF are generated from root `resume.json`; the phone number appears only in the PDF. Other PDFs are copied to `dist/` root. RSS at `/index.xml`, sitemap at `/sitemap.xml`. OpenGraph + Twitter meta on every page (post pages get a per-post auto-generated card at `/og/<slug>.png`). The integrity test suite verifies all of this against source markdown at runtime.
 
 New routes added post-migration: `/archive/` (every post + gallery + tag in one view; not in main nav).
 
@@ -118,7 +118,7 @@ Helpers in `tests/helpers/`:
 - **Port 3000** is often taken by other local dev servers; this site uses **3100** by default (override with `PORT=`).
 - **FOUC safety:** the theme-restore inline script in `partials/head.html` MUST appear before the stylesheet `<link>` tags. Moving them around will flash the light theme on page load for dark/parchment users.
 - **Mustache-lite nested sections:** the template engine does NOT support nested same-name sections (e.g., `{{#toc}}{{> toc-partial-that-also-uses-toc}}{{/toc}}`). The correct pattern is a boolean guard like `hasToc` + the iteration inside the partial — see `templates/page.html` and `partials/toc.html`.
-- **Playwright is dev-only.** It must NOT move back to `dependencies`. The Netlify build is intentionally browser-free; Resume.pdf comes from the locally-committed `content/Resume.pdf`. If you change the resume HTML, run `npm run build:pdf` and commit the regenerated PDF before pushing.
+- **Playwright is dev-only.** Keep it in devDependencies. Netlify generates the resume with Tectonic; update `resume.json` to change both webpage and PDF. Phone stays PDF-only.
 - **OG cards use generic font fallbacks** because sharp's libvips SVG renderer doesn't auto-fetch web fonts. On macOS dev you'll see Georgia; on Netlify Linux you'll see DejaVu Serif. Both look clean. To get pixel-identical typography, bundle the TTFs and embed via SVG `@font-face` — listed in README "Future work".
 - **Image count:** `content/gallery/*/images/*.jpeg` is 146. All integrity tests derive the expected count from source at runtime.
 - **Script loading:** every template includes `{{> scripts }}` (loads `theme.js` + `nav.js` + optional `lightbox.js`). To gate `lightbox.js` to gallery pages, the `gallery.html` render context sets `lightbox: true`; everywhere else the `{{#lightbox}}` section is falsy.

@@ -15,6 +15,42 @@ npm run dev                         # http://localhost:3100
 
 `npm run build` writes `dist/`. `npm run test` runs the Playwright suite (first time only: `npx playwright install chromium`). Cold local build: ~10 s. Incremental: ~350 ms.
 
+### Shared resume
+
+Edit `resume.json` in the repository root to update **both** `/resume/` and
+`/Resume.pdf`. Text, contacts, dates, section order, and bullets all come from
+this one file. Write plain text, not HTML or LaTeX; the renderers escape it.
+`npm run build` rebuilds both versions, and `npm run dev` watches the data file.
+`npm run build:resume` generates only the PDF for a quick layout check.
+
+Sections use `kind: "education"` (schools with nested `entries`), `"skills"`
+(items with `label` and `text`), or `"entries"` (items with `title`, `date`,
+optional `descriptionLabel`/`description`, and optional `bullets`). Array order
+controls display order in both outputs. The phone contact uses `pdfOnly: true`
+to appear only in the PDF; all other resume content appears in both. Unknown or malformed fields fail the
+build instead of silently dropping content. Contact items have `text` and an
+optional `href` using `https:`, `mailto:`, or `tel:`.
+
+PDF formatting lives in `site/templates/resume.tex`; webpage formatting lives
+in `site/assets/css/resume.css` and `site/lib/resume.mjs`.
+`content/resume.md` holds only page metadata. The shared data was updated from
+`resume_latest.tex`; that file and `resume_old.tex` are reference imports and
+do not drive the build. Dates such as “Present” are literal
+resume content and must be updated when appropriate.
+
+`npm run test:resume` checks validation/escaping and compares the text of the
+rendered webpage and downloaded PDF with every field in the shared data.
+This check needs Playwright Chromium and Poppler's `pdftotext` command installed
+locally; neither is required for a Netlify build.
+
+The first build downloads pinned Tectonic 0.15.0 from its official GitHub release
+and fetches the required TeX packages. Linux and macOS (Intel/ARM) are supported;
+`curl` and `tar` must be available. Compiler and package caches live in the ignored
+`site/cache/latex/` directory. Alternatively, set `TECTONIC` to the path of an
+installed executable. Netlify uses this same build automatically, with no extra
+build command. Compilation errors fail the build instead of serving the old
+`content/Resume.pdf`, which is retained only as an archived export.
+
 ## How it works
 
 ```mermaid
@@ -85,14 +121,7 @@ Flags: `--name <slug>`, `--title "..."`, `--date <iso>`, `--replace`. HEIC is re
 
 ## Resume PDF
 
-`Resume.pdf` is regenerated from the live `/resume/` HTML — but **runs locally**, not on the build server, so Netlify doesn't need a chromium binary:
-
-```bash
-npm run build:pdf          # build + regen content/Resume.pdf
-git add content/Resume.pdf && git commit -m "update resume PDF"
-```
-
-Netlify just copies the committed `content/Resume.pdf` into `dist/` like any other PDF.
+The build generates `dist/Resume.pdf` from `resume.json` using LaTeX, locally and on Netlify. See Shared resume above. `npm run build:pdf` is an alias for `npm run build:resume`.
 
 ## Gallery storage
 
@@ -134,7 +163,7 @@ flowchart LR
 | `npm run dev` | Dev server on `:3100` with watch + reload |
 | `npm run dev:drafts` | Same as `dev` but surfaces `draft: true` content for preview |
 | `npm run build` | One-shot build into `dist/` |
-| `npm run build:pdf` | Regenerate `content/Resume.pdf` (local-only) |
+| `npm run build:pdf` | Generate `dist/Resume.pdf` from shared resume data |
 | `npm run new-gallery -- <folder>` | Scaffold a gallery from a folder of JPEGs |
 | `npm run download-originals` | Pull gallery masters from R2 |
 | `npm run upload-originals` | Push clean + watermarked galleries to R2 |

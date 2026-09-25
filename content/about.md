@@ -26,7 +26,7 @@ Wrapping up my in-house GNC sensor project at Varda — qualifying it for flight
 - **Side projects with Claude Code** (including this site) — picking up multi-agent patterns along the way
 - **Local LLMs and hardware** — curious where the two overlap and what it's actually good for
 
-*Not reading much these days — heads-down on the project, sorting photos, traveling.*
+*Reading Lonesome Dove - An epic western novel*
 
 ## Elsewhere
 

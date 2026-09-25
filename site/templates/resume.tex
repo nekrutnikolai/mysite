@@ -1,0 +1,32 @@
+% Layout only. Resume content comes from /resume.json.
+\documentclass[11pt]{article}
+\usepackage[top=0.5in,bottom=0.5in,left=0.75in,right=0.75in]{geometry}
+\raggedright
+\newcommand{\lineunder}{\vspace*{-8pt} \\ \hspace*{-18pt} \hrulefill \\}
+\newcommand{\header}[1]{{\hspace*{-15pt}\vspace*{6pt} \textsc{#1}} \vspace*{-6pt} \lineunder}
+\newcommand{\contact}[2]{
+  \begin{center}
+  {\LARGE \scshape #1}\\
+  #2
+  \end{center}
+  \vspace*{-8pt}
+}
+\newenvironment{achievements}{
+  \begin{list}{\textbullet}{
+    \topsep -1pt
+    \itemsep -1pt
+    \addtolength{\leftmargin}{-0.15in}
+  }
+}{\end{list}}
+\newcommand{\schoolwithcourses}[3]{
+  \textbf{#1} \hfill\mbox{#2}\\
+  \if\relax\detokenize{#3}\relax\else#3\\\fi
+  \vspace*{3pt}
+}
+\begin{document}
+\pagenumbering{gobble}
+\fontsize{10pt}{11pt}\selectfont
+\smallskip
+\vspace*{-20pt}
+%%RESUME_BODY%%
+\end{document}
