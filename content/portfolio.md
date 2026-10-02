@@ -24,6 +24,8 @@ The sensor leverages slightly compressible fluids such as H₂O and their linear
 Advised by Dr. Hunter Adams from the Cornell Electrical and Computer Engineering Department and Jonathan Pfeifer from Woods Hole Oceanographic Institution.
 
 **Links:**
+- [Master's Thesis (PDF)](/depth_sensor_thesis.pdf)
+- [Project Page on Osprey](https://osprey.phalkon.io/projects/low-cost-depth-sensing-module-for-deep-water-instruments-2adb/)
 - [GitHub Repository](https://github.com/nekrutnikolai/depth_sensor)
 
 ---

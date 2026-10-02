@@ -74,7 +74,7 @@ const SITE_DESCRIPTION =
 const DEFAULT_OG_IMAGE = "/img/glacier.jpg";
 
 // Top-level PDFs the site links to. Copied from content/ → dist/ root.
-const PDF_FILES = ["Portfolio.pdf", "e_horiz_report.pdf"];
+const PDF_FILES = ["Portfolio.pdf", "e_horiz_report.pdf", "depth_sensor_thesis.pdf"];
 
 // Sitewide identity. Used by:
 //   - <meta name="author"> on every page
